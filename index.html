@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Türkiye için net maaş hesaplayıcı, brüt maaş hesaplayıcı, SGK ve gelir vergisi hesaplama aracı. 2025-2026 güncel vergi dilimleriyle ücretsiz maaş hesaplama.">
+<meta name="keywords" content="maaş hesaplama, net maaş, brüt maaş, SGK hesaplama, gelir vergisi, asgari ücret 2025">
+<title>Maaş Hesaplayıcı 2026 – Net & Brüt Maaş, SGK, Gelir Vergisi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+--ink: #0f0f0f;
+--paper: #fafaf8;
+--muted: #6b6b6b;
+--line: #e8e8e4;
+--accent: #1a5cff;
+--accent-soft: #eef2ff;
+--green: #0d7a3e;
+--green-soft: #e8f7ef;
+--red: #c0392b;
+--red-soft: #fdf0ee;
+--yellow-soft: #fffbea;
+--shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+--shadow-lg: 0 2px 8px rgba(0,0,0,0.08), 0 12px 40px rgba(0,0,0,0.08);
+--r: 12px;
+}
+
+- { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+font-family: ‘DM Sans’, sans-serif;
+background: var(–paper);
+color: var(–ink);
+line-height: 1.6;
+font-size: 15px;
+}
+
+/* HEADER */
+header {
+border-bottom: 1px solid var(–line);
+padding: 0 clamp(16px, 5vw, 60px);
+display: flex;
+align-items: center;
+justify-content: space-between;
+height: 60px;
+background: white;
+position: sticky;
+top: 0;
+z-index: 100;
+}
+.logo {
+font-family: ‘DM Serif Display’, serif;
+font-size: 20px;
+color: var(–ink);
+text-decoration: none;
+}
+.logo span { color: var(–accent); }
+nav a {
+font-size: 13px;
+color: var(–muted);
+text-decoration: none;
+margin-left: 24px;
+font-weight: 500;
+transition: color .2s;
+}
+nav a:hover { color: var(–ink); }
+
+/* HERO */
+.hero {
+text-align: center;
+padding: 64px clamp(16px, 5vw, 60px) 48px;
+border-bottom: 1px solid var(–line);
+}
+.hero-badge {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+background: var(–accent-soft);
+color: var(–accent);
+font-size: 12px;
+font-weight: 600;
+padding: 4px 12px;
+border-radius: 99px;
+margin-bottom: 20px;
+letter-spacing: .03em;
+text-transform: uppercase;
+}
+.hero h1 {
+font-family: ‘DM Serif Display’, serif;
+font-size: clamp(32px, 5vw, 52px);
+line-height: 1.1;
+max-width: 700px;
+margin: 0 auto 16px;
+letter-spacing: -.02em;
+}
+.hero h1 em {
+font-style: italic;
+color: var(–accent);
+}
+.hero p {
+color: var(–muted);
+max-width: 520px;
+margin: 0 auto;
+font-size: 16px;
+font-weight: 300;
+}
+
+/* MAIN LAYOUT */
+.main {
+max-width: 1100px;
+margin: 0 auto;
+padding: clamp(24px, 4vw, 56px) clamp(16px, 5vw, 40px);
+display: grid;
+grid-template-columns: 1fr 380px;
+gap: 32px;
+align-items: start;
+}
+@media (max-width: 800px) {
+.main { grid-template-columns: 1fr; }
+}
+
+/* CARD */
+.card {
+background: white;
+border: 1px solid var(–line);
+border-radius: var(–r);
+box-shadow: var(–shadow);
+overflow: hidden;
+}
+.card-header {
+padding: 20px 24px;
+border-bottom: 1px solid var(–line);
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.card-header h2 {
+font-size: 15px;
+font-weight: 600;
+letter-spacing: -.01em;
+}
+.card-icon {
+width: 32px; height: 32px;
+border-radius: 8px;
+display: flex; align-items: center; justify-content: center;
+font-size: 15px;
+flex-shrink: 0;
+}
+.card-body { padding: 24px; }
+
+/* FORM */
+.field { margin-bottom: 20px; }
+.field:last-child { margin-bottom: 0; }
+label {
+display: block;
+font-size: 12px;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: .06em;
+color: var(–muted);
+margin-bottom: 8px;
+}
+.input-wrap {
+position: relative;
+display: flex;
+align-items: center;
+}
+.input-wrap input {
+width: 100%;
+padding: 11px 48px 11px 16px;
+border: 1.5px solid var(–line);
+border-radius: 8px;
+font-family: ‘DM Sans’, sans-serif;
+font-size: 15px;
+font-weight: 500;
+color: var(–ink);
+background: white;
+transition: border-color .2s, box-shadow .2s;
+outline: none;
+}
+.input-wrap input:focus {
+border-color: var(–accent);
+box-shadow: 0 0 0 3px rgba(26,92,255,.08);
+}
+.input-unit {
+position: absolute;
+right: 14px;
+font-size: 12px;
+font-weight: 600;
+color: var(–muted);
+pointer-events: none;
+}
+
+/* TOGGLE */
+.toggle-group {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 6px;
+background: var(–line);
+padding: 4px;
+border-radius: 8px;
+}
+.toggle-btn {
+padding: 8px;
+border: none;
+border-radius: 6px;
+font-family: ‘DM Sans’, sans-serif;
+font-size: 13px;
+font-weight: 500;
+cursor: pointer;
+transition: all .2s;
+background: transparent;
+color: var(–muted);
+}
+.toggle-btn.active {
+background: white;
+color: var(–ink);
+box-shadow: 0 1px 3px rgba(0,0,0,.1);
+}
+
+/* SELECT */
+select {
+width: 100%;
+padding: 11px 16px;
+border: 1.5px solid var(–line);
+border-radius: 8px;
+font-family: ‘DM Sans’, sans-serif;
+font-size: 15px;
+color: var(–ink);
+background: white;
+outline: none;
+cursor: pointer;
+transition: border-color .2s;
+appearance: none;
+background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘12’ height=‘8’ viewBox=‘0 0 12 8’%3E%3Cpath d=‘M1 1l5 5 5-5’ stroke=’%236b6b6b’ stroke-width=‘1.5’ fill=‘none’ stroke-linecap=‘round’/%3E%3C/svg%3E”);
+background-repeat: no-repeat;
+background-position: right 14px center;
+padding-right: 36px;
+}
+select:focus { border-color: var(–accent); }
+
+/* CHECKBOX */
+.check-row {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 12px;
+cursor: pointer;
+}
+.check-row input[type=checkbox] {
+width: 16px; height: 16px;
+accent-color: var(–accent);
+cursor: pointer;
+}
+.check-row span {
+font-size: 13px;
+font-weight: 500;
+color: var(–ink);
+}
+
+/* CALC BUTTON */
+.calc-btn {
+width: 100%;
+padding: 14px;
+background: var(–accent);
+color: white;
+border: none;
+border-radius: 8px;
+font-family: ‘DM Sans’, sans-serif;
+font-size: 15px;
+font-weight: 600;
+cursor: pointer;
+margin-top: 24px;
+transition: background .2s, transform .1s;
+letter-spacing: -.01em;
+}
+.calc-btn:hover { background: #0f48e0; }
+.calc-btn:active { transform: scale(.99); }
+
+/* RESULTS */
+#results { display: none; }
+#results.show { display: block; }
+
+.result-highlight {
+background: var(–accent-soft);
+border: 1.5px solid #c5d5ff;
+border-radius: 10px;
+padding: 20px;
+margin-bottom: 20px;
+text-align: center;
+}
+.result-highlight .label {
+font-size: 11px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: .07em;
+color: var(–accent);
+margin-bottom: 6px;
+}
+.result-highlight .amount {
+font-family: ‘DM Serif Display’, serif;
+font-size: 36px;
+color: var(–ink);
+letter-spacing: -.02em;
+}
+.result-highlight .amount span {
+font-size: 18px;
+color: var(–muted);
+font-family: ‘DM Sans’, sans-serif;
+font-weight: 400;
+}
+
+.result-row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 11px 0;
+border-bottom: 1px solid var(–line);
+font-size: 14px;
+}
+.result-row:last-child { border-bottom: none; }
+.result-row .rname { color: var(–muted); font-weight: 400; }
+.result-row .rval { font-weight: 600; }
+.result-row .rval.red { color: var(–red); }
+.result-row .rval.green { color: var(–green); }
+
+/* BREAKDOWN BAR */
+.breakdown-bar {
+margin: 20px 0;
+border-radius: 8px;
+overflow: hidden;
+height: 10px;
+display: flex;
+}
+.bar-net { background: var(–accent); }
+.bar-sgk { background: #f59e0b; }
+.bar-tax { background: #ef4444; }
+.bar-stamp { background: #a78bfa; }
+.bar-legend {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin-bottom: 16px;
+}
+.legend-item {
+display: flex;
+align-items: center;
+gap: 5px;
+font-size: 11px;
+font-weight: 600;
+color: var(–muted);
+}
+.legend-dot {
+width: 8px; height: 8px;
+border-radius: 2px;
+flex-shrink: 0;
+}
+
+/* SIDE STICKY */
+.side-sticky { position: sticky; top: 80px; }
+
+/* INFO SECTION */
+.info-section {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 clamp(16px, 5vw, 40px) 80px;
+}
+.info-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 24px;
+margin-top: 16px;
+}
+.info-card {
+background: white;
+border: 1px solid var(–line);
+border-radius: var(–r);
+padding: 24px;
+}
+.info-card h3 {
+font-family: ‘DM Serif Display’, serif;
+font-size: 18px;
+margin-bottom: 12px;
+letter-spacing: -.01em;
+}
+.info-card p, .info-card li {
+font-size: 14px;
+color: var(–muted);
+line-height: 1.7;
+}
+.info-card ul { padding-left: 18px; }
+.info-card li { margin-bottom: 6px; }
+
+.section-title {
+font-family: ‘DM Serif Display’, serif;
+font-size: 26px;
+margin-bottom: 6px;
+letter-spacing: -.02em;
+}
+.section-sub {
+color: var(–muted);
+font-size: 14px;
+margin-bottom: 24px;
+}
+
+/* TAX TABLE */
+.tax-table {
+width: 100%;
+border-collapse: collapse;
+font-size: 13px;
+}
+.tax-table th {
+text-align: left;
+font-size: 11px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: .06em;
+color: var(–muted);
+padding: 8px 12px;
+border-bottom: 2px solid var(–line);
+}
+.tax-table td {
+padding: 10px 12px;
+border-bottom: 1px solid var(–line);
+color: var(–ink);
+}
+.tax-table tr:last-child td { border-bottom: none; }
+.tax-table .rate {
+font-weight: 700;
+color: var(–accent);
+}
+
+/* FAQ */
+.faq-item {
+border-bottom: 1px solid var(–line);
+padding: 20px 0;
+}
+.faq-item:first-child { border-top: 1px solid var(–line); }
+.faq-q {
+font-weight: 600;
+font-size: 15px;
+margin-bottom: 10px;
+cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 12px;
+}
+.faq-q::after {
+content: ‘+’;
+font-size: 20px;
+color: var(–accent);
+flex-shrink: 0;
+line-height: 1;
+font-weight: 300;
+transition: transform .2s;
+}
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a {
+font-size: 14px;
+color: var(–muted);
+line-height: 1.7;
+display: none;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* FOOTER */
+footer {
+border-top: 1px solid var(–line);
+padding: 24px clamp(16px, 5vw, 60px);
+text-align: center;
+font-size: 12px;
+color: var(–muted);
+}
+footer a { color: var(–muted); }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(12px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.animate-in {
+animation: fadeUp .35s ease forwards;
+}
+
+/* AD PLACEHOLDER */
+.ad-placeholder {
+background: var(–line);
+border-radius: var(–r);
+height: 90px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 11px;
+color: var(–muted);
+letter-spacing: .04em;
+text-transform: uppercase;
+font-weight: 600;
+margin: 24px 0;
+}
+
+/* ASGARI UCRET BANNER */
+.asgari-banner {
+background: var(–yellow-soft);
+border: 1px solid #fde68a;
+border-radius: 10px;
+padding: 14px 18px;
+display: flex;
+align-items: center;
+gap: 12px;
+margin-bottom: 20px;
+font-size: 13px;
+}
+.asgari-banner .icon { font-size: 18px; flex-shrink: 0; }
+.asgari-banner strong { font-weight: 700; color: var(–ink); }
+.asgari-banner span { color: var(–muted); }
+
+/* DIVIDER */
+.divider {
+border: none;
+border-top: 1px solid var(–line);
+margin: 8px 0 20px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<a href="#" class="logo">maaş<span>hesap</span></a>
+<nav>
+<a href="#hesaplayici">Hesaplayıcı</a>
+<a href="#nasil-hesaplanir">Nasıl Hesaplanır?</a>
+<a href="#sss">SSS</a>
+</nav>
+</header>
+
+<div class="hero">
+<div class="hero-badge">✦ 2026 Güncel Vergi Dilimleri</div>
+<h1>Net & Brüt Maaşınızı<br><em>Anında</em> Hesaplayın</h1>
+<p>SGK primi, gelir vergisi ve damga vergisi dahil tüm kesintileri saniyeler içinde görün.</p>
+</div>
+
+<!-- AD BANNER TOP -->
+
+<div style="max-width:1100px;margin:24px auto;padding:0 clamp(16px,5vw,40px)">
+<div class="ad-placeholder">Reklam Alanı – 728x90</div>
+</div>
+
+<div class="main" id="hesaplayici">
+
+<!-- LEFT: FORM + RESULTS -->
+
+<div>
+<div class="card" style="margin-bottom:24px">
+<div class="card-header">
+<div class="card-icon" style="background:var(--accent-soft)">💰</div>
+<h2>Maaş Bilgileri</h2>
+</div>
+<div class="card-body">
+
+```
+<div class="asgari-banner">
+<span class="icon">ℹ️</span>
+<div>
+<strong>2026 Asgari Ücret:</strong>
+<span> Brüt 33.030,00 ₺ — Net 28.075,50 ₺</span>
+</div>
+</div>
+
+<div class="field">
+<label>Hesaplama Yönü</label>
+<div class="toggle-group">
+<button class="toggle-btn active" onclick="setMode('brut-net', this)">Brüt → Net</button>
+<button class="toggle-btn" onclick="setMode('net-brut', this)">Net → Brüt</button>
+</div>
+</div>
+
+<div class="field">
+<label id="input-label">Brüt Maaş</label>
+<div class="input-wrap">
+<input type="number" id="salary-input" placeholder="Örn: 30000" min="0">
+<span class="input-unit">₺</span>
+</div>
+</div>
+
+<div class="field">
+<label>Medeni Durum</label>
+<select id="civil-status">
+<option value="bekâr">Bekâr</option>
+<option value="evli-esiz-calismiyor">Evli – Eş Çalışmıyor</option>
+<option value="evli-esiz-calisiyor">Evli – Eş Çalışıyor</option>
+</select>
+</div>
+
+<div class="field">
+<label>Çocuk Sayısı</label>
+<select id="children">
+<option value="0">Çocuk Yok</option>
+<option value="1">1 Çocuk</option>
+<option value="2">2 Çocuk</option>
+<option value="3">3 Çocuk</option>
+<option value="4">4+ Çocuk</option>
+</select>
+</div>
+
+<hr class="divider">
+
+<div class="check-row">
+<input type="checkbox" id="engellilik">
+<span>Engelli Vergi İndirimi</span>
+</div>
+<div class="check-row">
+<input type="checkbox" id="asgari-iscret-muafiyet" checked>
+<span>Asgari Ücret Vergi Muafiyeti (2025)</span>
+</div>
+
+<button class="calc-btn" onclick="calculate()">Hesapla →</button>
+</div>
+</div>
+
+<!-- RESULTS -->
+<div class="card" id="results">
+<div class="card-header">
+<div class="card-icon" style="background:var(--green-soft)">📊</div>
+<h2>Hesaplama Sonuçları</h2>
+</div>
+<div class="card-body">
+<div class="result-highlight">
+<div class="label" id="res-main-label">Net Maaş</div>
+<div class="amount" id="res-main-amount">—<span> ₺</span></div>
+</div>
+
+<div class="breakdown-bar" id="bar"></div>
+<div class="bar-legend">
+<div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div> Net Maaş</div>
+<div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div> SGK Primi</div>
+<div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div> Gelir Vergisi</div>
+<div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div> Damga Vergisi</div>
+</div>
+
+<div id="rows"></div>
+</div>
+</div>
+
+<!-- AD MID -->
+<div class="ad-placeholder" style="margin-top:24px">Reklam Alanı – 728x90</div>
+```
+
+</div>
+
+<!-- RIGHT: STICKY INFO -->
+
+<div class="side-sticky">
+<div class="card" style="margin-bottom:16px">
+<div class="card-header">
+<div class="card-icon" style="background:#fff0f0">📋</div>
+<h2>Hızlı Bilgi</h2>
+</div>
+<div class="card-body" style="padding:16px 20px">
+<div class="result-row">
+<span class="rname">SGK İşçi Payı</span>
+<span class="rval">%14</span>
+</div>
+<div class="result-row">
+<span class="rname">İşsizlik Sig. İşçi</span>
+<span class="rval">%1</span>
+</div>
+<div class="result-row">
+<span class="rname">Damga Vergisi</span>
+<span class="rval">%0,759</span>
+</div>
+<div class="result-row">
+<span class="rname">Gelir Vergisi</span>
+<span class="rval">%15–40</span>
+</div>
+<div class="result-row">
+<span class="rname">SGK İşveren Payı</span>
+<span class="rval">%21,75</span>
+</div>
+<div class="result-row" style="border:none">
+<span class="rname">SGK İşv. İşsizlik</span>
+<span class="rval">%2</span>
+</div>
+</div>
+</div>
+
+```
+<div class="card">
+<div class="card-header">
+<div class="card-icon" style="background:var(--accent-soft)">📅</div>
+<h2>2026 Vergi Dilimleri</h2>
+</div>
+<div class="card-body" style="padding:16px 0">
+<table class="tax-table">
+<thead>
+<tr>
+<th>Gelir Dilimi</th>
+<th>Oran</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 – 190.000 ₺</td>
+<td class="rate">%15</td>
+</tr>
+<tr>
+<td>190.000 – 400.000 ₺</td>
+<td class="rate">%20</td>
+</tr>
+<tr>
+<td>400.000 – 1.500.000 ₺</td>
+<td class="rate">%27</td>
+</tr>
+<tr>
+<td>1.500.000 – 5.300.000 ₺</td>
+<td class="rate">%35</td>
+</tr>
+<tr>
+<td>5.300.000 ₺ üzeri</td>
+<td class="rate">%40</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- AD SIDE -->
+<div class="ad-placeholder" style="height:250px;margin-top:16px">Reklam Alanı – 300x250</div>
+```
+
+</div>
+
+</div>
+
+<!-- INFO SECTION -->
+
+<div class="info-section" id="nasil-hesaplanir">
+
+<div class="section-title">Maaş Nasıl Hesaplanır?</div>
+<div class="section-sub">Brütten nete giden yolu adım adım anlayın.</div>
+
+<div class="info-grid">
+<div class="info-card">
+<h3>1. SGK Primi Kesintisi</h3>
+<p>Brüt maaştan önce SGK işçi payı düşülür. Bu pay iki bölümden oluşur:</p>
+<ul>
+<li><strong>%11 Emeklilik Sigortası</strong> (uzun vadeli sigorta)</li>
+<li><strong>%3 Genel Sağlık Sigortası</strong></li>
+<li><strong>%1 İşsizlik Sigortası</strong></li>
+</ul>
+<p style="margin-top:10px">Toplam SGK işçi payı: <strong>%15</strong>. SGK tavan ücreti aşılırsa tavan üzerindeki tutar SGK'ya tabi değildir.</p>
+</div>
+
+```
+<div class="info-card">
+<h3>2. Gelir Vergisi Matrahı</h3>
+<p>SGK primi düşüldükten sonra kalan tutar, <strong>kümülatif vergi matrahı</strong>na eklenir. Bu kümülatif matrah, yıl boyunca hangi vergi dilimine girdiğinizi belirler.</p>
+<p style="margin-top:10px">2025 yılında <strong>asgari ücret tutarı gelir vergisinden muaf</strong> tutulmaktadır. Bu muafiyet, düşük-orta gelirli çalışanlar için önemli bir avantaj sağlar.</p>
+</div>
+
+<div class="info-card">
+<h3>3. Damga Vergisi</h3>
+<p>Brüt maaş üzerinden <strong>%0,759</strong> oranında damga vergisi kesilir. Bu vergi, ücret ödemesine ait bordroya uygulanan küçük bir işlem vergisidir.</p>
+<p style="margin-top:10px">Asgari ücret düzeyindeki kazançlarda damga vergisi de muaf tutulmaktadır.</p>
+</div>
+
+<div class="info-card">
+<h3>4. Net Maaş Hesabı</h3>
+<p>Tüm kesintiler çıkarıldıktan sonra elde kalan tutar <strong>net maaş</strong>tır:</p>
+<ul>
+<li>Brüt Maaş</li>
+<li>– SGK İşçi Payı (%15)</li>
+<li>– Gelir Vergisi (kümülatif dilime göre)</li>
+<li>– Damga Vergisi (%0,759)</li>
+<li>= <strong>Net Maaş</strong></li>
+</ul>
+</div>
+
+<div class="info-card">
+<h3>İşverenin Ödediği Ek Maliyet</h3>
+<p>İşveren, çalışanın brüt maaşına ek olarak şu primleri SGK'ya öder:</p>
+<ul>
+<li><strong>%15,5 – %20,5</strong> SGK işveren payı</li>
+<li><strong>%2</strong> İşsizlik sigortası işveren payı</li>
+</ul>
+<p style="margin-top:10px">Yani 30.000 ₺ brüt maaşlı bir çalışan, işverene aslında <strong>~36.000–37.000 ₺</strong>'ye mal olur.</p>
+</div>
+
+<div class="info-card">
+<h3>Asgari Geçim İndirimi & Muafiyetler</h3>
+<p>2022 yılından itibaren AGİ kaldırılmış; yerine <strong>asgari ücret vergi muafiyeti</strong> sistemi getirilmiştir. Bu kapsamda:</p>
+<ul>
+<li>Asgari ücret tutarındaki kazanç üzerinden gelir vergisi alınmaz</li>
+<li>Asgari ücret tutarındaki kazanç üzerinden damga vergisi alınmaz</li>
+<li>Engelli vergi indirimi ayrıca uygulanabilir</li>
+</ul>
+</div>
+```
+
+</div>
+
+<!-- SSS -->
+
+<div style="margin-top:56px;max-width:680px" id="sss">
+<div class="section-title">Sık Sorulan Sorular</div>
+<div class="section-sub">Maaş hesaplama hakkında merak edilenler.</div>
+
+```
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">Net maaş ile brüt maaş arasındaki fark nedir?</div>
+<div class="faq-a">Brüt maaş, işverenin size ödemeyi taahhüt ettiği tam ücrettir. Net maaş ise bu tutardan SGK primi, gelir vergisi ve damga vergisi kesildikten sonra hesabınıza yatan paradır. İkisi arasındaki fark genellikle brütün %15–30'u kadardır.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">Asgari ücret vergi muafiyeti nasıl işliyor?</div>
+<div class="faq-a">2022 yılından itibaren uygulanan bu düzenlemeyle, brüt maaşın asgari ücrete karşılık gelen kısmı üzerinden gelir vergisi ve damga vergisi hesaplanmıyor. Bu sayede hem asgari ücretliler hem de daha yüksek maaş alanlar önemli bir vergi avantajı elde ediyor.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">Kümülatif vergi matrahı ne demek?</div>
+<div class="faq-a">Gelir vergisi, her ay tek başına değil yıl boyunca biriken matrah üzerinden hesaplanır. Yıl başında düşük vergi diliminde olan bir çalışan, yılın ilerleyen aylarında kümülatif matrahı arttıkça daha yüksek dilime geçebilir. Bu yüzden Ocak ayındaki net maaş, Aralık ayından farklı olabilir.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">SGK tavan ücreti nedir?</div>
+<div class="faq-a">SGK, prim hesaplamasında belirli bir üst sınır uygular. 2025 yılında bu tavan asgari ücretin 7,5 katıdır (~195.041 ₺ brüt). Bu tutarın üzerindeki kısım için SGK primi ödenmez; dolayısıyla yüksek ücretlilerde net maaş oransal olarak artar.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">İşverenin toplam maliyeti neden daha fazla?</div>
+<div class="faq-a">Brüt maaşa ek olarak işveren, SGK işveren payı (%15,5–20,5) ve işsizlik sigortası işveren payı (%2) ödemekle yükümlüdür. Bu yüzden sizin brüt maaşınız 30.000 ₺ olsa bile işveren için toplam maliyet yaklaşık 36.000–37.000 ₺ civarında olur.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" onclick="toggleFaq(this)">Medeni durum ve çocuk sayısı maaşı etkiler mi?</div>
+<div class="faq-a">2022 öncesinde medeni durum ve çocuk sayısı AGİ hesabını doğrudan etkiliyordu. Günümüzde bu faktörlerin net maaşa etkisi oldukça sınırlıdır. Engelli vergi indirimi ise dereceye göre önemli bir vergi avantajı sağlayabilir.</div>
+</div>
+```
+
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 MaaşHesap · Bu site yalnızca bilgilendirme amaçlıdır. Kesin hesap için mali müşavirinize danışın.</p>
+<p style="margin-top:6px"><a href="#">Gizlilik Politikası</a> · <a href="#">İletişim</a></p>
+</footer>
+
+<script>
+let mode = 'brut-net';
+
+function setMode(m, btn) {
+mode = m;
+document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+const lbl = document.getElementById('input-label');
+const inp = document.getElementById('salary-input');
+if (m === 'brut-net') {
+lbl.textContent = 'Brüt Maaş';
+inp.placeholder = 'Örn: 30000';
+} else {
+lbl.textContent = 'Net Maaş';
+inp.placeholder = 'Örn: 25000';
+}
+document.getElementById('results').classList.remove('show');
+}
+
+// 2026 vergi dilimleri - ücret gelirleri (kümülatif yıllık matrah)
+const TAX_BRACKETS = [
+{ limit: 190000, rate: 0.15, cumTax: 0 },
+{ limit: 400000, rate: 0.20, cumTax: 28500 },
+{ limit: 1500000, rate: 0.27, cumTax: 70500 },
+{ limit: 5300000, rate: 0.35, cumTax: 367500 },
+{ limit: Infinity, rate: 0.40, cumTax: 1697500 },
+];
+
+// 2026 sabitler
+const ASGARI_UCRET_BRUT = 33030.00;
+const ASGARI_UCRET_NET = 28075.50;
+const SGK_TAVAN = 247725.00; // asgari * 7.5
+const SGK_ISCI = 0.15; // %14 emeklilik + %1 işsizlik
+const DAMGA_ORANI = 0.00759;
+
+function calcGelirVergisi(kumulatifMatrah, aylikMatrah) {
+// Vergiyi kümülatif olarak hesapla
+const birBSonra = kumulatifMatrah + aylikMatrah;
+const vergiOnceki = calcVergiBracket(kumulatifMatrah);
+const vergiSonraki = calcVergiBracket(birBSonra);
+return vergiSonraki - vergiOnceki;
+}
+
+function calcVergiBracket(matrah) {
+if (matrah <= 0) return 0;
+for (let i = 0; i < TAX_BRACKETS.length; i++) {
+const b = TAX_BRACKETS[i];
+const prev = i === 0 ? 0 : TAX_BRACKETS[i-1].limit;
+if (matrah <= b.limit) {
+return b.cumTax + (matrah - prev) * b.rate;
+}
+}
+return 0;
+}
+
+function formatTL(n) {
+return n.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' ₺';
+}
+
+function calculate() {
+const raw = parseFloat(document.getElementById('salary-input').value);
+if (!raw || raw <= 0) {
+alert('Lütfen geçerli bir maaş giriniz.');
+return;
+}
+
+let brutMaas;
+if (mode === 'brut-net') {
+brutMaas = raw;
+} else {
+// net'ten brüte yaklaşık hesap (iteratif)
+brutMaas = nettenBrute(raw);
+}
+
+// SGK tavanı kontrolü
+const sgkMatrah = Math.min(brutMaas, SGK_TAVAN);
+const sgkIsci = sgkMatrah * SGK_ISCI;
+
+// Vergi matrahı = brüt - sgk işçi
+const vergMatrah = brutMaas - sgkIsci;
+
+// Asgari ücret muafiyeti: asgari ücrete tekabül eden kısmın vergisi muaf
+const asgariSgk = ASGARI_UCRET_BRUT * SGK_ISCI;
+const asgariVergiMatrahi = ASGARI_UCRET_BRUT - asgariSgk;
+
+// Kümülatif matrah olarak ilk ay varsayımı (basitleştirilmiş)
+const kumulatif = 0;
+let gelirVergisi = calcGelirVergisi(kumulatif, vergMatrah);
+
+// Asgari ücret muafiyeti indirim
+const muafVergi = calcGelirVergisi(kumulatif, asgariVergiMatrahi);
+const asgarUcretMuafiyet = document.getElementById('asgari-iscret-muafiyet').checked;
+if (asgarUcretMuafiyet && gelirVergisi > 0) {
+gelirVergisi = Math.max(0, gelirVergisi - muafVergi);
+}
+
+// Damga vergisi
+let damgaVergisi = brutMaas * DAMGA_ORANI;
+if (asgarUcretMuafiyet) {
+const asgariDamga = ASGARI_UCRET_BRUT * DAMGA_ORANI;
+damgaVergisi = Math.max(0, damgaVergisi - asgariDamga);
+}
+
+const toplamKesinti = sgkIsci + gelirVergisi + damgaVergisi;
+const netMaas = brutMaas - toplamKesinti;
+
+// İşveren maliyeti
+const sgkIsveren = sgkMatrah * 0.2175;
+const isvIssizlik = sgkMatrah * 0.02;
+const toplamIsvMaliyet = brutMaas + sgkIsveren + isvIssizlik;
+
+// Render
+renderResults(brutMaas, netMaas, sgkIsci, gelirVergisi, damgaVergisi, toplamKesinti, toplamIsvMaliyet);
+}
+
+function nettenBrute(net) {
+// Basit iteratif yaklaşım
+let brut = net * 1.25;
+for (let i = 0; i < 20; i++) {
+const sgk = Math.min(brut, SGK_TAVAN) * SGK_ISCI;
+const vm = brut - sgk;
+let gv = calcGelirVergisi(0, vm);
+const mu = calcGelirVergisi(0, ASGARI_UCRET_BRUT - ASGARI_UCRET_BRUT * SGK_ISCI);
+gv = Math.max(0, gv - mu);
+const dv = Math.max(0, brut * DAMGA_ORANI - ASGARI_UCRET_BRUT * DAMGA_ORANI);
+const hesapNet = brut - sgk - gv - dv;
+const fark = net - hesapNet;
+brut += fark * 0.8;
+}
+return brut;
+}
+
+function renderResults(brut, net, sgk, gv, dv, toplamKesinti, isvMaliyet) {
+const isNetToShow = mode === 'brut-net';
+document.getElementById('res-main-label').textContent = isNetToShow ? 'Net Maaş' : 'Brüt Maaş';
+document.getElementById('res-main-amount').innerHTML =
+(isNetToShow ? net : brut).toLocaleString('tr-TR', {maximumFractionDigits:2}) + '<span> ₺</span>';
+
+// Bar
+const total = brut;
+const bar = document.getElementById('bar');
+bar.innerHTML = `
+<div class="bar-net" style="width:${(net/total*100).toFixed(1)}%"></div>
+<div class="bar-sgk" style="width:${(sgk/total*100).toFixed(1)}%"></div>
+<div class="bar-tax" style="width:${(gv/total*100).toFixed(1)}%"></div>
+<div class="bar-stamp" style="width:${(dv/total*100).toFixed(1)}%"></div>
+`;
+
+const rows = [
+{ label: 'Brüt Maaş', val: formatTL(brut), cls: '' },
+{ label: 'SGK İşçi Payı (%15)', val: '– ' + formatTL(sgk), cls: 'red' },
+{ label: 'Gelir Vergisi', val: '– ' + formatTL(gv), cls: 'red' },
+{ label: 'Damga Vergisi', val: '– ' + formatTL(dv), cls: 'red' },
+{ label: 'Toplam Kesinti', val: '– ' + formatTL(toplamKesinti), cls: 'red' },
+{ label: 'Net Maaş', val: formatTL(net), cls: 'green' },
+{ label: 'İşveren Toplam Maliyet', val: formatTL(isvMaliyet), cls: '' },
+];
+
+document.getElementById('rows').innerHTML = rows.map(r => `
+<div class="result-row">
+<span class="rname">${r.label}</span>
+<span class="rval ${r.cls}">${r.val}</span>
+</div>
+`).join('');
+
+const resultsEl = document.getElementById('results');
+resultsEl.classList.add('show');
+resultsEl.classList.add('animate-in');
+resultsEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function toggleFaq(el) {
+const item = el.parentElement;
+item.classList.toggle('open');
+}
+
+// Enter key
+document.addEventListener('keypress', e => {
+if (e.key === 'Enter') calculate();
+});
+</script>
+
+</body>
+</html>
