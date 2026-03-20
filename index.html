@@ -70,8 +70,9 @@ nav a:hover { color: var(–ink); }
 /* HERO */
 .hero {
 text-align: center;
-padding: 64px clamp(16px, 5vw, 60px) 48px;
+padding: 72px clamp(16px, 5vw, 60px) 56px;
 border-bottom: 1px solid var(–line);
+background: linear-gradient(180deg, #f8f9ff 0%, var(–paper) 100%);
 }
 .hero-badge {
 display: inline-flex;
@@ -109,16 +110,37 @@ font-weight: 300;
 
 /* MAIN LAYOUT */
 .main {
-max-width: 1100px;
+max-width: 1200px;
 margin: 0 auto;
 padding: clamp(24px, 4vw, 56px) clamp(16px, 5vw, 40px);
 display: grid;
-grid-template-columns: 1fr 380px;
+grid-template-columns: 1fr 1fr;
 gap: 32px;
 align-items: start;
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 .main { grid-template-columns: 1fr; }
+}
+
+/* LEFT COLUMN */
+.col-left {
+display: flex;
+flex-direction: column;
+gap: 24px;
+}
+
+/* RIGHT COLUMN */
+.col-right {
+display: flex;
+flex-direction: column;
+gap: 20px;
+position: sticky;
+top: 80px;
+}
+
+/* EQUAL HEIGHT CARDS IN RIGHT COL */
+.col-right .card {
+width: 100%;
 }
 
 /* CARD */
@@ -358,20 +380,27 @@ border-radius: 2px;
 flex-shrink: 0;
 }
 
-/* SIDE STICKY */
+/* SIDE STICKY - legacy */
 .side-sticky { position: sticky; top: 80px; }
 
 /* INFO SECTION */
 .info-section {
-max-width: 1100px;
+max-width: 1200px;
 margin: 0 auto;
-padding: 0 clamp(16px, 5vw, 40px) 80px;
+padding: 56px clamp(16px, 5vw, 40px) 80px;
+border-top: 1px solid var(–line);
 }
 .info-grid {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+grid-template-columns: repeat(3, 1fr);
 gap: 24px;
-margin-top: 16px;
+margin-top: 24px;
+}
+@media (max-width: 900px) {
+.info-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 1100px) and (min-width: 900px) {
+.info-grid { grid-template-columns: repeat(2, 1fr); }
 }
 .info-card {
 background: white;
@@ -395,8 +424,8 @@ line-height: 1.7;
 
 .section-title {
 font-family: ‘DM Serif Display’, serif;
-font-size: 26px;
-margin-bottom: 6px;
+font-size: clamp(22px, 3vw, 32px);
+margin-bottom: 8px;
 letter-spacing: -.02em;
 }
 .section-sub {
@@ -469,10 +498,11 @@ display: none;
 /* FOOTER */
 footer {
 border-top: 1px solid var(–line);
-padding: 24px clamp(16px, 5vw, 60px);
+padding: 32px clamp(16px, 5vw, 60px);
 text-align: center;
 font-size: 12px;
 color: var(–muted);
+background: white;
 }
 footer a { color: var(–muted); }
 
@@ -545,7 +575,7 @@ margin: 8px 0 20px;
 
 <!-- AD BANNER TOP -->
 
-<div style="max-width:1100px;margin:24px auto;padding:0 clamp(16px,5vw,40px)">
+<div style="max-width:1200px;margin:24px auto;padding:0 clamp(16px,5vw,40px)">
 <div class="ad-placeholder">Reklam Alanı – 728x90</div>
 </div>
 
@@ -553,7 +583,7 @@ margin: 8px 0 20px;
 
 <!-- LEFT: FORM + RESULTS -->
 
-<div>
+<div class="col-left">
 <div class="card" style="margin-bottom:24px">
 <div class="card-header">
 <div class="card-icon" style="background:var(--accent-soft)">💰</div>
@@ -651,10 +681,10 @@ margin: 8px 0 20px;
 
 </div>
 
-<!-- RIGHT: STICKY INFO -->
+<!-- RIGHT: INFO -->
 
-<div class="side-sticky">
-<div class="card" style="margin-bottom:16px">
+<div class="col-right">
+<div class="card">
 <div class="card-header">
 <div class="card-icon" style="background:#fff0f0">📋</div>
 <h2>Hızlı Bilgi</h2>
@@ -728,7 +758,7 @@ margin: 8px 0 20px;
 </div>
 
 <!-- AD SIDE -->
-<div class="ad-placeholder" style="height:250px;margin-top:16px">Reklam Alanı – 300x250</div>
+<div class="ad-placeholder" style="height:250px;">Reklam Alanı – 300x250</div>
 ```
 
 </div>
@@ -804,7 +834,7 @@ margin: 8px 0 20px;
 
 <!-- SSS -->
 
-<div style="margin-top:56px;max-width:680px" id="sss">
+<div style="margin-top:64px;max-width:780px" id="sss">
 <div class="section-title">Sık Sorulan Sorular</div>
 <div class="section-sub">Maaş hesaplama hakkında merak edilenler.</div>
 
