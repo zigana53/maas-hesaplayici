@@ -12,7 +12,7 @@
 <style>
 :root {
 --ink: #0f0f0f;
---paper: #fafaf8;
+--paper: #f0f4fa;
 --muted: #6b6b6b;
 --line: #e8e8e4;
 --accent: #1a5cff;
@@ -22,8 +22,8 @@
 --red: #c0392b;
 --red-soft: #fdf0ee;
 --yellow-soft: #fffbea;
---shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
---shadow-lg: 0 2px 8px rgba(0,0,0,0.08), 0 12px 40px rgba(0,0,0,0.08);
+--shadow: 0 1px 4px rgba(0,0,0,0.08), 0 4px 20px rgba(0,0,0,0.07);
+--shadow-lg: 0 2px 10px rgba(0,0,0,0.10), 0 12px 40px rgba(0,0,0,0.10);
 --r: 12px;
 }
 
@@ -72,7 +72,7 @@ nav a:hover { color: var(–ink); }
 text-align: center;
 padding: 72px clamp(16px, 5vw, 60px) 56px;
 border-bottom: 1px solid var(–line);
-background: linear-gradient(180deg, #f8f9ff 0%, var(–paper) 100%);
+background: linear-gradient(180deg, #e8eef8 0%, var(–paper) 100%);
 }
 .hero-badge {
 display: inline-flex;
@@ -389,6 +389,7 @@ max-width: 1200px;
 margin: 0 auto;
 padding: 56px clamp(16px, 5vw, 40px) 80px;
 border-top: 1px solid var(–line);
+background: var(–paper);
 }
 .info-grid {
 display: grid;
@@ -432,6 +433,24 @@ letter-spacing: -.02em;
 color: var(–muted);
 font-size: 14px;
 margin-bottom: 24px;
+}
+
+/* MINI TIP */
+.mini-tip {
+padding: 12px 0;
+border-bottom: 1px solid var(–line);
+margin-bottom: 4px;
+}
+.tip-title {
+font-size: 13px;
+font-weight: 600;
+color: var(–ink);
+margin-bottom: 5px;
+}
+.tip-text {
+font-size: 13px;
+color: var(–muted);
+line-height: 1.6;
 }
 
 /* TAX TABLE */
@@ -616,25 +635,9 @@ margin: 8px 0 20px;
 </div>
 </div>
 
-<div class="field">
-<label>Medeni Durum</label>
-<select id="civil-status">
-<option value="bekâr">Bekâr</option>
-<option value="evli-esiz-calismiyor">Evli – Eş Çalışmıyor</option>
-<option value="evli-esiz-calisiyor">Evli – Eş Çalışıyor</option>
-</select>
-</div>
 
-<div class="field">
-<label>Çocuk Sayısı</label>
-<select id="children">
-<option value="0">Çocuk Yok</option>
-<option value="1">1 Çocuk</option>
-<option value="2">2 Çocuk</option>
-<option value="3">3 Çocuk</option>
-<option value="4">4+ Çocuk</option>
-</select>
-</div>
+
+
 
 <hr class="divider">
 
@@ -759,6 +762,86 @@ margin: 8px 0 20px;
 
 <!-- AD SIDE -->
 <div class="ad-placeholder" style="height:250px;">Reklam Alanı – 300x250</div>
+
+<!-- SEO CONTENT CARDS -->
+<div class="card">
+<div class="card-header">
+<div class="card-icon" style="background:#fff7ed">📌</div>
+<h2>Bilmeniz Gerekenler</h2>
+</div>
+<div class="card-body" style="padding:16px 20px">
+<div class="mini-tip">
+<div class="tip-title">🗓️ Maaş Ne Zaman Ödenir?</div>
+<div class="tip-text">İş Kanunu'na göre ücretler en geç ayda bir ödenmek zorundadır. Toplu iş sözleşmelerinde bu süre bir haftaya kadar indirilebilir.</div>
+</div>
+<div class="mini-tip">
+<div class="tip-title">📈 Kıdem Tazminatı Tavanı</div>
+<div class="tip-text">2026 yılı için kıdem tazminatı tavanı her altı ayda bir güncellenir. Her hizmet yılı için bir aylık brüt maaş tazminata esas alınır.</div>
+</div>
+<div class="mini-tip">
+<div class="tip-title">💼 İşten Çıkarma Tazminatı</div>
+<div class="tip-text">En az 6 ay çalışan işçi, haksız fesih durumunda ihbar tazminatına hak kazanır. Süreye göre 2 ila 8 hafta arasında değişir.</div>
+</div>
+<div class="mini-tip" style="border:none;margin:0;padding-bottom:0">
+<div class="tip-title">🏥 SGK Prim Günü</div>
+<div class="tip-text">Prim gün şartı sigorta giriş tarihine göre değişir. 2008 sonrası girişlerde 7.200 gün, bazı durumlarda 9.000 güne kadar çıkabilir. Kesin bilgi için e-Devlet'teki "Ne Zaman Emekli Olurum?" sorgusunu kullanın.</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-icon" style="background:#f0fdf4">💡</div>
+<h2>Vergi Tasarrufu İpuçları</h2>
+</div>
+<div class="card-body" style="padding:16px 20px">
+<div class="mini-tip">
+<div class="tip-title">🎓 Eğitim Harcamaları</div>
+<div class="tip-text">Kendiniz veya çocuklarınız için yapılan eğitim harcamalarını yıllık gelir vergisi beyannamesinde gider olarak göstererek vergi avantajı sağlayabilirsiniz.</div>
+</div>
+<div class="mini-tip">
+<div class="tip-title">🏠 Konut Kredisi Faizi</div>
+<div class="tip-text">İlk konut alımında kullanılan mortgage faizleri belirli limitler dahilinde gelir vergisi matrahından düşürülebilir.</div>
+</div>
+<div class="mini-tip">
+<div class="tip-title">🩺 Özel Sağlık Sigortası</div>
+<div class="tip-text">İşveren tarafından karşılanan özel sağlık sigortası primleri, brüt maaşın %1'ini aşmamak kaydıyla SGK matrahına dahil edilmez.</div>
+</div>
+<div class="mini-tip" style="border:none;margin:0;padding-bottom:0">
+<div class="tip-title">👶 Doğum Yardımı</div>
+<div class="tip-text">Devlet, doğum yapan annelere çocuk sayısına göre tek seferlik doğum yardımı ödemesi yapmaktadır. Bu ödeme gelir vergisinden muaftır.</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<div class="card-icon" style="background:#faf5ff">🔢</div>
+<h2>Hızlı Hesap Rehberi</h2>
+</div>
+<div class="card-body" style="padding:16px 20px">
+<div class="result-row">
+<span class="rname">Brüt × 0,85</span>
+<span class="rval" style="font-size:12px">≈ SGK sonrası matrah</span>
+</div>
+<div class="result-row">
+<span class="rname">Brüt × 0,15</span>
+<span class="rval" style="font-size:12px">≈ SGK işçi kesintisi</span>
+</div>
+<div class="result-row">
+<span class="rname">Brüt × 0,2175</span>
+<span class="rval" style="font-size:12px">≈ SGK işveren payı</span>
+</div>
+<div class="result-row">
+<span class="rname">Brüt × 0,00759</span>
+<span class="rval" style="font-size:12px">≈ Damga vergisi</span>
+</div>
+<div class="result-row" style="border:none">
+<span class="rname">Brüt × ~0,75–0,82</span>
+<span class="rval" style="font-size:12px">≈ Net maaş tahmini</span>
+</div>
+</div>
+</div>
 ```
 
 </div>
