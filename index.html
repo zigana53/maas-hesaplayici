@@ -112,35 +112,53 @@ font-weight: 300;
 .main {
 max-width: 1200px;
 margin: 0 auto;
-padding: clamp(24px, 4vw, 56px) clamp(16px, 5vw, 40px);
+padding: 32px clamp(16px, 4vw, 48px) 48px;
 display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 32px;
+grid-template-columns: 360px 1fr 300px;
+gap: 24px;
 align-items: start;
 }
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+.main { grid-template-columns: 1fr 1fr; }
+.col-right { display: none; }
+}
+@media (max-width: 700px) {
 .main { grid-template-columns: 1fr; }
+.col-mid { order: -1; }
 }
 
-/* LEFT COLUMN */
+/* LEFT COLUMN - form */
 .col-left {
 display: flex;
 flex-direction: column;
-gap: 24px;
-}
-
-/* RIGHT COLUMN */
-.col-right {
-display: flex;
-flex-direction: column;
 gap: 20px;
+}
+@media (min-width: 1100px) {
+.col-left {
 position: sticky;
 top: 80px;
 }
+}
 
-/* EQUAL HEIGHT CARDS IN RIGHT COL */
-.col-right .card {
-width: 100%;
+/* MIDDLE COLUMN - results + info */
+.col-mid {
+display: flex;
+flex-direction: column;
+gap: 20px;
+min-width: 0;
+}
+
+/* RIGHT COLUMN - sidebar */
+.col-right {
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+@media (min-width: 1100px) {
+.col-right {
+position: sticky;
+top: 80px;
+}
 }
 
 /* CARD */
@@ -600,10 +618,10 @@ margin: 8px 0 20px;
 
 <div class="main" id="hesaplayici">
 
-<!-- LEFT: FORM + RESULTS -->
+<!-- LEFT: FORM -->
 
 <div class="col-left">
-<div class="card" style="margin-bottom:24px">
+<div class="card">
 <div class="card-header">
 <div class="card-icon" style="background:var(--accent-soft)">💰</div>
 <h2>Maaş Bilgileri</h2>
@@ -635,10 +653,6 @@ margin: 8px 0 20px;
 </div>
 </div>
 
-
-
-
-
 <hr class="divider">
 
 <div class="check-row">
@@ -653,7 +667,15 @@ margin: 8px 0 20px;
 <button class="calc-btn" onclick="calculate()">Hesapla →</button>
 </div>
 </div>
+```
 
+</div>
+
+<!-- MIDDLE: RESULTS + QUICK INFO + TAX TABLE -->
+
+<div class="col-mid">
+
+```
 <!-- RESULTS -->
 <div class="card" id="results">
 <div class="card-header">
@@ -677,16 +699,6 @@ margin: 8px 0 20px;
 <div id="rows"></div>
 </div>
 </div>
-
-<!-- AD MID -->
-<div class="ad-placeholder" style="margin-top:24px">Reklam Alanı – 728x90</div>
-```
-
-</div>
-
-<!-- RIGHT: INFO -->
-
-<div class="col-right">
 <div class="card">
 <div class="card-header">
 <div class="card-icon" style="background:#fff0f0">📋</div>
@@ -720,7 +732,6 @@ margin: 8px 0 20px;
 </div>
 </div>
 
-```
 <div class="card">
 <div class="card-header">
 <div class="card-icon" style="background:var(--accent-soft)">📅</div>
@@ -760,9 +771,19 @@ margin: 8px 0 20px;
 </div>
 </div>
 
-<!-- AD SIDE -->
-<div class="ad-placeholder" style="height:250px;">Reklam Alanı – 300x250</div>
+<!-- AD MID -->
+<div class="ad-placeholder">Reklam Alanı – 728x90</div>
+```
 
+</div>
+
+<!-- RIGHT: SEO SIDEBAR -->
+
+<div class="col-right">
+<!-- AD SIDE -->
+<div class="ad-placeholder" style="height:90px;">Reklam Alanı – 300x90</div>
+
+```
 <!-- SEO CONTENT CARDS -->
 <div class="card">
 <div class="card-header">
