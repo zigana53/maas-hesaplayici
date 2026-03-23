@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2026 fazla mesai ücreti hesaplama araci. Saatlik, gunluk ve aylik fazla mesai ücretinizi aninda hesaplayin.">
-<meta name="keywords" content="fazla mesai hesaplama, mesai ücreti, haftalik çalışma suresi, 2026 is kanunu">
+<meta name="description" content="2026 fazla mesai ücreti hesaplama araci. Saatlik, günlük ve aylık fazla mesai ücretinizi anında hesaplayın.">
+<meta name="keywords" content="fazla mesai hesaplama, mesai ücreti, haftalık çalışma suresi, 2026 is kanunu">
 <title>Fazla Mesai Ücreti Hesaplama 2026 - MaaşHesap</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -144,7 +144,7 @@
 <div class="hero">
   <div class="hero-badge">&#9200; 2026 İş Kanunu</div>
   <h1>Fazla Mesai Ücreti<br><em>Hesaplayıcı</em></h1>
-  <p>Haftalık çalışma saatinize ve maasiniza gore fazla mesai ücretinizi aninda hesaplayin.</p>
+  <p>Haftalık çalışma saatinize ve maasiniza gore fazla mesai ücretinizi anında hesaplayın.</p>
 </div>
 
 <div class="main">
@@ -155,10 +155,10 @@
         <h2>Çalışma Bilgileri</h2>
       </div>
       <div class="card-body">
-        <div class="note-box">&#8505; İş Kanunu'na gore haftalik çalışma suresi 45 saattir. Bu sureyi asan her saat fazla mesai sayilir ve yuzde elli zamlı odenir.</div>
+        <div class="note-box">&#8505; İş Kanunu'na gore haftalık çalışma suresi 45 saattir. Bu sureyi asan her saat fazla mesai sayilir ve yuzde elli zamlı odenir.</div>
 
         <div class="field">
-          <label>Aylik Brüt Maas</label>
+          <label>Aylık Brüt Maaş</label>
           <div class="input-wrap">
             <input type="number" id="brut-maas" placeholder="Örneğin: 35000" min="0">
             <span class="input-unit">TL</span>
@@ -168,29 +168,29 @@
         <div class="field">
           <label>Fazla Mesai Turu</label>
           <div class="toggle-group" id="tur-grp">
-            <button class="toggle-btn active" id="btn-hafta" onclick="setTur('haftalik')">Haftalık</button>
-            <button class="toggle-btn"        id="btn-gunluk" onclick="setTur('gunluk')">Günlük</button>
+            <button class="toggle-btn active" id="btn-hafta" onclick="setTur('haftalık')">Haftalık</button>
+            <button class="toggle-btn"        id="btn-günlük" onclick="setTur('günlük')">Günlük</button>
           </div>
         </div>
 
-        <div class="field" id="haftalik-alan">
+        <div class="field" id="haftalık-alan">
           <label>Haftalık Toplam Çalışma Saati</label>
           <div class="input-wrap">
-            <input type="number" id="haftalik-saat" placeholder="Örneğin: 50" min="45">
+            <input type="number" id="haftalık-saat" placeholder="Örneğin: 50" min="45">
             <span class="input-unit">SAAT</span>
           </div>
         </div>
 
-        <div class="field" id="gunluk-alan" style="display:none">
+        <div class="field" id="günlük-alan" style="display:none">
           <label>Günlük Fazla Mesai Saati</label>
           <div class="input-wrap">
-            <input type="number" id="gunluk-saat" placeholder="Örneğin: 2" min="0">
+            <input type="number" id="günlük-saat" placeholder="Örneğin: 2" min="0">
             <span class="input-unit">SAAT</span>
           </div>
         </div>
 
         <div class="field">
-          <label>Aylik Çalışma Günü</label>
+          <label>Aylık Çalışma Günü</label>
           <select id="çalışma-gun">
             <option value="22">22 gun (ortalama)</option>
             <option value="20">20 gun</option>
@@ -221,7 +221,7 @@
       </div>
       <div class="card-body">
         <div class="res-box" style="background:linear-gradient(135deg,#0891b2,#22d3ee);color:white;">
-          <div class="lbl">Aylik Fazla Mesai Ücreti</div>
+          <div class="lbl">Aylık Fazla Mesai Ücreti</div>
           <div class="amt" id="mesai-amt">--<span> TL</span></div>
         </div>
         <div id="rows"></div>
@@ -247,7 +247,7 @@
         <h2>Saatlik Ücret Hesabı</h2>
       </div>
       <div class="card-body" style="padding:14px 20px">
-        <div class="result-row"><span class="rname">Aylik çalışma saati</span><span class="rval" id="aylik-saat-goster">--</span></div>
+        <div class="result-row"><span class="rname">Aylık çalışma saati</span><span class="rval" id="aylık-saat-goster">--</span></div>
         <div class="result-row"><span class="rname">Normal saatlik ücret</span><span class="rval" id="saatlik-goster">--</span></div>
         <div class="result-row" style="border:none"><span class="rname">Fazla mesai saatlik ücret</span><span class="rval teal" id="mesai-saatlik-goster">--</span></div>
       </div>
@@ -257,20 +257,20 @@
 
 <div class="info-band">
   <div class="info-inner">
-    <div class="section-title">Fazla Mesai Hakkinda</div>
+    <div class="section-title">Fazla Mesai Hakkında</div>
     <div class="section-sub">İş Kanunu kapsaminda fazla mesai haklariniz.</div>
     <div class="info-grid">
       <div class="info-card">
         <h3>Fazla Mesai Nedir?</h3>
-        <p>4857 sayili İş Kanunu'na gore haftalik 45 saati asan çalışma fazla mesai sayilir. Bu sinir, ulke ekonomisinin gerektirdigi hallerde Cumhurbaskani karariyla degistirilebilir.</p>
+        <p>4857 sayili İş Kanunu'na gore haftalık 45 saati asan çalışma fazla mesai sayilir. Bu sinir, ulke ekonomisinin gerektirdigi hallerde Cumhurbaskani karariyla degistirilebilir.</p>
       </div>
       <div class="info-card">
         <h3>Fazla Mesai Ücreti Nasıl Hesaplanir?</h3>
-        <p>Normal fazla mesai: Saatlik ücret x 1.5 x fazla mesai saati. Hafta sonu ve resmi tatil mesaisi: Saatlik ücret x 2 x mesai saati. Saatlik ücret = Aylik brüt maaş / (haftalik çalışma saati x 4.33) formuluyle bulunur.</p>
+        <p>Normal fazla mesai: Saatlik ücret x 1.5 x fazla mesai saati. Hafta sonu ve resmi tatil mesaisi: Saatlik ücret x 2 x mesai saati. Saatlik ücret = Aylık brüt maaş / (haftalık çalışma saati x 4.33) formuluyle bulunur.</p>
       </div>
       <div class="info-card">
         <h3>Yillik Azami Sinir</h3>
-        <p>İş Kanunu'na gore bir çalışanin yillik fazla mesai suresi 270 saati gecilemez. Bu siniri asan çalışma talep edilemez. Aylik yaklasik 22,5 saat anlamina gelir.</p>
+        <p>İş Kanunu'na gore bir çalışanin yillik fazla mesai suresi 270 saati gecilemez. Bu siniri asan çalışma talep edilemez. Aylık yaklasik 22,5 saat anlamina gelir.</p>
       </div>
       <div class="info-card">
         <h3>Serbest Zaman Hakki</h3>
@@ -278,7 +278,7 @@
       </div>
       <div class="info-card">
         <h3>Resmi Tatil Mesaisi</h3>
-        <p>Ulusal bayram ve genel tatil gunlerinde calistirilan isci, normal çalışma ücreti yaninda bir gunluk ücrete daha hak kazanir. Yani resmi tatil mesaisinde gunluk ücret 2 kat odenir.</p>
+        <p>Ulusal bayram ve genel tatil günlerinde çalıştırılan işçi, normal çalışma ücreti yanında bir günlük ücrete daha hak kazanir. Yani resmi tatil mesaisinde günlük ücret 2 kat odenir.</p>
       </div>
       <div class="info-card">
         <h3>Fazla Mesai Onay Zorunlulugu</h3>
@@ -291,17 +291,17 @@
 <div class="faq-band">
   <div class="faq-inner">
     <div class="section-title">Sik Sorulan Sorular</div>
-    <div class="section-sub" style="margin-bottom:24px">Fazla mesai haklariniz hakkinda merak edilenler.</div>
+    <div class="section-sub" style="margin-bottom:24px">Fazla mesai haklariniz hakkında merak edilenler.</div>
     <div class="faq-item"><div class="faq-q">İşveren fazla mesai yapmami zorla yaptiabilir mi?</div><div class="faq-a">Hayir. İş Kanunu'na gore fazla mesai icin çalışanin yazili onayı gereklidir. Çalışan fazla mesayi reddedebilir ve bu ret, is sozlesmesinin feshine dayanak olusturamaz. Ancak olagan ustu hallerde (deprem, yangin vb.) zorunlu çalışma sozu konusu olabilir.</div></div>
     <div class="faq-item"><div class="faq-q">Fazla mesai ücreti ne zaman odenir?</div><div class="faq-a">Fazla mesai ücreti, normal maasin odendigi gun birlikte odenmelidir. Ayri bir ödeme yapilabilecegi gibi maasin icerisine dahil edilerek de odenilebilir. Her durumda ücret bordrosunda ayri gosterilmesi gerekir.</div></div>
     <div class="faq-item"><div class="faq-q">Yonetici personel fazla mesai alabilir mi?</div><div class="faq-a">İş Kanunu'nun 4. maddesi kapsami disinda kalan ust duzey yoneticiler (iscinin iscisi niteligi tasiyanlar) fazla mesai ücretinden yararlanamaz. Ancak bu istisna cok sinirli bir kesimi kapsar.</div></div>
-    <div class="faq-item"><div class="faq-q">Cumartesi gunu çalışma fazla mesai sayilir mi?</div><div class="faq-a">Eger is sozlesmesinde haftalik 45 saat esas alinmissa ve cumartesi gunleri çalışma sozlesmeyle belirlenmisse, bu gunler normal çalışma sayilir. Ancak 45 saati asarsa fazla mesai olarak degerlendirilir.</div></div>
+    <div class="faq-item"><div class="faq-q">Cumartesi gunu çalışma fazla mesai sayilir mi?</div><div class="faq-a">Eger is sozlesmesinde haftalık 45 saat esas alinmissa ve cumartesi gunleri çalışma sozlesmeyle belirlenmisse, bu gunler normal çalışma sayilir. Ancak 45 saati asarsa fazla mesai olarak degerlendirilir.</div></div>
     <div class="faq-item"><div class="faq-q">Uzaktan çalışanlarda fazla mesai nasıl hesaplanir?</div><div class="faq-a">Uzaktan (remote) çalışanlarda fazla mesai aynı İş Kanunu kurallarina tabidir. Haftalık 45 saati asan çalışma fazla mesai sayilir. İşverenin çalışma saatlerini takip edecek bir sistem kurmas zorunlulugu bulunmaktadir.</div></div>
   </div>
 </div>
 
 <footer>
-  <p><strong>MaaşHesap 2026</strong> &mdash; Bu site yalnizca bilgilendirme amaclidir. Kesin bilgi icin is hukuku uzmaniyla gorusinuz.</p>
+  <p><strong>MaaşHesap 2026</strong> &mdash; Bu site yalnizca bilgilendirme amaçlıdır. Kesin bilgi icin iş hukuku uzmaniyla görüşünüz.</p>
   <div class="footer-links">
     <a href="index.html">&#128176; Maaş Hesaplama</a>
     <a href="tazminat.html">Kıdem Tazminati</a>
