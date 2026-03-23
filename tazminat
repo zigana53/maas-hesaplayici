@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="2026 ihbar tazminati ve kidem tazminati hesaplama araci. Calisma suresine ve maasa gore tazminat tutarinizi aninda ogrenin.">
+<meta name="keywords" content="ihbar tazminati hesaplama, kidem tazminati hesaplama, isten cikma tazminati, 2026">
+<title>Ihbar ve Kidem Tazminati Hesaplama 2026 - MaasHesap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#0f0f0f;--paper:#f2f5fb;--white:#ffffff;--muted:#6b7280;--line:#e2e8f0;
+    --accent:#1a5cff;--accent-soft:#eef2ff;--accent-dark:#0f48e0;
+    --green:#0d7a3e;--green-soft:#e8f7ef;--red:#c0392b;--yellow-soft:#fffbea;
+    --orange:#d97706;--orange-soft:#fffbeb;
+    --shadow-sm:0 1px 3px rgba(0,0,0,0.07),0 2px 8px rgba(0,0,0,0.05);
+    --shadow:0 2px 8px rgba(0,0,0,0.08),0 8px 24px rgba(0,0,0,0.06);--r:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:15px;}
+  header{border-bottom:1px solid var(--line);padding:0 clamp(16px,4vw,56px);display:flex;align-items:center;justify-content:space-between;height:64px;background:var(--white);position:sticky;top:0;z-index:200;box-shadow:0 1px 8px rgba(0,0,0,0.06);gap:16px;}
+  .logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .logo-icon{width:38px;height:38px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .logo-icon svg{width:20px;height:20px;fill:white;}
+  .logo-text{font-family:'DM Serif Display',serif;font-size:20px;color:var(--ink);}
+  .logo-text span{color:var(--accent);}
+  .main-nav{display:flex;align-items:center;gap:4px;}
+  .nav-link{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:8px;transition:all .2s;white-space:nowrap;}
+  .nav-link:hover{background:var(--paper);color:var(--ink);}
+  .nav-link.active{background:var(--orange-soft);color:var(--orange);}
+  .nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--ink);padding:4px 8px;}
+  .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--line);z-index:199;box-shadow:0 4px 16px rgba(0,0,0,0.1);flex-direction:column;}
+  .mobile-nav a{padding:14px 24px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);}
+  .mobile-nav a:last-child{border-bottom:none;}
+  .mobile-nav a:hover{background:var(--paper);}
+  .mobile-nav.open{display:flex;}
+  @media(max-width:860px){.main-nav{display:none;}.nav-toggle{display:block;}}
+
+  .hero{text-align:center;padding:56px clamp(16px,5vw,60px) 44px;background:linear-gradient(160deg,#fff7ed 0%,#fffbf5 50%,var(--paper) 100%);border-bottom:1px solid var(--line);}
+  .hero-badge{display:inline-flex;align-items:center;gap:6px;background:#fffbeb;color:var(--orange);font-size:12px;font-weight:600;padding:4px 14px;border-radius:99px;margin-bottom:20px;letter-spacing:.04em;text-transform:uppercase;border:1px solid #fde68a;}
+  .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,46px);line-height:1.1;max-width:680px;margin:0 auto 16px;letter-spacing:-.02em;}
+  .hero h1 em{font-style:italic;color:var(--orange);}
+  .hero p{color:var(--muted);max-width:500px;margin:0 auto;font-size:16px;font-weight:300;}
+
+  .main{max-width:1100px;margin:0 auto;padding:36px clamp(16px,3vw,40px) 56px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;}
+  @media(max-width:760px){.main{grid-template-columns:1fr;}}
+
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-sm);overflow:hidden;margin-bottom:20px;}
+  .card:last-child{margin-bottom:0;}
+  .card-header{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;background:#fafbfd;}
+  .card-header h2{font-size:14px;font-weight:600;}
+  .card-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+  .card-body{padding:22px;}
+
+  .field{margin-bottom:16px;}
+  label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:7px;}
+  .input-wrap{position:relative;display:flex;align-items:center;}
+  .input-wrap input{width:100%;padding:11px 60px 11px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--ink);background:var(--white);outline:none;transition:border-color .2s;}
+  .input-wrap input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,92,255,.1);}
+  .input-unit{position:absolute;right:14px;font-size:12px;font-weight:700;color:var(--muted);pointer-events:none;}
+  select{width:100%;padding:10px 36px 10px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:var(--white);outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
+  select:focus{border-color:var(--accent);}
+
+  .calc-btn{width:100%;padding:13px;background:var(--orange);color:white;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;margin-top:18px;transition:background .2s;}
+  .calc-btn:hover{background:#b45309;}
+
+  #results{display:none;}
+  #results.show{display:block;}
+
+  .res-box{border-radius:12px;padding:18px;margin-bottom:16px;text-align:center;}
+  .res-box .lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.8;margin-bottom:6px;}
+  .res-box .amt{font-family:'DM Serif Display',serif;font-size:34px;letter-spacing:-.02em;}
+  .res-box .amt span{font-size:18px;opacity:.7;font-family:'DM Sans',sans-serif;font-weight:400;}
+
+  .result-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;}
+  .result-row:last-child{border-bottom:none;}
+  .result-row .rname{color:var(--muted);}
+  .result-row .rval{font-weight:700;}
+  .result-row .rval.orange{color:var(--orange);}
+  .result-row .rval.green{color:var(--green);}
+
+  .info-band{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:0;}
+  .info-inner{max-width:1100px;margin:0 auto;padding:48px clamp(16px,3vw,40px);}
+  .section-title{font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,28px);margin-bottom:6px;letter-spacing:-.02em;}
+  .section-sub{color:var(--muted);font-size:14px;margin-bottom:24px;}
+  .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
+  .info-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px;}
+  .info-card h3{font-family:'DM Serif Display',serif;font-size:16px;margin-bottom:10px;}
+  .info-card p,.info-card li{font-size:14px;color:var(--muted);line-height:1.7;}
+  .info-card ul{padding-left:16px;}
+  .info-card li{margin-bottom:4px;}
+
+  .faq-band{background:var(--paper);padding:48px clamp(16px,3vw,40px) 64px;}
+  .faq-inner{max-width:800px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line);padding:16px 0;}
+  .faq-item:first-child{border-top:1px solid var(--line);}
+  .faq-q{font-weight:600;font-size:14px;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+  .faq-q::after{content:'+';font-size:20px;color:var(--orange);flex-shrink:0;line-height:1;font-weight:300;transition:transform .2s;}
+  .faq-item.open .faq-q::after{transform:rotate(45deg);}
+  .faq-a{font-size:13px;color:var(--muted);line-height:1.7;display:none;margin-top:8px;}
+  .faq-item.open .faq-a{display:block;}
+
+  footer{background:var(--ink);color:rgba(255,255,255,.6);padding:28px clamp(16px,5vw,60px);text-align:center;font-size:13px;}
+  footer strong{color:white;}
+  footer a{color:rgba(255,255,255,.6);text-decoration:underline;cursor:pointer;}
+  footer a:hover{color:white;}
+  footer .footer-links{margin-top:10px;display:flex;justify-content:center;gap:24px;}
+
+  .note-box{background:var(--yellow-soft);border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  .animate-in{animation:fadeUp .3s ease forwards;}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo-wrap">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="white" stroke-width="1.8"/>
+        <line x1="3" y1="9" x2="21" y2="9" stroke="white" stroke-width="1.8"/>
+        <line x1="8" y1="14" x2="10" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <line x1="12" y1="14" x2="14" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <line x1="16" y1="14" x2="16" y2="19" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <line x1="8" y1="18" x2="10" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <line x1="12" y1="18" x2="14" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="logo-text">maas<span>hesap</span></div>
+  </a>
+  <nav class="main-nav">
+    <a href="index.html" class="nav-link">&#128176; Maas Hesaplama</a>
+    <a href="tazminat.html" class="nav-link active">&#128203; Ihbar &amp; Kidem</a>
+    <a href="issizlik.html" class="nav-link">&#128084; Issizlik Maasi</a>
+    <a href="fazla-mesai.html" class="nav-link">&#9200; Fazla Mesai</a>
+  </nav>
+  <button class="nav-toggle" id="nav-toggle">&#9776;</button>
+</header>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">&#128176; Maas Hesaplama</a>
+  <a href="tazminat.html">&#128203; Ihbar &amp; Kidem Tazminati</a>
+  <a href="issizlik.html">&#128084; Issizlik Maasi</a>
+  <a href="fazla-mesai.html">&#9200; Fazla Mesai Ucreti</a>
+</div>
+
+<div class="hero">
+  <div class="hero-badge">&#128203; 2026 Guncel Hesaplama</div>
+  <h1>Ihbar ve Kidem Tazminati<br><em>Hesaplayici</em></h1>
+  <p>Calisma suresine ve brut maasiniza gore ihbar ve kidem tazminatinizi aninda hesaplayin.</p>
+</div>
+
+<div class="main">
+  <div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:#fff7ed">&#128203;</div>
+        <h2>Calisma Bilgileri</h2>
+      </div>
+      <div class="card-body">
+        <div class="note-box">&#8505; Bu hesaplayici bilgi amaclidir. Kesin hesap icin is hukuku uzmaniyla gorusun.</div>
+
+        <div class="field">
+          <label>Son Brut Maas</label>
+          <div class="input-wrap">
+            <input type="number" id="brut-maas" placeholder="Ornegin: 35000" min="0">
+            <span class="input-unit">TL</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Calisma Yili</label>
+          <div class="input-wrap">
+            <input type="number" id="calisma-yil" placeholder="Ornegin: 5" min="0">
+            <span class="input-unit">YIL</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Calisma Ayi (Tam Yil Ustu)</label>
+          <div class="input-wrap">
+            <input type="number" id="calisma-ay" placeholder="0-11" min="0" max="11">
+            <span class="input-unit">AY</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Isten Ayrilma Nedeni</label>
+          <select id="ayrilma-nedeni">
+            <option value="isveren-hakli">Isveren tarafindan haksiz fesih</option>
+            <option value="isci-istifa">Isci istifasi (kidem yok)</option>
+            <option value="isci-hakli">Isci hakli nedenle ayrilma</option>
+            <option value="askerlik">Askerlik / Evlilik (kadinlar)</option>
+            <option value="emeklilik">Emeklilik</option>
+          </select>
+        </div>
+
+        <button class="calc-btn" id="calc-btn">Hesapla &#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="card" id="results">
+      <div class="card-header">
+        <div class="card-icon" style="background:var(--green-soft)">&#128200;</div>
+        <h2>Tazminat Sonuclari</h2>
+      </div>
+      <div class="card-body">
+        <div class="res-box" style="background:linear-gradient(135deg,#d97706,#f59e0b);color:white;" id="kidem-box">
+          <div class="lbl">Kidem Tazminati</div>
+          <div class="amt" id="kidem-amt">--<span> TL</span></div>
+        </div>
+        <div class="res-box" style="background:linear-gradient(135deg,#1a5cff,#3b7dff);color:white;" id="ihbar-box">
+          <div class="lbl">Ihbar Tazminati</div>
+          <div class="amt" id="ihbar-amt">--<span> TL</span></div>
+        </div>
+        <div id="rows"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:#fff7ed">&#9203;</div>
+        <h2>Ihbar Sureleri - 2026</h2>
+      </div>
+      <div class="card-body" style="padding:14px 20px">
+        <div class="result-row"><span class="rname">0-6 ay</span><span class="rval">2 hafta</span></div>
+        <div class="result-row"><span class="rname">6 ay - 1,5 yil</span><span class="rval">4 hafta</span></div>
+        <div class="result-row"><span class="rname">1,5 - 3 yil</span><span class="rval">6 hafta</span></div>
+        <div class="result-row" style="border:none"><span class="rname">3 yil ve uzeri</span><span class="rval">8 hafta</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:var(--accent-soft)">&#128176;</div>
+        <h2>Kidem Tazminati Tavani</h2>
+      </div>
+      <div class="card-body" style="padding:14px 20px">
+        <div class="result-row"><span class="rname">2026 Tavan (Ocak)</span><span class="rval orange">47.754,28 TL</span></div>
+        <div class="result-row"><span class="rname">Hesaplama Esasi</span><span class="rval">Her tam yil icin</span></div>
+        <div class="result-row" style="border:none"><span class="rname">Guncelleme</span><span class="rval">Her 6 ayda bir</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="info-band">
+  <div class="info-inner">
+    <div class="section-title">Tazminat Hakkinda Bilmeniz Gerekenler</div>
+    <div class="section-sub">Is Kanunu'na gore kidem ve ihbar tazminati haklariniz.</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Kidem Tazminati Nedir?</h3>
+        <p>En az 1 yil calisip haksiz yere iscinin isten cikartilmasi veya bazi ozel durumlarda iscinin ayrilmasi halinde odenen tazminattir. Her tam calisma yili icin bir aylik brut maas odenir.</p>
+      </div>
+      <div class="info-card">
+        <h3>Ihbar Tazminati Nedir?</h3>
+        <p>Is sozlesmesini fesheden tarafin diger tarafa onceden haber vermesi (ihbar) zorunludur. Haber verilmezse ihbar suresiyle orantili ucret tazminat olarak odenir.</p>
+      </div>
+      <div class="info-card">
+        <h3>Kidem Tazminati Hangi Durumlarda Alinir?</h3>
+        <ul>
+          <li>Isveren tarafindan haksiz fesih</li>
+          <li>Emeklilik nedeniyle ayrilma</li>
+          <li>Askerlik nedeniyle ayrilma</li>
+          <li>Evlilik nedeniyle ayrilma (kadinlar, 1 yil icerisinde)</li>
+          <li>Isci tarafindan hakli nedenle fesih</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Kidem Tazminati Hangi Durumlarda Alinmaz?</h3>
+        <ul>
+          <li>Isci kendi iradesiyle istifa ederse</li>
+          <li>Isci ahlak ve iyi niyet kurallarini ihlal ederse</li>
+          <li>1 yildan az calisildiysa</li>
+          <li>Deneme suresi icerisinde is sozlesmesi feshedilirse</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Tazminat Hesaplama Formulu</h3>
+        <p><strong>Kidem:</strong> Brut Maas x Calisma Yili</p>
+        <p style="margin-top:6px"><strong>Ihbar:</strong> Gunluk Brut Maas x Ihbar Gun Sayisi</p>
+        <p style="margin-top:6px">Tazminata; yemek, yol, ikramiye gibi surekli yapilan odemeler de dahil edilir.</p>
+      </div>
+      <div class="info-card">
+        <h3>Tazminatta Vergi ve SGK</h3>
+        <p>Kidem tazminati damga vergisine tabidir (%0,759). Gelir vergisinden muaftir. SGK primine tabi degildir. Ihbar tazminati ise gelir vergisi ve SGK primine tabidir.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="faq-band">
+  <div class="faq-inner">
+    <div class="section-title">Sik Sorulan Sorular</div>
+    <div class="section-sub" style="margin-bottom:24px">Tazminat haklariniz hakkinda merak edilenler.</div>
+    <div class="faq-item"><div class="faq-q">Istifa edersem tazminat alabilir miyim?</div><div class="faq-a">Normal istifada kidem tazminati alinmaz. Ancak emeklilik, askerlik, evlilik (kadinlar icin) veya isveren kaynaklı hakli bir neden varsa istifa etseniz dahi kidem tazminatinizi alabilirsiniz.</div></div>
+    <div class="faq-item"><div class="faq-q">Kidem tazminatinda tavan nedir?</div><div class="faq-a">2026 Ocak itibariyle kidem tazminati tavani 47.754,28 TL'dir. Brut maasiniz bu tavanin uzerindeyse tazminat tavanin uzerinden hesaplanir. Tavan her yil Ocak ve Temmuz aylarinda guncellenir.</div></div>
+    <div class="faq-item"><div class="faq-q">Kidem tazminati ne zaman odenir?</div><div class="faq-a">Is sozlesmesinin sona erdigi tarihten itibaren odenmelidir. Gecikme halinde mevduat faizi uzerinden gecikme faizi isler.</div></div>
+    <div class="faq-item"><div class="faq-q">Yari zamanli calisanlarda tazminat nasil hesaplanir?</div><div class="faq-a">Yari zamanli (part-time) calisanlar da kidem tazminatina hak kazanir. Hesaplama son brut ucret uzerinden yapilir, calisma suresi tam yil esasina gore degerlendirilir.</div></div>
+    <div class="faq-item"><div class="faq-q">Kidem tazminati vergi ve SGK'ya tabi mi?</div><div class="faq-a">Kidem tazminati gelir vergisi ve SGK'dan muaftir. Sadece damga vergisi (yuzde 0,759) kesilir. Ihbar tazminati ise hem gelir vergisine hem SGK'ya tabidir.</div></div>
+  </div>
+</div>
+
+<footer>
+  <p><strong>MaasHesap 2026</strong> &mdash; Bu site yalnizca bilgilendirme amaclidir. Kesin hesap icin is hukuku uzmaniyla gorusinuz.</p>
+  <div class="footer-links">
+    <a href="index.html">Maas Hesaplama</a>
+    <a href="issizlik.html">Issizlik Maasi</a>
+    <a href="fazla-mesai.html">Fazla Mesai</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Mobile nav
+  var nt=document.getElementById('nav-toggle'),mn=document.getElementById('mobile-nav');
+  if(nt&&mn){nt.addEventListener('click',function(){mn.classList.toggle('open');});document.addEventListener('click',function(e){if(!nt.contains(e.target)&&!mn.contains(e.target))mn.classList.remove('open');});}
+
+  // FAQ
+  var faqs=document.querySelectorAll('.faq-q');
+  for(var i=0;i<faqs.length;i++) faqs[i].addEventListener('click',function(){this.parentElement.classList.toggle('open');});
+
+  var KIDEM_TAVAN = 47754.28;
+  var IHBAR_SURELER = [
+    {ay:0.5, hafta:2},
+    {ay:1.5, hafta:4},
+    {ay:3,   hafta:6},
+    {ay:999, hafta:8}
+  ];
+
+  function fmt(n){return n.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2})+' TL';}
+
+  function getIhbarHafta(toplamAy){
+    for(var i=0;i<IHBAR_SURELER.length;i++){
+      if(toplamAy/12 <= IHBAR_SURELER[i].ay) return IHBAR_SURELER[i].hafta;
+    }
+    return 8;
+  }
+
+  function calculate(){
+    var brut = parseFloat(document.getElementById('brut-maas').value);
+    var yil  = parseFloat(document.getElementById('calisma-yil').value)||0;
+    var ay   = parseFloat(document.getElementById('calisma-ay').value)||0;
+    var neden = document.getElementById('ayrilma-nedeni').value;
+
+    if(!brut||brut<=0){alert('Lutfen brut maas giriniz.');return;}
+
+    var toplamAy = yil*12 + ay;
+    var gunlukBrut = brut/30;
+
+    // Kidem hesabi
+    var kidemHakki = (neden !== 'isci-istifa');
+    var kidemBaz   = Math.min(brut, KIDEM_TAVAN);
+    var kidemTazminat = 0;
+    if(kidemHakki && toplamAy >= 12){
+      kidemTazminat = kidemBaz * yil + kidemBaz * (ay/12);
+    }
+
+    // Damga vergisi kidem tazminatindan
+    var damga = kidemTazminat * 0.00759;
+    var kidemNet = kidemTazminat - damga;
+
+    // Ihbar hesabi
+    var ihbarHafta = getIhbarHafta(toplamAy);
+    var ihbarTazminat = gunlukBrut * ihbarHafta * 7;
+    // Ihbar vergisi (yakl. %15 GV + %15 SGK = %30 kesinti tahmini)
+    var ihbarKesinti = ihbarTazminat * 0.20;
+    var ihbarNet = ihbarTazminat - ihbarKesinti;
+
+    var toplam = kidemNet + ihbarNet;
+
+    // Render
+    document.getElementById('kidem-amt').innerHTML = kidemTazminat.toLocaleString('tr-TR',{maximumFractionDigits:2})+'<span> TL</span>';
+    document.getElementById('ihbar-amt').innerHTML = ihbarTazminat.toLocaleString('tr-TR',{maximumFractionDigits:2})+'<span> TL</span>';
+
+    var rows = [
+      {n:'Brut Maas',                    v:fmt(brut),                c:''},
+      {n:'Calisma Suresi',               v:yil+' yil '+ay+' ay',     c:''},
+      {n:'Kidem Baz Ucreti',             v:fmt(kidemBaz),            c:''},
+      {n:'Kidem Tazminati (Brut)',        v:kidemHakki&&toplamAy>=12?fmt(kidemTazminat):'Hak yok', c:kidemHakki&&toplamAy>=12?'orange':''},
+      {n:'Damga Vergisi (%0,759)',        v:kidemHakki&&toplamAy>=12?'- '+fmt(damga):'-',  c:''},
+      {n:'Kidem Tazminati (Net)',         v:kidemHakki&&toplamAy>=12?fmt(kidemNet):'Hak yok', c:'green'},
+      {n:'Ihbar Suresi',                  v:ihbarHafta+' hafta',      c:''},
+      {n:'Ihbar Tazminati (Brut)',        v:fmt(ihbarTazminat),       c:'orange'},
+      {n:'Tahmini Net Toplam Tazminat',   v:fmt(toplam),              c:'green'}
+    ];
+
+    var h='';
+    for(var i=0;i<rows.length;i++) h+='<div class="result-row"><span class="rname">'+rows[i].n+'</span><span class="rval '+rows[i].c+'">'+rows[i].v+'</span></div>';
+    document.getElementById('rows').innerHTML=h;
+
+    var el=document.getElementById('results');
+    el.className='card show animate-in';
+    el.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+
+  document.getElementById('calc-btn').addEventListener('click',calculate);
+  document.addEventListener('keypress',function(e){if(e.key==='Enter')calculate();});
+})();
+</script>
+</body>
+</html>
