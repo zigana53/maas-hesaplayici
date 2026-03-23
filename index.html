@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Turkiye icin net maas hesaplayici, brut maas hesaplayici, SGK ve gelir vergisi hesaplama araci. 2026 guncel vergi dilimleriyle ucretsiz maas hesaplama.">
-<meta name="keywords" content="maas hesaplama, net maas, brut maas, SGK hesaplama, gelir vergisi, asgari ucret 2026">
-<title>MaasHesap - Net ve Brut Maas Hesaplama 2026</title>
+<meta name="description" content="Turkiye icin net maaş hesaplayıcı, brüt maaş hesaplayıcı, SGK ve gelir vergisi hesaplama araci. 2026 güncel vergi dilimleriyle ücretsiz maaş hesaplama.">
+<meta name="keywords" content="maaş hesaplama, net maas, brüt maas, SGK hesaplama, gelir vergisi, asgari ücret 2026">
+<title>MaaşHesap - Net ve Brüt Maaş Hesaplama 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -255,53 +255,53 @@
     <div class="logo-text">maas<span>hesap</span></div>
   </a>
   <nav class="main-nav">
-    <a href="index.html" class="nav-link active">&#128176; Maas Hesaplama</a>
+    <a href="index.html" class="nav-link active">&#128176; Maaş Hesaplama</a>
     <a href="tazminat.html" class="nav-link">&#128203; Tazminat</a>
-    <a href="issizlik.html" class="nav-link">&#128084; Issizlik</a>
+    <a href="işsizlik.html" class="nav-link">&#128084; İşsizlik</a>
     <a href="fazlamesas.html" class="nav-link">&#9200; Fazla Mesai</a>
   </nav>
   <button class="nav-toggle" id="nav-toggle">&#9776;</button>
 </header>
 <div class="mobile-nav" id="mobile-nav">
-  <a href="index.html" class="mnav-link active">&#128176; Maas Hesaplama</a>
+  <a href="index.html" class="mnav-link active">&#128176; Maaş Hesaplama</a>
   <a href="tazminat.html" class="mnav-link">Tazminat Tazminati</a>
-  <a href="issizlik.html" class="mnav-link">&#128084; Issizlik</a>
-  <a href="fazlamesas.html" class="mnav-link">Fazla Mesai Ucreti</a>
+  <a href="işsizlik.html" class="mnav-link">&#128084; İşsizlik</a>
+  <a href="fazlamesas.html" class="mnav-link">Fazla Mesai Ücreti</a>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">&#10022; 2026 Guncel Vergi Dilimleri</div>
-  <h1>Net ve Brut Maasinizi<br><em>Aninda</em> Hesaplayin</h1>
+  <div class="hero-badge">&#10022; 2026 Güncel Vergi Dilimleri</div>
+  <h1>Net ve Brüt Maaşınizi<br><em>Aninda</em> Hesaplayin</h1>
   <p>SGK primi, gelir vergisi ve damga vergisi dahil tum kesintileri saniyeler icinde gorun.</p>
 </div>
 
 <!-- MAIN 3 KOLON -->
-<div class="main" id="hesaplayici">
+<div class="main" id="hesaplayıcı">
 
   <!-- SOL: FORM (sticky) -->
   <div class="col-left">
     <div class="card">
       <div class="card-header">
         <div class="card-icon" style="background:#eff6ff">&#128176;</div>
-        <h2>Maas Bilgileri</h2>
+        <h2>Maaş Bilgileri</h2>
       </div>
       <div class="card-body">
         <div class="asgari-banner">
           <span>&#8505;</span>
-          <div><strong>2026 Asgari Ucret</strong><br><span style="color:var(--muted);font-size:12px">Brut 33.030 TL &nbsp;|&nbsp; Net 28.075,50 TL</span></div>
+          <div><strong>2026 Asgari Ücret</strong><br><span style="color:var(--muted);font-size:12px">Brüt 33.030 TL &nbsp;|&nbsp; Net 28.075,50 TL</span></div>
         </div>
 
         <div class="field">
-          <label>Hesaplama Yonu</label>
+          <label>Hesaplama Yönü</label>
           <div class="toggle-group">
-            <button class="toggle-btn active" id="btn-brut" onclick="setMode('brut-net')">Brut &#8594; Net</button>
+            <button class="toggle-btn active" id="btn-brut" onclick="setMode('brut-net')">Brüt &#8594; Net</button>
             <button class="toggle-btn"        id="btn-net"  onclick="setMode('net-brut')">Net &#8594; Brut</button>
           </div>
         </div>
 
         <div class="field">
-          <label>Calisan Tipi</label>
+          <label>Çalışan Tipi</label>
           <div class="toggle-group">
             <button class="toggle-btn active" id="btn-normal" onclick="setTip('normal')">Normal</button>
             <button class="toggle-btn"        id="btn-emekli" onclick="setTip('emekli')">Emekli</button>
@@ -309,7 +309,7 @@
         </div>
 
         <div class="field">
-          <label>Hesaplama Ayi</label>
+          <label>Hesaplama Ayı</label>
           <select id="ay-sel">
             <option value="1">Ocak</option><option value="2">Subat</option>
             <option value="3">Mart</option><option value="4">Nisan</option>
@@ -321,16 +321,16 @@
         </div>
 
         <div class="field">
-          <label id="inp-label">Brut Maas</label>
+          <label id="inp-label">Brüt Maas</label>
           <div class="input-wrap">
-            <input type="number" id="salary" placeholder="Ornegin: 30000" min="0">
+            <input type="number" id="salary" placeholder="Örneğin: 30000" min="0">
             <span class="input-unit">TL</span>
           </div>
         </div>
 
         <hr class="divider">
-        <div class="check-row"><input type="checkbox" id="engelli"><span>Engelli Vergi Indirimi</span></div>
-        <div class="check-row"><input type="checkbox" id="muafiyet" checked><span>Asgari Ucret Vergi Muafiyeti (2026)</span></div>
+        <div class="check-row"><input type="checkbox" id="engelli"><span>Engelli Vergi İndirimi</span></div>
+        <div class="check-row"><input type="checkbox" id="muafiyet" checked><span>Asgari Ücret Vergi Muafiyeti (2026)</span></div>
 
         <button class="calc-btn" id="calc-btn">Hesapla &#8594;</button>
       </div>
@@ -345,8 +345,8 @@
       <div class="aff-inner">
         <div class="aff-icon" style="background:#fff0db">&#128188;</div>
         <div class="aff-text">
-          <div class="aff-title">Is arayanlar icin: Kariyer.net</div>
-          <div class="aff-sub">Binlerce is ilani, ucretsiz ozgecmis olustur</div>
+          <div class="aff-title">İş arayanlar icin: Kariyer.net</div>
+          <div class="aff-sub">Binlerce is ilani, ücretsiz ozgecmis olustur</div>
         </div>
         <div class="aff-arrow">&#8594;</div>
       </div>
@@ -355,7 +355,7 @@
     <div class="card" id="results">
       <div class="card-header">
         <div class="card-icon" style="background:var(--green-soft)">&#128202;</div>
-        <h2>Hesaplama Sonuclari</h2>
+        <h2>Hesaplama Sonuçları</h2>
       </div>
       <div class="card-body">
         <div class="result-highlight">
@@ -368,7 +368,7 @@
         </div>
         <div id="rows"></div>
         <div class="action-row">
-          <button class="btn-sec" id="print-btn">&#128424; Yazdir</button>
+          <button class="btn-sec" id="print-btn">&#128424; Yazdır</button>
           <button class="btn-sec" id="copy-btn">&#128203; Kopyala</button>
         </div>
       </div>
@@ -377,15 +377,15 @@
     <div class="card">
       <div class="card-header">
         <div class="card-icon" style="background:#fff0f0">&#128203;</div>
-        <h2>Hizli Bilgi - 2026 Oranlari</h2>
+        <h2>Hızlı Bilgi - 2026 Oranları</h2>
       </div>
       <div class="card-body" style="padding:14px 20px">
-        <div class="result-row"><span class="rname">SGK Isci Payi</span><span class="rval">%14</span></div>
-        <div class="result-row"><span class="rname">Issizlik Sig. Isci</span><span class="rval">%1</span></div>
+        <div class="result-row"><span class="rname">SGK İşçi Payi</span><span class="rval">%14</span></div>
+        <div class="result-row"><span class="rname">İşsizlik Sig. Isci</span><span class="rval">%1</span></div>
         <div class="result-row"><span class="rname">Damga Vergisi</span><span class="rval">%0,759</span></div>
         <div class="result-row"><span class="rname">Gelir Vergisi</span><span class="rval">%15-40</span></div>
-        <div class="result-row"><span class="rname">SGK Isveren Payi</span><span class="rval">%21,75</span></div>
-        <div class="result-row" style="border:none"><span class="rname">SGK Isv. Issizlik</span><span class="rval">%2</span></div>
+        <div class="result-row"><span class="rname">SGK İşveren Payi</span><span class="rval">%21,75</span></div>
+        <div class="result-row" style="border:none"><span class="rname">SGK Isv. İşsizlik</span><span class="rval">%2</span></div>
       </div>
     </div>
 
@@ -396,13 +396,13 @@
       </div>
       <div class="card-body" style="padding:14px 0">
         <table class="tax-table">
-          <thead><tr><th>Yillik Gelir Dilimi</th><th>Vergi Orani</th></tr></thead>
+          <thead><tr><th>Yillik Gelir Dilimi</th><th>Vergi Oranı</th></tr></thead>
           <tbody>
             <tr><td>0 - 190.000 TL</td><td class="rate">%15</td></tr>
             <tr><td>190.000 - 400.000 TL</td><td class="rate">%20</td></tr>
             <tr><td>400.000 - 1.500.000 TL</td><td class="rate">%27</td></tr>
             <tr><td>1.500.000 - 5.300.000 TL</td><td class="rate">%35</td></tr>
-            <tr><td>5.300.000 TL uzeri</td><td class="rate">%40</td></tr>
+            <tr><td>5.300.000 TL üzeri</td><td class="rate">%40</td></tr>
           </tbody>
         </table>
       </div>
@@ -430,8 +430,8 @@
       <div class="aff-inner">
         <div class="aff-icon" style="background:#dcfce7">&#127970;</div>
         <div class="aff-text">
-          <div class="aff-title">ISKUR - Ucretsiz Kurslar</div>
-          <div class="aff-sub">Devlet destekli mesleki egitim</div>
+          <div class="aff-title">ISKUR - Ücretsiz Kurslar</div>
+          <div class="aff-sub">Devlet destekli mesleki eğitim</div>
         </div>
         <div class="aff-arrow">&#8594;</div>
       </div>
@@ -444,19 +444,19 @@
       </div>
       <div class="card-body" style="padding:14px 18px">
         <div class="mini-tip">
-          <div class="tip-title">Maas Ne Zaman Odenir?</div>
-          <div class="tip-text">Is Kanunu'na gore ucretler en gec ayda bir odenmek zorundadir.</div>
+          <div class="tip-title">Maaş Ne Zaman Odenir?</div>
+          <div class="tip-text">İş Kanunu'na gore ücretler en gec ayda bir odenmek zorundadir.</div>
         </div>
         <div class="mini-tip">
-          <div class="tip-title">Kidem Tazminati</div>
-          <div class="tip-text">Her hizmet yili icin bir aylik brut maas tazminata esas alinir.</div>
+          <div class="tip-title">Kıdem Tazminati</div>
+          <div class="tip-text">Her hizmet yili icin bir aylik brüt maaş tazminata esas alinir.</div>
         </div>
         <div class="mini-tip">
-          <div class="tip-title">Ihbar Tazminati</div>
-          <div class="tip-text">Haksiz fesihte calisme suresine gore 2-8 hafta arasinda degisir.</div>
+          <div class="tip-title">İhbar Tazminati</div>
+          <div class="tip-text">Haksız fesihte calisme suresine gore 2-8 hafta arasinda degisir.</div>
         </div>
         <div class="mini-tip">
-          <div class="tip-title">SGK Prim Gunu</div>
+          <div class="tip-title">SGK Prim Günü</div>
           <div class="tip-text">Sigorta giris tarihine gore degisir. Kesin bilgi icin e-Devlet'i kullanin.</div>
         </div>
       </div>
@@ -469,7 +469,7 @@
       </div>
       <div class="card-body" style="padding:14px 18px">
         <div class="mini-tip">
-          <div class="tip-title">Egitim Harcamalari</div>
+          <div class="tip-title">Eğitim Harcamalari</div>
           <div class="tip-text">Yillik beyannamede gider olarak gosterin.</div>
         </div>
         <div class="mini-tip">
@@ -477,8 +477,8 @@
           <div class="tip-text">Ilk konut icin belirli limitlerde matrahtan dusurulebilir.</div>
         </div>
         <div class="mini-tip">
-          <div class="tip-title">Ozel Saglik Sigortasi</div>
-          <div class="tip-text">Isveren karsilamali primler brut maasin %1'ine kadar muaf.</div>
+          <div class="tip-title">Özel Sağlık Sigortasi</div>
+          <div class="tip-text">İşveren karsilamali primler brüt maasin %1'ine kadar muaf.</div>
         </div>
       </div>
     </div>
@@ -486,13 +486,13 @@
     <div class="card">
       <div class="card-header">
         <div class="card-icon" style="background:#faf5ff">&#128290;</div>
-        <h2>Hizli Hesap Rehberi</h2>
+        <h2>Hızlı Hesap Rehberi</h2>
       </div>
       <div class="card-body" style="padding:14px 18px">
-        <div class="result-row"><span class="rname">Brut x 0,85</span><span class="rval" style="font-size:12px">SGK sonrasi matrah</span></div>
-        <div class="result-row"><span class="rname">Brut x 0,15</span><span class="rval" style="font-size:12px">SGK isci kesintisi</span></div>
-        <div class="result-row"><span class="rname">Brut x 0,2175</span><span class="rval" style="font-size:12px">SGK isveren payi</span></div>
-        <div class="result-row" style="border:none"><span class="rname">Brut x 0,76-0,82</span><span class="rval" style="font-size:12px">Net maas tahmini</span></div>
+        <div class="result-row"><span class="rname">Brüt x 0,85</span><span class="rval" style="font-size:12px">SGK sonrasi matrah</span></div>
+        <div class="result-row"><span class="rname">Brüt x 0,15</span><span class="rval" style="font-size:12px">SGK isci kesintisi</span></div>
+        <div class="result-row"><span class="rname">Brüt x 0,2175</span><span class="rval" style="font-size:12px">SGK işveren payi</span></div>
+        <div class="result-row" style="border:none"><span class="rname">Brüt x 0,76-0,82</span><span class="rval" style="font-size:12px">Net maaş tahmini</span></div>
       </div>
     </div>
 
@@ -502,52 +502,52 @@
 <!-- NASIL HESAPLANIR BOLUMU -->
 <div class="section-band">
   <div class="section-inner">
-    <div class="section-title">Maas Nasil Hesaplanir?</div>
-    <div class="section-sub">Brutten nete giden yolu adim adim anlayin.</div>
+    <div class="section-title">Maaş Nasıl Hesaplanir?</div>
+    <div class="section-sub">Brütten nete giden yolu adim adim anlayin.</div>
     <div class="info-grid">
       <div class="info-card">
         <h3>1. SGK Primi Kesintisi</h3>
         <ul>
           <li><strong>%11</strong> Emeklilik Sigortasi</li>
-          <li><strong>%3</strong> Genel Saglik Sigortasi</li>
-          <li><strong>%1</strong> Issizlik Sigortasi</li>
+          <li><strong>%3</strong> Genel Sağlık Sigortasi</li>
+          <li><strong>%1</strong> İşsizlik Sigortasi</li>
         </ul>
-        <p style="margin-top:8px">Toplam SGK isci payi yuzde 15'tir. SGK prim tavani asgari ucretin 7,5 katidir (2026: 247.725 TL).</p>
+        <p style="margin-top:8px">Toplam SGK işçi payı yuzde 15'tir. SGK prim tavani asgari ücretin 7,5 katidir (2026: 247.725 TL).</p>
       </div>
       <div class="info-card">
         <h3>2. Gelir Vergisi Matrahi</h3>
-        <p>SGK primi dusuldukten sonra kalan tutar kumulatif vergi matrahina eklenir. 2026 yilinda asgari ucret tutari gelir vergisinden muaf tutulmaktadir.</p>
+        <p>SGK primi dusuldukten sonra kalan tutar kumulatif vergi matrahina eklenir. 2026 yilinda asgari ücret tutari gelir vergisinden muaf tutulmaktadir.</p>
       </div>
       <div class="info-card">
         <h3>3. Damga Vergisi</h3>
-        <p>Brut maas uzerinden yuzde 0,759 oraninda damga vergisi kesilir. Asgari ucret duzeyindeki kazanclarda damga vergisi de muaf tutulmaktadir.</p>
+        <p>Brüt maaş üzerinden yuzde 0,759 oraninda damga vergisi kesilir. Asgari ücret duzeyindeki kazanclarda damga vergisi de muaf tutulmaktadir.</p>
       </div>
       <div class="info-card">
-        <h3>4. Net Maas Hesabi</h3>
+        <h3>4. Net Maaş Hesabı</h3>
         <ul>
-          <li>Brut Maas</li>
-          <li>- SGK Isci Payi (yuzde 14)</li>
-          <li>- Issizlik Sigortasi (yuzde 1)</li>
+          <li>Brüt Maas</li>
+          <li>- SGK İşçi Payi (yuzde 14)</li>
+          <li>- İşsizlik Sigortasi (yuzde 1)</li>
           <li>- Gelir Vergisi</li>
           <li>- Damga Vergisi (yuzde 0,759)</li>
           <li>= <strong>Net Maas</strong></li>
         </ul>
       </div>
       <div class="info-card">
-        <h3>Isverenin Ek Maliyeti</h3>
+        <h3>İşverenin Ek Maliyeti</h3>
         <ul>
-          <li><strong>%21,75</strong> SGK isveren payi</li>
-          <li><strong>%2</strong> Issizlik sigortasi isveren</li>
+          <li><strong>%21,75</strong> SGK işveren payi</li>
+          <li><strong>%2</strong> İşsizlik sigortasi işveren</li>
         </ul>
-        <p style="margin-top:8px">30.000 TL brut maas isvere yaklasik 37.000-38.000 TL'ye mal olur.</p>
+        <p style="margin-top:8px">30.000 TL brüt maaş isvere yaklasik 37.000-38.000 TL'ye mal olur.</p>
       </div>
       <div class="info-card">
-        <h3>Asgari Ucret Muafiyeti</h3>
+        <h3>Asgari Ücret Muafiyeti</h3>
         <ul>
-          <li>Asgari ucret tutarinda gelir vergisi alinmaz</li>
-          <li>Asgari ucret tutarinda damga vergisi alinmaz</li>
+          <li>Asgari ücret tutarinda gelir vergisi alinmaz</li>
+          <li>Asgari ücret tutarinda damga vergisi alinmaz</li>
           <li>Engelli vergi indirimi ayrica uygulanabilir</li>
-          <li>Emeklilerde SGK isci payi yuzde 7,5'tir</li>
+          <li>Emeklilerde SGK işçi payı yuzde 7,5'tir</li>
         </ul>
       </div>
     </div>
@@ -558,16 +558,16 @@
 <div class="sss-band">
   <div class="sss-inner">
     <div class="section-title">Sik Sorulan Sorular</div>
-    <div class="section-sub">Maas hesaplama hakkinda merak edilenler.</div>
+    <div class="section-sub">Maaş hesaplama hakkinda merak edilenler.</div>
     <div class="sss-cols">
       <div>
-        <div class="faq-item"><div class="faq-q" id="faq1">Net maas ile brut maas arasindaki fark nedir?</div><div class="faq-a">Brut maas isverenin odemeyi taahhut ettigi tam ucrettir. Net maas ise SGK, gelir vergisi ve damga vergisi kesildikten sonra hesabiniza yatan paradir. Fark genellikle brutun yuzde 15-30'u kadardir.</div></div>
-        <div class="faq-item"><div class="faq-q" id="faq2">Asgari ucret vergi muafiyeti nasil isliyor?</div><div class="faq-a">Brut maasin asgari ucrete karsilik gelen kismi uzerinden gelir vergisi ve damga vergisi hesaplanmiyor. Hem asgari ucretliler hem de daha yuksek maas alanlar bu avantajdan yararlaniyor.</div></div>
-        <div class="faq-item"><div class="faq-q" id="faq3">Kumulatif vergi matrahi ne demek?</div><div class="faq-a">Gelir vergisi her ay tek basina degil yil boyunca biriken matrah uzerinden hesaplanir. Bu yuzden Ocak ayindaki net maas Aralik ayindan farkli olabilir.</div></div>
+        <div class="faq-item"><div class="faq-q" id="faq1">Net maaş ile brüt maaş arasindaki fark nedir?</div><div class="faq-a">Brüt maaş işverenin ödemeyi taahhut ettigi tam ücrettir. Net maaş ise SGK, gelir vergisi ve damga vergisi kesildikten sonra hesabiniza yatan paradir. Fark genellikle brutun yuzde 15-30'u kadardir.</div></div>
+        <div class="faq-item"><div class="faq-q" id="faq2">Asgari ücret vergi muafiyeti nasıl isliyor?</div><div class="faq-a">Brüt maasin asgari ücrete karsilik gelen kismi üzerinden gelir vergisi ve damga vergisi hesaplanmiyor. Hem asgari ücretliler hem de daha yuksek maaş alanlar bu avantajdan yararlaniyor.</div></div>
+        <div class="faq-item"><div class="faq-q" id="faq3">Kumulatif vergi matrahi ne demek?</div><div class="faq-a">Gelir vergisi her ay tek basina degil yıl boyunca biriken matrah üzerinden hesaplanir. Bu yuzden Ocak ayindaki net maaş Aralik ayindan farkli olabilir.</div></div>
       </div>
       <div>
-        <div class="faq-item"><div class="faq-q" id="faq4">SGK tavan ucreti nedir?</div><div class="faq-a">2026 yilinda SGK prim tavani asgari ucretin 7,5 katidir, yaklasik 247.725 TL. Bu tutarin uzerindeki kisim icin SGK primi odenmez, yuksek maasli calisanlarda net maas oransal olarak artar.</div></div>
-        <div class="faq-item"><div class="faq-q" id="faq5">Isverenin toplam maliyeti neden daha fazla?</div><div class="faq-a">Isveren SGK isveren payi yuzde 21,75 ve issizlik sigortasi yuzde 2 odemekle yukumludur. 30.000 TL brut maas icin isveren toplam yaklasik 37.000-38.000 TL oder.</div></div>
+        <div class="faq-item"><div class="faq-q" id="faq4">SGK tavan ücreti nedir?</div><div class="faq-a">2026 yilinda SGK prim tavani asgari ücretin 7,5 katidir, yaklasik 247.725 TL. Bu tutarin üzerindeki kisim icin SGK primi odenmez, yuksek maasli çalışanlarda net maaş oransal olarak artar.</div></div>
+        <div class="faq-item"><div class="faq-q" id="faq5">İşverenin toplam maliyeti neden daha fazla?</div><div class="faq-a">İşveren SGK işveren payi yuzde 21,75 ve işsizlik sigortasi yuzde 2 ödemekle yukumludur. 30.000 TL brüt maaş icin işveren toplam yaklasik 37.000-38.000 TL oder.</div></div>
         <div class="faq-item"><div class="faq-q" id="faq6">Medeni durum ve cocuk sayisi maasi etkiler mi?</div><div class="faq-a">2022'den itibaren AGI kaldirildigi icin medeni durum ve cocuk sayisinin net maasa dogrudan etkisi yoktur. Engelli vergi indirimi ise dereceye gore onemli avantaj saglayabilir.</div></div>
       </div>
     </div>
@@ -578,25 +578,25 @@
 <div class="modal-overlay" id="modal-gizlilik">
   <div class="modal-box">
     <div class="modal-header">
-      <h2>Gizlilik Politikasi</h2>
+      <h2>Gizlilik Politikası</h2>
       <button class="modal-close" id="close-gizlilik">&#215;</button>
     </div>
     <div class="modal-body">
       <h3>1. Genel Bilgi</h3>
-      <p>maas-hesap.netlify.app olarak kullanicilarin gizliligini korumak temel ilkemizdir. Bu politika, sitemizi ziyaret ettiginizde hangi bilgilerin toplandigi ve nasil kullanildigi hakkinda sizi bilgilendirmeyi amaclamaktadir.</p>
+      <p>maas-hesap.netlify.app olarak kullanicilarin gizliligini korumak temel ilkemizdir. Bu politika, sitemizi ziyaret ettiginizde hangi bilgilerin toplandigi ve nasıl kullanildigi hakkinda sizi bilgilendirmeyi amaclamaktadir.</p>
       <h3>2. Toplanan Bilgiler</h3>
       <ul>
-        <li>Girdiginiz maas tutari yalnizca tarayicinizda islenir, sunucularimiza iletilmez.</li>
+        <li>Girdiginiz maaş tutari yalnizca tarayicinizda islenir, sunucularimiza iletilmez.</li>
         <li>Ziyaretci istatistikleri icin Google Analytics kullanilabilir (anonim).</li>
         <li>Reklam hizmetleri kapsaminda Google AdSense cerezler kullanabilir.</li>
       </ul>
-      <h3>3. Cerezler</h3>
+      <h3>3. Çerezler</h3>
       <p>Sitemiz hizmet kalitesi ve reklam amaciyla cerez kullanabilir. Tarayici ayarlarindan devre disi birakabilirsiniz.</p>
-      <h3>4. Veri Guvenligi</h3>
+      <h3>4. Veri Güvenliği</h3>
       <p>Yaptiginiz hesaplamalar tamamen tarayicinizda gerceklesir. Hicbir veri sunucularimizda saklanmaz veya ucuncu kisilerle paylasilmaz.</p>
-      <h3>5. Degisiklikler</h3>
-      <p>Bu politika gerektiginde guncellenebilir. Siteyi kullanmaya devam etmeniz politikayi kabul ettiginiz anlamina gelir.</p>
-      <p class="modal-note">Son guncelleme: Mart 2026 - 6698 sayili KVKK cercevesinde hazirlanmistir.</p>
+      <h3>5. Değişiklikler</h3>
+      <p>Bu politika gerektiginde güncellenebilir. Siteyi kullanmaya devam etmeniz politikayi kabul ettiginiz anlamina gelir.</p>
+      <p class="modal-note">Son güncelleme: Mart 2026 - 6698 sayili KVKK cercevesinde hazirlanmistir.</p>
     </div>
   </div>
 </div>
@@ -605,20 +605,20 @@
 <div class="modal-overlay" id="modal-hakkinda">
   <div class="modal-box">
     <div class="modal-header">
-      <h2>Hakkimizda</h2>
+      <h2>Hakkımızda</h2>
       <button class="modal-close" id="close-hakkinda">&#215;</button>
     </div>
     <div class="modal-body">
-      <h3>MaasHesap nedir?</h3>
-      <p>maas-hesap.netlify.app, Turkiye'deki calisanlara yonelik ucretsiz, hizli ve guvenilir bir maas hesaplama platformudur. 2026 yili guncel vergi dilimleri ve SGK prim oranlari esas alinarak hesaplama yapar.</p>
+      <h3>MaaşHesap nedir?</h3>
+      <p>maas-hesap.netlify.app, Turkiye'deki çalışanlara yonelik ücretsiz, hızlı ve guvenilir bir maaş hesaplama platformudur. 2026 yili güncel vergi dilimleri ve SGK prim oranlari esas alinarak hesaplama yapar.</p>
       <h3>Ne sunar?</h3>
       <ul>
-        <li>Brut-net ve net-brut maas hesaplama</li>
+        <li>Brut-net ve net-brüt maaş hesaplama</li>
         <li>SGK ve gelir vergisi kesintilerini ayri ayri goruntuleme</li>
         <li>Interaktif pasta grafigi ile kesinti dagilimi</li>
-        <li>Emekli calisanlar icin ozel SGK oranli hesaplama</li>
+        <li>Emekli çalışanlar icin ozel SGK oranli hesaplama</li>
         <li>Aya gore kumulatif vergi matrahi hesabi</li>
-        <li>Isverenin toplam maliyet hesabi</li>
+        <li>İşverenin toplam maliyet hesabi</li>
       </ul>
       <h3>Verilerim guvende mi?</h3>
       <p>Evet. Girdiginiz tum bilgiler yalnizca tarayicinizda islenir. Hicbir veri sunucularimizda saklanmaz.</p>
@@ -628,10 +628,10 @@
 
 <!-- FOOTER -->
 <footer>
-  <p><strong>MaasHesap 2026</strong> &mdash; Bu site yalnizca bilgilendirme amaclidir. Kesin hesap icin mali musavirinize danisin.</p>
+  <p><strong>MaaşHesap 2026</strong> &mdash; Bu site yalnizca bilgilendirme amaclidir. Kesin hesap icin mali musavirinize danisin.</p>
   <div class="footer-links">
-    <a id="link-gizlilik">Gizlilik Politikasi</a>
-    <a id="link-hakkinda">Hakkimizda</a>
+    <a id="link-gizlilik">Gizlilik Politikası</a>
+    <a id="link-hakkinda">Hakkımızda</a>
   </div>
 </footer>
 
