@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2026 ihbar tazminati ve kidem tazminati hesaplama araci. Calisma suresine ve maasa gore tazminat tutarinizi aninda ogrenin.">
-<meta name="keywords" content="ihbar tazminati hesaplama, kidem tazminati hesaplama, isten cikma tazminati, 2026">
-<title>Ihbar ve Kidem Tazminati Hesaplama 2026 - MaasHesap</title>
+<meta name="description" content="2026 ihbar tazminati ve kıdem tazminati hesaplama araci. Çalışma suresine ve maasa gore tazminat tutarinizi aninda ogrenin.">
+<meta name="keywords" content="ihbar tazminati hesaplama, kıdem tazminati hesaplama, isten cikma tazminati, 2026">
+<title>İhbar ve Kıdem Tazminati Hesaplama 2026 - MaaşHesap</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -132,24 +132,24 @@
     <div class="logo-text">maas<span>hesap</span></div>
   </a>
   <nav class="main-nav">
-    <a href="index.html" class="nav-link">&#128176; Maas Hesaplama</a>
+    <a href="index.html" class="nav-link">&#128176; Maaş Hesaplama</a>
     <a href="tazminat.html" class="nav-link active">&#128203; Tazminat</a>
-    <a href="issizlik.html" class="nav-link">&#128084; Issizlik</a>
+    <a href="işsizlik.html" class="nav-link">&#128084; İşsizlik</a>
     <a href="fazla-mesai.html" class="nav-link">&#9200; Fazla Mesai</a>
   </nav>
   <button class="nav-toggle" id="nav-toggle">&#9776;</button>
 </header>
 <div class="mobile-nav" id="mobile-nav">
-  <a href="index.html">&#128176; Maas Hesaplama</a>
+  <a href="index.html">&#128176; Maaş Hesaplama</a>
   <a href="tazminat.html">Tazminat Tazminati</a>
-  <a href="issizlik.html">&#128084; Issizlik</a>
-  <a href="fazla-mesai.html">Fazla Mesai Ucreti</a>
+  <a href="işsizlik.html">&#128084; İşsizlik</a>
+  <a href="fazla-mesai.html">Fazla Mesai Ücreti</a>
 </div>
 
 <div class="hero">
-  <div class="hero-badge">&#128203; 2026 Guncel Hesaplama</div>
-  <h1>Ihbar ve Kidem Tazminati<br><em>Hesaplayici</em></h1>
-  <p>Calisma suresine ve brut maasiniza gore ihbar ve kidem tazminatinizi aninda hesaplayin.</p>
+  <div class="hero-badge">&#128203; 2026 Güncel Hesaplama</div>
+  <h1>İhbar ve Kıdem Tazminati<br><em>Hesaplayıcı</em></h1>
+  <p>Çalışma suresine ve brüt maasiniza gore ihbar ve kıdem tazminatinizi aninda hesaplayin.</p>
 </div>
 
 <div class="main">
@@ -157,40 +157,40 @@
     <div class="card">
       <div class="card-header">
         <div class="card-icon" style="background:#fff7ed">&#128203;</div>
-        <h2>Calisma Bilgileri</h2>
+        <h2>Çalışma Bilgileri</h2>
       </div>
       <div class="card-body">
-        <div class="note-box">&#8505; Bu hesaplayici bilgi amaclidir. Kesin hesap icin is hukuku uzmaniyla gorusun.</div>
+        <div class="note-box">&#8505; Bu hesaplayıcı bilgi amaclidir. Kesin hesap icin is hukuku uzmaniyla gorusun.</div>
 
         <div class="field">
-          <label>Son Brut Maas</label>
+          <label>Son Brüt Maas</label>
           <div class="input-wrap">
-            <input type="number" id="brut-maas" placeholder="Ornegin: 35000" min="0">
+            <input type="number" id="brut-maas" placeholder="Örneğin: 35000" min="0">
             <span class="input-unit">TL</span>
           </div>
         </div>
 
         <div class="field">
-          <label>Calisma Yili</label>
+          <label>Çalışma Yılı</label>
           <div class="input-wrap">
-            <input type="number" id="calisma-yil" placeholder="Ornegin: 5" min="0">
+            <input type="number" id="çalışma-yil" placeholder="Örneğin: 5" min="0">
             <span class="input-unit">YIL</span>
           </div>
         </div>
 
         <div class="field">
-          <label>Calisma Ayi (Tam Yil Ustu)</label>
+          <label>Çalışma Ayı (Tam Yıl Ustu)</label>
           <div class="input-wrap">
-            <input type="number" id="calisma-ay" placeholder="0-11" min="0" max="11">
+            <input type="number" id="çalışma-ay" placeholder="0-11" min="0" max="11">
             <span class="input-unit">AY</span>
           </div>
         </div>
 
         <div class="field">
-          <label>Isten Ayrilma Nedeni</label>
+          <label>Isten Ayrılma Nedeni</label>
           <select id="ayrilma-nedeni">
-            <option value="isveren-hakli">Isveren tarafindan haksiz fesih</option>
-            <option value="isci-istifa">Isci istifasi (kidem yok)</option>
+            <option value="işveren-hakli">İşveren tarafindan haksiz fesih</option>
+            <option value="isci-istifa">Isci istifasi (kıdem yok)</option>
             <option value="isci-hakli">Isci hakli nedenle ayrilma</option>
             <option value="askerlik">Askerlik / Evlilik (kadinlar)</option>
             <option value="emeklilik">Emeklilik</option>
@@ -206,15 +206,15 @@
     <div class="card" id="results">
       <div class="card-header">
         <div class="card-icon" style="background:var(--green-soft)">&#128200;</div>
-        <h2>Tazminat Sonuclari</h2>
+        <h2>Tazminat Sonuçları</h2>
       </div>
       <div class="card-body">
-        <div class="res-box" style="background:linear-gradient(135deg,#d97706,#f59e0b);color:white;" id="kidem-box">
-          <div class="lbl">Kidem Tazminati</div>
-          <div class="amt" id="kidem-amt">--<span> TL</span></div>
+        <div class="res-box" style="background:linear-gradient(135deg,#d97706,#f59e0b);color:white;" id="kıdem-box">
+          <div class="lbl">Kıdem Tazminati</div>
+          <div class="amt" id="kıdem-amt">--<span> TL</span></div>
         </div>
         <div class="res-box" style="background:linear-gradient(135deg,#1a5cff,#3b7dff);color:white;" id="ihbar-box">
-          <div class="lbl">Ihbar Tazminati</div>
+          <div class="lbl">İhbar Tazminati</div>
           <div class="amt" id="ihbar-amt">--<span> TL</span></div>
         </div>
         <div id="rows"></div>
@@ -224,25 +224,25 @@
     <div class="card">
       <div class="card-header">
         <div class="card-icon" style="background:#fff7ed">&#9203;</div>
-        <h2>Ihbar Sureleri - 2026</h2>
+        <h2>İhbar Süreleri - 2026</h2>
       </div>
       <div class="card-body" style="padding:14px 20px">
         <div class="result-row"><span class="rname">0-6 ay</span><span class="rval">2 hafta</span></div>
         <div class="result-row"><span class="rname">6 ay - 1,5 yil</span><span class="rval">4 hafta</span></div>
         <div class="result-row"><span class="rname">1,5 - 3 yil</span><span class="rval">6 hafta</span></div>
-        <div class="result-row" style="border:none"><span class="rname">3 yil ve uzeri</span><span class="rval">8 hafta</span></div>
+        <div class="result-row" style="border:none"><span class="rname">3 yıl ve üzeri</span><span class="rval">8 hafta</span></div>
       </div>
     </div>
 
     <div class="card">
       <div class="card-header">
         <div class="card-icon" style="background:var(--accent-soft)">&#128176;</div>
-        <h2>Kidem Tazminati Tavani</h2>
+        <h2>Kıdem Tazminati Tavanı</h2>
       </div>
       <div class="card-body" style="padding:14px 20px">
         <div class="result-row"><span class="rname">2026 Tavan (Ocak)</span><span class="rval orange">47.754,28 TL</span></div>
-        <div class="result-row"><span class="rname">Hesaplama Esasi</span><span class="rval">Her tam yil icin</span></div>
-        <div class="result-row" style="border:none"><span class="rname">Guncelleme</span><span class="rval">Her 6 ayda bir</span></div>
+        <div class="result-row"><span class="rname">Hesaplama Esasi</span><span class="rval">Her tam yıl icin</span></div>
+        <div class="result-row" style="border:none"><span class="rname">Güncelleme</span><span class="rval">Her 6 ayda bir</span></div>
       </div>
     </div>
   </div>
@@ -251,28 +251,28 @@
 <div class="info-band">
   <div class="info-inner">
     <div class="section-title">Tazminat Hakkinda Bilmeniz Gerekenler</div>
-    <div class="section-sub">Is Kanunu'na gore kidem ve ihbar tazminati haklariniz.</div>
+    <div class="section-sub">İş Kanunu'na gore kıdem ve ihbar tazminati haklariniz.</div>
     <div class="info-grid">
       <div class="info-card">
-        <h3>Kidem Tazminati Nedir?</h3>
-        <p>En az 1 yil calisip haksiz yere iscinin isten cikartilmasi veya bazi ozel durumlarda iscinin ayrilmasi halinde odenen tazminattir. Her tam calisma yili icin bir aylik brut maas odenir.</p>
+        <h3>Kıdem Tazminati Nedir?</h3>
+        <p>En az 1 yıl calisip haksiz yere iscinin isten cikartilmasi veya bazi ozel durumlarda iscinin ayrilmasi halinde odenen tazminattir. Her tam çalışma yili icin bir aylik brüt maaş odenir.</p>
       </div>
       <div class="info-card">
-        <h3>Ihbar Tazminati Nedir?</h3>
-        <p>Is sozlesmesini fesheden tarafin diger tarafa onceden haber vermesi (ihbar) zorunludur. Haber verilmezse ihbar suresiyle orantili ucret tazminat olarak odenir.</p>
+        <h3>İhbar Tazminati Nedir?</h3>
+        <p>Is sozlesmesini fesheden tarafin diger tarafa onceden haber vermesi (ihbar) zorunludur. Haber verilmezse ihbar suresiyle orantili ücret tazminat olarak odenir.</p>
       </div>
       <div class="info-card">
-        <h3>Kidem Tazminati Hangi Durumlarda Alinir?</h3>
+        <h3>Kıdem Tazminati Hangi Durumlarda Alınır?</h3>
         <ul>
-          <li>Isveren tarafindan haksiz fesih</li>
+          <li>İşveren tarafindan haksiz fesih</li>
           <li>Emeklilik nedeniyle ayrilma</li>
           <li>Askerlik nedeniyle ayrilma</li>
-          <li>Evlilik nedeniyle ayrilma (kadinlar, 1 yil icerisinde)</li>
+          <li>Evlilik nedeniyle ayrilma (kadinlar, 1 yıl icerisinde)</li>
           <li>Isci tarafindan hakli nedenle fesih</li>
         </ul>
       </div>
       <div class="info-card">
-        <h3>Kidem Tazminati Hangi Durumlarda Alinmaz?</h3>
+        <h3>Kıdem Tazminati Hangi Durumlarda Alinmaz?</h3>
         <ul>
           <li>Isci kendi iradesiyle istifa ederse</li>
           <li>Isci ahlak ve iyi niyet kurallarini ihlal ederse</li>
@@ -281,14 +281,14 @@
         </ul>
       </div>
       <div class="info-card">
-        <h3>Tazminat Hesaplama Formulu</h3>
-        <p><strong>Kidem:</strong> Brut Maas x Calisma Yili</p>
-        <p style="margin-top:6px"><strong>Ihbar:</strong> Gunluk Brut Maas x Ihbar Gun Sayisi</p>
-        <p style="margin-top:6px">Tazminata; yemek, yol, ikramiye gibi surekli yapilan odemeler de dahil edilir.</p>
+        <h3>Tazminat Hesaplama Formülü</h3>
+        <p><strong>Kıdem:</strong> Brüt Maaş x Çalışma Yılı</p>
+        <p style="margin-top:6px"><strong>İhbar:</strong> Günlük Brüt Maaş x İhbar Gun Sayisi</p>
+        <p style="margin-top:6px">Tazminata; yemek, yol, ikramiye gibi surekli yapilan ödemeler de dahil edilir.</p>
       </div>
       <div class="info-card">
         <h3>Tazminatta Vergi ve SGK</h3>
-        <p>Kidem tazminati damga vergisine tabidir (%0,759). Gelir vergisinden muaftir. SGK primine tabi degildir. Ihbar tazminati ise gelir vergisi ve SGK primine tabidir.</p>
+        <p>Kıdem tazminati damga vergisine tabidir (%0,759). Gelir vergisinden muaftir. SGK primine tabi degildir. İhbar tazminati ise gelir vergisi ve SGK primine tabidir.</p>
       </div>
     </div>
   </div>
@@ -298,19 +298,19 @@
   <div class="faq-inner">
     <div class="section-title">Sik Sorulan Sorular</div>
     <div class="section-sub" style="margin-bottom:24px">Tazminat haklariniz hakkinda merak edilenler.</div>
-    <div class="faq-item"><div class="faq-q">Istifa edersem tazminat alabilir miyim?</div><div class="faq-a">Normal istifada kidem tazminati alinmaz. Ancak emeklilik, askerlik, evlilik (kadinlar icin) veya isveren kaynaklı hakli bir neden varsa istifa etseniz dahi kidem tazminatinizi alabilirsiniz.</div></div>
-    <div class="faq-item"><div class="faq-q">Kidem tazminatinda tavan nedir?</div><div class="faq-a">2026 Ocak itibariyle kidem tazminati tavani 47.754,28 TL'dir. Brut maasiniz bu tavanin uzerindeyse tazminat tavanin uzerinden hesaplanir. Tavan her yil Ocak ve Temmuz aylarinda guncellenir.</div></div>
-    <div class="faq-item"><div class="faq-q">Kidem tazminati ne zaman odenir?</div><div class="faq-a">Is sozlesmesinin sona erdigi tarihten itibaren odenmelidir. Gecikme halinde mevduat faizi uzerinden gecikme faizi isler.</div></div>
-    <div class="faq-item"><div class="faq-q">Yari zamanli calisanlarda tazminat nasil hesaplanir?</div><div class="faq-a">Yari zamanli (part-time) calisanlar da kidem tazminatina hak kazanir. Hesaplama son brut ucret uzerinden yapilir, calisma suresi tam yil esasina gore degerlendirilir.</div></div>
-    <div class="faq-item"><div class="faq-q">Kidem tazminati vergi ve SGK'ya tabi mi?</div><div class="faq-a">Kidem tazminati gelir vergisi ve SGK'dan muaftir. Sadece damga vergisi (yuzde 0,759) kesilir. Ihbar tazminati ise hem gelir vergisine hem SGK'ya tabidir.</div></div>
+    <div class="faq-item"><div class="faq-q">İstifa edersem tazminat alabilir miyim?</div><div class="faq-a">Normal istifada kıdem tazminati alinmaz. Ancak emeklilik, askerlik, evlilik (kadinlar icin) veya işveren kaynaklı hakli bir neden varsa istifa etseniz dahi kıdem tazminatinizi alabilirsiniz.</div></div>
+    <div class="faq-item"><div class="faq-q">Kıdem tazminatinda tavan nedir?</div><div class="faq-a">2026 Ocak itibariyle kıdem tazminati tavani 47.754,28 TL'dir. Brüt maasiniz bu tavanin üzerindeyse tazminat tavanin üzerinden hesaplanir. Tavan her yıl Ocak ve Temmuz aylarinda güncellenir.</div></div>
+    <div class="faq-item"><div class="faq-q">Kıdem tazminati ne zaman odenir?</div><div class="faq-a">Is sozlesmesinin sona erdigi tarihten itibaren odenmelidir. Gecikme halinde mevduat faizi üzerinden gecikme faizi isler.</div></div>
+    <div class="faq-item"><div class="faq-q">Yari zamanli çalışanlarda tazminat nasıl hesaplanir?</div><div class="faq-a">Yari zamanli (part-time) çalışanlar da kıdem tazminatina hak kazanir. Hesaplama son brüt ücret üzerinden yapilir, çalışma suresi tam yıl esasina gore degerlendirilir.</div></div>
+    <div class="faq-item"><div class="faq-q">Kıdem tazminati vergi ve SGK'ya tabi mi?</div><div class="faq-a">Kıdem tazminati gelir vergisi ve SGK'dan muaftir. Sadece damga vergisi (yuzde 0,759) kesilir. İhbar tazminati ise hem gelir vergisine hem SGK'ya tabidir.</div></div>
   </div>
 </div>
 
 <footer>
-  <p><strong>MaasHesap 2026</strong> &mdash; Bu site yalnizca bilgilendirme amaclidir. Kesin hesap icin is hukuku uzmaniyla gorusinuz.</p>
+  <p><strong>MaaşHesap 2026</strong> &mdash; Bu site yalnizca bilgilendirme amaclidir. Kesin hesap icin is hukuku uzmaniyla gorusinuz.</p>
   <div class="footer-links">
-    <a href="index.html">&#128176; Maas Hesaplama</a>
-    <a href="issizlik.html">Issizlik Maasi</a>
+    <a href="index.html">&#128176; Maaş Hesaplama</a>
+    <a href="işsizlik.html">İşsizlik Maaşı</a>
     <a href="fazla-mesai.html">&#9200; Fazla Mesai</a>
   </div>
 </footer>
