@@ -179,6 +179,22 @@
         </div>
 
         <div class="field">
+          <label>Aylık Brüt Yan Haklar (Yemek, Yol vb.)</label>
+          <div class="input-wrap">
+            <input type="number" id="yan-haklar" placeholder="Yoksa 0 girin" min="0" value="0">
+            <span class="input-unit">TL</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Yıllık Brüt İkramiye</label>
+          <div class="input-wrap">
+            <input type="number" id="ikramiye" placeholder="Yoksa 0 girin" min="0" value="0">
+            <span class="input-unit">TL</span>
+          </div>
+        </div>
+
+        <div class="field">
           <label>Çalışma Yılı</label>
           <div class="input-wrap">
             <input type="number" id="çalışma-yil" placeholder="Örneğin: 5" min="0">
@@ -248,7 +264,7 @@
         <h2>Kıdem Tazminatı Tavanı</h2>
       </div>
       <div class="card-body" style="padding:14px 20px">
-        <div class="result-row"><span class="rname">2026 Tavan (Ocak)</span><span class="rval orange">47.754,28 TL</span></div>
+        <div class="result-row"><span class="rname">2026 Tavan (Ocak)</span><span class="rval orange">64.948,77 TL</span></div>
         <div class="result-row"><span class="rname">Hesaplama Esası</span><span class="rval">Her tam yıl icin</span></div>
         <div class="result-row" style="border:none"><span class="rname">Güncelleme</span><span class="rval">Her 6 ayda bir</span></div>
       </div>
@@ -274,7 +290,8 @@
         <ul>
           <li>İşveren tarafindan haksız fesih</li>
           <li>Emeklilik nedeniyle ayrılma</li>
-          <li>Askerlik nedeniyle ayrılma</li>
+          <li><strong>15 yıl sigortalılık ve 3.600 prim günü</strong> ile kıdem tazminatı
+          </li><li>Askerlik nedeniyle ayrılma</li>
           <li>Evlilik nedeniyle ayrılma (kadinlar, 1 yıl icerisinde)</li>
           <li>İşçi tarafından haklı nedenle fesih</li>
         </ul>
@@ -307,7 +324,7 @@
     <div class="section-title">Sik Sorulan Sorular</div>
     <div class="section-sub" style="margin-bottom:24px">Tazminat haklariniz hakkında merak edilenler.</div>
     <div class="faq-item"><div class="faq-q">İstifa edersem tazminat alabilir miyim?</div><div class="faq-a">Normal iştifada kıdem tazminatı alinmaz. Ancak emeklilik, askerlik, evlilik (kadinlar icin) veya işveren kaynaklı haklı bir neden varsa istifa etseniz dahi kıdem tazminatınizi alabilirsiniz.</div></div>
-    <div class="faq-item"><div class="faq-q">Kıdem tazminatında tavan nedir?</div><div class="faq-a">2026 Ocak itibariyle kıdem tazminatı tavanı 47.754,28 TL'dir. Brüt maasiniz bu tavanın üzerindeyse tazminat tavanın üzerinden hesaplanir. Tavan her yıl Ocak ve Temmuz aylarinda güncellenir.</div></div>
+    <div class="faq-item"><div class="faq-q">Kıdem tazminatında tavan nedir?</div><div class="faq-a">2026 Ocak itibariyle kıdem tazminatı tavanı 64.948,77 TL'dir. Brüt maasiniz bu tavanın üzerindeyse tazminat tavanın üzerinden hesaplanir. Tavan her yıl Ocak ve Temmuz aylarinda güncellenir.</div></div>
     <div class="faq-item"><div class="faq-q">Kıdem tazminatı ne zaman odenir?</div><div class="faq-a">Is sozlesmesinin sona erdigi tarihten itibaren odenmelidir. Gecikme halinde mevduat faizi üzerinden gecikme faizi isler.</div></div>
     <div class="faq-item"><div class="faq-q">Yari zamanli çalışanlarda tazminat nasıl hesaplanir?</div><div class="faq-a">Yari zamanli (part-time) çalışanlar da kıdem tazminatına hak kazanir. Hesaplama son brüt ücret üzerinden yapilir, çalışma süresi tam yıl esasina gore degerlendirilir.</div></div>
     <div class="faq-item"><div class="faq-q">Kıdem tazminatı vergi ve SGK'ya tabi mi?</div><div class="faq-a">Kıdem tazminatı gelir vergisi ve SGK'dan muaftir. Sadece damga vergisi (yuzde 0,759) kesilir. İhbar tazminatı ise hem gelir vergisine hem SGK'ya tabidir.</div></div>
@@ -333,7 +350,7 @@
   var faqs=document.querySelectorAll('.faq-q');
   for(var i=0;i<faqs.length;i++) faqs[i].addEventListener('click',function(){this.parentElement.classList.toggle('open');});
 
-  var KIDEM_TAVAN = 47754.28;
+  var KIDEM_TAVAN = 64948.77;
   var IHBAR_SURELER = [
     {ay:0.5, hafta:2},
     {ay:1.5, hafta:4},
@@ -351,51 +368,86 @@
   }
 
   function calculate(){
-    var brut = parseFloat(document.getElementById('brut-maas').value);
-    var yil  = parseFloat(document.getElementById('calisma-yil').value)||0;
-    var ay   = parseFloat(document.getElementById('calisma-ay').value)||0;
-    var neden = document.getElementById('ayrilma-nedeni').value;
+    var brut    = parseFloat(document.getElementById('brut-maas').value)||0;
+    var yanHak  = parseFloat(document.getElementById('yan-haklar').value)||0;
+    var ikrami  = parseFloat(document.getElementById('ikramiye').value)||0;
+    var giris   = document.getElementById('ise-giris').value;
+    var ayri    = document.getElementById('isten-ayri').value;
+    var neden   = document.getElementById('ayrilma-nedeni').value;
 
     if(!brut||brut<=0){alert('Lutfen brut maas giriniz.');return;}
+    if(!giris){alert('Lutfen ise giris tarihini giriniz.');return;}
+    if(!ayri){alert('Lutfen isten ayrilma tarihini giriniz.');return;}
+
+    var d1 = new Date(giris);
+    var d2 = new Date(ayri);
+
+    if(d2<=d1){alert('Ayrilma tarihi giris tarihinden once olamaz.');return;}
+
+    // Toplam gun hesabi
+    var gunFarki = Math.floor((d2-d1)/(1000*60*60*24));
+
+    // Yil ve ay hesabi (tam takvim)
+    var yil = d2.getFullYear() - d1.getFullYear();
+    var ay  = d2.getMonth() - d1.getMonth();
+    var gun = d2.getDate() - d1.getDate();
+    if(gun<0){ ay--; }
+    if(ay<0){ yil--; ay+=12; }
 
     var toplamAy = yil*12 + ay;
-    var gunlukBrut = brut/30;
 
-    // Kidem hesabi
+    // Giydirilmis brut ucret
+    var aylikIkrami     = ikrami/12;
+    var giydirilmisBrut = brut + yanHak + aylikIkrami;
+
+    // Kidem hakki
     var kidemHakki = (neden !== 'isci-istifa');
-    var kidemBaz   = Math.min(brut, KIDEM_TAVAN);
-    var kidemTazminat = 0;
-    if(kidemHakki && toplamAy >= 12){
-      kidemTazminat = kidemBaz * yil + kidemBaz * (ay/12);
+    var kidemBaz   = Math.min(giydirilmisBrut, KIDEM_TAVAN);
+    var kidemBrut  = 0;
+    if(kidemHakki && gunFarki>=365){
+      // Tam gun bazli hesap
+      kidemBrut = kidemBaz * (gunFarki/365);
+      // Tavani gecemez kontrolu
+      if(kidemBrut > KIDEM_TAVAN * (gunFarki/365)) kidemBrut = KIDEM_TAVAN * (gunFarki/365);
     }
 
-    // Damga vergisi kidem tazminatindan
-    var damga = kidemTazminat * 0.00759;
-    var kidemNet = kidemTazminat - damga;
+    var kidemDamga = kidemBrut*0.00759;
+    var kidemNet   = kidemBrut - kidemDamga;
 
-    // Ihbar hesabi
+    // Ihbar
     var ihbarHafta = getIhbarHafta(toplamAy);
-    var ihbarTazminat = gunlukBrut * ihbarHafta * 7;
-    // Ihbar vergisi (yakl. %15 GV + %15 SGK = %30 kesinti tahmini)
-    var ihbarKesinti = ihbarTazminat * 0.20;
-    var ihbarNet = ihbarTazminat - ihbarKesinti;
+    var ihbarBrut  = (brut/30)*ihbarHafta*7;
+    var ihbarGV    = bVergi(ihbarBrut)*0.15;
+    var ihbarDamga = ihbarBrut*0.00759;
+    var ihbarNet   = ihbarBrut - ihbarGV - ihbarDamga;
 
     var toplam = kidemNet + ihbarNet;
 
-    // Render
-    document.getElementById('kidem-amt').innerHTML = kidemTazminat.toLocaleString('tr-TR',{maximumFractionDigits:2})+'<span> TL</span>';
-    document.getElementById('ihbar-amt').innerHTML = ihbarTazminat.toLocaleString('tr-TR',{maximumFractionDigits:2})+'<span> TL</span>';
+    // Sure goster
+    var sureText = yil+' yil '+ay+' ay ('+gunFarki+' gun)';
+    document.getElementById('sure-text').textContent = sureText;
+    document.getElementById('sure-goster').style.display = 'block';
 
+    document.getElementById('kidem-amt').innerHTML = kidemBrut.toLocaleString('tr-TR',{maximumFractionDigits:2})+'<span> TL</span>';
+    document.getElementById('ihbar-amt').innerHTML = ihbarBrut.toLocaleString('tr-TR',{maximumFractionDigits:2})+'<span> TL</span>';
+
+    var kH = kidemHakki && gunFarki>=365;
     var rows = [
-      {n:'Brut Maas',                    v:fmt(brut),                c:''},
-      {n:'Calisma Suresi',               v:yil+' yil '+ay+' ay',     c:''},
-      {n:'Kidem Baz Ucreti',             v:fmt(kidemBaz),            c:''},
-      {n:'Kidem Tazminati (Brut)',        v:kidemHakki&&toplamAy>=12?fmt(kidemTazminat):'Hak yok', c:kidemHakki&&toplamAy>=12?'orange':''},
-      {n:'Damga Vergisi (%0,759)',        v:kidemHakki&&toplamAy>=12?'- '+fmt(damga):'-',  c:''},
-      {n:'Kidem Tazminati (Net)',         v:kidemHakki&&toplamAy>=12?fmt(kidemNet):'Hak yok', c:'green'},
-      {n:'Ihbar Suresi',                  v:ihbarHafta+' hafta',      c:''},
-      {n:'Ihbar Tazminati (Brut)',        v:fmt(ihbarTazminat),       c:'orange'},
-      {n:'Tahmini Net Toplam Tazminat',   v:fmt(toplam),              c:'green'}
+      {n:'Brut Maas',                      v:fmt(brut),                   c:''},
+      {n:'Aylik Yan Haklar',               v:yanHak>0?fmt(yanHak):'--',   c:''},
+      {n:'Aylik Ikramiye (1/12)',          v:ikrami>0?fmt(aylikIkrami):'--', c:''},
+      {n:'Giydirilmis Brut Ucret',        v:fmt(giydirilmisBrut),        c:''},
+      {n:'Kidem Baz Ucreti (tavan dahil)',v:fmt(kidemBaz),               c:''},
+      {n:'Calisma Suresi',                v:sureText,                    c:''},
+      {n:'Kidem Tazminati (Brut)',        v:kH?fmt(kidemBrut):'Hak yok', c:kH?'orange':''},
+      {n:'Damga Vergisi (%0,759)',        v:kH?'- '+fmt(kidemDamga):'-', c:''},
+      {n:'Kidem Tazminati (Net)',         v:kH?fmt(kidemNet):'Hak yok',  c:'green'},
+      {n:'Ihbar Suresi',                  v:ihbarHafta+' hafta',         c:''},
+      {n:'Ihbar Tazminati (Brut)',        v:fmt(ihbarBrut),              c:'orange'},
+      {n:'Ihbar Gelir Vergisi',           v:'- '+fmt(ihbarGV),           c:''},
+      {n:'Ihbar Damga Vergisi',           v:'- '+fmt(ihbarDamga),        c:''},
+      {n:'Ihbar Tazminati (Net)',         v:fmt(ihbarNet),               c:'green'},
+      {n:'Tahmini Net Toplam',           v:fmt(toplam),                 c:'green'}
     ];
 
     var h='';
@@ -408,6 +460,28 @@
   }
 
   document.getElementById('calc-btn').addEventListener('click',calculate);
+
+  // Tarih degisince sure goster
+  function sureyiGoster(){
+    var g = document.getElementById('ise-giris').value;
+    var a = document.getElementById('isten-ayri').value;
+    if(!g||!a) return;
+    var d1=new Date(g), d2=new Date(a);
+    if(d2<=d1){document.getElementById('sure-goster').style.display='none';return;}
+    var gun=Math.floor((d2-d1)/(1000*60*60*24));
+    var yil=d2.getFullYear()-d1.getFullYear();
+    var ay=d2.getMonth()-d1.getMonth();
+    if(d2.getDate()<d1.getDate()) ay--;
+    if(ay<0){yil--;ay+=12;}
+    document.getElementById('sure-text').textContent=yil+' yil '+ay+' ay ('+gun+' gun)';
+    document.getElementById('sure-goster').style.display='block';
+  }
+  document.getElementById('ise-giris').addEventListener('change', sureyiGoster);
+  document.getElementById('isten-ayri').addEventListener('change', sureyiGoster);
+
+  // Bugunu isten ayris olarak varsayilan ayarla
+  var bugun = new Date().toISOString().split('T')[0];
+  document.getElementById('isten-ayri').value = bugun;
   document.addEventListener('keypress',function(e){if(e.key==='Enter')calculate();});
 })();
 </script>
