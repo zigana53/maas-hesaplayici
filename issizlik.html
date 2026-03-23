@@ -362,29 +362,35 @@
       return;
     }
 
-    // Hesaplama: brut maasin %40'i
+    // DOGRU HESAP - Eleman.net ve ISKUR ile ayni
+    // Odeme = son 4 aylik ortalama brut maasin %40i
     var aylikOdeme = brut * 0.40;
-    // Alt limit: asgari ucretin %80'i
-    var altLimit = ASG_BRUT * 0.80 * 0.85; // net yaklasik
-    // Ust limit: asgari ucretin %80'i x 4
-    var ustLimit = altLimit * 4;
 
-    aylikOdeme = Math.max(aylikOdeme, altLimit);
+    // Ust limit = Asgari ucretin %80i (26.424 TL)
+    // Alt limit yok - brut x %40 her zaman gecerli, sadece ust limit var
+    var ustLimit = ASG_BRUT * 0.80;
     aylikOdeme = Math.min(aylikOdeme, ustLimit);
 
-    var toplamOdeme = aylikOdeme * (sure/30);
+    // Sadece damga vergisi kesilir - gelir vergisinden MUAF
+    var damgaVergisi = aylikOdeme * 0.00759;
+    var netOdeme = aylikOdeme - damgaVergisi;
 
-    document.getElementById('odeme-amt').innerHTML = aylikOdeme.toLocaleString('tr-TR',{maximumFractionDigits:2})+'<span> TL</span>';
+    var toplamOdeme = netOdeme * (sure/30);
 
-    var rows=[
-      {n:'Son Brut Maas',                v:fmt(brut),            c:''},
-      {n:'Odeme Orani',                  v:'Brut maasin %40\'i', c:''},
-      {n:'Hesaplanan Tutar',             v:fmt(brut*0.40),       c:''},
-      {n:'Alt Limit (Asg. Ucr. x %80)', v:fmt(altLimit),        c:''},
-      {n:'Ust Limit (Alt Limit x 4)',    v:fmt(ustLimit),        c:''},
-      {n:'Aylik Issizlik Odenegi',       v:fmt(aylikOdeme),      c:'purple'},
-      {n:'Odeme Suresi',                 v:sure+' gun ('+(sure/30)+' ay)', c:''},
-      {n:'Tahmini Toplam Odeme',         v:fmt(toplamOdeme),     c:'green'}
+    document.getElementById('odeme-amt').innerHTML = netOdeme.toLocaleString('tr-TR',{maximumFractionDigits:2})+'<span> TL</span>';
+
+    var ustLimitDevrede = (brut * 0.40) > ustLimit;
+
+    var rows = [
+      {n:'Son 4 Aylik Ort. Brut Maas',   v:fmt(brut),                    c:''},
+      {n:'Odeme Orani',                   v:'Brut maasin %40i',           c:''},
+      {n:'Hesaplanan Tutar',              v:fmt(brut*0.40),               c:''},
+      {n:'Ust Limit (Asg. Ucr. x %80)', v:fmt(ustLimit)+' TL',          c: ustLimitDevrede?'red':''},
+      {n:'Aylik Odeme (Brut)',            v:fmt(aylikOdeme),              c:'purple'},
+      {n:'Damga Vergisi (%0,759)',        v:'- '+fmt(damgaVergisi),       c:''},
+      {n:'Aylik Issizlik Odenegi (Net)', v:fmt(netOdeme),               c:'purple'},
+      {n:'Odeme Suresi',                  v:sure+' gun ('+(sure/30)+' ay)', c:''},
+      {n:'Tahmini Toplam Net Odeme',     v:fmt(toplamOdeme),             c:'green'}
     ];
 
     var h='';
