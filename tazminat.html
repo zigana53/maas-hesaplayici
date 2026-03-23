@@ -195,19 +195,17 @@
         </div>
 
         <div class="field">
-          <label>Çalışma Yılı</label>
-          <div class="input-wrap">
-            <input type="number" id="çalışma-yil" placeholder="Örneğin: 5" min="0">
-            <span class="input-unit">YIL</span>
-          </div>
+          <label>İşe Giriş Tarihi</label>
+          <input type="date" id="ise-giris" style="width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:DM Sans,sans-serif;font-size:14px;color:var(--ink);background:white;outline:none;transition:border-color .2s;">
         </div>
 
         <div class="field">
-          <label>Çalışma Ayı (Tam Yıl Ustu)</label>
-          <div class="input-wrap">
-            <input type="number" id="çalışma-ay" placeholder="0-11" min="0" max="11">
-            <span class="input-unit">AY</span>
-          </div>
+          <label>İşten Ayrılış Tarihi</label>
+          <input type="date" id="isten-ayri" style="width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:DM Sans,sans-serif;font-size:14px;color:var(--ink);background:white;outline:none;transition:border-color .2s;">
+        </div>
+
+        <div id="sure-goster" style="display:none;background:var(--accent-soft);border:1px solid #c5d5ff;border-radius:8px;padding:10px 14px;font-size:13px;color:var(--accent);font-weight:600;margin-bottom:4px;">
+          Çalışma Süresi: <span id="sure-text">--</span>
         </div>
 
         <div class="field">
