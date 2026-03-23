@@ -12,14 +12,14 @@
   :root{--ink:#0f0f0f;--paper:#f2f5fb;--white:#ffffff;--muted:#6b7280;--line:#e2e8f0;--accent:#1a5cff;--accent-soft:#eef2ff;--green:#0d7a3e;--green-soft:#e8f7ef;--red:#c0392b;--yellow-soft:#fffbea;--teal:#0891b2;--teal-soft:#ecfeff;--shadow-sm:0 1px 3px rgba(0,0,0,0.07),0 2px 8px rgba(0,0,0,0.05);--shadow:0 2px 8px rgba(0,0,0,0.08),0 8px 24px rgba(0,0,0,0.06);--r:14px;}
   *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:15px;}
-  header{border-bottom:1px solid var(--line);padding:0 clamp(16px,4vw,56px);display:flex;align-items:center;justify-content:space-between;height:64px;background:var(--white);position:sticky;top:0;z-index:200;box-shadow:0 1px 8px rgba(0,0,0,0.06);gap:16px;}
+  header{border-bottom:1px solid var(--line);padding:0 clamp(16px,4vw,56px);display:flex;align-items:center;justify-content:flex-start;height:64px;background:var(--white);position:sticky;top:0;z-index:200;box-shadow:0 1px 8px rgba(0,0,0,0.06);gap:24px;}
   .logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;}
   .logo-icon{width:38px;height:38px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   .logo-icon svg{width:20px;height:20px;}
   .logo-text{font-family:'DM Serif Display',serif;font-size:20px;color:var(--ink);}
   .logo-text span{color:var(--accent);}
-  .main-nav{display:flex;align-items:center;gap:4px;flex-wrap:nowrap;overflow:hidden;}
-  .nav-link{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;padding:7px 10px;border-radius:8px;transition:all .2s;white-space:nowrap;}
+  .main-nav{display:flex;align-items:center;gap:2px;flex-wrap:nowrap;}
+  .nav-link{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;padding:7px 14px;border-radius:8px;transition:all .2s;white-space:nowrap;}
   .nav-link:hover{background:var(--paper);color:var(--ink);}
   .nav-link.active{background:var(--teal-soft);color:var(--teal);}
   .nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--ink);padding:4px 8px;flex-shrink:0;}
@@ -127,18 +127,18 @@
     <div class="logo-text">maas<span>hesap</span></div>
   </a>
   <nav class="main-nav">
-    <a href="index.html" class="nav-link">&#128176; Maas Hesaplama</a>
-    <a href="tazminat.html" class="nav-link">&#128203; Ihbar &amp; Kidem</a>
-    <a href="issizlik.html" class="nav-link">&#128084; Issizlik Maasi</a>
-    <a href="fazla-mesai.html" class="nav-link active">&#9200; Fazla Mesai</a>
+    <a href="index.html" class="nav-link">Maas Hesaplama</a>
+    <a href="tazminat.html" class="nav-link">Tazminat</a>
+    <a href="issizlik.html" class="nav-link">Issizlik</a>
+    <a href="fazla-mesai.html" class="nav-link active">Fazla Mesai</a>
   </nav>
   <button class="nav-toggle" id="nav-toggle">&#9776;</button>
 </header>
 <div class="mobile-nav" id="mobile-nav">
-  <a href="index.html">&#128176; Maas Hesaplama</a>
-  <a href="tazminat.html">&#128203; Ihbar &amp; Kidem Tazminati</a>
-  <a href="issizlik.html">&#128084; Issizlik Maasi</a>
-  <a href="fazla-mesai.html">&#9200; Fazla Mesai Ucreti</a>
+  <a href="index.html">Maas Hesaplama</a>
+  <a href="tazminat.html">Tazminat Tazminati</a>
+  <a href="issizlik.html">Issizlik</a>
+  <a href="fazla-mesai.html">Fazla Mesai Ucreti</a>
 </div>
 
 <div class="hero">
