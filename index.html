@@ -1026,9 +1026,6 @@
 
     document.addEventListener('keydown', function(e){
       if (e.key === 'Escape') {
-        var op = document.querySelectorAll('.modal-overlay.open');
-        for (var k = 0; k < op.length; k++) op[k].classList.remove('open');
-        document.body.style.overflow = '';
       }
     });
 
