@@ -326,12 +326,28 @@
 <script>
 (function(){
   var nt=document.getElementById('nav-toggle'),mn=document.getElementById('mobile-nav');
-  if(nt&&mn){nt.addEventListener('click',function(){mn.classList.toggle('open');});document.addEventListener('click',function(e){if(!nt.contains(e.target)&&!mn.contains(e.target))mn.classList.remove('open');});}
+  if(nt&&mn){
+    nt.addEventListener('click',function(){mn.classList.toggle('open');});
+    document.addEventListener('click',function(e){
+      if(!nt.contains(e.target)&&!mn.contains(e.target)) mn.classList.remove('open');
+    });
+  }
+
   var faqs=document.querySelectorAll('.faq-q');
-  for(var i=0;i<faqs.length;i++) faqs[i].addEventListener('click',function(){this.parentElement.classList.toggle('open');});
+  for(var i=0;i<faqs.length;i++){
+    faqs[i].addEventListener('click',function(){
+      this.parentElement.classList.toggle('open');
+    });
+  }
 
   var ASG_BRUT = 33030;
-  function fmt(n){return n.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2})+' TL';}
+
+  function fmt(n){
+    return n.toLocaleString('tr-TR',{
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
+    })+' TL';
+  }
 
   function getOdemeSuresi(gun){
     if(gun>=1080) return 300;
@@ -341,66 +357,93 @@
   }
 
   function calculate(){
-    var brut  = parseFloat(document.getElementById('brut-maas').value);
-    var gun   = parseFloat(document.getElementById('prim-gun').value);
+    var brut = parseFloat(
+      document.getElementById('brut-maas').value.replace(',', '.')
+    );
+
+    var gun = parseFloat(document.getElementById('prim-gun').value);
     var neden = document.getElementById('ayrilma').value;
 
-    if(!brut||brut<=0){alert('Lutfen brut maas giriniz.');return;}
-    if(!gun||gun<=0){alert('Lutfen prim gun sayisi giriniz.');return;}
+    if(!brut || brut<=0){
+      alert('Lütfen brüt maaş giriniz.');
+      return;
+    }
 
-    if(neden === 'haksiz-fesih' && gun < 600){
-      alert('Issizlik odenegi icin en az 600 prim gununuz olmasi gerekmektedir.');
+    if(!gun || gun<=0){
+      alert('Lütfen prim gün sayısı giriniz.');
+      return;
+    }
+
+    // ❗ Ayrılma kontrolü
+    if(neden === 'askerlik'){
+      alert('Askerlik veya emeklilik durumunda işsizlik maaşı alınamaz.');
+      return;
+    }
+
+    if(gun < 600){
+      document.getElementById('odeme-amt').innerHTML = 'Hak Yok<span></span>';
+      document.getElementById('rows').innerHTML =
+        '<div class="result-row"><span class="rname">Sonuç</span><span class="rval" style="color:var(--red)">600 gün şartını sağlamıyorsunuz</span></div>';
+
+      var el=document.getElementById('results');
+      el.className='card show animate-in';
+      el.scrollIntoView({behavior:'smooth',block:'center'});
       return;
     }
 
     var sure = getOdemeSuresi(gun);
-    if(sure === 0){
-      document.getElementById('odeme-amt').innerHTML = 'Hak Yok<span></span>';
-      var h = '<div class="result-row"><span class="rname">Sonuc</span><span class="rval" style="color:var(--red)">600 gun sartini saglamiyorsunuz</span></div>';
-      document.getElementById('rows').innerHTML = h;
-      var el=document.getElementById('results');el.className='card show animate-in';el.scrollIntoView({behavior:'smooth',block:'nearest'});
-      return;
-    }
 
-    // DOGRU HESAP - Eleman.net ve ISKUR ile ayni
-    // Odeme = son 4 aylik ortalama brut maasin %40i
     var aylikOdeme = brut * 0.40;
 
-    // Ust limit = Asgari ucretin %80i (26.424 TL)
-    // Alt limit yok - brut x %40 her zaman gecerli, sadece ust limit var
     var ustLimit = ASG_BRUT * 0.80;
     aylikOdeme = Math.min(aylikOdeme, ustLimit);
 
-    // Sadece damga vergisi kesilir - gelir vergisinden MUAF
     var damgaVergisi = aylikOdeme * 0.00759;
     var netOdeme = aylikOdeme - damgaVergisi;
 
     var toplamOdeme = netOdeme * (sure/30);
 
-    document.getElementById('odeme-amt').innerHTML = netOdeme.toLocaleString('tr-TR',{maximumFractionDigits:2})+'<span> TL</span>';
+    document.getElementById('odeme-amt').innerHTML =
+      netOdeme.toLocaleString('tr-TR',{maximumFractionDigits:2})+'<span> TL</span>';
 
     var ustLimitDevrede = (brut * 0.40) > ustLimit;
 
     var rows = [
-      {n:'Son 4 Aylik Ort. Brut Maas',   v:fmt(brut),                    c:''},
-      {n:'Odeme Orani',                   v:'Brut maasin %40i',           c:''},
-      {n:'Hesaplanan Tutar',              v:fmt(brut*0.40),               c:''},
-      {n:'Ust Limit (Asg. Ucr. x %80)', v:fmt(ustLimit)+' TL',          c: ustLimitDevrede?'red':''},
-      {n:'Aylik Odeme (Brut)',            v:fmt(aylikOdeme),              c:'purple'},
-      {n:'Damga Vergisi (%0,759)',        v:'- '+fmt(damgaVergisi),       c:''},
-      {n:'Aylik Issizlik Odenegi (Net)', v:fmt(netOdeme),               c:'purple'},
-      {n:'Odeme Suresi',                  v:sure+' gun ('+(sure/30)+' ay)', c:''},
-      {n:'Tahmini Toplam Net Odeme',     v:fmt(toplamOdeme),             c:'green'}
+      {n:'Son 4 Aylık Ort. Brüt Maaş', v:fmt(brut), c:''},
+      {n:'Ödeme Oranı', v:'Brüt maaşın %40ı', c:''},
+      {n:'Hesaplanan Tutar', v:fmt(brut*0.40), c:''},
+      {n:'Üst Limit (Asgari Ücretin %80i)', v:fmt(ustLimit), c: ustLimitDevrede?'red':''},
+      {n:'Aylık Ödeme (Brüt)', v:fmt(aylikOdeme), c:'purple'},
+      {n:'Damga Vergisi (%0,759)', v:'- '+fmt(damgaVergisi), c:''},
+      {n:'Aylık İşsizlik Ödeneği (Net)', v:fmt(netOdeme), c:'purple'},
+      {n:'Ödeme Süresi', v:sure+' gün ('+(sure/30)+' ay)', c:''},
+      {n:'Tahmini Toplam Net Ödeme', v:fmt(toplamOdeme), c:'green'}
     ];
 
     var h='';
-    for(var i=0;i<rows.length;i++) h+='<div class="result-row"><span class="rname">'+rows[i].n+'</span><span class="rval '+rows[i].c+'">'+rows[i].v+'</span></div>';
-    document.getElementById('rows').innerHTML=h;
-    var el=document.getElementById('results');el.className='card show animate-in';el.scrollIntoView({behavior:'smooth',block:'nearest'});
+    for(var i=0;i<rows.length;i++){
+      h += '<div class="result-row">' +
+            '<span class="rname">'+rows[i].n+'</span>' +
+            '<span class="rval '+rows[i].c+'">'+rows[i].v+'</span>' +
+           '</div>';
+    }
+
+    document.getElementById('rows').innerHTML = h;
+
+    var el=document.getElementById('results');
+    el.className='card show animate-in';
+    el.scrollIntoView({behavior:'smooth',block:'center'});
   }
 
   document.getElementById('calc-btn').addEventListener('click',calculate);
-  document.addEventListener('keypress',function(e){if(e.key==='Enter')calculate();});
+
+  // ✅ Enter sadece inputlarda çalışır
+  document.querySelectorAll('input').forEach(function(el){
+    el.addEventListener('keypress', function(e){
+      if(e.key === 'Enter') calculate();
+    });
+  });
+
 })();
 </script>
 </body>
