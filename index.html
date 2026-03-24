@@ -1020,16 +1020,6 @@
       faqs[i].addEventListener('click', function(){ this.parentElement.classList.toggle('open'); });
     }
 
-    var overlays = document.querySelectorAll('.modal-overlay');
-    for (var j = 0; j < overlays.length; j++) {
-      overlays[j].addEventListener('click', function(e){
-        if (e.target === this) {
-          this.classList.remove('open');
-          document.body.style.overflow = '';
-        }
-      });
-    }
-
     document.addEventListener('keypress', function(e){
       if (e.key === 'Enter') calculate();
     });
