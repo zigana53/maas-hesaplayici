@@ -252,7 +252,6 @@
   .faq-q::after{content:'+';font-size:20px;color:var(--accent);flex-shrink:0;line-height:1;font-weight:300;transition:transform .2s}
   .faq-item.open .faq-q::after{transform:rotate(45deg)}
   .faq-a{font-size:13px;color:var(--muted);line-height:1.7;display:none;margin-top:8px}
-  .faq-item.open .faq-a{display:block}
 
   footer{background:var(--ink);color:rgba(255,255,255,.6);padding:28px clamp(16px,5vw,60px);text-align:center;font-size:13px}
   footer strong{color:white;font-weight:600}
@@ -426,7 +425,6 @@
   </div>
 
   <div class="col-mid">
-
     <a class="aff-banner" href="https://www.kariyer.net" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#fff7ed,#fff)">
       <div class="aff-inner">
         <div class="aff-icon" style="background:#fff0db">&#128188;</div>
@@ -642,6 +640,8 @@
 <footer>
   <p><strong>MaaşHesap 2026</strong> &mdash; Bu site yalnızca bilgilendirme amaçlıdır. Kesin hesap için bordro ve uzman görüşü esas alınmalıdır.</p>
   <div class="footer-links">
+    <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
     <a href="iletisim.html">İletişim</a>
     <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
     <a href="kaynaklar.html">Kaynaklar</a>
@@ -754,7 +754,7 @@
     var damgaVergisi = Math.max(0, damgaBrut - damgaIstisna);
 
     var net = brut - toplamIsciSigorta - gelirVergisi - damgaVergisi;
-    var isverenMaliyet = brut + (sgkBase * employerRate());
+    var isverenMaliyeti = brut + (sgkBase * employerRate());
 
     return {
       ay: ay,
@@ -771,7 +771,7 @@
       dv: damgaVergisi,
       engelliMatrahInd: engelliMatrahInd,
       kesinti: toplamIsciSigorta + gelirVergisi + damgaVergisi,
-      isverenMaliyeti: isverenMaliyet,
+      isverenMaliyeti: isverenMaliyeti,
       sgkBase: sgkBase
     };
   }
@@ -957,7 +957,6 @@
     document.body.removeChild(ta);
   }
 
-
   window.addEventListener('load', function() {
     document.getElementById('ay_sel').value = new Date().getMonth() + 1;
     document.getElementById('calc_btn').addEventListener('click', calculate);
@@ -967,7 +966,6 @@
     if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
     if (copyBtn) copyBtn.addEventListener('click', doCopy);
 
-
     var faqs = document.querySelectorAll('.faq-q');
     for (var i = 0; i < faqs.length; i++) {
       faqs[i].addEventListener('click', function(){ this.parentElement.classList.toggle('open'); });
@@ -975,11 +973,6 @@
 
     document.addEventListener('keypress', function(e){
       if (e.key === 'Enter') calculate();
-    });
-
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape') {
-      }
     });
 
     setTip('normal');
