@@ -1014,10 +1014,6 @@
     if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
     if (copyBtn) copyBtn.addEventListener('click', doCopy);
 
-    document.getElementById('link_gizlilik').addEventListener('click', function(e){ e.preventDefault(); openModal('gizlilik'); });
-    document.getElementById('link_hakkinda').addEventListener('click', function(e){ e.preventDefault(); openModal('hakkinda'); });
-    document.getElementById('close_gizlilik').addEventListener('click', function(){ closeModal('gizlilik'); });
-    document.getElementById('close_hakkinda').addEventListener('click', function(){ closeModal('hakkinda'); });
 
     var faqs = document.querySelectorAll('.faq-q');
     for (var i = 0; i < faqs.length; i++) {
