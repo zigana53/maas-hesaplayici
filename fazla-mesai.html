@@ -5,43 +5,206 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Fazla Mesai Hesaplama 2026 - MaaşHesap</title>
-
-<meta name="description" content="2026 fazla mesai ücreti hesaplama aracı. Saatlik fazla mesai ücretinizi öğrenin.">
-<meta name="keywords" content="fazla mesai hesaplama, mesai ücreti hesaplama">
+<meta name="description" content="2026 fazla mesai ücreti hesaplama aracı. Fazla çalışma, fazla sürelerle çalışma, hafta tatili ve genel tatil ücretinizi hesaplayın.">
+<meta name="keywords" content="fazla mesai hesaplama, fazla çalışma ücreti, fazla sürelerle çalışma, hafta tatili ücreti, genel tatil ücreti, 2026 iş kanunu">
 
 <link rel="canonical" href="https://zigana53.github.io/maas-hesaplayici/fazla-mesai.html">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MaaşHesap">
-<meta property="og:title" content="Fazla Mesai Hesaplama 2026">
-<meta property="og:description" content="Fazla mesai ücretinizi hesaplayın">
+<meta property="og:title" content="Fazla Mesai Hesaplama 2026 - MaaşHesap">
+<meta property="og:description" content="2026 fazla mesai ücreti hesaplama aracı. Fazla çalışma, hafta tatili ve genel tatil ücretini hesaplayın.">
 <meta property="og:url" content="https://zigana53.github.io/maas-hesaplayici/fazla-mesai.html">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Fazla Mesai Hesaplama">
-<meta name="twitter:description" content="Mesai ücretinizi hesaplayın">
+<meta name="twitter:title" content="Fazla Mesai Hesaplama 2026 - MaaşHesap">
+<meta name="twitter:description" content="2026 fazla mesai ücreti hesaplama aracı.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
- "@context": "https://schema.org",
- "@type": "WebSite",
- "name": "MaaşHesap",
- "url": "https://zigana53.github.io/maas-hesaplayici/"
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MaaşHesap",
+  "url": "https://zigana53.github.io/maas-hesaplayici/"
 }
 </script>
 
 <script type="application/ld+json">
 {
- "@context": "https://schema.org",
- "@type": "Organization",
- "name": "MaaşHesap",
- "url": "https://zigana53.github.io/maas-hesaplayici/"
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MaaşHesap",
+  "url": "https://zigana53.github.io/maas-hesaplayici/"
 }
 </script>
 
+<style>
+  :root{
+    --ink:#0f0f0f;--paper:#f2f5fb;--white:#ffffff;--muted:#6b7280;--line:#e2e8f0;
+    --accent:#1a5cff;--accent-soft:#eef2ff;--green:#0d7a3e;--green-soft:#e8f7ef;
+    --red:#c0392b;--yellow-soft:#fffbea;--teal:#0891b2;--teal-soft:#ecfeff;
+    --shadow-sm:0 1px 3px rgba(0,0,0,0.07),0 2px 8px rgba(0,0,0,0.05);
+    --shadow:0 2px 8px rgba(0,0,0,0.08),0 8px 24px rgba(0,0,0,0.06);--r:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:15px;overflow-y:scroll}
+
+  header{border-bottom:1px solid var(--line);padding:0 clamp(16px,4vw,56px);display:flex;align-items:center;justify-content:flex-start;height:64px;background:var(--white);position:sticky;top:0;z-index:200;box-shadow:0 1px 8px rgba(0,0,0,0.06);gap:24px}
+  .logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .logo-icon{width:38px;height:38px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .logo-icon svg{width:20px;height:20px}
+  .logo-text{font-family:'DM Serif Display',serif;font-size:20px;color:var(--ink)}
+  .logo-text span{color:var(--accent)}
+  .main-nav{display:flex;align-items:center;gap:2px;flex-wrap:nowrap}
+  .nav-link{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;padding:7px 14px;border-radius:8px;transition:all .2s;white-space:nowrap}
+  .nav-link:hover{background:var(--paper);color:var(--ink)}
+  .nav-link.active{background:var(--teal-soft);color:var(--teal)}
+  .nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--ink);padding:4px 8px;flex-shrink:0}
+  .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--line);z-index:199;box-shadow:0 4px 16px rgba(0,0,0,0.1);flex-direction:column}
+  .mobile-nav a{padding:14px 24px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+  .mobile-nav a:last-child{border-bottom:none}
+  .mobile-nav a:hover{background:var(--paper)}
+  .mobile-nav.open{display:flex}
+  @media(max-width:980px){.main-nav{display:none}.nav-toggle{display:block}}
+  @media(min-width:981px) and (max-width:1200px){.nav-link{font-size:12px;padding:6px 8px}}
+
+  .hero{text-align:center;padding:56px clamp(16px,5vw,60px) 44px;background:linear-gradient(160deg,#ecfeff 0%,#f0fdfe 50%,var(--paper) 100%);border-bottom:1px solid var(--line)}
+  .hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--teal-soft);color:var(--teal);font-size:12px;font-weight:600;padding:4px 14px;border-radius:99px;margin-bottom:20px;letter-spacing:.04em;text-transform:uppercase;border:1px solid #a5f3fc}
+  .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,46px);line-height:1.1;max-width:760px;margin:0 auto 16px;letter-spacing:-.02em}
+  .hero h1 em{font-style:italic;color:var(--teal)}
+  .hero p{color:var(--muted);max-width:640px;margin:0 auto;font-size:16px;font-weight:300}
+
+  .main{max-width:1100px;margin:0 auto;padding:36px clamp(16px,3vw,40px) 56px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+  @media(max-width:760px){.main{grid-template-columns:1fr}}
+
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-sm);overflow:hidden;margin-bottom:20px}
+  .card:last-child{margin-bottom:0}
+  .card-header{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;background:#fafbfd}
+  .card-header h2{font-size:14px;font-weight:600}
+  .card-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+  .card-body{padding:22px}
+  .field{margin-bottom:16px}
+  label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:7px}
+  .field-help{display:block;font-size:12px;color:var(--muted);margin-top:6px;line-height:1.5}
+  .input-wrap{position:relative;display:flex;align-items:center}
+  .input-wrap input{width:100%;padding:11px 60px 11px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--ink);background:var(--white);outline:none;transition:border-color .2s}
+  .input-wrap input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(8,145,178,.1)}
+  .input-unit{position:absolute;right:14px;font-size:12px;font-weight:700;color:var(--muted);pointer-events:none}
+  select{width:100%;padding:10px 36px 10px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:var(--white);outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+  select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(8,145,178,.1)}
+
+  .toggle-group{display:grid;grid-template-columns:repeat(2,1fr);gap:5px;background:var(--paper);padding:4px;border-radius:10px;border:1.5px solid var(--line)}
+  .toggle-btn{padding:8px;border:none;border-radius:7px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);transition:all .2s}
+  .toggle-btn.active{background:var(--teal);color:white;box-shadow:0 2px 8px rgba(8,145,178,.3)}
+
+  .calc-btn{width:100%;padding:13px;background:var(--teal);color:white;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;margin-top:18px;transition:background .2s}
+  .calc-btn:hover{background:#0e7490}
+
+  #results{display:none}
+  #results.show{display:block}
+  .res-box{border-radius:12px;padding:18px;margin-bottom:16px;text-align:center}
+  .res-box .lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.85;margin-bottom:6px}
+  .res-box .amt{font-family:'DM Serif Display',serif;font-size:34px;letter-spacing:-.02em}
+  .res-box .amt span{font-size:18px;opacity:.7;font-family:'DM Sans',sans-serif;font-weight:400}
+
+  .result-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;gap:12px}
+  .result-row:last-child{border-bottom:none}
+  .result-row .rname{color:var(--muted)}
+  .result-row .rval{font-weight:700;text-align:right}
+  .result-row .rval.teal{color:var(--teal)}
+  .result-row .rval.green{color:var(--green)}
+  .result-row .rval.red{color:var(--red)}
+
+  .note-box{background:var(--yellow-soft);border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6}
+
+  .info-band{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .info-inner{max-width:1100px;margin:0 auto;padding:48px clamp(16px,3vw,40px)}
+  .section-title{font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,28px);margin-bottom:6px;letter-spacing:-.02em}
+  .section-sub{color:var(--muted);font-size:14px;margin-bottom:24px}
+  .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .info-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+  .info-card h3{font-family:'DM Serif Display',serif;font-size:16px;margin-bottom:10px}
+  .info-card p,.info-card li{font-size:14px;color:var(--muted);line-height:1.7}
+  .info-card ul{padding-left:16px}
+  .info-card li{margin-bottom:4px}
+
+  .faq-band{background:var(--paper);padding:48px clamp(16px,3vw,40px) 64px}
+  .faq-inner{max-width:800px;margin:0 auto}
+  .faq-item{border-bottom:1px solid var(--line);padding:16px 0}
+  .faq-item:first-child{border-top:1px solid var(--line)}
+  .faq-q{font-weight:600;font-size:14px;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .faq-q::after{content:'+';font-size:20px;color:var(--teal);flex-shrink:0;line-height:1;font-weight:300;transition:transform .2s}
+  .faq-item.open .faq-q::after{transform:rotate(45deg)}
+  .faq-a{font-size:13px;color:var(--muted);line-height:1.7;display:none;margin-top:8px}
+  .faq-item.open .faq-a{display:block}
+
+  footer{background:var(--ink);color:rgba(255,255,255,.6);padding:28px clamp(16px,5vw,60px);text-align:center;font-size:13px}
+  footer strong{color:white}
+  footer a{color:rgba(255,255,255,.6);text-decoration:underline}
+  footer a:hover{color:white}
+  footer .footer-links{margin-top:10px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  .animate-in{animation:fadeUp .3s ease forwards}
+
+  .ad-placeholder{background:var(--line);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+  .ad-top{height:90px;margin-bottom:24px}
+  .ad-side{height:250px;margin-bottom:20px}
+
+  @media(max-width:760px){
+    body{font-size:14px}
+    header{height:60px;padding:0 14px;gap:12px}
+    .logo-icon{width:34px;height:34px;border-radius:9px}
+    .logo-icon svg{width:18px;height:18px}
+    .logo-text{font-size:18px}
+    .mobile-nav{top:60px}
+    .hero{padding:34px 16px 28px}
+    .hero-badge{font-size:11px;padding:4px 12px;margin-bottom:14px}
+    .hero h1{font-size:32px;margin-bottom:12px}
+    .hero p{font-size:14px;max-width:100%;line-height:1.65}
+    .main{padding:20px 14px 40px;gap:18px}
+    .card{border-radius:12px;margin-bottom:16px}
+    .card-header{padding:14px 16px;gap:8px}
+    .card-header h2{font-size:13px;line-height:1.4}
+    .card-icon{width:28px;height:28px;font-size:13px}
+    .card-body{padding:16px}
+    .field{margin-bottom:14px}
+    label{font-size:10px;margin-bottom:6px}
+    .field-help{font-size:11px;margin-top:5px}
+    .input-wrap input,select{min-height:44px;font-size:16px;padding-top:10px;padding-bottom:10px}
+    .input-wrap input{padding-left:12px;padding-right:54px}
+    .input-unit{right:12px;font-size:11px}
+    .note-box{padding:11px 13px;font-size:12px;margin-bottom:14px}
+    .calc-btn{min-height:46px;padding:12px;font-size:15px;margin-top:14px}
+    .res-box{padding:16px 14px;margin-bottom:12px}
+    .res-box .lbl{font-size:10px;margin-bottom:4px}
+    .res-box .amt{font-size:28px;line-height:1.2;word-break:break-word}
+    .res-box .amt span{font-size:15px}
+    .result-row{flex-direction:column;align-items:flex-start;gap:4px;padding:10px 0}
+    .result-row .rname,.result-row .rval{text-align:left;width:100%}
+    .result-row .rname{font-size:12px;line-height:1.45}
+    .result-row .rval{font-size:14px;line-height:1.45;word-break:break-word}
+    .info-inner{padding:34px 14px}
+    .section-title{font-size:24px;line-height:1.2}
+    .section-sub{font-size:13px;margin-bottom:18px}
+    .info-grid{gap:14px}
+    .info-card{padding:16px;border-radius:12px}
+    .info-card h3{font-size:15px;margin-bottom:8px}
+    .info-card p,.info-card li{font-size:13px;line-height:1.65}
+    .faq-band{padding:34px 14px 44px}
+    .faq-item{padding:14px 0}
+    .faq-q{font-size:13px;line-height:1.5}
+    .faq-a{font-size:12px;line-height:1.65}
+    footer{padding:22px 14px;font-size:12px}
+    footer .footer-links{gap:12px 18px;margin-top:12px}
+    .ad-top{height:74px;margin-bottom:18px}
+    .ad-side{height:180px;margin-bottom:0;width:100%}
+  }
+</style>
 </head>
 <body>
 
@@ -95,7 +258,7 @@
       </div>
       <div class="card-body">
         <div class="note-box">
-          &#8505; Genel uygulamada saatlik ücret, aylık brüt ücretin 225’e bölünmesiyle bulunur. Haftalık sözleşme süresi 45 saatin altındaysa 45 saate kadar olan kısım fazla sürelerle çalışma (%25), 45 saati aşan kısım fazla çalışma (%50) olarak değerlendirilir.
+          &#8505; Saatlik ücret uygulamada çoğunlukla aylık brüt ücretin 225’e bölünmesiyle bulunur. Haftalık sözleşme süresi 45 saatin altındaysa 45 saate kadar olan kısım fazla sürelerle çalışma (%25), 45 saati aşan kısım fazla çalışma (%50) sayılır.
         </div>
 
         <div class="field">
@@ -150,7 +313,7 @@
               <input type="number" id="ozel_saat" placeholder="Örneğin: 7.5" min="0" step="0.5">
               <span class="input-unit">SAAT</span>
             </div>
-            <span class="field-help">Genel tatilde günlük ücret hakkı doğar. Buradaki hesap, pratik kullanım için saat karşılığını yaklaşık gösterir.</span>
+            <span class="field-help">Genel tatilde günlük ücret hakkı doğar. Buradaki hesap yaklaşık karşılığı gösterir.</span>
           </div>
         </div>
 
@@ -211,7 +374,7 @@
     <div class="info-grid">
       <div class="info-card">
         <h3>Fazla Çalışma Nedir?</h3>
-        <p>4857 sayılı İş Kanunu’na göre haftalık 45 saati aşan çalışmalar fazla çalışma sayılır ve her saat için normal saat ücretinin %50 artırılmış tutarı ödenir.</p>
+        <p>Haftalık 45 saati aşan çalışmalar fazla çalışma sayılır ve her saat için normal saat ücretinin %50 artırılmış tutarı ödenir.</p>
       </div>
       <div class="info-card">
         <h3>Fazla Sürelerle Çalışma</h3>
@@ -223,7 +386,7 @@
       </div>
       <div class="info-card">
         <h3>Yıllık Azami Sınır</h3>
-        <p>Yıllık fazla çalışma süresi 270 saati aşamaz. Bu sınır, fazla çalışma için geçerlidir.</p>
+        <p>Yıllık fazla çalışma süresi 270 saati aşamaz.</p>
       </div>
       <div class="info-card">
         <h3>Serbest Zaman Hakkı</h3>
@@ -231,7 +394,7 @@
       </div>
       <div class="info-card">
         <h3>Genel Tatil Çalışması</h3>
-        <p>Ulusal bayram ve genel tatil günlerinde çalışan işçiye, aylık ücretli ise ayrıca bir günlük ücreti daha ödenir. Bu, klasik fazla çalışma hesabından ayrı bir hukuki başlıktır.</p>
+        <p>Ulusal bayram ve genel tatil günlerinde çalışan işçiye, aylık ücretli ise ayrıca bir günlük ücreti daha ödenir.</p>
       </div>
     </div>
   </div>
@@ -243,14 +406,14 @@
     <div class="section-sub" style="margin-bottom:24px">Fazla çalışma hakkında en sık sorulanlar.</div>
     <div class="faq-item"><div class="faq-q">44 saat çalışma için fazla mesai doğar mı?</div><div class="faq-a">Haftalık normal süre 45 saat ise hayır. Ama sözleşmenizde haftalık süre örneğin 40 saat ise, 40-45 arası çalışma fazla sürelerle çalışma sayılabilir.</div></div>
     <div class="faq-item"><div class="faq-q">Cumartesi çalışması otomatik %100 zamlı mıdır?</div><div class="faq-a">Hayır. Cumartesi çalışması otomatik olarak %100 zamlı sayılmaz. Haftalık toplam süre ve işyerindeki hafta tatili düzeni önemlidir.</div></div>
-    <div class="faq-item"><div class="faq-q">Genel tatilde 1 saat çalışsam da günlük ücret doğar mı?</div><div class="faq-a">Uygulamada genel tatil gününde çalışılan gün için ek 1 günlük ücret esası vardır. Bu nedenle saatten bağımsız günlük ücret hakkı gündeme gelir.</div></div>
-    <div class="faq-item"><div class="faq-q">Fazla çalışma için onay gerekir mi?</div><div class="faq-a">Evet. Fazla saatlerde çalışma için işçinin onayının alınmaması idari yaptırıma konu olabilir.</div></div>
+    <div class="faq-item"><div class="faq-q">Genel tatilde 1 saat çalışsam da günlük ücret doğar mı?</div><div class="faq-a">Genel tatil gününde çalışılan gün için ek 1 günlük ücret esası vardır. Bu nedenle saatten bağımsız günlük ücret hakkı gündeme gelir.</div></div>
+    <div class="faq-item"><div class="faq-q">Fazla çalışma için onay gerekir mi?</div><div class="faq-a">Evet. Fazla saatlerde çalışma için işçinin onayı alınmalıdır.</div></div>
     <div class="faq-item"><div class="faq-q">Bu hesap net mi brüt mü?</div><div class="faq-a">Bu araç brüt ücret üzerinden yaklaşık hesap yapar. Net bordro sonucunda vergi ve SGK etkileri ayrıca değişebilir.</div></div>
   </div>
 </div>
 
 <footer>
-  <p><strong>MaaşHesap 2026</strong> &mdash; Bu site yalnızca bilgilendirme amaçlıdır. Kesin bilgi için uzman görüşü ve bordro kayıtları esas alınmalıdır.</p>
+  <p><strong>MaaşHesap 2026</strong> &mdash; Bu site yalnızca bilgilendirme amaçlıdır. Kesin bilgi için bordro ve uzman görüşü esas alınmalıdır.</p>
   <div class="footer-links">
     <a href="index.html">&#128176; Maaş Hesaplama</a>
     <a href="tazminat.html">Kıdem Tazminatı</a>
@@ -395,7 +558,7 @@
       rowsOzel.push({n:'Çalışılan Saat', v:ozelSaat.toLocaleString('tr-TR') + ' saat'});
       rowsOzel.push({n:'Yaklaşık Saatlik Karşılık', v:fmt(saatlikUcret * 2), c:'teal'});
       rowsOzel.push({n:'Toplam Ek Ücret', v:fmt(toplamOzel), c:'green'});
-      rowsOzel.push({n:'Not', v:'Hafta tatili hesabı uygulamada çalışma düzenine göre değişebilir', c:'red'});
+      rowsOzel.push({n:'Not', v:'Hafta tatili hesabı çalışma düzenine göre değişebilir', c:'red'});
       renderRows(rowsOzel);
       return;
     }
