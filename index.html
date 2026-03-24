@@ -360,7 +360,15 @@
           <span>&#8505;</span>
           <div><strong>2026 Asgari Ücret</strong><br><span style="color:var(--muted);font-size:12px">Brüt 33.030,00 TL &nbsp;|&nbsp; Net 28.075,50 TL</span></div>
         </div>
-
+        
+        <div class="field">
+          <label id="inp_label">Brüt Maaş</label>
+          <div class="input-wrap">
+            <input type="number" id="salary" placeholder="Örneğin: 30000" min="0" step="0.01">
+            <span class="input-unit">TL</span>
+          </div>
+        </div>
+        
         <div class="field">
           <label>Hesaplama Yönü</label>
           <div class="toggle-group">
@@ -376,17 +384,7 @@
             <button class="toggle-btn" id="btn_emekli" type="button" onclick="setTip('emekli')">Emekli</button>
           </div>
         </div>
-
-        <div class="field">
-          <label>İşveren Maliyeti Türü</label>
-          <select id="tesvik_turu">
-            <option value="5puan">İmalat sektörü - 5 puan indirimli</option>
-            <option value="2puan" selected>Diğer sektörler - 2 puan indirimli</option>
-            <option value="yok">SGK prim indirimi yok</option>
-          </select>
-          <span class="field-help">Emekli çalışan modunda bu alan otomatik olarak SGDP mantığıyla hesaplanır.</span>
-        </div>
-
+        
         <div class="field">
           <label>Hesaplama Ayı</label>
           <select id="ay_sel">
@@ -398,13 +396,15 @@
             <option value="11">Kasım</option><option value="12">Aralık</option>
           </select>
         </div>
-
+        
         <div class="field">
-          <label id="inp_label">Brüt Maaş</label>
-          <div class="input-wrap">
-            <input type="number" id="salary" placeholder="Örneğin: 30000" min="0" step="0.01">
-            <span class="input-unit">TL</span>
-          </div>
+          <label>İşveren Maliyeti Türü</label>
+          <select id="tesvik_turu">
+            <option value="5puan">İmalat sektörü - 5 puan indirimli</option>
+            <option value="2puan" selected>Diğer sektörler - 2 puan indirimli</option>
+            <option value="yok">SGK prim indirimi yok</option>
+          </select>
+          <span class="field-help">Emekli çalışan modunda bu alan otomatik olarak SGDP mantığıyla hesaplanır.</span>
         </div>
 
         <hr class="divider">
