@@ -87,10 +87,10 @@
   .res-box .amt{font-family:'DM Serif Display',serif;font-size:32px;letter-spacing:-.02em;}
   .res-box .amt span{font-size:16px;opacity:.7;font-family:'DM Sans',sans-serif;font-weight:400;}
 
-  .result-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px;}
+  .result-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px;gap:12px;}
   .result-row:last-child{border-bottom:none;}
   .result-row .rname{color:var(--muted);}
-  .result-row .rval{font-weight:700;}
+  .result-row .rval{font-weight:700;text-align:right;}
   .result-row .rval.orange{color:var(--orange);}
   .result-row .rval.green{color:var(--green);}
   .result-row .rval.red{color:var(--red);}
@@ -120,7 +120,7 @@
   footer strong{color:white;}
   footer a{color:rgba(255,255,255,.6);text-decoration:underline;cursor:pointer;}
   footer a:hover{color:white;}
-  footer .footer-links{margin-top:10px;display:flex;justify-content:center;gap:24px;}
+  footer .footer-links{margin-top:10px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;}
 
   @keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
   .animate-in{animation:fadeUp .3s ease forwards;}
@@ -151,6 +151,7 @@
   </nav>
   <button class="nav-toggle" id="nav-toggle">&#9776;</button>
 </header>
+
 <div class="mobile-nav" id="mobile-nav">
   <a href="index.html">&#128176; Maas Hesaplama</a>
   <a href="tazminat.html">&#128203; Tazminat</a>
@@ -170,7 +171,6 @@
 
 <div class="main">
 
-  <!-- SOL: FORM -->
   <div>
     <div class="card">
       <div class="card-header">
@@ -237,10 +237,8 @@
     </div>
 
     <div class="ad-placeholder" style="height:250px;">Reklam Alani - 300x250</div>
-
   </div>
 
-  <!-- SAG: SONUCLAR -->
   <div>
     <div class="card" id="results">
       <div class="card-header">
@@ -349,30 +347,30 @@
     <div class="section-title">Sik Sorulan Sorular</div>
     <div class="section-sub" style="margin-bottom:24px">Tazminat haklariniz hakkinda merak edilenler.</div>
     <div class="faq-item">
-      <div class="faq-q" id="faq1">Kidem tazminatinda tavan ne demek?</div>
+      <div class="faq-q">Kidem tazminatinda tavan ne demek?</div>
       <div class="faq-a">2026 Ocak-Haziran donemi icin tavan 64.948,77 TL'dir. Brut maasiniz bu tutari asiyorsa, tazminat gercek maasiniz uzerinden degil tavan uzerinden hesaplanir. Tavan her yil Ocak ve Temmuz aylarinda guncellenir.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" id="faq2">Kidem tazminati ne zaman odenir?</div>
+      <div class="faq-q">Kidem tazminati ne zaman odenir?</div>
       <div class="faq-a">Is sozlesmesinin sona erdigi tarihten itibaren odenmesi gerekir. Gecikme halinde mevduat faizi uzerinden gecikme faizi isler.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" id="faq3">Ihbar tazminati ile kidem tazminati farki nedir?</div>
+      <div class="faq-q">Ihbar tazminati ile kidem tazminati farki nedir?</div>
       <div class="faq-a">Kidem tazminati calisma suresine gore odenen bir haktir ve sadece damga vergisi kesilir. Ihbar tazminati ise taraflarin onceden haber vermeksizin sozlesmeyi feshetmesi durumunda odenen tazminattir ve gelir vergisine tabidir.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" id="faq4">1 yildan az calistiysam tazminat alabilir miyim?</div>
-      <div class="faq-a">Hayir. Kidem tazminatina hak kazanmak icin ayni isveren buynyesinde en az 1 tam yil (365 gun) calismaniz gerekmektedir. 1 yildan az calismada kidem tazminati odenmiyor, ancak ihbar tazminati alinabilir.</div>
+      <div class="faq-q">1 yildan az calistiysam tazminat alabilir miyim?</div>
+      <div class="faq-a">Hayir. Kidem tazminatina hak kazanmak icin ayni isveren bunyesinde en az 1 tam yil (365 gun) calismaniz gerekmektedir. 1 yildan az calismada kidem tazminati odenmez, ancak ihbar tazminati alinabilir.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q" id="faq5">15 yil 3.600 gun sartı ne anlama geliyor?</div>
-      <div class="faq-a">En az 15 yil sigortalılık suresi ve 3.600 prim gun sayisını doldurarak yas sartini beklemeksizin istifa edip kidem tazminati alabilirsiniz. Bunu kullanmak icin SGK'ya basvurup belge almaniz gerekir.</div>
+      <div class="faq-q">15 yil 3.600 gun sarti ne anlama geliyor?</div>
+      <div class="faq-a">En az 15 yil sigortalilik suresi ve 3.600 prim gun sayisini doldurarak yas sartini beklemeksizin istifa edip kidem tazminati alabilirsiniz. Bunu kullanmak icin SGK'ya basvurup belge almaniz gerekir.</div>
     </div>
   </div>
 </div>
 
 <footer>
-  <p><strong>MaasHesap 2026</strong> &mdash; Bu site yalnizca bilgilendirme amaclidir. Kesin hesap icin is hukuku uzmaniyla gorusinuz.</p>
+  <p><strong>MaasHesap 2026</strong> &mdash; Bu site yalnizca bilgilendirme amaclidir. Kesin hesap icin is hukuku uzmaniyla gorusunuz.</p>
   <div class="footer-links">
     <a href="index.html">Maas Hesaplama</a>
     <a href="issizlik.html">Issizlik Maasi</a>
@@ -383,17 +381,20 @@
 <script>
 (function() {
 
-  // Nav toggle
   var nt = document.getElementById('nav-toggle');
   var mn = document.getElementById('mobile-nav');
   if (nt && mn) {
-    nt.addEventListener('click', function() { mn.classList.toggle('open'); });
+    nt.addEventListener('click', function() {
+      mn.classList.toggle('open');
+    });
+
     document.addEventListener('click', function(e) {
-      if (!nt.contains(e.target) && !mn.contains(e.target)) mn.classList.remove('open');
+      if (!nt.contains(e.target) && !mn.contains(e.target)) {
+        mn.classList.remove('open');
+      }
     });
   }
 
-  // FAQ
   var faqs = document.querySelectorAll('.faq-q');
   for (var i = 0; i < faqs.length; i++) {
     faqs[i].addEventListener('click', function() {
@@ -401,11 +402,9 @@
     });
   }
 
-  // Sabitler
   var KIDEM_TAVAN = 64948.77;
-  var DAMGA       = 0.00759;
+  var DAMGA = 0.00759;
 
-  // Vergi dilimleri
   var BRACKETS = [
     {limit: 190000,  rate: 0.15, cum: 0},
     {limit: 400000,  rate: 0.20, cum: 28500},
@@ -416,37 +415,56 @@
 
   function bVergi(mat) {
     if (mat <= 0) return 0;
+
     for (var i = 0; i < BRACKETS.length; i++) {
       var b = BRACKETS[i];
-      var p = i === 0 ? 0 : BRACKETS[i-1].limit;
-      if (mat <= b.limit) return b.cum + (mat - p) * b.rate;
+      var p = i === 0 ? 0 : BRACKETS[i - 1].limit;
+      if (mat <= b.limit) {
+        return b.cum + (mat - p) * b.rate;
+      }
     }
+
     return 0;
   }
 
   function fmt(n) {
-    return n.toLocaleString('tr-TR', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' TL';
+    return n.toLocaleString('tr-TR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }) + ' TL';
   }
 
   function ihbarHafta(toplamAy) {
-    if (toplamAy < 6)   return 2;
-    if (toplamAy < 18)  return 4;
-    if (toplamAy < 36)  return 6;
+    if (toplamAy < 6) return 2;
+    if (toplamAy < 18) return 4;
+    if (toplamAy < 36) return 6;
     return 8;
   }
 
   function sureyiGoster() {
     var g = document.getElementById('giris').value;
     var a = document.getElementById('ayri').value;
+
     if (!g || !a) return;
+
     var d1 = new Date(g);
     var d2 = new Date(a);
-    if (d2 <= d1) { document.getElementById('sure-box').style.display = 'none'; return; }
+
+    if (d2 <= d1) {
+      document.getElementById('sure-box').style.display = 'none';
+      return;
+    }
+
     var gun = Math.floor((d2 - d1) / 86400000);
     var yil = d2.getFullYear() - d1.getFullYear();
-    var ay  = d2.getMonth() - d1.getMonth();
+    var ay = d2.getMonth() - d1.getMonth();
+
     if (d2.getDate() < d1.getDate()) ay--;
-    if (ay < 0) { yil--; ay += 12; }
+    if (ay < 0) {
+      yil--;
+      ay += 12;
+    }
+
     document.getElementById('sure-text').textContent = yil + ' yil ' + ay + ' ay (' + gun + ' gun)';
     document.getElementById('sure-box').style.display = 'block';
   }
@@ -454,94 +472,115 @@
   document.getElementById('giris').addEventListener('change', sureyiGoster);
   document.getElementById('ayri').addEventListener('change', sureyiGoster);
 
-  // Bugun'u ayri olarak varsayilan yap
   var bugun = new Date().toISOString().split('T')[0];
   document.getElementById('ayri').value = bugun;
+  sureyiGoster();
 
   function calculate() {
-    var brut    = parseFloat(document.getElementById('brut').value)    || 0;
-    var yanhak  = parseFloat(document.getElementById('yanhak').value)  || 0;
-    var ikrami  = parseFloat(document.getElementById('ikramiye').value)|| 0;
-    var giris   = document.getElementById('giris').value;
-    var ayri    = document.getElementById('ayri').value;
-    var neden   = document.getElementById('neden').value;
+    var brut = parseFloat(document.getElementById('brut').value) || 0;
+    var yanhak = parseFloat(document.getElementById('yanhak').value) || 0;
+    var ikrami = parseFloat(document.getElementById('ikramiye').value) || 0;
+    var giris = document.getElementById('giris').value;
+    var ayri = document.getElementById('ayri').value;
+    var neden = document.getElementById('neden').value;
 
-    if (!brut || brut <= 0) { alert('Lutfen brut maas giriniz.'); return; }
-    if (!giris)             { alert('Lutfen ise giris tarihini giriniz.'); return; }
-    if (!ayri)              { alert('Lutfen isten ayrilma tarihini giriniz.'); return; }
+    if (!brut || brut <= 0) {
+      alert('Lutfen brut maas giriniz.');
+      return;
+    }
+
+    if (!giris) {
+      alert('Lutfen ise giris tarihini giriniz.');
+      return;
+    }
+
+    if (!ayri) {
+      alert('Lutfen isten ayrilma tarihini giriniz.');
+      return;
+    }
 
     var d1 = new Date(giris);
     var d2 = new Date(ayri);
 
-    if (d2 <= d1) { alert('Ayrilma tarihi giris tarihinden once olamaz.'); return; }
+    if (d2 <= d1) {
+      alert('Ayrilma tarihi giris tarihinden once olamaz.');
+      return;
+    }
 
-    // Sure hesabi
-    var gun  = Math.floor((d2 - d1) / 86400000);
-    var yil  = d2.getFullYear() - d1.getFullYear();
-    var aay  = d2.getMonth() - d1.getMonth();
+    var gun = Math.floor((d2 - d1) / 86400000);
+    var yil = d2.getFullYear() - d1.getFullYear();
+    var aay = d2.getMonth() - d1.getMonth();
+
     if (d2.getDate() < d1.getDate()) aay--;
-    if (aay < 0) { yil--; aay += 12; }
+    if (aay < 0) {
+      yil--;
+      aay += 12;
+    }
+
     var toplamAy = yil * 12 + aay;
 
-    // Giydirilmis brut
-    var aylikIkrami     = ikrami / 12;
+    var aylikIkrami = ikrami / 12;
     var giydirilmisBrut = brut + yanhak + aylikIkrami;
 
-    // Kidem hakki
     var kidemHak = (neden !== 'istifa') && gun >= 365;
     var kidemBaz = Math.min(giydirilmisBrut, KIDEM_TAVAN);
     var kidemBrut = kidemHak ? kidemBaz * (gun / 365) : 0;
     var kidemDamga = kidemBrut * DAMGA;
-    var kidemNet   = kidemBrut - kidemDamga;
+    var kidemNet = kidemBrut - kidemDamga;
 
-    // Ihbar
     var ihbHafta = ihbarHafta(toplamAy);
-    var ihbBrut  = (brut / 30) * ihbHafta * 7;
-    var ihbGV    = bVergi(ihbBrut) * 0.15;
+    var ihbBrut = (brut / 30) * ihbHafta * 7;
+
+    var ihbGV = bVergi(ihbBrut);
     var ihbDamga = ihbBrut * DAMGA;
-    var ihbNet   = ihbBrut - ihbGV - ihbDamga;
+    var ihbNet = ihbBrut - ihbGV - ihbDamga;
 
     var toplam = kidemNet + ihbNet;
     var sureStr = yil + ' yil ' + aay + ' ay (' + gun + ' gun)';
 
-    // Render
     document.getElementById('kidem-amt').innerHTML =
-      kidemBrut.toLocaleString('tr-TR', {maximumFractionDigits: 2}) + '<span> TL</span>';
+      kidemBrut.toLocaleString('tr-TR', { maximumFractionDigits: 2 }) + '<span> TL</span>';
+
     document.getElementById('ihbar-amt').innerHTML =
-      ihbBrut.toLocaleString('tr-TR', {maximumFractionDigits: 2}) + '<span> TL</span>';
+      ihbBrut.toLocaleString('tr-TR', { maximumFractionDigits: 2 }) + '<span> TL</span>';
 
     var rows = [
-      {n: 'Brut Maas',                      v: fmt(brut),                             c: ''},
-      {n: 'Aylik Yan Haklar',               v: yanhak > 0 ? fmt(yanhak) : '--',       c: ''},
-      {n: 'Aylik Ikramiye (1/12)',          v: ikrami > 0 ? fmt(aylikIkrami) : '--',  c: ''},
-      {n: 'Giydirilmis Brut Ucret',        v: fmt(giydirilmisBrut),                  c: ''},
-      {n: 'Kidem Baz Ucreti',              v: fmt(kidemBaz),                         c: ''},
-      {n: 'Calisma Suresi',                v: sureStr,                               c: ''},
-      {n: 'Kidem Tazminati (Brut)',        v: kidemHak ? fmt(kidemBrut) : 'Hak yok', c: kidemHak ? 'orange' : ''},
-      {n: 'Damga Vergisi (%0,759)',        v: kidemHak ? '- ' + fmt(kidemDamga) : '-', c: 'red'},
-      {n: 'Kidem Tazminati (Net)',         v: kidemHak ? fmt(kidemNet) : 'Hak yok',  c: 'green'},
-      {n: 'Ihbar Suresi',                  v: ihbHafta + ' hafta',                   c: ''},
-      {n: 'Ihbar Tazminati (Brut)',        v: fmt(ihbBrut),                          c: 'orange'},
-      {n: 'Ihbar Gelir Vergisi',           v: '- ' + fmt(ihbGV),                    c: 'red'},
-      {n: 'Ihbar Damga Vergisi',           v: '- ' + fmt(ihbDamga),                 c: 'red'},
-      {n: 'Ihbar Tazminati (Net)',         v: fmt(ihbNet),                           c: 'green'},
-      {n: 'Tahmini Net Toplam Tazminat',  v: fmt(toplam),                           c: 'green'}
+      {n:'Brut Maas', v:fmt(brut), c:''},
+      {n:'Aylik Yan Haklar', v:yanhak > 0 ? fmt(yanhak) : '--', c:''},
+      {n:'Aylik Ikramiye (1/12)', v:ikrami > 0 ? fmt(aylikIkrami) : '--', c:''},
+      {n:'Giydirilmis Brut Ucret', v:fmt(giydirilmisBrut), c:''},
+      {n:'Kidem Baz Ucreti', v:fmt(kidemBaz), c:''},
+      {n:'Calisma Suresi', v:sureStr, c:''},
+      {n:'Kidem Tazminati (Brut)', v:kidemHak ? fmt(kidemBrut) : 'Hak yok', c:kidemHak ? 'orange' : ''},
+      {n:'Damga Vergisi (%0,759)', v:kidemHak ? '- ' + fmt(kidemDamga) : '-', c:'red'},
+      {n:'Kidem Tazminati (Net)', v:kidemHak ? fmt(kidemNet) : 'Hak yok', c:'green'},
+      {n:'Ihbar Suresi', v:ihbHafta + ' hafta', c:''},
+      {n:'Ihbar Tazminati (Brut)', v:fmt(ihbBrut), c:'orange'},
+      {n:'Ihbar Gelir Vergisi', v:'- ' + fmt(ihbGV), c:'red'},
+      {n:'Ihbar Damga Vergisi', v:'- ' + fmt(ihbDamga), c:'red'},
+      {n:'Ihbar Tazminati (Net)', v:fmt(ihbNet), c:'green'},
+      {n:'Tahmini Net Toplam Tazminat', v:fmt(toplam), c:'green'}
     ];
 
     var h = '';
     for (var i = 0; i < rows.length; i++) {
-      h += '<div class="result-row"><span class="rname">' + rows[i].n +
-           '</span><span class="rval ' + rows[i].c + '">' + rows[i].v + '</span></div>';
+      h += '<div class="result-row"><span class="rname">' + rows[i].n + '</span><span class="rval ' + rows[i].c + '">' + rows[i].v + '</span></div>';
     }
+
     document.getElementById('rows').innerHTML = h;
 
     var el = document.getElementById('results');
     el.className = 'card show animate-in';
-    el.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
   document.getElementById('calc-btn').addEventListener('click', calculate);
-  document.addEventListener('keypress', function(e) { if (e.key === 'Enter') calculate(); });
+
+  document.querySelectorAll('input').forEach(function(el) {
+    el.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') calculate();
+    });
+  });
 
 })();
 </script>
