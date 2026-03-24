@@ -3,84 +3,324 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2026 işsizlik maaşı hesaplama araci. SGK prim gün sayisi ve son maasinizia gore işsizlik ödeneğini anında ogrenin.">
-<meta name="keywords" content="işsizlik maaşı hesaplama, işsizlik ödeneği, SGK, 2026, işten cikma">
+<meta name="description" content="2026 işsizlik maaşı hesaplama aracı. SGK prim gün sayısı ve son maaşınıza göre işsizlik ödeneğini anında öğrenin.">
+<meta name="keywords" content="işsizlik maaşı hesaplama, işsizlik ödeneği, SGK, 2026, işten çıkma">
 <title>İşsizlik Maaşı Hesaplama 2026 - MaaşHesap</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--ink:#0f0f0f;--paper:#f2f5fb;--white:#ffffff;--muted:#6b7280;--line:#e2e8f0;--accent:#1a5cff;--accent-soft:#eef2ff;--green:#0d7a3e;--green-soft:#e8f7ef;--red:#c0392b;--yellow-soft:#fffbea;--purple:#7c3aed;--purple-soft:#f5f3ff;--shadow-sm:0 1px 3px rgba(0,0,0,0.07),0 2px 8px rgba(0,0,0,0.05);--shadow:0 2px 8px rgba(0,0,0,0.08),0 8px 24px rgba(0,0,0,0.06);--r:14px;}
+  :root{
+    --ink:#0f0f0f;--paper:#f2f5fb;--white:#ffffff;--muted:#6b7280;--line:#e2e8f0;
+    --accent:#1a5cff;--accent-soft:#eef2ff;--green:#0d7a3e;--green-soft:#e8f7ef;
+    --red:#c0392b;--yellow-soft:#fffbea;--purple:#7c3aed;--purple-soft:#f5f3ff;
+    --shadow-sm:0 1px 3px rgba(0,0,0,0.07),0 2px 8px rgba(0,0,0,0.05);
+    --shadow:0 2px 8px rgba(0,0,0,0.08),0 8px 24px rgba(0,0,0,0.06);
+    --r:14px;
+  }
+
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:15px;overflow-y:scroll;}
-  header{border-bottom:1px solid var(--line);padding:0 clamp(16px,4vw,56px);display:flex;align-items:center;justify-content:flex-start;height:64px;background:var(--white);position:sticky;top:0;z-index:200;box-shadow:0 1px 8px rgba(0,0,0,0.06);gap:24px;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    font-size:15px;
+    overflow-y:scroll;
+  }
+
+  header{
+    border-bottom:1px solid var(--line);
+    padding:0 clamp(16px,4vw,56px);
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    height:64px;
+    background:var(--white);
+    position:sticky;
+    top:0;
+    z-index:200;
+    box-shadow:0 1px 8px rgba(0,0,0,0.06);
+    gap:24px;
+  }
+
   .logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;}
-  .logo-icon{width:38px;height:38px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .logo-icon{
+    width:38px;height:38px;background:var(--accent);border-radius:10px;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
   .logo-icon svg{width:20px;height:20px;}
   .logo-text{font-family:'DM Serif Display',serif;font-size:20px;color:var(--ink);}
   .logo-text span{color:var(--accent);}
+
   .main-nav{display:flex;align-items:center;gap:2px;flex-wrap:nowrap;}
-  .nav-link{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;padding:7px 14px;border-radius:8px;transition:all .2s;white-space:nowrap;}
+  .nav-link{
+    font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;
+    padding:7px 14px;border-radius:8px;transition:all .2s;white-space:nowrap;
+  }
   .nav-link:hover{background:var(--paper);color:var(--ink);}
   .nav-link.active{background:var(--purple-soft);color:var(--purple);}
-  .nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--ink);padding:4px 8px;flex-shrink:0;}
-  .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--line);z-index:199;box-shadow:0 4px 16px rgba(0,0,0,0.1);flex-direction:column;}
-  .mobile-nav a{padding:14px 24px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);}
+
+  .nav-toggle{
+    display:none;background:none;border:none;font-size:22px;cursor:pointer;
+    color:var(--ink);padding:4px 8px;flex-shrink:0;
+  }
+
+  .mobile-nav{
+    display:none;position:fixed;top:64px;left:0;right:0;background:var(--white);
+    border-bottom:1px solid var(--line);z-index:199;box-shadow:0 4px 16px rgba(0,0,0,0.1);
+    flex-direction:column;
+  }
+  .mobile-nav a{
+    padding:14px 24px;font-size:14px;font-weight:600;color:var(--ink);
+    text-decoration:none;border-bottom:1px solid var(--line);
+  }
   .mobile-nav a:last-child{border-bottom:none;}
   .mobile-nav a:hover{background:var(--paper);}
   .mobile-nav.open{display:flex;}
-  @media(max-width:980px){.main-nav{display:none;}.nav-toggle{display:block;}}
-  @media(min-width:981px) and (max-width:1200px){.nav-link{font-size:12px;padding:6px 8px;}}
 
-  .hero{text-align:center;padding:56px clamp(16px,5vw,60px) 44px;background:linear-gradient(160deg,#f5f3ff 0%,#faf8ff 50%,var(--paper) 100%);border-bottom:1px solid var(--line);}
-  .hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--purple-soft);color:var(--purple);font-size:12px;font-weight:600;padding:4px 14px;border-radius:99px;margin-bottom:20px;letter-spacing:.04em;text-transform:uppercase;border:1px solid #ddd6fe;}
-  .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,46px);line-height:1.1;max-width:680px;margin:0 auto 16px;letter-spacing:-.02em;}
+  @media(max-width:980px){
+    .main-nav{display:none;}
+    .nav-toggle{display:block;}
+  }
+
+  @media(min-width:981px) and (max-width:1200px){
+    .nav-link{font-size:12px;padding:6px 8px;}
+  }
+
+  .hero{
+    text-align:center;
+    padding:56px clamp(16px,5vw,60px) 44px;
+    background:linear-gradient(160deg,#f5f3ff 0%,#faf8ff 50%,var(--paper) 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:6px;background:var(--purple-soft);color:var(--purple);
+    font-size:12px;font-weight:600;padding:4px 14px;border-radius:99px;margin-bottom:20px;
+    letter-spacing:.04em;text-transform:uppercase;border:1px solid #ddd6fe;
+  }
+  .hero h1{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(28px,5vw,46px);
+    line-height:1.1;
+    max-width:680px;
+    margin:0 auto 16px;
+    letter-spacing:-.02em;
+  }
   .hero h1 em{font-style:italic;color:var(--purple);}
-  .hero p{color:var(--muted);max-width:500px;margin:0 auto;font-size:16px;font-weight:300;}
+  .hero p{
+    color:var(--muted);
+    max-width:620px;
+    margin:0 auto;
+    font-size:16px;
+    font-weight:300;
+  }
 
-  .main{max-width:1100px;margin:0 auto;padding:36px clamp(16px,3vw,40px) 56px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;}
-  @media(max-width:760px){.main{grid-template-columns:1fr;}}
+  .main{
+    max-width:1100px;
+    margin:0 auto;
+    padding:36px clamp(16px,3vw,40px) 56px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+    align-items:start;
+  }
 
-  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-sm);overflow:hidden;margin-bottom:20px;}
+  @media(max-width:760px){
+    .main{grid-template-columns:1fr;}
+  }
+
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--r);
+    box-shadow:var(--shadow-sm);
+    overflow:hidden;
+    margin-bottom:20px;
+  }
   .card:last-child{margin-bottom:0;}
-  .card-header{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;background:#fafbfd;}
-  .card-header h2{font-size:14px;font-weight:600;}
-  .card-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
-  .card-body{padding:22px;}
-  .field{margin-bottom:16px;}
-  label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:7px;}
-  .input-wrap{position:relative;display:flex;align-items:center;}
-  .input-wrap input{width:100%;padding:11px 60px 11px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--ink);background:var(--white);outline:none;transition:border-color .2s;}
-  .input-wrap input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,92,255,.1);}
-  .input-unit{position:absolute;right:14px;font-size:12px;font-weight:700;color:var(--muted);pointer-events:none;}
 
-  .calc-btn{width:100%;padding:13px;background:var(--purple);color:white;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;margin-top:18px;transition:background .2s;}
+  .card-header{
+    padding:16px 20px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#fafbfd;
+  }
+  .card-header h2{font-size:14px;font-weight:600;}
+  .card-icon{
+    width:30px;height:30px;border-radius:8px;display:flex;
+    align-items:center;justify-content:center;font-size:14px;flex-shrink:0;
+  }
+  .card-body{padding:22px;}
+
+  .field{margin-bottom:16px;}
+  label{
+    display:block;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.07em;
+    color:var(--muted);
+    margin-bottom:7px;
+  }
+  .field-help{
+    display:block;
+    font-size:12px;
+    color:var(--muted);
+    margin-top:6px;
+    line-height:1.5;
+  }
+
+  .input-wrap{position:relative;display:flex;align-items:center;}
+  .input-wrap input{
+    width:100%;
+    padding:11px 60px 11px 14px;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    font-family:'DM Sans',sans-serif;
+    font-size:15px;
+    font-weight:600;
+    color:var(--ink);
+    background:var(--white);
+    outline:none;
+    transition:border-color .2s;
+  }
+  .input-wrap input:focus{
+    border-color:var(--accent);
+    box-shadow:0 0 0 3px rgba(26,92,255,.1);
+  }
+  .input-unit{
+    position:absolute;right:14px;font-size:12px;font-weight:700;color:var(--muted);pointer-events:none;
+  }
+
+  select{
+    width:100%;
+    padding:11px 36px 11px 14px;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    font-family:'DM Sans',sans-serif;
+    font-size:14px;
+    color:var(--ink);
+    background:var(--white);
+    outline:none;
+    cursor:pointer;
+    appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 14px center;
+  }
+  select:focus{
+    border-color:var(--accent);
+    box-shadow:0 0 0 3px rgba(26,92,255,.1);
+  }
+
+  .calc-btn{
+    width:100%;
+    padding:13px;
+    background:var(--purple);
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-family:'DM Sans',sans-serif;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    margin-top:18px;
+    transition:background .2s;
+  }
   .calc-btn:hover{background:#6d28d9;}
 
   #results{display:none;}
   #results.show{display:block;}
-  .res-box{border-radius:12px;padding:18px;margin-bottom:16px;text-align:center;}
-  .res-box .lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.85;margin-bottom:6px;}
-  .res-box .amt{font-family:'DM Serif Display',serif;font-size:34px;letter-spacing:-.02em;}
-  .res-box .amt span{font-size:18px;opacity:.7;font-family:'DM Sans',sans-serif;font-weight:400;}
 
-  .result-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;}
+  .res-box{
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:16px;
+    text-align:center;
+  }
+  .res-box .lbl{
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    opacity:.85;
+    margin-bottom:6px;
+  }
+  .res-box .amt{
+    font-family:'DM Serif Display',serif;
+    font-size:34px;
+    letter-spacing:-.02em;
+  }
+  .res-box .amt span{
+    font-size:18px;
+    opacity:.7;
+    font-family:'DM Sans',sans-serif;
+    font-weight:400;
+  }
+
+  .result-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+    gap:12px;
+  }
   .result-row:last-child{border-bottom:none;}
   .result-row .rname{color:var(--muted);}
-  .result-row .rval{font-weight:700;}
+  .result-row .rval{font-weight:700;text-align:right;}
   .result-row .rval.purple{color:var(--purple);}
   .result-row .rval.green{color:var(--green);}
+  .result-row .rval.red{color:var(--red);}
 
-  .note-box{background:var(--yellow-soft);border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;}
+  .note-box{
+    background:var(--yellow-soft);
+    border:1px solid #fde68a;
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:16px;
+    line-height:1.6;
+  }
 
-  .sart-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:4px;}
-  @media(max-width:600px){.sart-grid{grid-template-columns:1fr;}}
-  .sart-item{background:var(--purple-soft);border:1px solid #ddd6fe;border-radius:10px;padding:14px;text-align:center;}
-  .sart-num{font-family:'DM Serif Display',serif;font-size:24px;color:var(--purple);line-height:1;}
+  .sart-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:12px;
+    margin-top:4px;
+  }
+  @media(max-width:600px){
+    .sart-grid{grid-template-columns:1fr;}
+  }
+
+  .sart-item{
+    background:var(--purple-soft);
+    border:1px solid #ddd6fe;
+    border-radius:10px;
+    padding:14px;
+    text-align:center;
+  }
+  .sart-num{
+    font-family:'DM Serif Display',serif;
+    font-size:24px;
+    color:var(--purple);
+    line-height:1;
+  }
   .sart-label{font-size:12px;color:var(--muted);margin-top:4px;}
 
   .info-band{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .info-inner{max-width:1100px;margin:0 auto;padding:48px clamp(16px,3vw,40px);}
-  .section-title{font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,28px);margin-bottom:6px;letter-spacing:-.02em;}
+  .section-title{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(22px,3vw,28px);
+    margin-bottom:6px;
+    letter-spacing:-.02em;
+  }
   .section-sub{color:var(--muted);font-size:14px;margin-bottom:24px;}
   .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
   .info-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px;}
@@ -93,25 +333,321 @@
   .faq-inner{max-width:800px;margin:0 auto;}
   .faq-item{border-bottom:1px solid var(--line);padding:16px 0;}
   .faq-item:first-child{border-top:1px solid var(--line);}
-  .faq-q{font-weight:600;font-size:14px;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
-  .faq-q::after{content:'+';font-size:20px;color:var(--purple);flex-shrink:0;line-height:1;font-weight:300;transition:transform .2s;}
+  .faq-q{
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+  }
+  .faq-q::after{
+    content:'+';
+    font-size:20px;
+    color:var(--purple);
+    flex-shrink:0;
+    line-height:1;
+    font-weight:300;
+    transition:transform .2s;
+  }
   .faq-item.open .faq-q::after{transform:rotate(45deg);}
   .faq-a{font-size:13px;color:var(--muted);line-height:1.7;display:none;margin-top:8px;}
   .faq-item.open .faq-a{display:block;}
 
-  footer{background:var(--ink);color:rgba(255,255,255,.6);padding:28px clamp(16px,5vw,60px);text-align:center;font-size:13px;}
+  footer{
+    background:var(--ink);
+    color:rgba(255,255,255,.6);
+    padding:28px clamp(16px,5vw,60px);
+    text-align:center;
+    font-size:13px;
+  }
   footer strong{color:white;}
   footer a{color:rgba(255,255,255,.6);text-decoration:underline;}
   footer a:hover{color:white;}
-  footer .footer-links{margin-top:10px;display:flex;justify-content:center;gap:24px;}
+  footer .footer-links{
+    margin-top:10px;
+    display:flex;
+    justify-content:center;
+    gap:24px;
+    flex-wrap:wrap;
+  }
 
-  @keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(10px);}
+    to{opacity:1;transform:translateY(0);}
+  }
   .animate-in{animation:fadeUp .3s ease forwards;}
 
-  /* REKLAM ALANI */
-  .ad-placeholder { background: var(--line); border-radius: var(--r); display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; font-weight: 600; }
-  .ad-top { height: 90px; margin-bottom: 24px; }
-  .ad-side { height: 250px; margin-bottom: 20px; }
+  .ad-placeholder{
+    background:var(--line);
+    border-radius:var(--r);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--muted);
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  .ad-top{height:90px;margin-bottom:24px;}
+  .ad-side{height:250px;margin-bottom:20px;}
+
+  /* MOBIL REVIZE */
+  @media(max-width:760px){
+    body{font-size:14px;}
+
+    header{
+      height:60px;
+      padding:0 14px;
+      gap:12px;
+    }
+
+    .logo-icon{
+      width:34px;
+      height:34px;
+      border-radius:9px;
+    }
+
+    .logo-icon svg{width:18px;height:18px;}
+    .logo-text{font-size:18px;}
+    .mobile-nav{top:60px;}
+
+    .hero{
+      padding:34px 16px 28px;
+    }
+
+    .hero-badge{
+      font-size:11px;
+      padding:4px 12px;
+      margin-bottom:14px;
+    }
+
+    .hero h1{
+      font-size:32px;
+      margin-bottom:12px;
+    }
+
+    .hero p{
+      font-size:14px;
+      max-width:100%;
+      line-height:1.65;
+    }
+
+    .main{
+      padding:20px 14px 40px;
+      gap:18px;
+    }
+
+    .card{
+      border-radius:12px;
+      margin-bottom:16px;
+    }
+
+    .card-header{
+      padding:14px 16px;
+      gap:8px;
+    }
+
+    .card-header h2{
+      font-size:13px;
+      line-height:1.4;
+    }
+
+    .card-icon{
+      width:28px;
+      height:28px;
+      font-size:13px;
+    }
+
+    .card-body{
+      padding:16px;
+    }
+
+    .field{
+      margin-bottom:14px;
+    }
+
+    label{
+      font-size:10px;
+      margin-bottom:6px;
+    }
+
+    .field-help{
+      font-size:11px;
+      margin-top:5px;
+    }
+
+    .input-wrap input,
+    select{
+      min-height:44px;
+      font-size:16px;
+      padding-top:10px;
+      padding-bottom:10px;
+    }
+
+    .input-wrap input{
+      padding-left:12px;
+      padding-right:54px;
+    }
+
+    .input-unit{
+      right:12px;
+      font-size:11px;
+    }
+
+    .note-box{
+      padding:11px 13px;
+      font-size:12px;
+      margin-bottom:14px;
+    }
+
+    .calc-btn{
+      min-height:46px;
+      padding:12px;
+      font-size:15px;
+      margin-top:14px;
+    }
+
+    .res-box{
+      padding:16px 14px;
+      margin-bottom:12px;
+    }
+
+    .res-box .lbl{
+      font-size:10px;
+      margin-bottom:4px;
+    }
+
+    .res-box .amt{
+      font-size:28px;
+      line-height:1.2;
+      word-break:break-word;
+    }
+
+    .res-box .amt span{
+      font-size:15px;
+    }
+
+    .result-row{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:4px;
+      padding:10px 0;
+    }
+
+    .result-row .rname,
+    .result-row .rval{
+      text-align:left;
+      width:100%;
+    }
+
+    .result-row .rname{
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .result-row .rval{
+      font-size:14px;
+      line-height:1.45;
+      word-break:break-word;
+    }
+
+    .sart-item{
+      padding:12px;
+    }
+
+    .sart-num{
+      font-size:22px;
+    }
+
+    .sart-label{
+      font-size:11px;
+    }
+
+    .info-inner{
+      padding:34px 14px;
+    }
+
+    .section-title{
+      font-size:24px;
+      line-height:1.2;
+    }
+
+    .section-sub{
+      font-size:13px;
+      margin-bottom:18px;
+    }
+
+    .info-grid{
+      gap:14px;
+    }
+
+    .info-card{
+      padding:16px;
+      border-radius:12px;
+    }
+
+    .info-card h3{
+      font-size:15px;
+      margin-bottom:8px;
+    }
+
+    .info-card p,
+    .info-card li{
+      font-size:13px;
+      line-height:1.65;
+    }
+
+    .faq-band{
+      padding:34px 14px 44px;
+    }
+
+    .faq-item{
+      padding:14px 0;
+    }
+
+    .faq-q{
+      font-size:13px;
+      line-height:1.5;
+    }
+
+    .faq-a{
+      font-size:12px;
+      line-height:1.65;
+    }
+
+    footer{
+      padding:22px 14px;
+      font-size:12px;
+    }
+
+    footer .footer-links{
+      gap:12px 18px;
+      margin-top:12px;
+    }
+
+    .ad-top{
+      height:74px;
+      margin-bottom:18px;
+    }
+
+    .ad-side{
+      height:180px;
+      margin-bottom:0;
+      width:100%;
+    }
+  }
+
+  @media(max-width:420px){
+    .hero h1{font-size:28px;}
+    .res-box .amt{font-size:25px;}
+    .card-body{padding:14px;}
+    .main{padding:18px 12px 36px;}
+    .info-inner,
+    .faq-band{padding-left:12px;padding-right:12px;}
+  }
 </style>
 </head>
 <body>
@@ -139,6 +675,7 @@
   </nav>
   <button class="nav-toggle" id="nav-toggle">&#9776;</button>
 </header>
+
 <div class="mobile-nav" id="mobile-nav">
   <a href="index.html">&#128176; Maaş Hesaplama</a>
   <a href="tazminat.html">&#128203; Tazminat</a>
@@ -149,12 +686,13 @@
 <div class="hero">
   <div class="hero-badge">&#128084; 2026 Güncel Hesaplama</div>
   <h1>İşsizlik Maaşı<br><em>Hesaplayıcı</em></h1>
-  <p>SGK prim gün sayısı ve son maaşınıza göre alacağınız işsizlik ödeneğini anında hesaplayın.</p>
+  <p>SGK prim gün sayısı ve son maaşınıza göre alabileceğiniz işsizlik ödeneğini hesaplayın. Sonuç yaklaşık tutarı gösterir; nihai değerlendirme İŞKUR başvuru incelemesine göre yapılır.</p>
 </div>
 
 <div style="max-width:1100px;margin:24px auto;padding:0 clamp(16px,3vw,40px)">
-  <div class="ad-placeholder ad-top">Reklam Alanı – 728x90</div>
+  <div class="ad-placeholder ad-top">Reklam Alanı - 728x90</div>
 </div>
+
 <div class="main">
   <div>
     <div class="card">
@@ -163,31 +701,51 @@
         <h2>Bilgilerinizi Girin</h2>
       </div>
       <div class="card-body">
-        <div class="note-box">&#8505; İşsizlik ödeneği almak icin son 3 yıl icerisinde en az 600 gun SGK priminizin yatirilmis olmasi ve son 120 gun kesintisiz çalışmaniz gerekmektedir.</div>
+        <div class="note-box">
+          &#8505; Genel şartlar: kendi istek ve kusuru dışında işsiz kalmak, son 120 gün hizmet akdine tabi olmak, son 3 yılda en az 600 gün işsizlik sigortası primi ödemiş olmak ve fesih sonrası 30 gün içinde başvurmak. Mücbir sebep dışında geciken başvurularda gecikilen süre toplam hak sahipliğinden düşülür.
+        </div>
 
         <div class="field">
           <label>Son 4 Aylık Ortalama Brüt Maaş</label>
           <div class="input-wrap">
-            <input type="number" id="brut-maas" placeholder="Örneğin: 35000" min="0">
+            <input type="number" id="brut-maas" placeholder="Örneğin: 35000" min="0" step="0.01">
             <span class="input-unit">TL</span>
           </div>
         </div>
 
         <div class="field">
-          <label>Son 3 Yildaki SGK Prim Gün Sayisi</label>
+          <label>Son 3 Yıldaki Prim Gün Sayısı</label>
           <div class="input-wrap">
-            <input type="number" id="prim-gun" placeholder="Örneğin: 900" min="0">
-            <span class="input-unit">GUN</span>
+            <input type="number" id="prim-gun" placeholder="Örneğin: 900" min="0" step="1">
+            <span class="input-unit">GÜN</span>
           </div>
         </div>
 
         <div class="field">
-          <label>İşten Ayrılma Sekli</label>
-          <select id="ayrilma">
-            <option value="haksız-fesih">İşveren tarafindan haksız fesih</option>
-            <option value="hakli-neden">İşçi haklı nedenle ayrılma</option>
-            <option value="askerlik">Askerlik / Emeklilik</option>
+          <label>SGK İşten Çıkış Kodu (Opsiyonel)</label>
+          <select id="cikis-kodu">
+            <option value="">Bilmiyorum / Seçmek istemiyorum</option>
+            <option value="04">04 - Belirsiz süreli iş sözleşmesinin işveren tarafından haklı sebep bildirilmeden feshi</option>
+            <option value="05">05 - Belirli süreli iş sözleşmesinin sona ermesi</option>
+            <option value="12">12 - Askerlik</option>
+            <option value="13">13 - Kadın işçinin evlenmesi</option>
+            <option value="17">17 - Emeklilik</option>
+            <option value="22">22 - Diğer nedenler</option>
+            <option value="25">25 - İşçi tarafından haklı nedenle fesih</option>
+            <option value="29">29 - İşveren tarafından ahlak ve iyi niyet kurallarına aykırılık nedeniyle fesih</option>
           </select>
+          <span class="field-help">Bu alan sadece bilgi amaçlıdır. Nihai hak sahipliği İŞKUR’un işten ayrılma bildirgesi ve başvuru incelemesine göre belirlenir.</span>
+        </div>
+
+        <div class="field">
+          <label>İşten Ayrılma Şekli</label>
+          <select id="ayrilma">
+            <option value="haksiz-fesih">İşveren tarafından haksız fesih</option>
+            <option value="hakli-neden">İşçi haklı nedenle ayrılma</option>
+            <option value="askerlik">Askerlik nedeniyle ayrılma</option>
+            <option value="emeklilik">Emeklilik nedeniyle ayrılma</option>
+          </select>
+          <span class="field-help" id="ayrilma-help"></span>
         </div>
 
         <button class="calc-btn" id="calc-btn">Hesapla &#8594;</button>
@@ -203,15 +761,15 @@
         <div class="sart-grid">
           <div class="sart-item">
             <div class="sart-num">600</div>
-            <div class="sart-label">Min. prim günü (3 yil)</div>
+            <div class="sart-label">Min. prim günü (3 yıl)</div>
           </div>
           <div class="sart-item">
             <div class="sart-num">120</div>
-            <div class="sart-label">Kesintisiz çalışma günü</div>
+            <div class="sart-label">Son 120 gün şartı</div>
           </div>
           <div class="sart-item">
             <div class="sart-num">30</div>
-            <div class="sart-label">Başvuru icin gun</div>
+            <div class="sart-label">Başvuru süresi</div>
           </div>
         </div>
       </div>
@@ -239,63 +797,68 @@
         <h2>Ödeme Süreleri</h2>
       </div>
       <div class="card-body" style="padding:14px 20px">
-        <div class="result-row"><span class="rname">600 - 899 prim günü</span><span class="rval purple">180 gun (6 ay)</span></div>
-        <div class="result-row"><span class="rname">900 - 1079 prim günü</span><span class="rval purple">240 gun (8 ay)</span></div>
-        <div class="result-row" style="border:none"><span class="rname">1080 gun ve üzeri</span><span class="rval purple">300 gun (10 ay)</span></div>
+        <div class="result-row"><span class="rname">600 - 899 prim günü</span><span class="rval purple">180 gün (6 ay)</span></div>
+        <div class="result-row"><span class="rname">900 - 1079 prim günü</span><span class="rval purple">240 gün (8 ay)</span></div>
+        <div class="result-row" style="border:none"><span class="rname">1080 gün ve üzeri</span><span class="rval purple">300 gün (10 ay)</span></div>
       </div>
     </div>
 
     <div class="card">
       <div class="card-header">
         <div class="card-icon" style="background:#f0fdf4">&#128176;</div>
-        <h2>2026 Ödeme Limitleri</h2>
+        <h2>2026 Resmî Ödeme Bilgileri</h2>
       </div>
       <div class="card-body" style="padding:14px 20px">
-        <div class="result-row"><span class="rname">Hesaplama Oranı</span><span class="rval">Brüt maasin %40'i</span></div>
-        <div class="result-row"><span class="rname">Alt Limit</span><span class="rval">Asgari ücretin %80'i</span></div>
-        <div class="result-row" style="border:none"><span class="rname">Üst Limit</span><span class="rval">Asgari ücretin %80'i x 4</span></div>
+        <div class="result-row"><span class="rname">Hesaplama Oranı</span><span class="rval">Son 4 ay ort. brütün %40’ı</span></div>
+        <div class="result-row"><span class="rname">Üst Limit</span><span class="rval">Brüt asgari ücretin %80’i</span></div>
+        <div class="result-row"><span class="rname">Ödeme Günü</span><span class="rval">Her ayın 5’i</span></div>
+        <div class="result-row" style="border:none"><span class="rname">Ödeme Kanalı</span><span class="rval">IBAN / PTT</span></div>
       </div>
     </div>
+
+    <div class="ad-placeholder ad-side">Reklam Alanı - 300x250</div>
   </div>
 </div>
 
 <div class="info-band">
   <div class="info-inner">
     <div class="section-title">İşsizlik Maaşı Hakkında</div>
-    <div class="section-sub">İşsizlik ödeneğine iliskin merak ettiginiz her sey.</div>
+    <div class="section-sub">İŞKUR’daki güncel bilgilere göre temel başlıklar.</div>
     <div class="info-grid">
       <div class="info-card">
         <h3>İşsizlik Ödeneği Nedir?</h3>
-        <p>Kendi iradesi disinda işten cikan ve belirli sartlari yerine getiren çalışanlara İşsizlik Sigortası Fonu'ndan yapilan ödemedir. Amaci, is bulana kadar çalışanin gecimini desteklemektir.</div>
+        <p>Sigortalı işsizlere, yasadaki şartları taşımaları halinde işsiz kaldıkları dönem için belirli süre ve miktarda yapılan ödemedir.</p>
       </div>
       <div class="info-card">
         <h3>Kimler Yararlanabilir?</h3>
         <ul>
-          <li>Son 3 yilda en az 600 gun SGK pirimi odenenmis olmali</li>
-          <li>Son 120 gun kesintisiz calisılmis olmali</li>
-          <li>Kendi iradesi disinda işten cıkılmis olmali</li>
-          <li>Is-Kur'a 30 gun icerisinde başvurulmali</li>
+          <li>Kendi istek ve kusuru dışında işsiz kalanlar</li>
+          <li>Son 120 gün hizmet akdine tabi olanlar</li>
+          <li>Son 3 yılda en az 600 gün prim ödemiş olanlar</li>
+          <li>30 gün içinde başvuranlar</li>
         </ul>
       </div>
       <div class="info-card">
-        <h3>Ne Kadar Odenir?</h3>
-        <p>Son 4 aylık ortalama brüt maaşin yuzde 40'i oranında odenir. Alt limit asgari ücretin yuzde 80'i, üst limit ise asgari ücretin yuzde 80'inin dort katidir. 2026 icin üst limit yaklasik 26.424 TL'dir.</p>
+        <h3>Son 120 Gün Kuralı</h3>
+        <p>İŞKUR SSS’ye göre hastalık, ücretsiz izin, disiplin cezası, gözaltı, hükümlülükle sonuçlanmayan tutukluluk, kısmi istihdam, grev, lokavt, doğal afet gibi nedenlerle prim yatmayan süreler kesinti sayılmaz. Ayrıca 18.01.2019 ve sonrasında sona eren hizmet akitlerinde, fesih öncesi son 120 günlük dönemde hizmet akdinin bulunması yeterli kabul edilmektedir.</p>
       </div>
       <div class="info-card">
-        <h3>Nereden Başvurulur?</h3>
-        <p>İşten ayrildiktan sonra en gec 30 gun icerisinde yakin İSKUR birimine veya e-Devlet üzerinden online başvuru yapilmalidir. Gecikmeli başvurularda başvuru tarihi esas alınır.</p>
+        <h3>Ne Kadar Ödenir?</h3>
+        <p>Günlük işsizlik ödeneği, son dört aylık prime esas kazançlar dikkate alınarak hesaplanan günlük ortalama brüt kazancın %40’ıdır. Aylık tutar, brüt asgari ücretin %80’ini geçemez.</p>
       </div>
       <div class="info-card">
-        <h3>Ödenekten SGK Kesiliyor mu?</h3>
-        <p>İşsizlik ödeneği alanlar icin Genel Sağlık Sigortası (GSS) primleri İşsizlik Fonu tarafindan karsilanir. Gelir vergisinden muaftir. SGK emeklilik priminden muaftir.</p>
+        <h3>Başvuru ve Ödeme</h3>
+        <p>Başvurular izleyen ayın sonuna kadar sonuçlandırılır. Ödeme her ayın 5’inde yapılır. IBAN verilmezse ödeme PTT üzerinden alınır.</p>
       </div>
       <div class="info-card">
-        <h3>Hangi Durumlarda Kesilir?</h3>
+        <h3>Bildirilmesi Gereken Durumlar</h3>
         <ul>
-          <li>Yeni bir işe başlandiginda</li>
-          <li>İSKUR'un teklif ettigi isi veya kursu kabul etmediginde</li>
-          <li>Aylık kontrol girisini yapilmadiginda</li>
-          <li>Aylık is arama yukseltimi yerine getirilmediginde</li>
+          <li>Adres değişikliği</li>
+          <li>Yaşlılık aylığı bağlanması</li>
+          <li>Silah altına alınma</li>
+          <li>Yurt dışına çıkış</li>
+          <li>Yeni işe başlama</li>
+          <li>İşe iade kararı</li>
         </ul>
       </div>
     </div>
@@ -304,18 +867,18 @@
 
 <div class="faq-band">
   <div class="faq-inner">
-    <div class="section-title">Sik Sorulan Sorular</div>
-    <div class="section-sub" style="margin-bottom:24px">İşsizlik ödeneği hakkında merak edilenler.</div>
-    <div class="faq-item"><div class="faq-q">İstifa edersem işsizlik maaşı alabilir miyim?</div><div class="faq-a">Normal iştifada işsizlik ödeneği alınamaz. Ancak işveren tarafindan mobbing, ücret odenememesi, çalışma sartlarinin agirlatilmasi gibi haklı bir neden varsa isci is sozlesmesini feshederek işsizlik ödeneğine basvurabilir.</div></div>
-    <div class="faq-item"><div class="faq-q">İşsizlik maasi ne kadar surer?</div><div class="faq-a">600-899 prim günü icin 180 gun, 900-1079 gun icin 240 gun, 1080 gun ve üzeri icin 300 gun ödeme yapilir. Ödeme süresi bittikten sonra yeniden hak kazanmak icin yeni çalışma sartlarini saglamak gerekir.</div></div>
-    <div class="faq-item"><div class="faq-q">İşsizlik maasi aldiktan sonra işe başladimda ne olur?</div><div class="faq-a">İşe basladiginizda işsizlik ödeneği otomatik olarak kesilir. İSKUR'a derhal bildirmeniz zorunludur. Bildirmezseniz fazla alinan tutarlari geri ödemeniz gerekir.</div></div>
-    <div class="faq-item"><div class="faq-q">Başvuruyu kaç gün icinde yapmam gerekiyor?</div><div class="faq-a">İşten ayrildiktan sonra 30 gun icerisinde İSKUR'a basvurmaniz gerekir. Bu sureyi gecirirseniz, başvuru tarihinden itibaren hesaplama yapilir ve basta kalan gunleri kaybedebilirsiniz.</div></div>
-    <div class="faq-item"><div class="faq-q">İşsizlik ödeneği asgari ücret kadar mi?</div><div class="faq-a">İşsizlik ödeneği alt limiti asgari ücretin yuzde 80'idir. Yani 2026 icin en az yaklasik 6.606 TL ödeme yapilir. Brüt maasinizin yuzde 40'i bu tutarin altindaysa alt limit gecerli olur.</div></div>
+    <div class="section-title">Sık Sorulan Sorular</div>
+    <div class="section-sub" style="margin-bottom:24px">Resmî bilgiye göre en çok merak edilenler.</div>
+    <div class="faq-item"><div class="faq-q">İstifa edersem işsizlik maaşı alabilir miyim?</div><div class="faq-a">Normal istifada alınamaz. Ancak haklı nedenle fesih gibi özel hallerde, diğer şartlar da sağlanıyorsa başvuru incelemeye alınabilir.</div></div>
+    <div class="faq-item"><div class="faq-q">Askerlik nedeniyle ayrılırsam alabilir miyim?</div><div class="faq-a">Bu sayfada askerlik ayrı gösterildi ve otomatik engel konulmadı. Ancak nihai hak sahipliği, işten ayrılma bildirgesi ve İŞKUR incelemesine göre belirlenir.</div></div>
+    <div class="faq-item"><div class="faq-q">Emeklilikte işsizlik maaşı olur mu?</div><div class="faq-a">Hayır. İşsizlik ödeneği almakta iken yaşlılık aylığı almaya başlanırsa ödenek de emeklilik gerekçesiyle kesilir.</div></div>
+    <div class="faq-item"><div class="faq-q">İşsizlik maaşı ne kadar sürer?</div><div class="faq-a">600-899 gün için 180 gün, 900-1079 gün için 240 gün, 1080 gün ve üzeri için 300 gün ödenir.</div></div>
+    <div class="faq-item"><div class="faq-q">Başvuruyu kaç gün içinde yapmalıyım?</div><div class="faq-a">Genel kural, fesih sonrası 30 gündür. Mücbir sebep dışında geç kalınırsa geciken süre toplam hak sahipliğinden düşülür.</div></div>
   </div>
 </div>
 
 <footer>
-  <p><strong>MaaşHesap 2026</strong> &mdash; Bu site yalnizca bilgilendirme amaçlıdır. Kesin bilgi icin İSKUR'a başvurunuz.</p>
+  <p><strong>MaaşHesap 2026</strong> &mdash; Bu site yalnızca bilgilendirme amaçlıdır. Kesin bilgi için İŞKUR başvurusu ve resmî kayıtlar esas alınmalıdır.</p>
   <div class="footer-links">
     <a href="index.html">&#128176; Maaş Hesaplama</a>
     <a href="tazminat.html">Kıdem Tazminatı</a>
@@ -325,125 +888,174 @@
 
 <script>
 (function(){
-  var nt=document.getElementById('nav-toggle'),mn=document.getElementById('mobile-nav');
-  if(nt&&mn){
-    nt.addEventListener('click',function(){mn.classList.toggle('open');});
-    document.addEventListener('click',function(e){
-      if(!nt.contains(e.target)&&!mn.contains(e.target)) mn.classList.remove('open');
+  var nt = document.getElementById('nav-toggle');
+  var mn = document.getElementById('mobile-nav');
+
+  if(nt && mn){
+    nt.addEventListener('click', function(){
+      mn.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function(e){
+      if(!nt.contains(e.target) && !mn.contains(e.target)){
+        mn.classList.remove('open');
+      }
     });
   }
 
-  var faqs=document.querySelectorAll('.faq-q');
+  var faqs = document.querySelectorAll('.faq-q');
   for(var i=0;i<faqs.length;i++){
-    faqs[i].addEventListener('click',function(){
+    faqs[i].addEventListener('click', function(){
       this.parentElement.classList.toggle('open');
     });
   }
 
-  var ASG_BRUT = 33030;
+  var ASG_BRUT = 33030.00;
+  var DAMGA = 0.00759;
 
   function fmt(n){
     return n.toLocaleString('tr-TR',{
       minimumFractionDigits:2,
       maximumFractionDigits:2
-    })+' TL';
+    }) + ' TL';
   }
 
   function getOdemeSuresi(gun){
-    if(gun>=1080) return 300;
-    if(gun>=900)  return 240;
-    if(gun>=600)  return 180;
+    if(gun >= 1080) return 300;
+    if(gun >= 900) return 240;
+    if(gun >= 600) return 180;
     return 0;
   }
 
-  function calculate(){
-    var brut = parseFloat(
-      document.getElementById('brut-maas').value.replace(',', '.')
-    );
-
-    var gun = parseFloat(document.getElementById('prim-gun').value);
+  function updateAyrilmaHelp(){
     var neden = document.getElementById('ayrilma').value;
+    var kod = document.getElementById('cikis-kodu').value;
+    var help = document.getElementById('ayrilma-help');
 
-    if(!brut || brut<=0){
+    if(neden === 'askerlik'){
+      help.textContent = 'Askerlik seçeneği ayrı değerlendirilir; nihai hak sahipliği işten ayrılma bildirgesi ve İŞKUR incelemesine bağlıdır.';
+      return;
+    }
+
+    if(neden === 'emeklilik'){
+      help.textContent = 'Emeklilik nedeniyle ayrılma işsizlik ödeneği kapsamında değerlendirilmez.';
+      return;
+    }
+
+    if(neden === 'hakli-neden'){
+      help.textContent = 'Haklı nedenle fesihte diğer şartlar da sağlanıyorsa başvuru incelemeye alınabilir.';
+      return;
+    }
+
+    if(kod === '29'){
+      help.textContent = 'Seçilen çıkış kodu işverenin ahlak ve iyi niyet kurallarına aykırılık feshi kodudur; bu durumda hak sahipliği ayrıca incelemeye tabidir.';
+      return;
+    }
+
+    help.textContent = '';
+  }
+
+  function showNoRight(message){
+    document.getElementById('odeme-amt').innerHTML = 'Hak Yok<span></span>';
+    document.getElementById('rows').innerHTML =
+      '<div class="result-row"><span class="rname">Sonuç</span><span class="rval red">' + message + '</span></div>';
+
+    var el = document.getElementById('results');
+    el.className = 'card show animate-in';
+    el.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  function calculate(){
+    var brut = parseFloat((document.getElementById('brut-maas').value || '').replace(',', '.'));
+    var gun = parseFloat((document.getElementById('prim-gun').value || '').replace(',', '.'));
+    var neden = document.getElementById('ayrilma').value;
+    var kod = document.getElementById('cikis-kodu').value;
+
+    if(!brut || brut <= 0){
       alert('Lütfen brüt maaş giriniz.');
       return;
     }
 
-    if(!gun || gun<=0){
+    if(!gun || gun <= 0){
       alert('Lütfen prim gün sayısı giriniz.');
       return;
     }
 
-    // ❗ Ayrılma kontrolü
-    if(neden === 'askerlik'){
-      alert('Askerlik veya emeklilik durumunda işsizlik maaşı alınamaz.');
+    if(neden === 'emeklilik' || kod === '17'){
+      showNoRight('Emeklilik nedeniyle ayrılmada işsizlik ödeneği alınamaz.');
       return;
     }
 
-    if(gun < 600){
-      document.getElementById('odeme-amt').innerHTML = 'Hak Yok<span></span>';
-      document.getElementById('rows').innerHTML =
-        '<div class="result-row"><span class="rname">Sonuç</span><span class="rval" style="color:var(--red)">600 gün şartını sağlamıyorsunuz</span></div>';
-
-      var el=document.getElementById('results');
-      el.className='card show animate-in';
-      el.scrollIntoView({behavior:'smooth',block:'center'});
+    if(kod === '29'){
+      showNoRight('Seçilen çıkış kodunda hak sahipliği genellikle oluşmaz; nihai değerlendirme İŞKUR kayıtlarına göre yapılır.');
       return;
     }
 
     var sure = getOdemeSuresi(gun);
 
-    var aylikOdeme = brut * 0.40;
+    if(sure === 0){
+      showNoRight('En az 600 gün prim şartı sağlanmıyor.');
+      return;
+    }
 
+    var aylikOdemeBrut = brut * 0.40;
     var ustLimit = ASG_BRUT * 0.80;
-    aylikOdeme = Math.min(aylikOdeme, ustLimit);
+    aylikOdemeBrut = Math.min(aylikOdemeBrut, ustLimit);
 
-    var damgaVergisi = aylikOdeme * 0.00759;
-    var netOdeme = aylikOdeme - damgaVergisi;
-
-    var toplamOdeme = netOdeme * (sure/30);
+    var damgaVergisi = aylikOdemeBrut * DAMGA;
+    var netOdeme = aylikOdemeBrut - damgaVergisi;
+    var toplamOdeme = netOdeme * (sure / 30);
 
     document.getElementById('odeme-amt').innerHTML =
-      netOdeme.toLocaleString('tr-TR',{maximumFractionDigits:2})+'<span> TL</span>';
-
-    var ustLimitDevrede = (brut * 0.40) > ustLimit;
+      netOdeme.toLocaleString('tr-TR',{maximumFractionDigits:2}) + '<span> TL</span>';
 
     var rows = [
-      {n:'Son 4 Aylık Ort. Brüt Maaş', v:fmt(brut), c:''},
-      {n:'Ödeme Oranı', v:'Brüt maaşın %40ı', c:''},
-      {n:'Hesaplanan Tutar', v:fmt(brut*0.40), c:''},
-      {n:'Üst Limit (Asgari Ücretin %80i)', v:fmt(ustLimit), c: ustLimitDevrede?'red':''},
-      {n:'Aylık Ödeme (Brüt)', v:fmt(aylikOdeme), c:'purple'},
-      {n:'Damga Vergisi (%0,759)', v:'- '+fmt(damgaVergisi), c:''},
+      {n:'Son 4 Aylık Ortalama Brüt Kazanç', v:fmt(brut), c:''},
+      {n:'Hesaplama Oranı', v:'Brüt kazancın %40’ı', c:''},
+      {n:'Hesaplanan Tutar', v:fmt(brut * 0.40), c:''},
+      {n:'Üst Limit', v:fmt(ustLimit), c:(brut * 0.40) > ustLimit ? 'red' : ''},
+      {n:'Aylık Ödenek (Brüt)', v:fmt(aylikOdemeBrut), c:'purple'},
+      {n:'Damga Vergisi (%0,759)', v:'- ' + fmt(damgaVergisi), c:''},
       {n:'Aylık İşsizlik Ödeneği (Net)', v:fmt(netOdeme), c:'purple'},
-      {n:'Ödeme Süresi', v:sure+' gün ('+(sure/30)+' ay)', c:''},
+      {n:'Hak Sahipliği Süresi', v:sure + ' gün (' + (sure/30) + ' ay)', c:''},
       {n:'Tahmini Toplam Net Ödeme', v:fmt(toplamOdeme), c:'green'}
     ];
 
-    var h='';
+    if(kod){
+      rows.push({n:'Girilen SGK Çıkış Kodu', v:kod, c:''});
+    }
+
+    if(neden === 'askerlik' || kod === '12'){
+      rows.push({
+        n:'Not',
+        v:'Askerlik seçeneği ayrıca incelenir',
+        c:'purple'
+      });
+    }
+
+    var h = '';
     for(var i=0;i<rows.length;i++){
-      h += '<div class="result-row">' +
-            '<span class="rname">'+rows[i].n+'</span>' +
-            '<span class="rval '+rows[i].c+'">'+rows[i].v+'</span>' +
-           '</div>';
+      h += '<div class="result-row"><span class="rname">' + rows[i].n + '</span><span class="rval ' + rows[i].c + '">' + rows[i].v + '</span></div>';
     }
 
     document.getElementById('rows').innerHTML = h;
 
-    var el=document.getElementById('results');
-    el.className='card show animate-in';
-    el.scrollIntoView({behavior:'smooth',block:'center'});
+    var el = document.getElementById('results');
+    el.className = 'card show animate-in';
+    el.scrollIntoView({behavior:'smooth', block:'center'});
   }
 
-  document.getElementById('calc-btn').addEventListener('click',calculate);
+  document.getElementById('calc-btn').addEventListener('click', calculate);
+  document.getElementById('ayrilma').addEventListener('change', updateAyrilmaHelp);
+  document.getElementById('cikis-kodu').addEventListener('change', updateAyrilmaHelp);
 
-  // ✅ Enter sadece inputlarda çalışır
   document.querySelectorAll('input').forEach(function(el){
     el.addEventListener('keypress', function(e){
       if(e.key === 'Enter') calculate();
     });
   });
 
+  updateAyrilmaHelp();
 })();
 </script>
 </body>
