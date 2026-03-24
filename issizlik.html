@@ -3,11 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="2026 işsizlik maaşı hesaplama aracı. SGK prim gün sayısı ve son maaşınıza göre işsizlik ödeneğini anında öğrenin.">
-<meta name="keywords" content="işsizlik maaşı hesaplama, işsizlik ödeneği, SGK, 2026, işten çıkma">
+
 <title>İşsizlik Maaşı Hesaplama 2026 - MaaşHesap</title>
+<meta name="description" content="2026 işsizlik maaşı hesaplama aracı. Prim gün sayısı ve son maaşınıza göre işsizlik ödeneğini hesaplayın.">
+<meta name="keywords" content="işsizlik maaşı hesaplama, işsizlik ödeneği, SGK, 2026, işten çıkma">
+
+<link rel="canonical" href="https://zigana53.github.io/maas-hesaplayici/issizlik.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MaaşHesap">
+<meta property="og:title" content="İşsizlik Maaşı Hesaplama 2026 - MaaşHesap">
+<meta property="og:description" content="2026 işsizlik maaşı hesaplama aracı. Prim gün sayısı ve son maaşınıza göre işsizlik ödeneğini hesaplayın.">
+<meta property="og:url" content="https://zigana53.github.io/maas-hesaplayici/issizlik.html">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="İşsizlik Maaşı Hesaplama 2026 - MaaşHesap">
+<meta name="twitter:description" content="2026 işsizlik maaşı hesaplama aracı.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MaaşHesap",
+  "url": "https://zigana53.github.io/maas-hesaplayici/"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MaaşHesap",
+  "url": "https://zigana53.github.io/maas-hesaplayici/"
+}
+</script>
+
 <style>
   :root{
     --ink:#0f0f0f;--paper:#f2f5fb;--white:#ffffff;--muted:#6b7280;--line:#e2e8f0;
@@ -20,256 +53,70 @@
 
   *{box-sizing:border-box;margin:0;padding:0;}
   html{-webkit-text-size-adjust:100%;}
-  body{
-    font-family:'DM Sans',sans-serif;
-    background:var(--paper);
-    color:var(--ink);
-    line-height:1.6;
-    font-size:15px;
-    overflow-y:scroll;
-  }
+  body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:15px;overflow-y:scroll;}
 
-  header{
-    border-bottom:1px solid var(--line);
-    padding:0 clamp(16px,4vw,56px);
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
-    height:64px;
-    background:var(--white);
-    position:sticky;
-    top:0;
-    z-index:200;
-    box-shadow:0 1px 8px rgba(0,0,0,0.06);
-    gap:24px;
-  }
-
+  header{border-bottom:1px solid var(--line);padding:0 clamp(16px,4vw,56px);display:flex;align-items:center;justify-content:flex-start;height:64px;background:var(--white);position:sticky;top:0;z-index:200;box-shadow:0 1px 8px rgba(0,0,0,0.06);gap:24px;}
   .logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;}
-  .logo-icon{
-    width:38px;height:38px;background:var(--accent);border-radius:10px;
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  }
+  .logo-icon{width:38px;height:38px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   .logo-icon svg{width:20px;height:20px;}
   .logo-text{font-family:'DM Serif Display',serif;font-size:20px;color:var(--ink);}
   .logo-text span{color:var(--accent);}
-
   .main-nav{display:flex;align-items:center;gap:2px;flex-wrap:nowrap;}
-  .nav-link{
-    font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;
-    padding:7px 14px;border-radius:8px;transition:all .2s;white-space:nowrap;
-  }
+  .nav-link{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;padding:7px 14px;border-radius:8px;transition:all .2s;white-space:nowrap;}
   .nav-link:hover{background:var(--paper);color:var(--ink);}
   .nav-link.active{background:var(--purple-soft);color:var(--purple);}
-
-  .nav-toggle{
-    display:none;background:none;border:none;font-size:22px;cursor:pointer;
-    color:var(--ink);padding:4px 8px;flex-shrink:0;
-  }
-
-  .mobile-nav{
-    display:none;position:fixed;top:64px;left:0;right:0;background:var(--white);
-    border-bottom:1px solid var(--line);z-index:199;box-shadow:0 4px 16px rgba(0,0,0,0.1);
-    flex-direction:column;
-  }
-  .mobile-nav a{
-    padding:14px 24px;font-size:14px;font-weight:600;color:var(--ink);
-    text-decoration:none;border-bottom:1px solid var(--line);
-  }
+  .nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--ink);padding:4px 8px;flex-shrink:0;}
+  .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--line);z-index:199;box-shadow:0 4px 16px rgba(0,0,0,0.1);flex-direction:column;}
+  .mobile-nav a{padding:14px 24px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);}
   .mobile-nav a:last-child{border-bottom:none;}
   .mobile-nav a:hover{background:var(--paper);}
   .mobile-nav.open{display:flex;}
+  @media(max-width:980px){.main-nav{display:none;}.nav-toggle{display:block;}}
+  @media(min-width:981px) and (max-width:1200px){.nav-link{font-size:12px;padding:6px 8px;}}
 
-  @media(max-width:980px){
-    .main-nav{display:none;}
-    .nav-toggle{display:block;}
-  }
-
-  @media(min-width:981px) and (max-width:1200px){
-    .nav-link{font-size:12px;padding:6px 8px;}
-  }
-
-  .hero{
-    text-align:center;
-    padding:56px clamp(16px,5vw,60px) 44px;
-    background:linear-gradient(160deg,#f5f3ff 0%,#faf8ff 50%,var(--paper) 100%);
-    border-bottom:1px solid var(--line);
-  }
-  .hero-badge{
-    display:inline-flex;align-items:center;gap:6px;background:var(--purple-soft);color:var(--purple);
-    font-size:12px;font-weight:600;padding:4px 14px;border-radius:99px;margin-bottom:20px;
-    letter-spacing:.04em;text-transform:uppercase;border:1px solid #ddd6fe;
-  }
-  .hero h1{
-    font-family:'DM Serif Display',serif;
-    font-size:clamp(28px,5vw,46px);
-    line-height:1.1;
-    max-width:680px;
-    margin:0 auto 16px;
-    letter-spacing:-.02em;
-  }
+  .hero{text-align:center;padding:56px clamp(16px,5vw,60px) 44px;background:linear-gradient(160deg,#f5f3ff 0%,#faf8ff 50%,var(--paper) 100%);border-bottom:1px solid var(--line);}
+  .hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--purple-soft);color:var(--purple);font-size:12px;font-weight:600;padding:4px 14px;border-radius:99px;margin-bottom:20px;letter-spacing:.04em;text-transform:uppercase;border:1px solid #ddd6fe;}
+  .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,46px);line-height:1.1;max-width:680px;margin:0 auto 16px;letter-spacing:-.02em;}
   .hero h1 em{font-style:italic;color:var(--purple);}
-  .hero p{
-    color:var(--muted);
-    max-width:620px;
-    margin:0 auto;
-    font-size:16px;
-    font-weight:300;
-  }
+  .hero p{color:var(--muted);max-width:620px;margin:0 auto;font-size:16px;font-weight:300;}
 
-  .main{
-    max-width:1100px;
-    margin:0 auto;
-    padding:36px clamp(16px,3vw,40px) 56px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:28px;
-    align-items:start;
-  }
+  .main{max-width:1100px;margin:0 auto;padding:36px clamp(16px,3vw,40px) 56px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;}
+  @media(max-width:760px){.main{grid-template-columns:1fr;}}
 
-  @media(max-width:760px){
-    .main{grid-template-columns:1fr;}
-  }
-
-  .card{
-    background:var(--white);
-    border:1px solid var(--line);
-    border-radius:var(--r);
-    box-shadow:var(--shadow-sm);
-    overflow:hidden;
-    margin-bottom:20px;
-  }
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-sm);overflow:hidden;margin-bottom:20px;}
   .card:last-child{margin-bottom:0;}
-
-  .card-header{
-    padding:16px 20px;
-    border-bottom:1px solid var(--line);
-    display:flex;
-    align-items:center;
-    gap:10px;
-    background:#fafbfd;
-  }
+  .card-header{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;background:#fafbfd;}
   .card-header h2{font-size:14px;font-weight:600;}
-  .card-icon{
-    width:30px;height:30px;border-radius:8px;display:flex;
-    align-items:center;justify-content:center;font-size:14px;flex-shrink:0;
-  }
+  .card-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
   .card-body{padding:22px;}
-
   .field{margin-bottom:16px;}
-  label{
-    display:block;
-    font-size:11px;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:.07em;
-    color:var(--muted);
-    margin-bottom:7px;
-  }
-  .field-help{
-    display:block;
-    font-size:12px;
-    color:var(--muted);
-    margin-top:6px;
-    line-height:1.5;
-  }
-
+  label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:7px;}
+  .field-help{display:block;font-size:12px;color:var(--muted);margin-top:6px;line-height:1.5;}
   .input-wrap{position:relative;display:flex;align-items:center;}
-  .input-wrap input{
-    width:100%;
-    padding:11px 60px 11px 14px;
-    border:1.5px solid var(--line);
-    border-radius:10px;
-    font-family:'DM Sans',sans-serif;
-    font-size:15px;
-    font-weight:600;
-    color:var(--ink);
-    background:var(--white);
-    outline:none;
-    transition:border-color .2s;
-  }
-  .input-wrap input:focus{
-    border-color:var(--accent);
-    box-shadow:0 0 0 3px rgba(26,92,255,.1);
-  }
-  .input-unit{
-    position:absolute;right:14px;font-size:12px;font-weight:700;color:var(--muted);pointer-events:none;
-  }
+  .input-wrap input{width:100%;padding:11px 60px 11px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--ink);background:var(--white);outline:none;transition:border-color .2s;}
+  .input-wrap input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,92,255,.1);}
+  .input-unit{position:absolute;right:14px;font-size:12px;font-weight:700;color:var(--muted);pointer-events:none;}
 
   select{
-    width:100%;
-    padding:11px 36px 11px 14px;
-    border:1.5px solid var(--line);
-    border-radius:10px;
-    font-family:'DM Sans',sans-serif;
-    font-size:14px;
-    color:var(--ink);
-    background:var(--white);
-    outline:none;
-    cursor:pointer;
-    appearance:none;
+    width:100%;padding:11px 36px 11px 14px;border:1.5px solid var(--line);border-radius:10px;
+    font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:var(--white);
+    outline:none;cursor:pointer;appearance:none;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat:no-repeat;
-    background-position:right 14px center;
+    background-repeat:no-repeat;background-position:right 14px center;
   }
-  select:focus{
-    border-color:var(--accent);
-    box-shadow:0 0 0 3px rgba(26,92,255,.1);
-  }
+  select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,92,255,.1);}
 
-  .calc-btn{
-    width:100%;
-    padding:13px;
-    background:var(--purple);
-    color:white;
-    border:none;
-    border-radius:10px;
-    font-family:'DM Sans',sans-serif;
-    font-size:15px;
-    font-weight:700;
-    cursor:pointer;
-    margin-top:18px;
-    transition:background .2s;
-  }
+  .calc-btn{width:100%;padding:13px;background:var(--purple);color:white;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;margin-top:18px;transition:background .2s;}
   .calc-btn:hover{background:#6d28d9;}
 
   #results{display:none;}
   #results.show{display:block;}
+  .res-box{border-radius:12px;padding:18px;margin-bottom:16px;text-align:center;}
+  .res-box .lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.85;margin-bottom:6px;}
+  .res-box .amt{font-family:'DM Serif Display',serif;font-size:34px;letter-spacing:-.02em;}
+  .res-box .amt span{font-size:18px;opacity:.7;font-family:'DM Sans',sans-serif;font-weight:400;}
 
-  .res-box{
-    border-radius:12px;
-    padding:18px;
-    margin-bottom:16px;
-    text-align:center;
-  }
-  .res-box .lbl{
-    font-size:11px;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:.08em;
-    opacity:.85;
-    margin-bottom:6px;
-  }
-  .res-box .amt{
-    font-family:'DM Serif Display',serif;
-    font-size:34px;
-    letter-spacing:-.02em;
-  }
-  .res-box .amt span{
-    font-size:18px;
-    opacity:.7;
-    font-family:'DM Sans',sans-serif;
-    font-weight:400;
-  }
-
-  .result-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:10px 0;
-    border-bottom:1px solid var(--line);
-    font-size:14px;
-    gap:12px;
-  }
+  .result-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;gap:12px;}
   .result-row:last-child{border-bottom:none;}
   .result-row .rname{color:var(--muted);}
   .result-row .rval{font-weight:700;text-align:right;}
@@ -277,50 +124,16 @@
   .result-row .rval.green{color:var(--green);}
   .result-row .rval.red{color:var(--red);}
 
-  .note-box{
-    background:var(--yellow-soft);
-    border:1px solid #fde68a;
-    border-radius:10px;
-    padding:12px 16px;
-    font-size:13px;
-    color:var(--muted);
-    margin-bottom:16px;
-    line-height:1.6;
-  }
-
-  .sart-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    gap:12px;
-    margin-top:4px;
-  }
-  @media(max-width:600px){
-    .sart-grid{grid-template-columns:1fr;}
-  }
-
-  .sart-item{
-    background:var(--purple-soft);
-    border:1px solid #ddd6fe;
-    border-radius:10px;
-    padding:14px;
-    text-align:center;
-  }
-  .sart-num{
-    font-family:'DM Serif Display',serif;
-    font-size:24px;
-    color:var(--purple);
-    line-height:1;
-  }
+  .note-box{background:var(--yellow-soft);border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;}
+  .sart-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:4px;}
+  @media(max-width:600px){.sart-grid{grid-template-columns:1fr;}}
+  .sart-item{background:var(--purple-soft);border:1px solid #ddd6fe;border-radius:10px;padding:14px;text-align:center;}
+  .sart-num{font-family:'DM Serif Display',serif;font-size:24px;color:var(--purple);line-height:1;}
   .sart-label{font-size:12px;color:var(--muted);margin-top:4px;}
 
   .info-band{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .info-inner{max-width:1100px;margin:0 auto;padding:48px clamp(16px,3vw,40px);}
-  .section-title{
-    font-family:'DM Serif Display',serif;
-    font-size:clamp(22px,3vw,28px);
-    margin-bottom:6px;
-    letter-spacing:-.02em;
-  }
+  .section-title{font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,28px);margin-bottom:6px;letter-spacing:-.02em;}
   .section-sub{color:var(--muted);font-size:14px;margin-bottom:24px;}
   .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
   .info-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px;}
@@ -333,320 +146,76 @@
   .faq-inner{max-width:800px;margin:0 auto;}
   .faq-item{border-bottom:1px solid var(--line);padding:16px 0;}
   .faq-item:first-child{border-top:1px solid var(--line);}
-  .faq-q{
-    font-weight:600;
-    font-size:14px;
-    cursor:pointer;
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:10px;
-  }
-  .faq-q::after{
-    content:'+';
-    font-size:20px;
-    color:var(--purple);
-    flex-shrink:0;
-    line-height:1;
-    font-weight:300;
-    transition:transform .2s;
-  }
+  .faq-q{font-weight:600;font-size:14px;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+  .faq-q::after{content:'+';font-size:20px;color:var(--purple);flex-shrink:0;line-height:1;font-weight:300;transition:transform .2s;}
   .faq-item.open .faq-q::after{transform:rotate(45deg);}
   .faq-a{font-size:13px;color:var(--muted);line-height:1.7;display:none;margin-top:8px;}
   .faq-item.open .faq-a{display:block;}
 
-  footer{
-    background:var(--ink);
-    color:rgba(255,255,255,.6);
-    padding:28px clamp(16px,5vw,60px);
-    text-align:center;
-    font-size:13px;
-  }
+  footer{background:var(--ink);color:rgba(255,255,255,.6);padding:28px clamp(16px,5vw,60px);text-align:center;font-size:13px;}
   footer strong{color:white;}
   footer a{color:rgba(255,255,255,.6);text-decoration:underline;}
   footer a:hover{color:white;}
-  footer .footer-links{
-    margin-top:10px;
-    display:flex;
-    justify-content:center;
-    gap:24px;
-    flex-wrap:wrap;
-  }
+  footer .footer-links{margin-top:10px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;}
 
-  @keyframes fadeUp{
-    from{opacity:0;transform:translateY(10px);}
-    to{opacity:1;transform:translateY(0);}
-  }
+  @keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
   .animate-in{animation:fadeUp .3s ease forwards;}
 
-  .ad-placeholder{
-    background:var(--line);
-    border-radius:var(--r);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:11px;
-    color:var(--muted);
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    font-weight:600;
-  }
+  .ad-placeholder{background:var(--line);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;font-weight:600;}
   .ad-top{height:90px;margin-bottom:24px;}
   .ad-side{height:250px;margin-bottom:20px;}
 
-  /* MOBIL REVIZE */
   @media(max-width:760px){
     body{font-size:14px;}
-
-    header{
-      height:60px;
-      padding:0 14px;
-      gap:12px;
-    }
-
-    .logo-icon{
-      width:34px;
-      height:34px;
-      border-radius:9px;
-    }
-
+    header{height:60px;padding:0 14px;gap:12px;}
+    .logo-icon{width:34px;height:34px;border-radius:9px;}
     .logo-icon svg{width:18px;height:18px;}
     .logo-text{font-size:18px;}
     .mobile-nav{top:60px;}
-
-    .hero{
-      padding:34px 16px 28px;
-    }
-
-    .hero-badge{
-      font-size:11px;
-      padding:4px 12px;
-      margin-bottom:14px;
-    }
-
-    .hero h1{
-      font-size:32px;
-      margin-bottom:12px;
-    }
-
-    .hero p{
-      font-size:14px;
-      max-width:100%;
-      line-height:1.65;
-    }
-
-    .main{
-      padding:20px 14px 40px;
-      gap:18px;
-    }
-
-    .card{
-      border-radius:12px;
-      margin-bottom:16px;
-    }
-
-    .card-header{
-      padding:14px 16px;
-      gap:8px;
-    }
-
-    .card-header h2{
-      font-size:13px;
-      line-height:1.4;
-    }
-
-    .card-icon{
-      width:28px;
-      height:28px;
-      font-size:13px;
-    }
-
-    .card-body{
-      padding:16px;
-    }
-
-    .field{
-      margin-bottom:14px;
-    }
-
-    label{
-      font-size:10px;
-      margin-bottom:6px;
-    }
-
-    .field-help{
-      font-size:11px;
-      margin-top:5px;
-    }
-
-    .input-wrap input,
-    select{
-      min-height:44px;
-      font-size:16px;
-      padding-top:10px;
-      padding-bottom:10px;
-    }
-
-    .input-wrap input{
-      padding-left:12px;
-      padding-right:54px;
-    }
-
-    .input-unit{
-      right:12px;
-      font-size:11px;
-    }
-
-    .note-box{
-      padding:11px 13px;
-      font-size:12px;
-      margin-bottom:14px;
-    }
-
-    .calc-btn{
-      min-height:46px;
-      padding:12px;
-      font-size:15px;
-      margin-top:14px;
-    }
-
-    .res-box{
-      padding:16px 14px;
-      margin-bottom:12px;
-    }
-
-    .res-box .lbl{
-      font-size:10px;
-      margin-bottom:4px;
-    }
-
-    .res-box .amt{
-      font-size:28px;
-      line-height:1.2;
-      word-break:break-word;
-    }
-
-    .res-box .amt span{
-      font-size:15px;
-    }
-
-    .result-row{
-      flex-direction:column;
-      align-items:flex-start;
-      gap:4px;
-      padding:10px 0;
-    }
-
-    .result-row .rname,
-    .result-row .rval{
-      text-align:left;
-      width:100%;
-    }
-
-    .result-row .rname{
-      font-size:12px;
-      line-height:1.45;
-    }
-
-    .result-row .rval{
-      font-size:14px;
-      line-height:1.45;
-      word-break:break-word;
-    }
-
-    .sart-item{
-      padding:12px;
-    }
-
-    .sart-num{
-      font-size:22px;
-    }
-
-    .sart-label{
-      font-size:11px;
-    }
-
-    .info-inner{
-      padding:34px 14px;
-    }
-
-    .section-title{
-      font-size:24px;
-      line-height:1.2;
-    }
-
-    .section-sub{
-      font-size:13px;
-      margin-bottom:18px;
-    }
-
-    .info-grid{
-      gap:14px;
-    }
-
-    .info-card{
-      padding:16px;
-      border-radius:12px;
-    }
-
-    .info-card h3{
-      font-size:15px;
-      margin-bottom:8px;
-    }
-
-    .info-card p,
-    .info-card li{
-      font-size:13px;
-      line-height:1.65;
-    }
-
-    .faq-band{
-      padding:34px 14px 44px;
-    }
-
-    .faq-item{
-      padding:14px 0;
-    }
-
-    .faq-q{
-      font-size:13px;
-      line-height:1.5;
-    }
-
-    .faq-a{
-      font-size:12px;
-      line-height:1.65;
-    }
-
-    footer{
-      padding:22px 14px;
-      font-size:12px;
-    }
-
-    footer .footer-links{
-      gap:12px 18px;
-      margin-top:12px;
-    }
-
-    .ad-top{
-      height:74px;
-      margin-bottom:18px;
-    }
-
-    .ad-side{
-      height:180px;
-      margin-bottom:0;
-      width:100%;
-    }
-  }
-
-  @media(max-width:420px){
-    .hero h1{font-size:28px;}
-    .res-box .amt{font-size:25px;}
-    .card-body{padding:14px;}
-    .main{padding:18px 12px 36px;}
-    .info-inner,
-    .faq-band{padding-left:12px;padding-right:12px;}
+    .hero{padding:34px 16px 28px;}
+    .hero-badge{font-size:11px;padding:4px 12px;margin-bottom:14px;}
+    .hero h1{font-size:32px;margin-bottom:12px;}
+    .hero p{font-size:14px;max-width:100%;line-height:1.65;}
+    .main{padding:20px 14px 40px;gap:18px;}
+    .card{border-radius:12px;margin-bottom:16px;}
+    .card-header{padding:14px 16px;gap:8px;}
+    .card-header h2{font-size:13px;line-height:1.4;}
+    .card-icon{width:28px;height:28px;font-size:13px;}
+    .card-body{padding:16px;}
+    .field{margin-bottom:14px;}
+    label{font-size:10px;margin-bottom:6px;}
+    .field-help{font-size:11px;margin-top:5px;}
+    .input-wrap input,select{min-height:44px;font-size:16px;padding-top:10px;padding-bottom:10px;}
+    .input-wrap input{padding-left:12px;padding-right:54px;}
+    .input-unit{right:12px;font-size:11px;}
+    .note-box{padding:11px 13px;font-size:12px;margin-bottom:14px;}
+    .calc-btn{min-height:46px;padding:12px;font-size:15px;margin-top:14px;}
+    .res-box{padding:16px 14px;margin-bottom:12px;}
+    .res-box .lbl{font-size:10px;margin-bottom:4px;}
+    .res-box .amt{font-size:28px;line-height:1.2;word-break:break-word;}
+    .res-box .amt span{font-size:15px;}
+    .result-row{flex-direction:column;align-items:flex-start;gap:4px;padding:10px 0;}
+    .result-row .rname,.result-row .rval{text-align:left;width:100%;}
+    .result-row .rname{font-size:12px;line-height:1.45;}
+    .result-row .rval{font-size:14px;line-height:1.45;word-break:break-word;}
+    .sart-item{padding:12px;}
+    .sart-num{font-size:22px;}
+    .sart-label{font-size:11px;}
+    .info-inner{padding:34px 14px;}
+    .section-title{font-size:24px;line-height:1.2;}
+    .section-sub{font-size:13px;margin-bottom:18px;}
+    .info-grid{gap:14px;}
+    .info-card{padding:16px;border-radius:12px;}
+    .info-card h3{font-size:15px;margin-bottom:8px;}
+    .info-card p,.info-card li{font-size:13px;line-height:1.65;}
+    .faq-band{padding:34px 14px 44px;}
+    .faq-item{padding:14px 0;}
+    .faq-q{font-size:13px;line-height:1.5;}
+    .faq-a{font-size:12px;line-height:1.65;}
+    footer{padding:22px 14px;font-size:12px;}
+    footer .footer-links{gap:12px 18px;margin-top:12px;}
+    .ad-top{height:74px;margin-bottom:18px;}
+    .ad-side{height:180px;margin-bottom:0;width:100%;}
   }
 </style>
 </head>
@@ -690,7 +259,7 @@
 </div>
 
 <div style="max-width:1100px;margin:24px auto;padding:0 clamp(16px,3vw,40px)">
-  <div class="ad-placeholder ad-top">Reklam Alanı - 728x90</div>
+  <div class="ad-placeholder ad-top">Reklam Alani - 728x90</div>
 </div>
 
 <div class="main">
@@ -702,7 +271,7 @@
       </div>
       <div class="card-body">
         <div class="note-box">
-          &#8505; Genel şartlar: kendi istek ve kusuru dışında işsiz kalmak, son 120 gün hizmet akdine tabi olmak, son 3 yılda en az 600 gün işsizlik sigortası primi ödemiş olmak ve fesih sonrası 30 gün içinde başvurmak. Mücbir sebep dışında geciken başvurularda gecikilen süre toplam hak sahipliğinden düşülür.
+          &#8505; Genel şartlar: kendi istek ve kusuru dışında işsiz kalmak, son 120 gün hizmet akdine tabi olmak, son 3 yılda en az 600 gün işsizlik sigortası primi ödemiş olmak ve fesih sonrası 30 gün içinde başvurmak gerekir.
         </div>
 
         <div class="field">
@@ -734,7 +303,7 @@
             <option value="25">25 - İşçi tarafından haklı nedenle fesih</option>
             <option value="29">29 - İşveren tarafından ahlak ve iyi niyet kurallarına aykırılık nedeniyle fesih</option>
           </select>
-          <span class="field-help">Bu alan sadece bilgi amaçlıdır. Nihai hak sahipliği İŞKUR’un işten ayrılma bildirgesi ve başvuru incelemesine göre belirlenir.</span>
+          <span class="field-help">Bu alan bilgi amaçlıdır. Nihai hak sahipliği İŞKUR incelemesine göre belirlenir.</span>
         </div>
 
         <div class="field">
@@ -816,18 +385,18 @@
       </div>
     </div>
 
-    <div class="ad-placeholder ad-side">Reklam Alanı - 300x250</div>
+    <div class="ad-placeholder ad-side">Reklam Alani - 300x250</div>
   </div>
 </div>
 
 <div class="info-band">
   <div class="info-inner">
     <div class="section-title">İşsizlik Maaşı Hakkında</div>
-    <div class="section-sub">İŞKUR’daki güncel bilgilere göre temel başlıklar.</div>
+    <div class="section-sub">Temel başlıklar ve başvuru mantığı.</div>
     <div class="info-grid">
       <div class="info-card">
         <h3>İşsizlik Ödeneği Nedir?</h3>
-        <p>Sigortalı işsizlere, yasadaki şartları taşımaları halinde işsiz kaldıkları dönem için belirli süre ve miktarda yapılan ödemedir.</p>
+        <p>Sigortalı işsizlere, yasal şartları taşımaları halinde işsiz kaldıkları dönem için yapılan ödemedir.</p>
       </div>
       <div class="info-card">
         <h3>Kimler Yararlanabilir?</h3>
@@ -840,24 +409,24 @@
       </div>
       <div class="info-card">
         <h3>Son 120 Gün Kuralı</h3>
-        <p>İŞKUR SSS’ye göre hastalık, ücretsiz izin, disiplin cezası, gözaltı, hükümlülükle sonuçlanmayan tutukluluk, kısmi istihdam, grev, lokavt, doğal afet gibi nedenlerle prim yatmayan süreler kesinti sayılmaz. Ayrıca 18.01.2019 ve sonrasında sona eren hizmet akitlerinde, fesih öncesi son 120 günlük dönemde hizmet akdinin bulunması yeterli kabul edilmektedir.</p>
+        <p>Son 120 gün hizmet akdine tabi olma şartı aranır. Bazı özel kesintiler uygulamada ayrıca değerlendirilir.</p>
       </div>
       <div class="info-card">
         <h3>Ne Kadar Ödenir?</h3>
-        <p>Günlük işsizlik ödeneği, son dört aylık prime esas kazançlar dikkate alınarak hesaplanan günlük ortalama brüt kazancın %40’ıdır. Aylık tutar, brüt asgari ücretin %80’ini geçemez.</p>
+        <p>Son dört aylık ortalama brüt kazancın %40’ı esas alınır. Aylık tutar, brüt asgari ücretin %80’ini geçemez.</p>
       </div>
       <div class="info-card">
         <h3>Başvuru ve Ödeme</h3>
-        <p>Başvurular izleyen ayın sonuna kadar sonuçlandırılır. Ödeme her ayın 5’inde yapılır. IBAN verilmezse ödeme PTT üzerinden alınır.</p>
+        <p>Başvurular genel olarak izleyen ay içinde sonuçlandırılır. Ödeme her ayın 5’inde yapılır.</p>
       </div>
       <div class="info-card">
         <h3>Bildirilmesi Gereken Durumlar</h3>
         <ul>
-          <li>Adres değişikliği</li>
-          <li>Yaşlılık aylığı bağlanması</li>
-          <li>Silah altına alınma</li>
-          <li>Yurt dışına çıkış</li>
           <li>Yeni işe başlama</li>
+          <li>Emeklilik</li>
+          <li>Yurt dışına çıkış</li>
+          <li>Adres değişikliği</li>
+          <li>Askerlik</li>
           <li>İşe iade kararı</li>
         </ul>
       </div>
@@ -868,12 +437,12 @@
 <div class="faq-band">
   <div class="faq-inner">
     <div class="section-title">Sık Sorulan Sorular</div>
-    <div class="section-sub" style="margin-bottom:24px">Resmî bilgiye göre en çok merak edilenler.</div>
-    <div class="faq-item"><div class="faq-q">İstifa edersem işsizlik maaşı alabilir miyim?</div><div class="faq-a">Normal istifada alınamaz. Ancak haklı nedenle fesih gibi özel hallerde, diğer şartlar da sağlanıyorsa başvuru incelemeye alınabilir.</div></div>
-    <div class="faq-item"><div class="faq-q">Askerlik nedeniyle ayrılırsam alabilir miyim?</div><div class="faq-a">Bu sayfada askerlik ayrı gösterildi ve otomatik engel konulmadı. Ancak nihai hak sahipliği, işten ayrılma bildirgesi ve İŞKUR incelemesine göre belirlenir.</div></div>
-    <div class="faq-item"><div class="faq-q">Emeklilikte işsizlik maaşı olur mu?</div><div class="faq-a">Hayır. İşsizlik ödeneği almakta iken yaşlılık aylığı almaya başlanırsa ödenek de emeklilik gerekçesiyle kesilir.</div></div>
+    <div class="section-sub" style="margin-bottom:24px">İşsizlik ödeneği hakkında en çok merak edilenler.</div>
+    <div class="faq-item"><div class="faq-q">İstifa edersem işsizlik maaşı alabilir miyim?</div><div class="faq-a">Normal istifada alınamaz. Ancak haklı nedenle fesih gibi özel hallerde diğer şartlar da sağlanıyorsa değerlendirme yapılabilir.</div></div>
+    <div class="faq-item"><div class="faq-q">Askerlik nedeniyle ayrılırsam alabilir miyim?</div><div class="faq-a">Askerlik seçeneği ayrı değerlendirilir; nihai hak sahipliği işten ayrılma bildirgesi ve İŞKUR incelemesine göre belirlenir.</div></div>
+    <div class="faq-item"><div class="faq-q">Emeklilikte işsizlik maaşı olur mu?</div><div class="faq-a">Hayır. Emeklilik nedeniyle ayrılmada işsizlik ödeneği alınamaz.</div></div>
     <div class="faq-item"><div class="faq-q">İşsizlik maaşı ne kadar sürer?</div><div class="faq-a">600-899 gün için 180 gün, 900-1079 gün için 240 gün, 1080 gün ve üzeri için 300 gün ödenir.</div></div>
-    <div class="faq-item"><div class="faq-q">Başvuruyu kaç gün içinde yapmalıyım?</div><div class="faq-a">Genel kural, fesih sonrası 30 gündür. Mücbir sebep dışında geç kalınırsa geciken süre toplam hak sahipliğinden düşülür.</div></div>
+    <div class="faq-item"><div class="faq-q">Başvuruyu kaç gün içinde yapmalıyım?</div><div class="faq-a">Genel kural, fesih sonrası 30 gündür. Geç kalınması halinde hak kaybı doğabilir.</div></div>
   </div>
 </div>
 
@@ -987,7 +556,7 @@
     }
 
     if(kod === '29'){
-      showNoRight('Seçilen çıkış kodunda hak sahipliği genellikle oluşmaz; nihai değerlendirme İŞKUR kayıtlarına göre yapılır.');
+      showNoRight('Seçilen çıkış kodunda hak sahipliği genellikle oluşmaz; nihai değerlendirme resmî kayıtlara göre yapılır.');
       return;
     }
 
