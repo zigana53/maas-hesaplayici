@@ -1004,15 +1004,6 @@
     document.body.removeChild(ta);
   }
 
-  function openModal(id) {
-    document.getElementById('modal_' + id).classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal(id) {
-    document.getElementById('modal_' + id).classList.remove('open');
-    document.body.style.overflow = '';
-  }
 
   window.addEventListener('load', function() {
     document.getElementById('ay_sel').value = new Date().getMonth() + 1;
