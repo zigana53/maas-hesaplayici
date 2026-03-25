@@ -28,39 +28,78 @@
     --orange:#d97706;
     --orange-soft:#fffbeb;
     --shadow-sm:0 1px 3px rgba(0,0,0,.07),0 2px 8px rgba(0,0,0,.05);
+    --shadow:0 2px 8px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.06);
     --r:14px;
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:15px}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    font-size:15px;
+  }
 
   header{
     border-bottom:1px solid var(--line);
-    padding:0 clamp(16px,4vw,56px);
-    display:flex;align-items:center;justify-content:flex-start;
-    height:64px;background:var(--white);position:sticky;top:0;z-index:200;
-    box-shadow:0 1px 8px rgba(0,0,0,.06);gap:24px;
+    padding:0 clamp(16px,4vw,40px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    height:64px;
+    background:var(--white);
+    position:sticky;
+    top:0;
+    z-index:200;
+    box-shadow:0 1px 8px rgba(0,0,0,.06);
   }
 
-  .logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none}
-  .logo-icon{width:38px;height:38px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .header-left{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    min-width:0;
+  }
+
+  .logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+  .logo-icon{
+    width:38px;height:38px;background:var(--accent);border-radius:10px;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
   .logo-icon svg{width:20px;height:20px}
-  .logo-text{font-family:'DM Serif Display',serif;font-size:20px;color:var(--ink)}
+  .logo-text{font-family:'DM Serif Display',serif;font-size:20px;color:var(--ink);line-height:1}
   .logo-text span{color:var(--accent)}
 
-  .main-nav{display:flex;align-items:center;gap:2px;flex-wrap:nowrap}
-  .nav-link{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:8px;transition:all .2s;white-space:nowrap}
+  .main-nav{display:flex;align-items:center;gap:4px;min-width:0}
+  .nav-link{
+    font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;
+    padding:7px 12px;border-radius:8px;transition:all .2s;white-space:nowrap;
+  }
   .nav-link:hover{background:var(--paper);color:var(--ink)}
   .nav-link.active{background:var(--orange-soft);color:var(--orange)}
 
-  .nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--ink);padding:4px 8px;flex-shrink:0}
-  .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--line);z-index:199;box-shadow:0 4px 16px rgba(0,0,0,.1);flex-direction:column}
-  .mobile-nav a{padding:14px 24px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+  .nav-toggle{
+    display:none;background:none;border:none;font-size:24px;line-height:1;cursor:pointer;
+    color:var(--muted);padding:6px 8px;margin-left:auto;flex-shrink:0;
+  }
+
+  .mobile-nav{
+    display:none;position:fixed;top:64px;left:0;right:0;background:var(--white);
+    border-bottom:1px solid var(--line);z-index:199;box-shadow:0 4px 16px rgba(0,0,0,.1);
+    flex-direction:column;
+  }
+  .mobile-nav.open{display:flex}
+  .mobile-nav a{
+    padding:14px 18px;font-size:14px;font-weight:600;color:var(--ink);
+    text-decoration:none;border-bottom:1px solid var(--line);
+  }
   .mobile-nav a:last-child{border-bottom:none}
   .mobile-nav a:hover{background:var(--paper)}
-  .mobile-nav.open{display:flex}
 
-  @media(max-width:980px){
+  @media(max-width:860px){
     .main-nav{display:none}
     .nav-toggle{display:block}
   }
@@ -83,52 +122,72 @@
   .hero h1 em{font-style:italic;color:var(--orange)}
   .hero p{color:var(--muted);max-width:520px;margin:0 auto;font-size:16px;font-weight:300}
 
+  .top-ad-wrap{
+    max-width:1320px;
+    margin:24px auto 0;
+    padding:0 clamp(16px,3vw,40px);
+  }
+
   .main{
     max-width:1320px;
     margin:0 auto;
-    padding:36px clamp(16px,3vw,40px) 0;
+    padding:24px clamp(16px,3vw,40px) 0;
   }
 
   @media(min-width:980px){
     .main{
       display:grid;
-      grid-template-columns:1fr 1fr 300px;
+      grid-template-columns:320px 1fr 300px;
       gap:24px;
       align-items:start;
     }
-    .left-col{grid-column:1}
-    .mid-col{grid-column:2}
-    .right-col{grid-column:3}
   }
 
-  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-sm);overflow:hidden;margin-bottom:20px}
+  @media(max-width:979px){
+    .left-col,.mid-col,.right-col{display:block;margin-bottom:20px}
+  }
+
+  .card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+    box-shadow:var(--shadow-sm);overflow:hidden;margin-bottom:20px;
+  }
   .card:last-child{margin-bottom:0}
-  .card-header{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;background:#fafbfd}
+  .card-header{
+    padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;background:#fafbfd;
+  }
   .card-header h2{font-size:14px;font-weight:600}
-  .card-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+  .card-icon{
+    width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+    font-size:14px;flex-shrink:0;
+  }
   .card-body{padding:22px}
 
   .field{margin-bottom:16px}
-  label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:7px}
+  label{
+    display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+    color:var(--muted);margin-bottom:7px;
+  }
 
   .input-wrap{position:relative;display:flex;align-items:center}
   .input-wrap input{
     width:100%;padding:11px 48px 11px 14px;border:1.5px solid var(--line);border-radius:10px;
-    font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--ink);background:var(--white);outline:none;transition:border-color .2s;
+    font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--ink);
+    background:var(--white);outline:none;transition:border-color .2s, box-shadow .2s;
   }
   .input-wrap input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,92,255,.1)}
   .input-unit{position:absolute;right:14px;font-size:12px;font-weight:700;color:var(--muted);pointer-events:none}
 
   input[type=date]{
     width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;
-    font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:var(--white);outline:none;transition:border-color .2s;cursor:pointer;
+    font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:var(--white);
+    outline:none;transition:border-color .2s, box-shadow .2s;cursor:pointer;
   }
   input[type=date]:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(217,119,6,.1)}
 
   select{
     width:100%;padding:11px 36px 11px 14px;border:1.5px solid var(--line);border-radius:10px;
-    font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:var(--white);outline:none;cursor:pointer;
-    appearance:none;
+    font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:var(--white);
+    outline:none;cursor:pointer;appearance:none;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
     background-repeat:no-repeat;background-position:right 14px center;
   }
@@ -139,7 +198,10 @@
     padding:10px 14px;font-size:13px;color:var(--orange);font-weight:600;margin-bottom:4px;display:none;
   }
 
-  .note-box{background:var(--yellow-soft);border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6}
+  .note-box{
+    background:var(--yellow-soft);border:1px solid #fde68a;border-radius:10px;padding:12px 16px;
+    font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;
+  }
 
   .calc-btn{
     width:100%;padding:13px;background:var(--orange);color:#fff;border:none;border-radius:10px;
@@ -155,7 +217,10 @@
   .res-box .amt{font-family:'DM Serif Display',serif;font-size:32px;letter-spacing:-.02em}
   .res-box .amt span{font-size:16px;opacity:.7;font-family:'DM Sans',sans-serif;font-weight:400}
 
-  .result-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px;gap:10px}
+  .result-row{
+    display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);
+    font-size:14px;gap:12px;
+  }
   .result-row:last-child{border-bottom:none}
   .result-row .rname{color:var(--muted)}
   .result-row .rval{font-weight:700;text-align:right}
@@ -165,11 +230,19 @@
 
   .action-row{display:flex;gap:8px;margin-top:16px}
   .btn-sec{
-    flex:1;padding:10px 4px;border:1.5px solid var(--line);border-radius:9px;
-    font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;background:var(--white);color:var(--muted);
+    flex:1;padding:10px 4px;border:1.5px solid var(--line);border-radius:9px;font-family:'DM Sans',sans-serif;
+    font-size:13px;font-weight:600;cursor:pointer;background:var(--white);color:var(--muted);
     transition:all .2s;display:flex;align-items:center;justify-content:center;gap:5px;
   }
   .btn-sec:hover{border-color:var(--orange);color:var(--orange);background:var(--orange-soft)}
+
+  .ad-placeholder{
+    background:var(--line);border-radius:var(--r);display:flex;align-items:center;justify-content:center;
+    font-size:11px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;font-weight:600;
+  }
+  .ad-top{height:90px}
+  .ad-left{height:250px;margin-bottom:20px}
+  .ad-side{height:250px;margin-bottom:20px}
 
   .info-band{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:48px}
   .info-inner{max-width:1320px;margin:0 auto;padding:48px clamp(16px,3vw,40px)}
@@ -192,12 +265,6 @@
   .faq-a{font-size:13px;color:var(--muted);line-height:1.7;display:none;margin-top:8px}
   .faq-item.open .faq-a{display:block}
 
-  .ad-placeholder{
-    background:var(--line);border-radius:var(--r);display:flex;align-items:center;justify-content:center;
-    font-size:11px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;font-weight:600;
-  }
-  .ad-side{height:250px;margin-bottom:20px}
-
   footer{
     background:var(--ink);color:rgba(255,255,255,.6);padding:28px clamp(16px,5vw,60px);
     text-align:center;font-size:13px;
@@ -210,39 +277,64 @@
   @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
   .animate-in{animation:fadeUp .3s ease forwards}
 
-  @media(max-width:760px){
+  @media (max-width:760px){
+    body{font-size:14px}
+    header{height:60px;padding:0 14px;gap:10px}
+    .header-left{gap:0}
+    .logo-icon{width:34px;height:34px;border-radius:9px}
+    .logo-icon svg{width:18px;height:18px}
+    .logo-text{font-size:18px}
+    .mobile-nav{top:60px}
+    .hero{padding:36px 16px 30px}
+    .hero-badge{font-size:11px;padding:4px 12px;margin-bottom:14px}
+    .hero h1{font-size:32px;margin-bottom:12px}
+    .hero p{font-size:14px;max-width:100%;line-height:1.65}
+    .top-ad-wrap{padding:0 14px;margin-top:16px}
+    .main{padding:16px 14px 0}
+    .card{border-radius:12px;margin-bottom:16px}
+    .card-header{padding:14px 16px;gap:8px}
+    .card-header h2{font-size:13px;line-height:1.4}
+    .card-icon{width:28px;height:28px;font-size:13px}
+    .card-body{padding:16px}
+    .field{margin-bottom:14px}
+    label{font-size:10px;margin-bottom:6px}
+    .input-wrap input,select,input[type=date]{min-height:44px;font-size:16px}
     .result-row{flex-direction:column;align-items:flex-start}
-    .result-row .rval{text-align:left}
+    .result-row .rval{text-align:left;width:100%}
     .action-row{flex-direction:column}
+    .ad-left,.ad-side{height:180px}
+    footer{padding:22px 14px;font-size:12px}
   }
 </style>
 </head>
 <body>
 
 <header>
-  <a href="index.html" class="logo-wrap">
-    <div class="logo-icon">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <rect x="3" y="3" width="18" height="18" rx="2" stroke="white" stroke-width="1.8"/>
-        <line x1="3" y1="9" x2="21" y2="9" stroke="white" stroke-width="1.8"/>
-        <line x1="8" y1="14" x2="10" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <line x1="12" y1="14" x2="14" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <line x1="16" y1="14" x2="16" y2="19" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <line x1="8" y1="18" x2="10" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <line x1="12" y1="18" x2="14" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </div>
-    <div class="logo-text">maas<span>hesap</span></div>
-  </a>
+  <div class="header-left">
+    <a href="index.html" class="logo-wrap">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="white" stroke-width="1.8"/>
+          <line x1="3" y1="9" x2="21" y2="9" stroke="white" stroke-width="1.8"/>
+          <line x1="8" y1="14" x2="10" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="14" x2="14" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="16" y1="14" x2="16" y2="19" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="8" y1="18" x2="10" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="18" x2="14" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="logo-text">maas<span>hesap</span></div>
+    </a>
 
-  <nav class="main-nav">
-    <a href="index.html" class="nav-link">&#128176; Maaş Hesaplama</a>
-    <a href="tazminat.html" class="nav-link active">&#128203; Tazminat</a>
-    <a href="issizlik.html" class="nav-link">&#128084; İşsizlik</a>
-    <a href="fazla-mesai.html" class="nav-link">&#9200; Fazla Mesai</a>
-  </nav>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">&#128176; Maaş Hesaplama</a>
+      <a href="tazminat.html" class="nav-link active">&#128203; Tazminat</a>
+      <a href="issizlik.html" class="nav-link">&#128084; İşsizlik</a>
+      <a href="fazla-mesai.html" class="nav-link">&#9200; Fazla Mesai</a>
+    </nav>
+  </div>
 
-  <button class="nav-toggle" id="nav-toggle">&#9776;</button>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menüyü aç">☰</button>
 </header>
 
 <div class="mobile-nav" id="mobile-nav">
@@ -256,6 +348,10 @@
   <div class="hero-badge">&#128203; 2026 Güncel Hesaplama</div>
   <h1>İhbar ve Kıdem Tazminatı<br><em>Hesaplayıcısı</em></h1>
   <p>İşe giriş ve ayrılma tarihine göre ihbar ve kıdem tazminatınızı anında hesaplayın.</p>
+</div>
+
+<div class="top-ad-wrap">
+  <div class="ad-placeholder ad-top">Reklam Alani - 728x90</div>
 </div>
 
 <div class="main">
@@ -323,6 +419,8 @@
         <button class="calc-btn" id="calc-btn">Hesapla</button>
       </div>
     </div>
+
+    <div class="ad-placeholder ad-left">Reklam Alani - 300x250</div>
   </div>
 
   <div class="mid-col">
@@ -482,6 +580,7 @@
 (function() {
   var KIDEM_TAVAN = 64948.77;
   var DAMGA = 0.00759;
+  var lastResult = null;
 
   function fmt(n) {
     return n.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' TL';
@@ -557,30 +656,34 @@
     var toplamNetTahmini = kidemNet + ihbNetTahmini;
     var sureStr = yil + ' yıl ' + aay + ' ay (' + gun + ' gün)';
 
+    lastResult = {
+      kidemBrut: kidemBrut,
+      ihbarBrut: ihbBrut,
+      rows: [
+        {n:'Brüt Maaş', v:fmt(brut), c:''},
+        {n:'Aylık Yan Haklar', v: yanhak > 0 ? fmt(yanhak) : '--', c:''},
+        {n:'Aylık İkramiye Payı', v: ikrami > 0 ? fmt(aylikIkrami) : '--', c:''},
+        {n:'Giydirilmiş Brüt Ücret', v:fmt(giydirilmisBrut), c:''},
+        {n:'Çalışma Süresi', v:sureStr, c:''},
+        {n:'Kıdem Tazminatı (Brüt)', v: kidemHak ? fmt(kidemBrut) : 'Hak yok', c: kidemHak ? 'orange' : ''},
+        {n:'Kıdem Damga Vergisi', v: kidemHak ? '- ' + fmt(kidemDamga) : '-', c:'red'},
+        {n:'Kıdem Tazminatı (Net)', v: kidemHak ? fmt(kidemNet) : 'Hak yok', c:'green'},
+        {n:'İhbar Süresi', v: ihbHafta + ' hafta', c:''},
+        {n:'İhbar Tazminatı (Brüt)', v: fmt(ihbBrut), c:'orange'},
+        {n:'İhbar Damga Vergisi (Tahmini)', v: '- ' + fmt(ihbDamga), c:'red'},
+        {n:'İhbar Tazminatı (Net Tahmini)', v: fmt(ihbNetTahmini), c:'green'},
+        {n:'Tahmini Net Toplam', v: fmt(toplamNetTahmini), c:'green'}
+      ]
+    };
+
     document.getElementById('kidem-amt').innerHTML =
       kidemBrut.toLocaleString('tr-TR', { maximumFractionDigits: 2 }) + '<span> TL</span>';
     document.getElementById('ihbar-amt').innerHTML =
       ihbBrut.toLocaleString('tr-TR', { maximumFractionDigits: 2 }) + '<span> TL</span>';
 
-    var rows = [
-      {n:'Brüt Maaş', v:fmt(brut), c:''},
-      {n:'Aylık Yan Haklar', v: yanhak > 0 ? fmt(yanhak) : '--', c:''},
-      {n:'Aylık İkramiye Payı', v: ikrami > 0 ? fmt(aylikIkrami) : '--', c:''},
-      {n:'Giydirilmiş Brüt Ücret', v:fmt(giydirilmisBrut), c:''},
-      {n:'Çalışma Süresi', v:sureStr, c:''},
-      {n:'Kıdem Tazminatı (Brüt)', v: kidemHak ? fmt(kidemBrut) : 'Hak yok', c: kidemHak ? 'orange' : ''},
-      {n:'Kıdem Damga Vergisi', v: kidemHak ? '- ' + fmt(kidemDamga) : '-', c:'red'},
-      {n:'Kıdem Tazminatı (Net)', v: kidemHak ? fmt(kidemNet) : 'Hak yok', c:'green'},
-      {n:'İhbar Süresi', v: ihbHafta + ' hafta', c:''},
-      {n:'İhbar Tazminatı (Brüt)', v: fmt(ihbBrut), c:'orange'},
-      {n:'İhbar Damga Vergisi (Tahmini)', v: '- ' + fmt(ihbDamga), c:'red'},
-      {n:'İhbar Tazminatı (Net Tahmini)', v: fmt(ihbNetTahmini), c:'green'},
-      {n:'Tahmini Net Toplam', v: fmt(toplamNetTahmini), c:'green'}
-    ];
-
     var h = '';
-    for (var i = 0; i < rows.length; i++) {
-      h += '<div class="result-row"><span class="rname">' + rows[i].n + '</span><span class="rval ' + rows[i].c + '">' + rows[i].v + '</span></div>';
+    for (var i = 0; i < lastResult.rows.length; i++) {
+      h += '<div class="result-row"><span class="rname">' + lastResult.rows[i].n + '</span><span class="rval ' + lastResult.rows[i].c + '">' + lastResult.rows[i].v + '</span></div>';
     }
 
     document.getElementById('rows').innerHTML = h;
@@ -592,20 +695,17 @@
   }
 
   function copyResult() {
-    var rows = document.querySelectorAll('#rows .result-row');
-    if (!rows.length) {
+    if (!lastResult) {
       alert('Önce hesaplama yapınız.');
       return;
     }
 
     var text = 'MaaşHesap - Tazminat Sonuç Özeti\n--------------------\n';
-    text += 'Kıdem Tazminatı (Brüt): ' + document.getElementById('kidem-amt').textContent.trim() + '\n';
-    text += 'İhbar Tazminatı (Brüt): ' + document.getElementById('ihbar-amt').textContent.trim() + '\n';
+    text += 'Kıdem Tazminatı (Brüt): ' + fmt(lastResult.kidemBrut) + '\n';
+    text += 'İhbar Tazminatı (Brüt): ' + fmt(lastResult.ihbarBrut) + '\n';
 
-    for (var i = 0; i < rows.length; i++) {
-      var name = rows[i].querySelector('.rname').textContent.trim();
-      var val = rows[i].querySelector('.rval').textContent.trim();
-      text += name + ': ' + val + '\n';
+    for (var i = 0; i < lastResult.rows.length; i++) {
+      text += lastResult.rows[i].n + ': ' + lastResult.rows[i].v + '\n';
     }
 
     navigator.clipboard.writeText(text).then(function() {
@@ -616,8 +716,7 @@
   }
 
   function printResultCard() {
-    var rows = document.querySelectorAll('#rows .result-row');
-    if (!rows.length) {
+    if (!lastResult) {
       alert('Önce hesaplama yapınız.');
       return;
     }
@@ -629,10 +728,8 @@
     }
 
     var rebuiltRows = '';
-    for (var i = 0; i < rows.length; i++) {
-      var name = rows[i].querySelector('.rname').innerHTML;
-      var val = rows[i].querySelector('.rval').innerHTML;
-      rebuiltRows += '<div class="row"><div class="name">' + name + '</div><div class="val">' + val + '</div></div>';
+    for (var i = 0; i < lastResult.rows.length; i++) {
+      rebuiltRows += '<div class="row"><div class="name">' + lastResult.rows[i].n + '</div><div class="val">' + lastResult.rows[i].v + '</div></div>';
     }
 
     printWindow.document.open();
@@ -663,12 +760,12 @@
 
             <div class="highlight">
               <div class="lbl">Kıdem Tazminatı (Brüt)</div>
-              <div class="amt">${document.getElementById('kidem-amt').innerHTML}</div>
+              <div class="amt">${fmt(lastResult.kidemBrut)}</div>
             </div>
 
             <div class="highlight" style="background:#eff6ff;border-color:#bfdbfe">
               <div class="lbl">İhbar Tazminatı (Brüt)</div>
-              <div class="amt">${document.getElementById('ihbar-amt').innerHTML}</div>
+              <div class="amt">${fmt(lastResult.ihbarBrut)}</div>
             </div>
 
             <div class="rows">${rebuiltRows}</div>
@@ -699,7 +796,10 @@
     var nt = document.getElementById('nav-toggle');
     var mn = document.getElementById('mobile-nav');
     if (nt && mn) {
-      nt.addEventListener('click', function() { mn.classList.toggle('open'); });
+      nt.addEventListener('click', function(e) {
+        e.stopPropagation();
+        mn.classList.toggle('open');
+      });
       document.addEventListener('click', function(e) {
         if (!nt.contains(e.target) && !mn.contains(e.target)) mn.classList.remove('open');
       });
