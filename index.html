@@ -252,10 +252,25 @@
   .faq-q::after{content:'+';font-size:20px;color:var(--accent);flex-shrink:0;line-height:1;font-weight:300;transition:transform .2s}
   .faq-item.open .faq-q::after{transform:rotate(45deg)}
   .faq-a{font-size:13px;color:var(--muted);line-height:1.7;display:none;margin-top:8px}
+  .faq-item.open .faq-a{display:block}
+
+  .accordion-card .card-header{cursor:pointer;user-select:none}
+  .accordion-card .card-header::after{
+    content:'+';
+    margin-left:auto;
+    font-size:22px;
+    color:var(--accent);
+    line-height:1;
+    font-weight:300;
+    transition:transform .2s;
+  }
+  .accordion-card.open .card-header::after{transform:rotate(45deg)}
+  .accordion-card .card-body{display:none}
+  .accordion-card.open .card-body{display:block}
 
   footer{background:var(--ink);color:rgba(255,255,255,.6);padding:28px clamp(16px,5vw,60px);text-align:center;font-size:13px}
   footer strong{color:white;font-weight:600}
-  footer a{color:rgba(255,255,255,.6);text-decoration:underline;cursor:pointer}
+  footer a{color:rgba(255,255,255,.6);text-decoration:underline}
   footer a:hover{color:white}
   footer .footer-links{margin-top:10px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
 
@@ -289,7 +304,7 @@
     .input-wrap input,select{min-height:44px;font-size:16px;padding-top:10px;padding-bottom:10px}
     .input-wrap input{padding-left:12px;padding-right:54px}
     .input-unit{right:12px;font-size:11px}
-    .note-box,.asgari-banner{padding:11px 13px;font-size:12px}
+    .asgari-banner{padding:11px 13px;font-size:12px}
     .calc-btn{min-height:46px;padding:12px;font-size:15px;margin-top:14px}
     .result-highlight .amt{font-size:30px}
     .result-row{flex-direction:column;align-items:flex-start;gap:4px}
@@ -298,13 +313,22 @@
     .sss-inner{padding:34px 14px 0}
     footer{padding:22px 14px;font-size:12px}
     .ad-mid,.ad-side{height:180px}
+    .action-row{flex-direction:column}
   }
 
   @media print{
-    header,.hero,.col-right,.section-band,.sss-band,footer,.action-row,.aff-banner,.ad-mid{display:none !important}
-    .main{display:block !important}
-    .col-left,.col-mid{width:100% !important}
-    #results{display:block !important}
+    body *{visibility:hidden !important}
+    #results, #results *{visibility:visible !important}
+    #results{
+      display:block !important;
+      position:absolute;
+      left:0;
+      top:0;
+      width:100%;
+      margin:0;
+      box-shadow:none;
+      border:none;
+    }
   }
 </style>
 </head>
@@ -325,12 +349,14 @@
     </div>
     <div class="logo-text">maas<span>hesap</span></div>
   </a>
+
   <nav class="main-nav">
     <a href="index.html" class="nav-link active">&#128176; Maaş Hesaplama</a>
     <a href="tazminat.html" class="nav-link">&#128203; Tazminat</a>
     <a href="issizlik.html" class="nav-link">&#128084; İşsizlik</a>
     <a href="fazla-mesai.html" class="nav-link">&#9200; Fazla Mesai</a>
   </nav>
+
   <button class="nav-toggle" id="nav-toggle">&#9776;</button>
 </header>
 
@@ -360,7 +386,7 @@
           <span>&#8505;</span>
           <div><strong>2026 Asgari Ücret</strong><br><span style="color:var(--muted);font-size:12px">Brüt 33.030,00 TL &nbsp;|&nbsp; Net 28.075,50 TL</span></div>
         </div>
-        
+
         <div class="field">
           <label id="inp_label">Brüt Maaş</label>
           <div class="input-wrap">
@@ -368,7 +394,7 @@
             <span class="input-unit">TL</span>
           </div>
         </div>
-        
+
         <div class="field">
           <label>Hesaplama Yönü</label>
           <div class="toggle-group">
@@ -384,7 +410,17 @@
             <button class="toggle-btn" id="btn_emekli" type="button" onclick="setTip('emekli')">Emekli</button>
           </div>
         </div>
-        
+
+        <div class="field">
+          <label>İşveren Maliyeti Türü</label>
+          <select id="tesvik_turu">
+            <option value="5puan">İmalat sektörü - 5 puan indirimli</option>
+            <option value="2puan" selected>Diğer sektörler - 2 puan indirimli</option>
+            <option value="yok">SGK prim indirimi yok</option>
+          </select>
+          <span class="field-help">Emekli çalışan modunda bu alan otomatik olarak SGDP mantığıyla hesaplanır.</span>
+        </div>
+
         <div class="field">
           <label>Hesaplama Ayı</label>
           <select id="ay_sel">
@@ -395,16 +431,6 @@
             <option value="9">Eylül</option><option value="10">Ekim</option>
             <option value="11">Kasım</option><option value="12">Aralık</option>
           </select>
-        </div>
-        
-        <div class="field">
-          <label>İşveren Maliyeti Türü</label>
-          <select id="tesvik_turu">
-            <option value="5puan">İmalat sektörü - 5 puan indirimli</option>
-            <option value="2puan" selected>Diğer sektörler - 2 puan indirimli</option>
-            <option value="yok">SGK prim indirimi yok</option>
-          </select>
-          <span class="field-help">Emekli çalışan modunda bu alan otomatik olarak SGDP mantığıyla hesaplanır.</span>
         </div>
 
         <hr class="divider">
@@ -498,6 +524,37 @@
     </div>
 
     <div class="ad-placeholder ad-mid">Reklam Alani - 300x250</div>
+
+    <div class="card accordion-card" id="seo-accordion">
+      <div class="card-header">
+        <div class="card-icon" style="background:#eef2ff">📊</div>
+        <h2>Net Maaş Hesaplama Nasıl Yapılır?</h2>
+      </div>
+      <div class="card-body">
+        <p>
+          Net maaş hesaplama işlemi, brüt ücret üzerinden yapılan yasal kesintilerin düşülmesiyle bulunur.
+          Türkiye’de çalışan bir kişinin maaşından SGK primi, işsizlik sigortası, gelir vergisi ve damga vergisi kesilir.
+        </p>
+
+        <p style="margin-top:10px">
+          2026 yılı itibarıyla gelir vergisi dilimleri kümülatif olarak hesaplanır ve yıl ilerledikçe net maaş düşebilir.
+          Bu nedenle maaş hesaplama işlemlerinde doğru vergi dilimi kullanılması büyük önem taşır.
+        </p>
+
+        <p style="margin-top:10px">Bu sayfadaki maaş hesaplama aracı ile:</p>
+        <ul style="padding-left:18px;margin-top:8px;color:var(--muted)">
+          <li>Brütten net maaş hesaplama</li>
+          <li>Netten brüt maaş hesaplama</li>
+          <li>İşveren maliyeti hesaplama</li>
+          <li>SGK ve vergi kesintilerini detaylı görme</li>
+        </ul>
+
+        <p style="margin-top:10px">
+          Tüm hesaplamalar 2026 yılı güncel vergi oranları ve SGK primleri dikkate alınarak yaklaşık sonuç üretir.
+          Nihai bordro sonucu işveren uygulamasına ve resmi kayıtlara göre değişebilir.
+        </p>
+      </div>
+    </div>
   </div>
 
   <div class="col-right">
@@ -633,46 +690,6 @@
         <div class="faq-item"><div class="faq-q">Emekli çalışan neden daha yüksek net alır?</div><div class="faq-a">Çünkü normal çalışan gibi %15 değil, işçi tarafında %7,5 SGDP kesintisine tabidir ve işsizlik primi kesilmez.</div></div>
         <div class="faq-item"><div class="faq-q">İşveren maliyeti neden tek oran değildir?</div><div class="faq-a">Çünkü işveren maliyeti sektör, teşvik ve çalışan türüne göre değişir. 5 puan ve 2 puan prim teşvikleri sonucu etkiler.</div></div>
       </div>
-      <div class="card">
-  <div class="card-header">
-    <div class="card-icon" style="background:#eef2ff">📊</div>
-    <div class="card">
-  <div class="card-header faq-q" style="cursor:pointer">
-    <div class="card-icon" style="background:#eef2ff">📊</div>
-    <h2>Net Maaş Hesaplama Nasıl Yapılır?</h2>
-  </div>
-  <div class="card-body faq-a" style="display:none">
-    <p>
-      Net maaş hesaplama işlemi, brüt ücret üzerinden yapılan yasal kesintilerin düşülmesiyle bulunur. 
-      Türkiye’de çalışan bir kişinin maaşından SGK primi, işsizlik sigortası, gelir vergisi ve damga vergisi kesilir.
-    </p>
-
-    <p>
-      2026 yılı itibarıyla gelir vergisi dilimleri kümülatif olarak hesaplanır ve yıl ilerledikçe net maaş düşebilir. 
-      Bu nedenle maaş hesaplama işlemlerinde doğru vergi dilimi kullanılması büyük önem taşır.
-    </p>
-
-    <p>
-      Bu sayfadaki maaş hesaplama aracı ile:
-    </p>
-
-    <ul>
-      <li>Brütten net maaş hesaplama</li>
-      <li>Netten brüt maaş hesaplama</li>
-      <li>İşveren maliyeti hesaplama</li>
-      <li>SGK ve vergi kesintilerini detaylı görme</li>
-    </ul>
-
-    <p>
-      Tüm hesaplamalar 2026 yılı güncel vergi oranları ve SGK primleri dikkate alınarak yapılmaktadır.
-    </p>
-  </div>
-</div>
-  </div>
-  <div class="card-body">
-    
-  </div>
-</div>
     </div>
   </div>
 </div>
@@ -680,6 +697,10 @@
 <footer>
   <p><strong>MaaşHesap 2026</strong> &mdash; Bu site yalnızca bilgilendirme amaçlıdır. Kesin hesap için bordro ve uzman görüşü esas alınmalıdır.</p>
   <div class="footer-links">
+    <a href="index.html">Maaş Hesaplama</a>
+    <a href="tazminat.html">Tazminat</a>
+    <a href="issizlik.html">İşsizlik</a>
+    <a href="fazla-mesai.html">Fazla Mesai</a>
     <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
     <a href="hakkimizda.html">Hakkımızda</a>
     <a href="iletisim.html">İletişim</a>
@@ -687,8 +708,8 @@
     <a href="kaynaklar.html">Kaynaklar</a>
   </div>
   <p style="margin-top:10px">
-  İletişim: <a href="mailto:info@maashesap.net">info@maashesap.net</a>
-</p>
+    İletişim: <a href="mailto:info@maashesap.net">info@maashesap.net</a>
+  </p>
 </footer>
 
 <script>
@@ -714,13 +735,7 @@
   var COLORS = ['#1a5cff','#f59e0b','#ef4444','#a78bfa'];
   var CLABELS = ['Net Maaş','İşçi SGK / SGDP','Gelir Vergisi','Damga Vergisi'];
   var AYLAR = ['', 'Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
-  var toggles = document.querySelectorAll('.faq-q');
-  for (var i = 0; i < toggles.length; i++) {
-    toggles[i].addEventListener('click', function(){
-      var body = this.nextElementSibling;
-    body.style.display = body.style.display === 'none' ? 'block' : 'none';
-  });
-}
+
   function fmt(n) {
     return n.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' TL';
   }
@@ -820,8 +835,7 @@
       dv: damgaVergisi,
       engelliMatrahInd: engelliMatrahInd,
       kesinti: toplamIsciSigorta + gelirVergisi + damgaVergisi,
-      isverenMaliyeti: isverenMaliyeti,
-      sgkBase: sgkBase
+      isverenMaliyeti: isverenMaliyeti
     };
   }
 
@@ -1006,6 +1020,39 @@
     document.body.removeChild(ta);
   }
 
+  function initFaqs() {
+    var faqs = document.querySelectorAll('.faq-item .faq-q');
+    for (var i = 0; i < faqs.length; i++) {
+      faqs[i].addEventListener('click', function(){
+        this.parentElement.classList.toggle('open');
+      });
+    }
+  }
+
+  function initAccordionCards() {
+    var cards = document.querySelectorAll('.accordion-card');
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].querySelector('.card-header').addEventListener('click', function(){
+        this.parentElement.classList.toggle('open');
+      });
+    }
+  }
+
+  function initMobileNav() {
+    var navToggle = document.getElementById('nav-toggle');
+    var mobileNav = document.getElementById('mobile-nav');
+    if (navToggle && mobileNav) {
+      navToggle.addEventListener('click', function() {
+        mobileNav.classList.toggle('open');
+      });
+      document.addEventListener('click', function(e) {
+        if (!navToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+          mobileNav.classList.remove('open');
+        }
+      });
+    }
+  }
+
   window.addEventListener('load', function() {
     document.getElementById('ay_sel').value = new Date().getMonth() + 1;
     document.getElementById('calc_btn').addEventListener('click', calculate);
@@ -1015,34 +1062,15 @@
     if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
     if (copyBtn) copyBtn.addEventListener('click', doCopy);
 
-    var faqs = document.querySelectorAll('.faq-q');
-    for (var i = 0; i < faqs.length; i++) {
-      faqs[i].addEventListener('click', function(){ this.parentElement.classList.toggle('open'); });
-    }
-
     document.addEventListener('keypress', function(e){
       if (e.key === 'Enter') calculate();
     });
 
     setTip('normal');
+    initFaqs();
+    initAccordionCards();
+    initMobileNav();
   });
-
-  window.setMode = setMode;
-  window.setTip = setTip;
-  window.calculate = calculate;
-
-  var navToggle = document.getElementById('nav-toggle');
-  var mobileNav = document.getElementById('mobile-nav');
-  if (navToggle && mobileNav) {
-    navToggle.addEventListener('click', function() {
-      mobileNav.classList.toggle('open');
-    });
-    document.addEventListener('click', function(e) {
-      if (!navToggle.contains(e.target) && !mobileNav.contains(e.target)) {
-        mobileNav.classList.remove('open');
-      }
-    });
-  }
 })();
 </script>
 </body>
