@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://maashesap.net/index.html</loc>
+    <loc>https://maashesap.net/</loc>
   </url>
+
   <url>
     <loc>https://maashesap.net/tazminat.html</loc>
   </url>
+
   <url>
     <loc>https://maashesap.net/issizlik.html</loc>
   </url>
+
   <url>
     <loc>https://maashesap.net/fazla-mesai.html</loc>
   </url>
+
+  <url>
+    <loc>https://maashesap.net/hakkimizda.html</loc>
+  </url>
+
+  <url>
+    <loc>https://maashesap.net/iletisim.html</loc>
+  </url>
+
+  <url>
+    <loc>https://maashesap.net/kaynaklar.html</loc>
+  </url>
+
+  <url>
+    <loc>https://maashesap.net/gizlilik-politikasi.html</loc>
+  </url>
+
+  <url>
+    <loc>https://maashesap.net/kullanim-kosullari.html</loc>
+  </url>
+
 </urlset>
