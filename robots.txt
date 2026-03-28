@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zigana53.github.io/maas-hesaplayici/sitemap.xml
+Sitemap: https://maashesap/sitemap.xml
