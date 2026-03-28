@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://maashesap/sitemap.xml
+Sitemap: https://maashesap.net/sitemap.xml
