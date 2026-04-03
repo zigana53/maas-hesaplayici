@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3524613180930720"
-     crossorigin="anonymous"></script>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.svg">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kaynaklar - MaaşHesap</title>
-<meta name="description" content="MaaşHesap üzerinde kullanılan resmi veri kaynakları ve mevzuat referansları.">
-<meta name="keywords" content="kaynaklar, SGK, İŞKUR, gelir vergisi, resmi kaynaklar">
+<title>Kaynaklar | MaaşHesap</title>
+<meta name="description" content="MaaşHesap platformunda kullanılan hesaplama verilerinin dayandığı resmi mevzuatlar ve kaynaklar.">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://maashesap.net/kaynaklar.html">
-
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="shortcut icon" href="favicon.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -27,7 +24,6 @@
     --accent:#1a5cff;
     --accent-soft:#eef2ff;
     --shadow-sm:0 1px 3px rgba(0,0,0,.07),0 2px 8px rgba(0,0,0,.05);
-    --shadow:0 2px 8px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.06);
     --r:14px;
   }
 
@@ -37,7 +33,7 @@
     font-family:'DM Sans',sans-serif;
     background:var(--paper);
     color:var(--ink);
-    line-height:1.6;
+    line-height:1.7;
     font-size:15px;
   }
 
@@ -91,109 +87,151 @@
   }
   .logo-text span{color:var(--accent)}
 
-  .main-nav{display:flex;align-items:center;gap:4px;min-width:0}
-  .nav-link{
-    font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;
-    padding:7px 12px;border-radius:8px;transition:all .2s;white-space:nowrap;
+  .main-nav{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    min-width:0;
   }
+
+  .nav-link{
+    font-size:13px;
+    font-weight:600;
+    color:var(--muted);
+    text-decoration:none;
+    padding:7px 12px;
+    border-radius:8px;
+    transition:all .2s;
+    white-space:nowrap;
+  }
+
   .nav-link:hover{background:var(--paper);color:var(--ink)}
+  .nav-link.active{background:var(--accent-soft);color:var(--accent)}
 
   .nav-toggle{
-    display:none;background:none;border:none;font-size:24px;line-height:1;cursor:pointer;
-    color:var(--muted);padding:6px 8px;margin-left:auto;flex-shrink:0;
+    display:none;
+    background:none;
+    border:none;
+    font-size:24px;
+    line-height:1;
+    cursor:pointer;
+    color:var(--muted);
+    padding:6px 8px;
+    margin-left:auto;
+    flex-shrink:0;
   }
 
   .mobile-nav{
-    display:none;position:fixed;top:64px;left:0;right:0;background:var(--white);
-    border-bottom:1px solid var(--line);z-index:199;box-shadow:0 4px 16px rgba(0,0,0,.1);
+    display:none;
+    position:fixed;
+    top:64px;
+    left:0;
+    right:0;
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    z-index:199;
+    box-shadow:0 4px 16px rgba(0,0,0,.1);
     flex-direction:column;
   }
   .mobile-nav.open{display:flex}
   .mobile-nav a{
-    padding:14px 18px;font-size:14px;font-weight:600;color:var(--ink);
-    text-decoration:none;border-bottom:1px solid var(--line);
+    padding:14px 18px;
+    font-size:14px;
+    font-weight:600;
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
   }
   .mobile-nav a:last-child{border-bottom:none}
   .mobile-nav a:hover{background:var(--paper)}
 
-  @media(max-width:860px){
+  @media (max-width:860px){
     .main-nav{display:none}
     .nav-toggle{display:block}
   }
 
   .hero{
     text-align:center;
-    padding:52px clamp(16px,5vw,60px) 40px;
+    padding:56px clamp(16px,5vw,60px) 40px;
     background:linear-gradient(160deg,#dce8ff 0%,#eef4ff 50%,var(--paper) 100%);
     border-bottom:1px solid var(--line);
   }
   .hero-badge{
-    display:inline-flex;align-items:center;gap:6px;background:var(--accent-soft);color:var(--accent);
-    font-size:12px;font-weight:600;padding:4px 14px;border-radius:99px;margin-bottom:18px;
-    letter-spacing:.04em;text-transform:uppercase;border:1px solid #c5d5ff;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    font-size:12px;
+    font-weight:600;
+    padding:4px 14px;
+    border-radius:99px;
+    margin-bottom:18px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    border:1px solid #c5d5ff;
   }
   .hero h1{
-    font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,44px);
-    line-height:1.1;max-width:680px;margin:0 auto 14px;letter-spacing:-.02em;
-  }
-  .hero p{
-    color:var(--muted);max-width:620px;margin:0 auto;font-size:16px;font-weight:300;
-  }
-
-  .section-band{
-    background:var(--white);
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-  }
-  .section-inner{
-    max-width:1320px;
-    margin:0 auto;
-    padding:48px clamp(16px,3vw,40px);
-  }
-  .section-title{
     font-family:'DM Serif Display',serif;
-    font-size:clamp(22px,3vw,30px);
-    margin-bottom:6px;
+    font-size:clamp(28px,5vw,44px);
+    line-height:1.15;
+    max-width:760px;
+    margin:0 auto 14px;
     letter-spacing:-.02em;
   }
-  .section-sub{
+  .hero p{
     color:var(--muted);
-    font-size:14px;
-    margin-bottom:28px;
+    max-width:720px;
+    margin:0 auto;
+    font-size:16px;
+    font-weight:300;
   }
 
-  .info-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:18px;
+  .content-wrap{
+    max-width:980px;
+    margin:0 auto;
+    padding:32px 20px 0;
   }
 
-  .info-card{
-    background:var(--paper);
+  .content-card{
+    background:var(--white);
     border:1px solid var(--line);
     border-radius:var(--r);
-    padding:20px;
     box-shadow:var(--shadow-sm);
+    padding:28px;
   }
 
-  .info-card h3{
+  .content-card h2{
     font-family:'DM Serif Display',serif;
+    font-size:28px;
+    margin:30px 0 12px;
+    line-height:1.2;
+    letter-spacing:-.02em;
+  }
+
+  .content-card h2:first-of-type{margin-top:0}
+
+  .content-card p{
+    margin-bottom:14px;
+    color:#374151;
     font-size:16px;
-    margin-bottom:10px;
   }
 
-  .info-card p,.info-card li{
-    font-size:14px;
-    color:var(--muted);
-    line-height:1.7;
+  .content-card ul{
+    padding-left:20px;
+    margin:10px 0 16px;
   }
 
-  .info-card ul{
-    padding-left:18px;
-    margin-top:4px;
+  .content-card li{
+    margin-bottom:8px;
+    color:#374151;
+    font-size:16px;
   }
 
-  .info-card li{margin-bottom:4px}
+  .content-card a{
+    color:var(--accent);
+    text-decoration:underline;
+  }
 
   footer{
     background:var(--ink);
@@ -201,10 +239,11 @@
     padding:28px clamp(16px,5vw,60px);
     text-align:center;
     font-size:13px;
+    margin-top:40px;
   }
-  footer strong{color:white;font-weight:600}
+  footer strong{color:#fff;font-weight:600}
   footer a{color:rgba(255,255,255,.6);text-decoration:underline}
-  footer a:hover{color:white}
+  footer a:hover{color:#fff}
   footer .footer-links{
     margin-top:10px;
     display:flex;
@@ -215,17 +254,27 @@
 
   @media (max-width:760px){
     body{font-size:14px}
-    header{height:60px;padding:0 14px;gap:10px}
+    header{
+      height:60px;
+      padding:0 14px;
+      gap:10px;
+    }
     .header-left{gap:0}
-    .logo-icon{width:34px;height:34px;border-radius:9px}
+    .logo-icon{
+      width:34px;
+      height:34px;
+      border-radius:9px;
+    }
     .logo-icon svg{width:18px;height:18px}
     .logo-text{font-size:18px}
     .mobile-nav{top:60px}
-    .hero{padding:36px 16px 30px}
-    .hero-badge{font-size:11px;padding:4px 12px;margin-bottom:14px}
-    .hero h1{font-size:32px;margin-bottom:12px}
-    .hero p{font-size:14px;max-width:100%;line-height:1.65}
-    .section-inner{padding:34px 14px}
+    .hero{padding:36px 16px 28px}
+    .hero h1{font-size:34px}
+    .hero p{font-size:14px;line-height:1.65}
+    .content-wrap{padding:18px 14px 0}
+    .content-card{padding:20px}
+    .content-card h2{font-size:24px}
+    .content-card p,.content-card li{font-size:15px}
     footer{padding:22px 14px;font-size:12px}
   }
 </style>
@@ -236,8 +285,8 @@
   <div class="header-left">
     <a href="index.html" class="logo-wrap">
       <div class="logo-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
-          <rect x="3" y="3" width="18" height="18" rx="2" stroke="white" stroke-width="1.8"/>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="white" stroke-width="1.8"/>
           <line x1="3" y1="9" x2="21" y2="9" stroke="white" stroke-width="1.8"/>
           <line x1="8" y1="14" x2="10" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
           <line x1="12" y1="14" x2="14" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
@@ -250,10 +299,10 @@
     </a>
 
     <nav class="main-nav">
-      <a href="index.html" class="nav-link">💰 Maaş Hesaplama</a>
-      <a href="tazminat.html" class="nav-link">📋 Tazminat</a>
-      <a href="issizlik.html" class="nav-link">🎒 İşsizlik</a>
-      <a href="fazla-mesai.html" class="nav-link">⏰ Fazla Mesai</a>
+      <a href="index.html" class="nav-link">&#128176; Maaş Hesaplama</a>
+      <a href="tazminat.html" class="nav-link">&#128203; Tazminat</a>
+      <a href="issizlik.html" class="nav-link">&#128084; İşsizlik</a>
+      <a href="fazla-mesai.html" class="nav-link">&#9200; Fazla Mesai</a>
     </nav>
   </div>
 
@@ -261,61 +310,53 @@
 </header>
 
 <div class="mobile-nav" id="mobile-nav">
-  <a href="index.html">💰 Maaş Hesaplama</a>
-  <a href="tazminat.html">📋 Tazminat</a>
-  <a href="issizlik.html">🎒 İşsizlik</a>
-  <a href="fazla-mesai.html">⏰ Fazla Mesai</a>
+  <a href="index.html">&#128176; Maaş Hesaplama</a>
+  <a href="tazminat.html">&#128203; Tazminat</a>
+  <a href="issizlik.html">&#128084; İşsizlik</a>
+  <a href="fazla-mesai.html">&#9200; Fazla Mesai</a>
 </div>
 
 <div class="hero">
-  <div class="hero-badge">MaaşHesap</div>
+  <div class="hero-badge">&#10022; Resmî Kaynaklar</div>
   <h1>Kaynaklar</h1>
-  <p>MaaşHesap üzerinde sunulan hesaplamalar hazırlanırken esas alınan genel mevzuat, resmi kurumlar ve temel referans kaynaklar aşağıda listelenmiştir.</p>
+  <p>MaaşHesap platformunda yer alan hesaplama ve rehber içeriklerinde kullanılan temel mevzuatlar ve resmî kurum kaynakları.</p>
 </div>
 
-<div class="section-band">
-  <div class="section-inner">
-    <h2 class="section-title">Kullandığımız Temel Referanslar</h2>
-    <p class="section-sub">Hesaplamalar genel mevzuat ve resmi veri kaynaklarına göre hazırlanır. Nihai sonuçlar özel durumlara göre değişebilir.</p>
+<div class="content-wrap">
+  <article class="content-card">
+    <h2>Kullanılan Temel Mevzuatlar</h2>
+    <p>
+      MaaşHesap üzerinde yer alan maaş, tazminat, işsizlik ödeneği ve fazla mesai hesaplamaları Türkiye Cumhuriyeti’nin yürürlükteki mevzuatları dikkate alınarak hazırlanmıştır.
+    </p>
 
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>Sosyal Güvenlik Kurumu (SGK)</h3>
-        <p>SGK prim oranları, prime esas kazanç alt ve üst sınırları ile emekli çalışan uygulamaları genel olarak SGK mevzuatı ve duyuruları esas alınarak değerlendirilir.</p>
-      </div>
+    <ul>
+      <li>4857 Sayılı İş Kanunu</li>
+      <li>5510 Sayılı Sosyal Sigortalar ve Genel Sağlık Sigortası Kanunu</li>
+      <li>193 Sayılı Gelir Vergisi Kanunu</li>
+      <li>488 Sayılı Damga Vergisi Kanunu</li>
+    </ul>
 
-      <div class="info-card">
-        <h3>İŞKUR</h3>
-        <p>İşsizlik ödeneği ile ilgili şartlar, süreler ve başvuru mantığı İŞKUR tarafından yayımlanan genel bilgilere göre esas alınır.</p>
-      </div>
+    <h2>Resmî Kurum Kaynakları</h2>
+    <p>
+      Sayfalarda kullanılan temel bilgiler ve güncel mevzuat yorumları aşağıdaki resmî kurumların yayımladığı bilgiler esas alınarak derlenmektedir.
+    </p>
 
-      <div class="info-card">
-        <h3>Gelir İdaresi Başkanlığı</h3>
-        <p>Gelir vergisi dilimleri, vergi oranları ve ücret gelirlerine ilişkin temel istisna mantığı resmi vergi duyuruları ve genel düzenlemeler çerçevesinde hazırlanır.</p>
-      </div>
+    <ul>
+      <li><a href="https://www.csgb.gov.tr" target="_blank" rel="noopener">Çalışma ve Sosyal Güvenlik Bakanlığı</a></li>
+      <li><a href="https://www.sgk.gov.tr" target="_blank" rel="noopener">Sosyal Güvenlik Kurumu (SGK)</a></li>
+      <li><a href="https://www.gib.gov.tr" target="_blank" rel="noopener">Gelir İdaresi Başkanlığı (GİB)</a></li>
+      <li><a href="https://www.iskur.gov.tr" target="_blank" rel="noopener">İŞKUR</a></li>
+    </ul>
 
-      <div class="info-card">
-        <h3>4857 Sayılı İş Kanunu</h3>
-        <p>Kıdem, ihbar, fazla çalışma ve çalışma süreleriyle ilgili içerikler İş Kanunu’ndaki genel çerçeve dikkate alınarak oluşturulur.</p>
-      </div>
+    <h2>Önemli Bilgilendirme</h2>
+    <p>
+      Bu sitede yer alan hesaplamalar kullanıcıya genel fikir vermek amacıyla hazırlanmıştır. Nihai bordro sonuçları, işveren uygulamaları, ek ödemeler, özel durumlar ve resmî kayıtlar nedeniyle farklılık gösterebilir.
+    </p>
 
-      <div class="info-card">
-        <h3>Resmî Gazete</h3>
-        <p>Asgari ücret, vergi dilimleri ve benzeri yıllık güncellemeler Resmî Gazete’de yayımlanan kararlar esas alınarak takip edilir.</p>
-      </div>
-
-      <div class="info-card">
-        <h3>Genel Bordro Uygulamaları</h3>
-        <p>Ücret bordrosu ve işveren maliyeti hesaplarında yaygın uygulamalar ve genel bordro mantığı dikkate alınır.</p>
-      </div>
-    </div>
-
-    <div class="info-card" style="margin-top:20px">
-      <h3>Önemli Not</h3>
-      <p>MaaşHesap üzerindeki tüm hesaplamalar bilgilendirme amaçlıdır. Özel sektör uygulamaları, toplu iş sözleşmeleri, işyeri bordro sistemleri ve kişisel durumlar sonuçları değiştirebilir.</p>
-      <p style="margin-top:8px">Kesin ve bağlayıcı sonuçlar için resmi kayıtlar, bordro verileri ve uzman görüşü esas alınmalıdır.</p>
-    </div>
-  </div>
+    <p>
+      Kesin değerlendirme için resmî kurum kayıtları, bordro belgeleri ve gerektiğinde mali müşavir ya da uzman görüşü esas alınmalıdır.
+    </p>
+  </article>
 </div>
 
 <footer>
@@ -340,11 +381,13 @@
 (function() {
   var navToggle = document.getElementById('nav-toggle');
   var mobileNav = document.getElementById('mobile-nav');
+
   if (navToggle && mobileNav) {
     navToggle.addEventListener('click', function(e) {
       e.stopPropagation();
       mobileNav.classList.toggle('open');
     });
+
     document.addEventListener('click', function(e) {
       if (!navToggle.contains(e.target) && !mobileNav.contains(e.target)) {
         mobileNav.classList.remove('open');
