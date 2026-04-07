@@ -68,6 +68,18 @@
     }
   ]
 }
+  function formatNumberTR(number) {
+  const isInteger = Number.isInteger(number);
+
+  if (isInteger) {
+    return number.toLocaleString('tr-TR');
+  } else {
+    return number.toLocaleString('tr-TR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  }
+}
 </script>
 
 <style>
@@ -1166,15 +1178,21 @@
   }
 
   function fmtNum(n){
-    return n.toLocaleString('tr-TR', {
-      minimumFractionDigits: 2,
+    const rounded = Math.round(n * 100) / 100;
+    const isInteger = Number.isInteger(rounded);
+
+    return rounded.toLocaleString('tr-TR', {
+      minimumFractionDigits: isInteger ? 0 : 2,
       maximumFractionDigits: 2
     });
   }
 
   function fmtPct(n){
-    return n.toLocaleString('tr-TR', {
-      minimumFractionDigits: 2,
+    const rounded = Math.round(n * 100) / 100;
+    const isInteger = Number.isInteger(rounded);
+
+    return rounded.toLocaleString('tr-TR', {
+      minimumFractionDigits: isInteger ? 0 : 2,
       maximumFractionDigits: 2
     }) + '%';
   }
@@ -1213,7 +1231,7 @@
       't1_val',
       't1_detail',
       fmtNum(sonuc),
-      '<strong>' + fmtNum(a) + '</strong> sayısının <strong>%' + fmtNum(b) + '</strong> değeri <strong>' + fmtNum(sonuc) + '</strong> eder.<br>Formül: ' + fmtNum(a) + ' × ' + fmtNum(b) + ' ÷ 100 = ' + fmtNum(sonuc),
+      '<strong>' + fmtNum(a) + '</strong> sayısının <strong>' + fmtNum(b) + '</strong> değeri <strong>' + fmtNum(sonuc) + '</strong> eder.<br>Formül: ' + fmtNum(a) + ' × ' + fmtNum(b) + ' ÷ 100 = ' + fmtNum(sonuc),
       'default'
     );
   };
