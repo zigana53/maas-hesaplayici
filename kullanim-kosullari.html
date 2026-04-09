@@ -8,21 +8,278 @@
 
 <title>Kullanım Koşulları - MaaşHesap</title>
 <meta name="description" content="MaaşHesap kullanım koşulları ve şartları.">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://maashesap.net/kullanim-kosullari.html">
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.svg">
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-body{font-family:'DM Sans',sans-serif;background:#f2f5fb;margin:0}
-header{background:#fff;padding:16px 24px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between}
-.container{max-width:1100px;margin:40px auto;padding:20px}
-.hero{text-align:center;margin-bottom:30px}
-.hero h1{font-family:'DM Serif Display';font-size:32px}
-.card{background:#fff;padding:20px;border-radius:12px;margin-bottom:15px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
-footer{background:#111;color:#ccc;text-align:center;padding:20px;margin-top:40px;font-size:13px}
-footer a{color:#ccc}
+  :root{
+    --ink:#0f0f0f;
+    --paper:#f2f5fb;
+    --white:#ffffff;
+    --muted:#6b7280;
+    --line:#e2e8f0;
+    --accent:#1a5cff;
+    --accent-soft:#eef2ff;
+    --shadow-sm:0 1px 3px rgba(0,0,0,.07),0 2px 8px rgba(0,0,0,.05);
+    --r:14px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:15px;
+  }
+
+  header{
+    border-bottom:1px solid var(--line);
+    padding:0 clamp(16px,4vw,40px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    height:64px;
+    background:var(--white);
+    position:sticky;
+    top:0;
+    z-index:200;
+    box-shadow:0 1px 8px rgba(0,0,0,.06);
+  }
+
+  .header-left{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    min-width:0;
+  }
+
+  .logo-wrap{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+
+  .logo-icon{
+    width:38px;
+    height:38px;
+    background:var(--accent);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+
+  .logo-icon svg{width:20px;height:20px}
+
+  .logo-text{
+    font-family:'DM Serif Display',serif;
+    font-size:20px;
+    color:var(--ink);
+    line-height:1;
+  }
+
+  .logo-text span{color:var(--accent)}
+
+  .main-nav{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    min-width:0;
+  }
+
+  .nav-link{
+    font-size:13px;
+    font-weight:600;
+    color:var(--muted);
+    text-decoration:none;
+    padding:7px 12px;
+    border-radius:8px;
+    transition:all .2s;
+    white-space:nowrap;
+  }
+
+  .nav-link:hover{background:var(--paper);color:var(--ink)}
+  .nav-link.active{background:var(--accent-soft);color:var(--accent)}
+
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:none;
+    font-size:24px;
+    line-height:1;
+    cursor:pointer;
+    color:var(--muted);
+    padding:6px 8px;
+    margin-left:auto;
+    flex-shrink:0;
+  }
+
+  .mobile-nav{
+    display:none;
+    position:fixed;
+    top:64px;
+    left:0;
+    right:0;
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    z-index:199;
+    box-shadow:0 4px 16px rgba(0,0,0,.1);
+    flex-direction:column;
+  }
+
+  .mobile-nav.open{display:flex}
+
+  .mobile-nav a{
+    padding:14px 18px;
+    font-size:14px;
+    font-weight:600;
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+
+  .mobile-nav a:last-child{border-bottom:none}
+  .mobile-nav a:hover{background:var(--paper)}
+
+  @media (max-width:860px){
+    .main-nav{display:none}
+    .nav-toggle{display:block}
+  }
+
+  .hero{
+    text-align:center;
+    padding:56px clamp(16px,5vw,60px) 40px;
+    background:linear-gradient(160deg,#dce8ff 0%,#eef4ff 50%,var(--paper) 100%);
+    border-bottom:1px solid var(--line);
+  }
+
+  .hero h1{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(28px,5vw,42px);
+    line-height:1.15;
+    max-width:760px;
+    margin:0 auto 12px;
+    letter-spacing:-.02em;
+  }
+
+  .hero p{
+    color:var(--muted);
+    max-width:700px;
+    margin:0 auto;
+    font-size:16px;
+    font-weight:300;
+  }
+
+  .container{
+    max-width:980px;
+    margin:0 auto;
+    padding:32px 20px 0;
+  }
+
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--r);
+    padding:24px;
+    margin-bottom:18px;
+    box-shadow:var(--shadow-sm);
+  }
+
+  .card h2{
+    font-family:'DM Serif Display',serif;
+    font-size:24px;
+    margin:0 0 10px;
+    line-height:1.2;
+    letter-spacing:-.02em;
+  }
+
+  .card p{
+    color:#374151;
+    font-size:16px;
+    line-height:1.75;
+  }
+
+  .disclaimer{
+    max-width:1100px;
+    margin:40px auto;
+    padding:15px 20px;
+    font-size:14px;
+    color:#666;
+    line-height:1.6;
+  }
+
+  footer{
+    background:var(--ink);
+    color:rgba(255,255,255,.6);
+    padding:28px clamp(16px,5vw,60px);
+    text-align:center;
+    font-size:13px;
+    margin-top:10px;
+  }
+
+  footer strong{color:#fff;font-weight:600}
+  footer a{color:rgba(255,255,255,.6);text-decoration:underline}
+  footer a:hover{color:#fff}
+
+  footer .footer-links{
+    margin-top:10px;
+    display:flex;
+    justify-content:center;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+
+  @media (max-width:760px){
+    body{font-size:14px}
+
+    header{
+      height:60px;
+      padding:0 14px;
+      gap:10px;
+    }
+
+    .header-left{gap:0}
+
+    .logo-icon{
+      width:34px;
+      height:34px;
+      border-radius:9px;
+    }
+
+    .logo-icon svg{width:18px;height:18px}
+    .logo-text{font-size:18px}
+    .mobile-nav{top:60px}
+
+    .hero{
+      padding:36px 16px 28px;
+    }
+
+    .hero h1{font-size:34px}
+    .hero p{font-size:14px;line-height:1.65}
+
+    .container{padding:18px 14px 0}
+    .card{padding:20px}
+    .card h2{font-size:22px}
+    .card p{font-size:15px}
+
+    footer{
+      padding:22px 14px;
+      font-size:12px;
+    }
+  }
 </style>
 </head>
 
@@ -65,33 +322,45 @@ footer a{color:#ccc}
   <a href="yuzde-hesaplama.html">&#37; Yüzde Hesaplama</a>
 </div>
 
+<div class="hero">
+  <h1>Kullanım Koşulları</h1>
+  <p>Bu sayfa, MaaşHesap sitesini kullanırken geçerli olan temel şartları ve sorumluluk alanlarını açıklar.</p>
+</div>
+
 <div class="container">
 
-<div class="hero">
-<h1>Kullanım Koşulları</h1>
-<p>Site kullanım şartları ve sorumluluklar</p>
+  <div class="card">
+    <h2>Kullanım Amacı</h2>
+    <p>
+      MaaşHesap üzerindeki içerikler ve hesaplama araçları yalnızca bilgilendirme amacıyla sunulmaktadır. Site üzerinde yer alan bilgiler, resmi danışmanlık, mali müşavirlik veya hukuki görüş yerine geçmez.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Sorumluluk</h2>
+    <p>
+      Site üzerindeki hesaplamalar genel bilgiler ve standart formüller üzerinden hazırlanır. Kullanıcılar, burada yer alan sonuçları kendi sorumluluğunda değerlendirmelidir. Kesin sonuçlar için resmi kurum verileri, bordro kayıtları ve uzman görüşü esas alınmalıdır.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Hizmet Değişikliği</h2>
+    <p>
+      MaaşHesap, site içeriğini, hesaplama mantığını, araçları ve sayfa yapısını önceden haber vermeksizin güncelleme veya değiştirme hakkını saklı tutar.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Telif Hakları</h2>
+    <p>
+      Sitede yer alan metinler, tasarım unsurları ve hesaplama içerikleri izinsiz şekilde kopyalanamaz, çoğaltılamaz veya ticari amaçla kullanılamaz.
+    </p>
+  </div>
+
 </div>
 
-<div class="card">
-<h3>Kullanım Amacı</h3>
-<p>MaaşHesap yalnızca bilgilendirme amacıyla kullanılmalıdır.</p>
-</div>
-
-<div class="card">
-<h3>Sorumluluk</h3>
-<p>Site üzerindeki hesaplamalar genel bilgiler içerir. Kullanıcılar sonuçları kendi sorumluluğunda kullanır.</p>
-</div>
-
-<div class="card">
-<h3>Hizmet Değişikliği</h3>
-<p>Site içeriği önceden haber verilmeksizin değiştirilebilir.</p>
-</div>
-
-<div class="card">
-<h3>Telif Hakları</h3>
-<p>Site içeriği izinsiz kopyalanamaz.</p>
-</div>
-
+<div class="disclaimer">
+  Bu sayfa bilgilendirme amaçlıdır. Siteyi kullanmaya devam eden kullanıcılar, burada yer alan koşulları kabul etmiş sayılır.
 </div>
 
 <footer>
@@ -113,6 +382,26 @@ footer a{color:#ccc}
     İletişim: <a href="mailto:info@maashesap.net">info@maashesap.net</a>
   </p>
 </footer>
+
+<script>
+(function() {
+  var navToggle = document.getElementById('nav-toggle');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  if (navToggle && mobileNav) {
+    navToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      mobileNav.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!navToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+        mobileNav.classList.remove('open');
+      }
+    });
+  }
+})();
+</script>
 
 </body>
 </html>
