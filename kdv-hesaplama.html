@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3524613180930720" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KDV Hesaplama 2026 - KDV Dahil, Hariç, Tevkifatlı Hesaplayıcı | MaaşHesap</title>
+<meta name="description" content="KDV hesaplama aracı ile KDV dahil ve hariç fiyatı, KDV tutarını, matrahı ve tevkifatlı KDV hesaplamalarını anında yapın. %1, %10 ve %20 oran destekli ücretsiz araç.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://maashesap.net/kdv-hesaplama.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"KDV Hesaplama Aracı",
+  "url":"https://maashesap.net/kdv-hesaplama.html",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"Web",
+  "description":"KDV dahil ve hariç tutar, KDV oranı, KDV tutarı, matrah ve tevkifatlı KDV hesaplama aracı.",
+  "inLanguage":"tr-TR"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"KDV nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"KDV hariç tutar üzerinden KDV hesaplamak için matrah x oran / 100 formülü kullanılır. KDV dahil tutar için ise matraha KDV tutarı eklenir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"KDV dahil fiyattan KDV hariç tutar nasıl bulunur?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"KDV dahil tutar, 1 artı KDV oranının 100'e bölünmüş haline bölünür. Örneğin yüzde 20 KDV dahil fiyat için toplam tutar 1,20'ye bölünür."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Türkiye’de genel KDV oranları nelerdir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Türkiye’de genel KDV oran yapısı yüzde 1, yüzde 10 ve yüzde 20 şeklindedir. Uygulanacak oran mal ve hizmet türüne göre değişebilir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Tevkifatlı KDV hesaplama nasıl yapılır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Önce toplam KDV hesaplanır, ardından tevkifat oranına göre alıcı tarafından tevkif edilen ve satıcıya kalan KDV ayrı ayrı gösterilir."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --ink:#0f0f0f;
+    --paper:#f2f5fb;
+    --white:#ffffff;
+    --muted:#6b7280;
+    --line:#e2e8f0;
+    --accent:#1a5cff;
+    --accent-soft:#eef2ff;
+    --orange:#d97706;
+    --orange-soft:#fffbeb;
+    --green:#0d7a3e;
+    --red:#c0392b;
+    --shadow-sm:0 1px 3px rgba(0,0,0,.07),0 2px 8px rgba(0,0,0,.05);
+    --r:14px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    font-size:15px;
+  }
+
+  header{
+    border-bottom:1px solid var(--line);
+    padding:0 clamp(16px,4vw,40px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    height:64px;
+    background:var(--white);
+    position:sticky;
+    top:0;
+    z-index:200;
+    box-shadow:0 1px 8px rgba(0,0,0,.06);
+  }
+
+  .header-left{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    min-width:0;
+  }
+
+  .logo-wrap{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+
+  .logo-icon{
+    width:38px;
+    height:38px;
+    background:var(--accent);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+
+  .logo-icon svg{width:20px;height:20px}
+
+  .logo-text{
+    font-family:'DM Serif Display',serif;
+    font-size:20px;
+    color:var(--ink);
+    line-height:1;
+  }
+
+  .logo-text span{color:var(--accent)}
+
+  .main-nav{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    min-width:0;
+  }
+
+  .nav-link{
+    font-size:13px;
+    font-weight:600;
+    color:var(--muted);
+    text-decoration:none;
+    padding:7px 12px;
+    border-radius:8px;
+    transition:all .2s;
+    white-space:nowrap;
+  }
+
+  .nav-link:hover{background:var(--paper);color:var(--ink)}
+  .nav-link.active{background:var(--orange-soft);color:var(--orange)}
+
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:none;
+    font-size:24px;
+    line-height:1;
+    cursor:pointer;
+    color:var(--muted);
+    padding:6px 8px;
+    margin-left:auto;
+    flex-shrink:0;
+  }
+
+  .mobile-nav{
+    display:none;
+    position:fixed;
+    top:64px;
+    left:0;
+    right:0;
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    z-index:199;
+    box-shadow:0 4px 16px rgba(0,0,0,.1);
+    flex-direction:column;
+  }
+
+  .mobile-nav.open{display:flex}
+
+  .mobile-nav a{
+    padding:14px 18px;
+    font-size:14px;
+    font-weight:600;
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+
+  .mobile-nav a:last-child{border-bottom:none}
+  .mobile-nav a:hover{background:var(--paper)}
+
+  @media(max-width:980px){
+    .main-nav{display:none}
+    .nav-toggle{display:block}
+  }
+
+  .hero{
+    text-align:center;
+    padding:64px clamp(16px,5vw,60px) 52px;
+    background:linear-gradient(160deg,#fff7ed 0%,#fffbf5 50%,var(--paper) 100%);
+    border-bottom:1px solid var(--line);
+  }
+
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:var(--orange-soft);
+    color:var(--orange);
+    font-size:12px;
+    font-weight:600;
+    padding:4px 14px;
+    border-radius:99px;
+    margin-bottom:20px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    border:1px solid #fde68a;
+  }
+
+  .hero h1{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(30px,5vw,50px);
+    line-height:1.1;
+    max-width:780px;
+    margin:0 auto 16px;
+    letter-spacing:-.02em;
+  }
+
+  .hero p{
+    color:var(--muted);
+    max-width:760px;
+    margin:0 auto;
+    font-size:16px;
+    font-weight:300;
+  }
+
+  .main{
+    max-width:1100px;
+    margin:0 auto;
+    padding:28px clamp(16px,3vw,40px) 56px;
+  }
+
+  .tab-bar{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+  }
+
+  .tab-btn{
+    padding:7px 14px;
+    border:1.5px solid var(--line);
+    border-radius:99px;
+    font-family:'DM Sans',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    background:var(--white);
+    color:var(--muted);
+    transition:all .2s;
+  }
+
+  .tab-btn.active{
+    background:var(--orange);
+    color:white;
+    border-color:var(--orange);
+  }
+
+  .tab-btn:hover:not(.active){
+    border-color:var(--orange);
+    color:var(--orange);
+  }
+
+  .calc-section{display:none}
+  .calc-section.active{display:block}
+
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--r);
+    box-shadow:var(--shadow-sm);
+    overflow:hidden;
+  }
+
+  .card-header{
+    padding:16px 20px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#fafbfd;
+  }
+
+  .card-header h2{
+    font-size:14px;
+    font-weight:600;
+    color:var(--ink);
+  }
+
+  .card-icon{
+    width:30px;
+    height:30px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:15px;
+    flex-shrink:0;
+    background:var(--orange-soft);
+  }
+
+  .card-body{padding:20px}
+
+  .field{margin-bottom:14px}
+
+  label{
+    display:block;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.07em;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+
+  .input-wrap{position:relative;flex:1}
+
+  .input-wrap input,
+  .input-wrap select{
+    width:100%;
+    padding:11px 40px 11px 14px;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    font-family:'DM Sans',sans-serif;
+    font-size:16px;
+    font-weight:600;
+    color:var(--ink);
+    background:var(--white);
+    outline:none;
+    transition:border-color .2s, box-shadow .2s;
+  }
+
+  .input-wrap input:focus,
+  .input-wrap select:focus{
+    border-color:var(--orange);
+    box-shadow:0 0 0 3px rgba(217,119,6,.1);
+  }
+
+  .input-unit{
+    position:absolute;
+    right:12px;
+    font-size:12px;
+    font-weight:700;
+    color:var(--muted);
+    pointer-events:none;
+    top:50%;
+    transform:translateY(-50%);
+  }
+
+  .quick-rate-bar{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:8px;
+  }
+
+  .quick-btn{
+    border:1px solid var(--line);
+    background:#fff;
+    color:#374151;
+    border-radius:999px;
+    padding:6px 12px;
+    font-size:12px;
+    font-weight:700;
+    cursor:pointer;
+    transition:all .2s;
+  }
+
+  .quick-btn:hover{
+    border-color:var(--orange);
+    color:var(--orange);
+  }
+
+  .result-box{
+    background:linear-gradient(135deg,#d97706 0%, #f59e0b 55%, #fbbf24 100%);
+    border-radius:16px;
+    padding:18px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin-top:14px;
+    box-shadow:0 10px 24px rgba(217,119,6,.18);
+    border:1px solid rgba(255,255,255,.18);
+    transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+  }
+
+  .result-box.show-animate{
+    animation:resultPulse .35s ease;
+  }
+
+  .result-box .res-label{
+    font-size:12px;
+    font-weight:700;
+    color:rgba(255,255,255,.82);
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    margin-bottom:4px;
+  }
+
+  .result-box .res-value{
+    font-family:'DM Serif Display',serif;
+    font-size:34px;
+    color:#fff;
+    letter-spacing:-.03em;
+    line-height:1.05;
+    word-break:break-word;
+  }
+
+  .result-box .res-unit{
+    font-size:15px;
+    opacity:.82;
+    font-family:'DM Sans',sans-serif;
+    font-weight:500;
+  }
+
+  .result-box .res-icon{
+    font-size:38px;
+    opacity:.72;
+    flex-shrink:0;
+  }
+
+  @keyframes resultPulse{
+    0%{transform:scale(.985);opacity:.9}
+    100%{transform:scale(1);opacity:1}
+  }
+
+  .result-detail{
+    margin-top:12px;
+    padding:14px 16px;
+    background:#f8fafc;
+    border:1px solid var(--line);
+    border-radius:12px;
+    font-size:14px;
+    color:#667085;
+    line-height:1.7;
+    display:none;
+  }
+
+  .result-detail.show{display:block}
+  .result-detail strong{color:var(--ink);font-weight:700}
+
+  .calc-btn{
+    width:100%;
+    padding:12px;
+    background:var(--orange);
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    font-family:'DM Sans',sans-serif;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
+    margin-top:14px;
+    transition:background .2s;
+  }
+
+  .calc-btn:hover{background:#b45309}
+
+  .warn-box{
+    background:#fffbea;
+    border:1px solid #fde68a;
+    border-radius:12px;
+    padding:14px 16px;
+    margin-top:18px;
+    font-size:14px;
+    color:#57534e;
+  }
+
+  .section-band{
+    background:var(--white);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    margin-top:48px;
+  }
+
+  .section-inner{
+    max-width:1100px;
+    margin:0 auto;
+    padding:48px clamp(16px,3vw,40px);
+  }
+
+  .section-title{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(22px,3vw,30px);
+    margin-bottom:6px;
+    letter-spacing:-.02em;
+  }
+
+  .section-sub{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:28px;
+  }
+
+  .info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+  }
+
+  .info-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--r);
+    padding:20px;
+  }
+
+  .info-card h3{
+    font-family:'DM Serif Display',serif;
+    font-size:16px;
+    margin-bottom:10px;
+  }
+
+  .info-card p,
+  .info-card li{
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.7;
+  }
+
+  .info-card ul{padding-left:16px}
+  .info-card li{margin-bottom:4px}
+
+  .formula{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:10px 14px;
+    margin-top:10px;
+    font-size:13px;
+    font-weight:600;
+    color:var(--ink);
+    font-family:monospace;
+  }
+
+  .content-band{background:var(--paper)}
+
+  .content-inner{
+    max-width:1100px;
+    margin:0 auto;
+    padding:48px clamp(16px,3vw,40px) 0;
+  }
+
+  .content-box{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--r);
+    box-shadow:var(--shadow-sm);
+    padding:28px;
+    margin-bottom:20px;
+  }
+
+  .content-box h2{
+    font-family:'DM Serif Display',serif;
+    font-size:28px;
+    margin:0 0 12px;
+    line-height:1.2;
+    letter-spacing:-.02em;
+  }
+
+  .content-box p{
+    margin-bottom:14px;
+    color:#374151;
+    font-size:16px;
+    line-height:1.7;
+  }
+
+  .content-box ul{
+    padding-left:20px;
+    margin:10px 0 16px;
+  }
+
+  .content-box li{
+    margin-bottom:8px;
+    color:#374151;
+    font-size:16px;
+    line-height:1.7;
+  }
+
+  .content-box a{
+    color:var(--accent);
+    text-decoration:underline;
+  }
+
+  .sss-band{
+    background:var(--paper);
+    padding-bottom:64px;
+  }
+
+  .sss-inner{
+    max-width:1100px;
+    margin:0 auto;
+    padding:48px clamp(16px,3vw,40px) 0;
+  }
+
+  .faq-item{
+    border-bottom:1px solid var(--line);
+    padding:16px 0;
+  }
+
+  .faq-item:first-child{border-top:1px solid var(--line)}
+
+  .faq-q{
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    color:var(--ink);
+  }
+
+  .faq-q::after{
+    content:'+';
+    font-size:20px;
+    color:var(--orange);
+    flex-shrink:0;
+    line-height:1;
+    font-weight:300;
+    transition:transform .2s;
+  }
+
+  .faq-item.open .faq-q::after{transform:rotate(45deg)}
+
+  .faq-a{
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.7;
+    display:none;
+    margin-top:8px;
+  }
+
+  .faq-item.open .faq-a{display:block}
+
+  .related-links{
+    max-width:1100px;
+    margin:30px auto;
+    padding:16px 20px;
+    font-size:14px;
+    color:#555;
+    line-height:1.8;
+    background:#fff;
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+  }
+
+  .related-links a{
+    color:var(--accent);
+    text-decoration:none;
+    margin-right:8px;
+  }
+
+  .related-links a:hover{text-decoration:underline}
+
+  .disclaimer{
+    max-width:1100px;
+    margin:40px auto;
+    padding:15px 20px;
+    font-size:14px;
+    color:#666;
+    line-height:1.6;
+  }
+
+  footer{
+    background:var(--ink);
+    color:rgba(255,255,255,.6);
+    padding:28px clamp(16px,5vw,60px);
+    text-align:center;
+    font-size:13px;
+  }
+
+  footer strong{color:#fff;font-weight:600}
+  footer a{color:rgba(255,255,255,.6);text-decoration:underline}
+  footer a:hover{color:#fff}
+
+  footer .footer-links{
+    margin-top:10px;
+    display:flex;
+    justify-content:center;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+
+  @media(max-width:600px){
+    header{height:60px;padding:0 14px}
+    .header-left{gap:0}
+    .logo-icon{width:34px;height:34px}
+    .logo-text{font-size:18px}
+    .mobile-nav{top:60px}
+    .hero{padding:36px 16px 30px}
+    .result-box{padding:16px 16px;border-radius:14px}
+    .result-box .res-value{font-size:28px}
+    .result-box .res-icon{font-size:30px}
+    .content-box{padding:20px}
+    .content-box h2{font-size:24px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <a href="/" class="logo-wrap">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="white" stroke-width="1.8"/>
+          <line x1="3" y1="9" x2="21" y2="9" stroke="white" stroke-width="1.8"/>
+          <line x1="8" y1="14" x2="10" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="14" x2="14" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="16" y1="14" x2="16" y2="19" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="8" y1="18" x2="10" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="18" x2="14" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="logo-text">maas<span>hesap</span></div>
+    </a>
+
+    <nav class="main-nav">
+      <a href="/" class="nav-link">&#128176; Maaş Hesaplama</a>
+      <a href="tazminat.html" class="nav-link">&#128203; Tazminat</a>
+      <a href="issizlik.html" class="nav-link">&#128084; İşsizlik</a>
+      <a href="fazla-mesai.html" class="nav-link">&#9200; Fazla Mesai</a>
+      <a href="yuzde-hesaplama.html" class="nav-link">&#37; Yüzde Hesaplama</a>
+      <a href="kdv-hesaplama.html" class="nav-link active">KDV Hesaplama</a>
+    </nav>
+  </div>
+
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menüyü aç">☰</button>
+</header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/">&#128176; Maaş Hesaplama</a>
+  <a href="tazminat.html">&#128203; Tazminat</a>
+  <a href="issizlik.html">&#128084; İşsizlik</a>
+  <a href="fazla-mesai.html">&#9200; Fazla Mesai</a>
+  <a href="yuzde-hesaplama.html">&#37; Yüzde Hesaplama</a>
+  <a href="kdv-hesaplama.html">KDV Hesaplama</a>
+</div>
+
+<div class="hero">
+  <div class="hero-badge">KDV Hesaplama Aracı</div>
+  <h1>KDV Hesaplama: Dahil, Hariç, Tevkifatlı ve Matrah Hesapla</h1>
+  <p>
+    KDV dahil ve hariç fiyatı, KDV tutarını, matrahı ve tevkifatlı KDV hesabını tek sayfada hızlıca yapın.
+    %1, %10 ve %20 oranlarıyla çalışan pratik KDV hesaplama aracı.
+  </p>
+</div>
+
+<div class="main">
+  <div class="tab-bar">
+    <button class="tab-btn main-tab-btn active" onclick="switchTab('t1')">KDV Hariç → Dahil</button>
+    <button class="tab-btn main-tab-btn" onclick="switchTab('t2')">KDV Dahil → Hariç</button>
+    <button class="tab-btn main-tab-btn" onclick="switchTab('t3')">KDV Tutarı Hesapla</button>
+    <button class="tab-btn main-tab-btn" onclick="switchTab('t4')">KDV'den Matrah Bul</button>
+    <button class="tab-btn main-tab-btn" onclick="switchTab('t5')">Tevkifatlı KDV</button>
+  </div>
+
+  <div class="calc-section active" id="t1">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">₺</div>
+        <h2>KDV Hariç Tutarı KDV Dahil Fiyata Çevir</h2>
+      </div>
+      <div class="card-body">
+        <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Örnek: 10.000 TL tutarın %20 KDV dahil toplamı kaç olur?</p>
+
+        <div class="field">
+          <label for="t1_base">KDV Hariç Tutar</label>
+          <div class="input-wrap">
+            <input type="number" id="t1_base" placeholder="Örneğin: 10000" inputmode="decimal">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="t1_rate">KDV Oranı</label>
+          <div class="input-wrap">
+            <select id="t1_rate">
+              <option value="1">%1</option>
+              <option value="10">%10</option>
+              <option value="20" selected>%20</option>
+            </select>
+          </div>
+          <div class="quick-rate-bar">
+            <button class="quick-btn" type="button" onclick="setRate('t1_rate',1)">%1</button>
+            <button class="quick-btn" type="button" onclick="setRate('t1_rate',10)">%10</button>
+            <button class="quick-btn" type="button" onclick="setRate('t1_rate',20)">%20</button>
+          </div>
+        </div>
+
+        <button class="calc-btn" onclick="calc1()">Hesapla →</button>
+
+        <div class="result-box" id="t1_res" style="display:none;">
+          <div>
+            <div class="res-label">KDV Dahil Toplam</div>
+            <div class="res-value" id="t1_val">--</div>
+          </div>
+          <div class="res-icon">🧾</div>
+        </div>
+
+        <div class="result-detail" id="t1_detail"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="calc-section" id="t2">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">↘</div>
+        <h2>KDV Dahil Fiyattan KDV Hariç Tutarı Bul</h2>
+      </div>
+      <div class="card-body">
+        <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Örnek: 12.000 TL KDV dahil toplamın KDV hariç tutarı nedir?</p>
+
+        <div class="field">
+          <label for="t2_total">KDV Dahil Toplam</label>
+          <div class="input-wrap">
+            <input type="number" id="t2_total" placeholder="Örneğin: 12000" inputmode="decimal">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="t2_rate">KDV Oranı</label>
+          <div class="input-wrap">
+            <select id="t2_rate">
+              <option value="1">%1</option>
+              <option value="10">%10</option>
+              <option value="20" selected>%20</option>
+            </select>
+          </div>
+          <div class="quick-rate-bar">
+            <button class="quick-btn" type="button" onclick="setRate('t2_rate',1)">%1</button>
+            <button class="quick-btn" type="button" onclick="setRate('t2_rate',10)">%10</button>
+            <button class="quick-btn" type="button" onclick="setRate('t2_rate',20)">%20</button>
+          </div>
+        </div>
+
+        <button class="calc-btn" onclick="calc2()">Hesapla →</button>
+
+        <div class="result-box" id="t2_res" style="display:none;">
+          <div>
+            <div class="res-label">KDV Hariç Tutar</div>
+            <div class="res-value" id="t2_val">--</div>
+          </div>
+          <div class="res-icon">💼</div>
+        </div>
+
+        <div class="result-detail" id="t2_detail"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="calc-section" id="t3">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">%</div>
+        <h2>Yalnızca KDV Tutarını Hesapla</h2>
+      </div>
+      <div class="card-body">
+        <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Örnek: 8.500 TL üzerinden %10 KDV tutarı ne kadar?</p>
+
+        <div class="field">
+          <label for="t3_base">KDV Hariç Tutar</label>
+          <div class="input-wrap">
+            <input type="number" id="t3_base" placeholder="Örneğin: 8500" inputmode="decimal">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="t3_rate">KDV Oranı</label>
+          <div class="input-wrap">
+            <select id="t3_rate">
+              <option value="1">%1</option>
+              <option value="10" selected>%10</option>
+              <option value="20">%20</option>
+            </select>
+          </div>
+          <div class="quick-rate-bar">
+            <button class="quick-btn" type="button" onclick="setRate('t3_rate',1)">%1</button>
+            <button class="quick-btn" type="button" onclick="setRate('t3_rate',10)">%10</button>
+            <button class="quick-btn" type="button" onclick="setRate('t3_rate',20)">%20</button>
+          </div>
+        </div>
+
+        <button class="calc-btn" onclick="calc3()">Hesapla →</button>
+
+        <div class="result-box" id="t3_res" style="display:none;">
+          <div>
+            <div class="res-label">KDV Tutarı</div>
+            <div class="res-value" id="t3_val">--</div>
+          </div>
+          <div class="res-icon">🧮</div>
+        </div>
+
+        <div class="result-detail" id="t3_detail"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="calc-section" id="t4">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🔎</div>
+        <h2>KDV Tutarından Matrah Bul</h2>
+      </div>
+      <div class="card-body">
+        <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Örnek: 2.000 TL KDV, %20 orana göre hangi matrahın vergisidir?</p>
+
+        <div class="field">
+          <label for="t4_vat">KDV Tutarı</label>
+          <div class="input-wrap">
+            <input type="number" id="t4_vat" placeholder="Örneğin: 2000" inputmode="decimal">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="t4_rate">KDV Oranı</label>
+          <div class="input-wrap">
+            <select id="t4_rate">
+              <option value="1">%1</option>
+              <option value="10">%10</option>
+              <option value="20" selected>%20</option>
+            </select>
+          </div>
+          <div class="quick-rate-bar">
+            <button class="quick-btn" type="button" onclick="setRate('t4_rate',1)">%1</button>
+            <button class="quick-btn" type="button" onclick="setRate('t4_rate',10)">%10</button>
+            <button class="quick-btn" type="button" onclick="setRate('t4_rate',20)">%20</button>
+          </div>
+        </div>
+
+        <button class="calc-btn" onclick="calc4()">Hesapla →</button>
+
+        <div class="result-box" id="t4_res" style="display:none;">
+          <div>
+            <div class="res-label">Matrah</div>
+            <div class="res-value" id="t4_val">--</div>
+          </div>
+          <div class="res-icon">📌</div>
+        </div>
+
+        <div class="result-detail" id="t4_detail"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="calc-section" id="t5">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">⚖️</div>
+        <h2>Tevkifatlı KDV Hesaplama</h2>
+      </div>
+      <div class="card-body">
+        <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Örnek: 50.000 TL tutar, %20 KDV ve 7/10 tevkifat için hesaplama yapın.</p>
+
+        <div class="field">
+          <label for="t5_base">KDV Hariç Tutar</label>
+          <div class="input-wrap">
+            <input type="number" id="t5_base" placeholder="Örneğin: 50000" inputmode="decimal">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="t5_rate">KDV Oranı</label>
+          <div class="input-wrap">
+            <select id="t5_rate">
+              <option value="1">%1</option>
+              <option value="10">%10</option>
+              <option value="20" selected>%20</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="t5_withholding">Tevkifat Oranı</label>
+          <div class="input-wrap">
+            <select id="t5_withholding">
+              <option value="1/10">1/10</option>
+              <option value="2/10">2/10</option>
+              <option value="3/10">3/10</option>
+              <option value="4/10">4/10</option>
+              <option value="5/10">5/10</option>
+              <option value="7/10" selected>7/10</option>
+              <option value="9/10">9/10</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="calc-btn" onclick="calc5()">Hesapla →</button>
+
+        <div class="result-box" id="t5_res" style="display:none;">
+          <div>
+            <div class="res-label">Toplam Tutar</div>
+            <div class="res-value" id="t5_val">--</div>
+          </div>
+          <div class="res-icon">📑</div>
+        </div>
+
+        <div class="result-detail" id="t5_detail"></div>
+
+        <div class="warn-box">
+          Tevkifat oranı ve uygulanabilirlik, işlem türüne göre değişebilir. Kesin işlem için muhasebe kaydı ve güncel mevzuat ayrıca kontrol edilmelidir.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-band">
+  <div class="section-inner">
+    <div class="section-title">KDV Hesaplama Nasıl Yapılır?</div>
+    <div class="section-sub">KDV dahil, hariç, matrah ve tevkifatlı hesaplamalarda kullanılan temel mantık.</div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>KDV Hariç → Dahil</h3>
+        <p>KDV hariç tutara vergi eklenerek toplam fiyat bulunur.</p>
+        <div class="formula">Toplam = Matrah + (Matrah × Oran / 100)</div>
+      </div>
+
+      <div class="info-card">
+        <h3>KDV Dahil → Hariç</h3>
+        <p>KDV dahil toplamdan vergi ayrıştırılarak net matrah hesaplanır.</p>
+        <div class="formula">Matrah = Toplam / (1 + Oran/100)</div>
+      </div>
+
+      <div class="info-card">
+        <h3>KDV Tutarı</h3>
+        <p>Sadece verginin ne kadar olduğunu görmek için matrah üzerinden doğrudan KDV hesaplanır.</p>
+        <div class="formula">KDV = Matrah × Oran / 100</div>
+      </div>
+
+      <div class="info-card">
+        <h3>KDV Tutarından Matrah</h3>
+        <p>KDV tutarı biliniyorsa buna karşılık gelen vergi öncesi bedel bulunabilir.</p>
+        <div class="formula">Matrah = KDV × 100 / Oran</div>
+      </div>
+
+      <div class="info-card">
+        <h3>Tevkifatlı KDV</h3>
+        <p>Önce toplam KDV hesaplanır, sonra tevkifat oranına göre alıcıya ve satıcıya düşen kısım ayrılır.</p>
+        <div class="formula">Tevkif Edilen = KDV × Tevkifat Oranı</div>
+      </div>
+
+      <div class="info-card">
+        <h3>Türkiye’de Genel KDV Yapısı</h3>
+        <p>Türkiye’de genel KDV oran yapısı %1, %10 ve %20 şeklindedir. Uygulanacak oran mal ve hizmet türüne göre değişebildiği için işlem öncesinde resmi oran kontrolü önemlidir.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-band">
+  <div class="content-inner">
+
+    <div class="content-box">
+      <h2>KDV Hesaplama Aracı Ne İşe Yarar?</h2>
+      <p>
+        KDV hesaplama aracı; bir ürün veya hizmet bedelinin vergi dahil toplamını, vergi hariç tutarını, yalnızca KDV kısmını ve gerektiğinde tevkifatlı KDV dağılımını hızlıca hesaplamanıza yardımcı olur.
+      </p>
+      <p>
+        Özellikle fatura düzenleme, teklif hazırlama, satın alma, serbest çalışma, e-ticaret ve muhasebe süreçlerinde KDV dahil ve hariç fiyatları doğru görmek büyük önem taşır. Bu nedenle kullanıcıların tek bir kutu yerine farklı hesap senaryolarını aynı sayfada kullanabilmesi ciddi avantaj sağlar.
+      </p>
+    </div>
+
+    <div class="content-box">
+      <h2>KDV Hesaplama Nerelerde Kullanılır?</h2>
+      <ul>
+        <li>Fatura düzenlerken KDV dahil ve hariç tutarı görmek için</li>
+        <li>Teklif hazırlarken müşteriye toplam fiyat sunmak için</li>
+        <li>E-ticaret satışlarında vergi dahil fiyat ayrıştırmak için</li>
+        <li>Serbest çalışanların tahsilat ve vergi planlamasında</li>
+        <li>Tevkifatlı işlemlerde alıcı ve satıcı payını ayırmak için</li>
+      </ul>
+      <p>
+        KDV hesaplama yalnızca ticari işletmeler için değil, fiyat karşılaştırması yapan son kullanıcılar için de faydalıdır. Özellikle “bu fiyatın içindeki KDV ne kadar?” sorusu günlük hayatta sıkça sorulur.
+      </p>
+    </div>
+
+    <div class="content-box">
+      <h2>KDV Hesaplamada En Sık Yapılan Hatalar</h2>
+      <ul>
+        <li>KDV dahil toplamı doğrudan oranla çarparak vergi hesaplamak</li>
+        <li>Yanlış KDV oranı seçmek</li>
+        <li>KDV tutarı ile toplam tutarı karıştırmak</li>
+        <li>Tevkifatlı işlemlerde tevkif edilen kısmı hatalı yorumlamak</li>
+        <li>Her ürün ve hizmet için aynı oran geçerli sanmak</li>
+      </ul>
+      <div class="warn-box">
+        Aynı oran her işlem için geçerli değildir. Bu sayfadaki araç genel hesap mantığını sunar; işlem bazlı kesin oran için resmi KDV listesi ve güncel mevzuat kontrol edilmelidir.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="sss-band">
+  <div class="sss-inner">
+    <div class="section-title">Sık Sorulan Sorular</div>
+    <div class="section-sub" style="margin-bottom:24px">KDV hesaplama hakkında merak edilenler.</div>
+
+    <div style="max-width:800px;">
+      <div class="faq-item">
+        <div class="faq-q">KDV nasıl hesaplanır?</div>
+        <div class="faq-a">KDV hariç tutar üzerinden vergi hesaplamak için matrah × oran / 100 formülü kullanılır. KDV dahil toplam için ise matraha KDV tutarı eklenir.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">KDV dahil fiyattan KDV hariç tutar nasıl bulunur?</div>
+        <div class="faq-a">KDV dahil toplam, 1 artı KDV oranına bölünür. Örneğin %20 KDV dahil toplam için toplam tutar 1,20'ye bölünerek matrah bulunur.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Türkiye’de genel KDV oranları nelerdir?</div>
+        <div class="faq-a">Türkiye’de genel oran yapısı %1, %10 ve %20 şeklindedir. Ancak hangi mal veya hizmete hangi oranın uygulanacağı işlem türüne göre değişebilir.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Tevkifatlı KDV hesaplama nasıl yapılır?</div>
+        <div class="faq-a">Önce toplam KDV bulunur. Daha sonra seçilen tevkifat oranına göre alıcı tarafından tevkif edilen KDV ve satıcıya kalan KDV ayrı ayrı hesaplanır.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">KDV tutarından matrah bulunabilir mi?</div>
+        <div class="faq-a">Evet. KDV tutarı biliniyorsa matrah, KDV × 100 / oran formülü ile bulunabilir.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="related-links">
+  <strong>İlgili Hesaplama Araçları:</strong>
+  <a href="yuzde-hesaplama.html">Yüzde Hesaplama</a> ·
+  <a href="/">Maaş Hesaplama</a> ·
+  <a href="tazminat.html">Kıdem Tazminatı Hesaplama</a> ·
+  <a href="issizlik.html">İşsizlik Maaşı Hesaplama</a> ·
+  <a href="fazla-mesai.html">Fazla Mesai Hesaplama</a>
+</div>
+
+<div class="disclaimer">
+  Bu içerik bilgilendirme amaçlıdır. Türkiye’de genel KDV oran yapısı resmî listelerde yer alır; ancak hangi oranının hangi mal veya hizmete uygulanacağı işlem türüne göre değişebilir. Kesin işlem öncesinde güncel resmi oranlar ve mevzuat ayrıca kontrol edilmelidir.
+</div>
+
+<footer>
+  <p><strong>MaaşHesap 2026</strong> &mdash; Bu site yalnızca bilgilendirme amaçlıdır. Kesin hesap için resmi kayıtlar ve uzman görüşü esas alınmalıdır.</p>
+  <div class="footer-links">
+    <a href="/">Maaş Hesaplama</a>
+    <a href="tazminat.html">Tazminat</a>
+    <a href="issizlik.html">İşsizlik</a>
+    <a href="fazla-mesai.html">Fazla Mesai</a>
+    <a href="yuzde-hesaplama.html">Yüzde Hesaplama</a>
+    <a href="kdv-hesaplama.html">KDV Hesaplama</a>
+    <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="iletisim.html">İletişim</a>
+    <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
+    <a href="kaynaklar.html">Kaynaklar</a>
+    <a href="cerez-politikasi.html">Çerez Politikası</a>
+  </div>
+  <p style="margin-top:10px">İletişim: <a href="mailto:info@maashesap.net">info@maashesap.net</a></p>
+</footer>
+
+<script>
+(function(){
+  var nt = document.getElementById('nav-toggle');
+  var mn = document.getElementById('mobile-nav');
+
+  if(nt && mn){
+    nt.addEventListener('click', function(e){
+      e.stopPropagation();
+      mn.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function(e){
+      if(!nt.contains(e.target) && !mn.contains(e.target)){
+        mn.classList.remove('open');
+      }
+    });
+  }
+
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      this.parentElement.classList.toggle('open');
+    });
+  });
+
+  var currentTab = 't1';
+  var mainTabs = ['t1','t2','t3','t4','t5'];
+
+  window.switchTab = function(id){
+    var currentEl = document.getElementById(currentTab);
+    if(currentEl){ currentEl.classList.remove('active'); }
+
+    document.querySelectorAll('.main-tab-btn').forEach(function(btn, i){
+      btn.classList.toggle('active', mainTabs[i] === id);
+    });
+
+    document.getElementById(id).classList.add('active');
+    currentTab = id;
+  };
+
+  window.setRate = function(selectId, rate){
+    document.getElementById(selectId).value = String(rate);
+  };
+
+  function parseNumber(value){
+    if(value === null || value === undefined) return NaN;
+    value = String(value).replace(',', '.').trim();
+    if(value === '') return NaN;
+    return Number(value);
+  }
+
+  function getVal(id){
+    return parseNumber(document.getElementById(id).value);
+  }
+
+  function fmtNum(n){
+    var rounded = Math.round(n * 100) / 100;
+    var isInteger = Number.isInteger(rounded);
+
+    return rounded.toLocaleString('tr-TR', {
+      minimumFractionDigits: isInteger ? 0 : 2,
+      maximumFractionDigits: 2
+    });
+  }
+
+  function showResult(resId, valId, detailId, valueHtml, detailHtml){
+    var resEl = document.getElementById(resId);
+    var valEl = document.getElementById(valId);
+    var detEl = document.getElementById(detailId);
+
+    resEl.style.display = 'flex';
+    valEl.innerHTML = valueHtml;
+    detEl.innerHTML = detailHtml;
+    detEl.className = 'result-detail show';
+
+    resEl.classList.remove('show-animate');
+    void resEl.offsetWidth;
+    resEl.classList.add('show-animate');
+  }
+
+  window.calc1 = function(){
+    var base = getVal('t1_base');
+    var rate = getVal('t1_rate');
+
+    if(!isFinite(base) || !isFinite(rate)){
+      alert('Lütfen tüm alanları doldurun.');
+      return;
+    }
+
+    var vat = base * rate / 100;
+    var total = base + vat;
+
+    showResult(
+      't1_res',
+      't1_val',
+      't1_detail',
+      fmtNum(total),
+      '<strong>KDV hariç tutar:</strong> ' + fmtNum(base) + '<br>' +
+      '<strong>KDV tutarı:</strong> ' + fmtNum(vat) + '<br>' +
+      '<strong>Toplam:</strong> ' + fmtNum(total) + '<br>' +
+      '<strong>Formül:</strong> ' + fmtNum(base) + ' + (' + fmtNum(base) + ' × ' + rate + ' / 100)'
+    );
+  };
+
+  window.calc2 = function(){
+    var total = getVal('t2_total');
+    var rate = getVal('t2_rate');
+
+    if(!isFinite(total) || !isFinite(rate)){
+      alert('Lütfen tüm alanları doldurun.');
+      return;
+    }
+
+    var base = total / (1 + rate / 100);
+    var vat = total - base;
+
+    showResult(
+      't2_res',
+      't2_val',
+      't2_detail',
+      fmtNum(base),
+      '<strong>KDV dahil toplam:</strong> ' + fmtNum(total) + '<br>' +
+      '<strong>KDV hariç tutar:</strong> ' + fmtNum(base) + '<br>' +
+      '<strong>KDV tutarı:</strong> ' + fmtNum(vat) + '<br>' +
+      '<strong>Formül:</strong> ' + fmtNum(total) + ' / (1 + ' + rate + '/100)'
+    );
+  };
+
+  window.calc3 = function(){
+    var base = getVal('t3_base');
+    var rate = getVal('t3_rate');
+
+    if(!isFinite(base) || !isFinite(rate)){
+      alert('Lütfen tüm alanları doldurun.');
+      return;
+    }
+
+    var vat = base * rate / 100;
+    var total = base + vat;
+
+    showResult(
+      't3_res',
+      't3_val',
+      't3_detail',
+      fmtNum(vat),
+      '<strong>KDV hariç tutar:</strong> ' + fmtNum(base) + '<br>' +
+      '<strong>KDV oranı:</strong> %' + fmtNum(rate) + '<br>' +
+      '<strong>KDV tutarı:</strong> ' + fmtNum(vat) + '<br>' +
+      '<strong>KDV dahil toplam:</strong> ' + fmtNum(total)
+    );
+  };
+
+  window.calc4 = function(){
+    var vat = getVal('t4_vat');
+    var rate = getVal('t4_rate');
+
+    if(!isFinite(vat) || !isFinite(rate) || rate === 0){
+      alert('Lütfen geçerli değerler girin.');
+      return;
+    }
+
+    var base = vat * 100 / rate;
+    var total = base + vat;
+
+    showResult(
+      't4_res',
+      't4_val',
+      't4_detail',
+      fmtNum(base),
+      '<strong>KDV tutarı:</strong> ' + fmtNum(vat) + '<br>' +
+      '<strong>KDV oranı:</strong> %' + fmtNum(rate) + '<br>' +
+      '<strong>Matrah:</strong> ' + fmtNum(base) + '<br>' +
+      '<strong>KDV dahil toplam:</strong> ' + fmtNum(total)
+    );
+  };
+
+  window.calc5 = function(){
+    var base = getVal('t5_base');
+    var rate = getVal('t5_rate');
+    var withholding = document.getElementById('t5_withholding').value.split('/');
+
+    if(!isFinite(base) || !isFinite(rate)){
+      alert('Lütfen tüm alanları doldurun.');
+      return;
+    }
+
+    var num = Number(withholding[0]);
+    var den = Number(withholding[1]);
+
+    var vat = base * rate / 100;
+    var withheldVat = vat * num / den;
+    var remainingVat = vat - withheldVat;
+    var total = base + vat;
+
+    showResult(
+      't5_res',
+      't5_val',
+      't5_detail',
+      fmtNum(total),
+      '<strong>KDV hariç tutar:</strong> ' + fmtNum(base) + '<br>' +
+      '<strong>Toplam KDV:</strong> ' + fmtNum(vat) + '<br>' +
+      '<strong>Tevkifat oranı:</strong> ' + num + '/' + den + '<br>' +
+      '<strong>Tevkif edilen KDV:</strong> ' + fmtNum(withheldVat) + '<br>' +
+      '<strong>Satıcıya kalan KDV:</strong> ' + fmtNum(remainingVat) + '<br>' +
+      '<strong>KDV dahil toplam:</strong> ' + fmtNum(total)
+    );
+  };
+
+  document.addEventListener('keypress', function(e){
+    if(e.key !== 'Enter') return;
+    var map = {
+      t1: window.calc1,
+      t2: window.calc2,
+      t3: window.calc3,
+      t4: window.calc4,
+      t5: window.calc5
+    };
+    if(map[currentTab]) map[currentTab]();
+  });
+})();
+</script>
+
+</body>
+</html>
