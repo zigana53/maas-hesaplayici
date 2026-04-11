@@ -1378,7 +1378,7 @@
 
         <div class="result-box" id="t5_res" style="display:none;">
           <div>
-            <div class="res-label">Toplam Tutar</div>
+            <div class="res-label">Tevkif Edilen KDV</div>
             <div class="res-value" id="t5_val">--</div>
           </div>
           <div class="res-icon">📑</div>
@@ -1780,7 +1780,7 @@
       't5_res',
       't5_val',
       't5_detail',
-      fmtNum(total),
+      fmtNum(withheldVat),
       '<strong>KDV hariç tutar:</strong> ' + fmtNum(base) + '<br>' +
       '<strong>Toplam KDV:</strong> ' + fmtNum(vat) + '<br>' +
       '<strong>Tevkifat oranı:</strong> ' + num + '/' + den + '<br>' +
