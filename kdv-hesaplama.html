@@ -728,6 +728,183 @@
     .content-box{padding:20px}
     .content-box h2{font-size:24px}
   }
+
+  .mode-switch{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:14px;
+  }
+
+  .mode-btn{
+    border:1px solid var(--line);
+    background:#fff;
+    color:#374151;
+    border-radius:999px;
+    padding:8px 14px;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    transition:all .2s;
+  }
+
+  .mode-btn.active{
+    background:var(--orange);
+    color:#fff;
+    border-color:var(--orange);
+  }
+
+  .rate-mode-wrap{
+    margin-top:10px;
+  }
+
+  .rate-mode-tabs{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:10px;
+  }
+
+  .rate-mode-btn{
+    border:1px solid var(--line);
+    background:#fff;
+    color:#374151;
+    border-radius:999px;
+    padding:7px 12px;
+    font-size:12px;
+    font-weight:700;
+    cursor:pointer;
+    transition:all .2s;
+  }
+
+  .rate-mode-btn.active{
+    background:var(--orange);
+    color:#fff;
+    border-color:var(--orange);
+  }
+
+  .custom-rate-box{
+    display:none;
+    margin-top:10px;
+  }
+
+  .custom-rate-box.show{
+    display:block;
+  }
+
+  .helper-note{
+    font-size:12px;
+    color:#666;
+    line-height:1.6;
+    margin-top:8px;
+  }
+
+  .quick-scenarios{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin:10px 0 0;
+  }
+
+  .scenario-btn{
+    border:1px solid var(--line);
+    background:#fff;
+    color:#374151;
+    border-radius:10px;
+    padding:8px 12px;
+    font-size:12px;
+    font-weight:700;
+    cursor:pointer;
+    transition:all .2s;
+  }
+
+  .scenario-btn:hover{
+    border-color:var(--orange);
+    color:var(--orange);
+  }
+
+  .result-summary-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:14px;
+  }
+
+  .result-summary-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:14px;
+  }
+
+  .result-summary-card .summary-label{
+    font-size:12px;
+    color:#667085;
+    margin-bottom:4px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+  }
+
+  .result-summary-card .summary-value{
+    font-size:20px;
+    font-weight:700;
+    color:var(--ink);
+    line-height:1.2;
+  }
+
+  .copy-btn{
+    margin-top:12px;
+    width:100%;
+    padding:11px;
+    border:none;
+    border-radius:10px;
+    background:#111827;
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    transition:opacity .2s;
+  }
+
+  .copy-btn:hover{
+    opacity:.9;
+  }
+
+  .invoice-box{
+    margin-top:14px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:14px 16px;
+  }
+
+  .invoice-box h3{
+    font-size:14px;
+    margin:0 0 10px;
+    color:var(--ink);
+  }
+
+  .invoice-row{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    padding:8px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+  }
+
+  .invoice-row:last-child{
+    border-bottom:none;
+    font-weight:700;
+  }
+
+  @media(max-width:760px){
+    .result-summary-grid{
+      grid-template-columns:1fr;
+    }
+  }
+  
 </style>
 </head>
 <body>
@@ -806,7 +983,15 @@
         </div>
 
         <div class="field">
-          <label for="t1_rate">KDV Oranı</label>
+          <label>KDV Oranı</label>
+
+          <div class="rate-mode-wrap">
+            <div class="rate-mode-tabs">
+              <button class="rate-mode-btn active" type="button" id="t1_rate_ready_btn" onclick="setRateMode('t1','ready')">Hazır Oranlar</button>
+              <button class="rate-mode-btn" type="button" id="t1_rate_custom_btn" onclick="setRateMode('t1','custom')">Özel Oran</button>
+        </div>
+
+        <div id="t1_ready_rate_box">
           <div class="input-wrap">
             <select id="t1_rate">
               <option value="1">%1</option>
@@ -821,6 +1006,24 @@
           </div>
         </div>
 
+    <div class="custom-rate-box" id="t1_custom_rate_box">
+      <div class="input-wrap">
+        <input type="number" id="t1_custom_rate" placeholder="Örneğin: 18" inputmode="decimal">
+        <span class="input-unit">%</span>
+      </div>
+      <p class="helper-note">
+        Türkiye’de genel oran yapısı çoğunlukla %1, %10 ve %20’dir. İsterseniz özel oran da girebilirsiniz.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="quick-scenarios">
+  <button class="scenario-btn" type="button" onclick="fillKdvScenario('t1',1000,20)">1.000 TL + %20</button>
+  <button class="scenario-btn" type="button" onclick="fillKdvScenario('t1',10000,20)">10.000 TL + %20</button>
+  <button class="scenario-btn" type="button" onclick="fillKdvScenario('t1',50000,10)">50.000 TL + %10</button>
+</div>
+
         <button class="calc-btn" onclick="calc1()">Hesapla →</button>
 
         <div class="result-box" id="t1_res" style="display:none;">
@@ -832,6 +1035,30 @@
         </div>
 
         <div class="result-detail" id="t1_detail"></div>
+        <div class="result-summary-grid" id="t1_summary" style="display:none;">
+          <div class="result-summary-card">
+          <div class="summary-label">KDV Hariç</div>
+          <div class="summary-value" id="t1_summary_base">-</div>
+        </div>
+        <div class="result-summary-card">
+          <div class="summary-label">KDV Tutarı</div>
+          <div class="summary-value" id="t1_summary_vat">-</div>
+        </div>
+        <div class="result-summary-card">
+          <div class="summary-label">KDV Dahil</div>
+          <div class="summary-value" id="t1_summary_total">-</div>
+        </div>
+      </div>
+
+      <div class="invoice-box" id="t1_invoice" style="display:none;">
+        <h3>Fatura Özeti</h3>
+        <div class="invoice-row"><span>Mal / Hizmet Bedeli</span><span id="t1_invoice_base">-</span></div>
+        <div class="invoice-row"><span>KDV Oranı</span><span id="t1_invoice_rate">-</span></div>
+        <div class="invoice-row"><span>KDV Tutarı</span><span id="t1_invoice_vat">-</span></div>
+        <div class="invoice-row"><span>Genel Toplam</span><span id="t1_invoice_total">-</span></div>
+      </div>
+
+      <button class="copy-btn" id="t1_copy_btn" type="button" style="display:none;" onclick="copyKdvSummary('t1')">Sonucu Kopyala</button>
       </div>
     </div>
   </div>
@@ -853,20 +1080,46 @@
         </div>
 
         <div class="field">
-          <label for="t2_rate">KDV Oranı</label>
-          <div class="input-wrap">
-            <select id="t2_rate">
-              <option value="1">%1</option>
-              <option value="10">%10</option>
-              <option value="20" selected>%20</option>
-            </select>
-          </div>
-          <div class="quick-rate-bar">
-            <button class="quick-btn" type="button" onclick="setRate('t2_rate',1)">%1</button>
-            <button class="quick-btn" type="button" onclick="setRate('t2_rate',10)">%10</button>
-            <button class="quick-btn" type="button" onclick="setRate('t2_rate',20)">%20</button>
-          </div>
-        </div>
+  <label>KDV Oranı</label>
+
+  <div class="rate-mode-wrap">
+    <div class="rate-mode-tabs">
+      <button class="rate-mode-btn active" type="button" id="t2_rate_ready_btn" onclick="setRateMode('t2','ready')">Hazır Oranlar</button>
+      <button class="rate-mode-btn" type="button" id="t2_rate_custom_btn" onclick="setRateMode('t2','custom')">Özel Oran</button>
+    </div>
+
+    <div id="t2_ready_rate_box">
+      <div class="input-wrap">
+        <select id="t2_rate">
+          <option value="1">%1</option>
+          <option value="10">%10</option>
+          <option value="20" selected>%20</option>
+        </select>
+      </div>
+      <div class="quick-rate-bar">
+        <button class="quick-btn" type="button" onclick="setRate('t2_rate',1)">%1</button>
+        <button class="quick-btn" type="button" onclick="setRate('t2_rate',10)">%10</button>
+        <button class="quick-btn" type="button" onclick="setRate('t2_rate',20)">%20</button>
+      </div>
+    </div>
+
+    <div class="custom-rate-box" id="t2_custom_rate_box">
+      <div class="input-wrap">
+        <input type="number" id="t2_custom_rate" placeholder="Örneğin: 18" inputmode="decimal">
+        <span class="input-unit">%</span>
+      </div>
+      <p class="helper-note">
+        İsterseniz özel KDV oranı da girebilirsiniz.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="quick-scenarios">
+  <button class="scenario-btn" type="button" onclick="fillKdvScenario('t2',1200,20)">1.200 TL dahil %20</button>
+  <button class="scenario-btn" type="button" onclick="fillKdvScenario('t2',5500,10)">5.500 TL dahil %10</button>
+  <button class="scenario-btn" type="button" onclick="fillKdvScenario('t2',10100,1)">10.100 TL dahil %1</button>
+</div>
 
         <button class="calc-btn" onclick="calc2()">Hesapla →</button>
 
@@ -879,6 +1132,22 @@
         </div>
 
         <div class="result-detail" id="t2_detail"></div>
+          <div class="result-summary-grid" id="t2_summary" style="display:none;">
+  <div class="result-summary-card">
+    <div class="summary-label">KDV Hariç</div>
+    <div class="summary-value" id="t2_summary_base">-</div>
+  </div>
+  <div class="result-summary-card">
+    <div class="summary-label">KDV Tutarı</div>
+    <div class="summary-value" id="t2_summary_vat">-</div>
+  </div>
+  <div class="result-summary-card">
+    <div class="summary-label">KDV Dahil</div>
+    <div class="summary-value" id="t2_summary_total">-</div>
+  </div>
+</div>
+
+<button class="copy-btn" id="t2_copy_btn" type="button" style="display:none;" onclick="copyKdvSummary('t2')">Sonucu Kopyala</button>
       </div>
     </div>
   </div>
@@ -1274,7 +1543,7 @@
 
   window.calc1 = function(){
     var base = getVal('t1_base');
-    var rate = getVal('t1_rate');
+    var rate = getRateValue('t1','t1_rate');
 
     if(!isFinite(base) || !isFinite(rate)){
       alert('Lütfen tüm alanları doldurun.');
@@ -1294,11 +1563,13 @@
       '<strong>Toplam:</strong> ' + fmtNum(total) + '<br>' +
       '<strong>Formül:</strong> ' + fmtNum(base) + ' + (' + fmtNum(base) + ' × ' + rate + ' / 100)'
     );
+
+    showSummary('t1', base, vat, total, rate);
   };
 
   window.calc2 = function(){
     var total = getVal('t2_total');
-    var rate = getVal('t2_rate');
+    var rate = getRateValue('t2','t2_rate');
 
     if(!isFinite(total) || !isFinite(rate)){
       alert('Lütfen tüm alanları doldurun.');
@@ -1318,6 +1589,8 @@
       '<strong>KDV tutarı:</strong> ' + fmtNum(vat) + '<br>' +
       '<strong>Formül:</strong> ' + fmtNum(total) + ' / (1 + ' + rate + '/100)'
     );
+
+    showSummary('t2', base, vat, total, rate);
   };
 
   window.calc3 = function(){
@@ -1400,6 +1673,84 @@
     );
   };
 
+  var rateModes = {
+  t1: 'ready',
+  t2: 'ready'
+};
+
+window.setRateMode = function(tabId, mode){
+  rateModes[tabId] = mode;
+
+  document.getElementById(tabId + '_rate_ready_btn').classList.toggle('active', mode === 'ready');
+  document.getElementById(tabId + '_rate_custom_btn').classList.toggle('active', mode === 'custom');
+
+  document.getElementById(tabId + '_ready_rate_box').style.display = mode === 'ready' ? 'block' : 'none';
+  document.getElementById(tabId + '_custom_rate_box').classList.toggle('show', mode === 'custom');
+};
+
+function getRateValue(tabId, selectId){
+  if(rateModes[tabId] === 'custom'){
+    return parseNumber(document.getElementById(tabId + '_custom_rate').value);
+  }
+  return parseNumber(document.getElementById(selectId).value);
+}
+
+window.fillKdvScenario = function(tabId, amount, rate){
+  if(tabId === 't1'){
+    document.getElementById('t1_base').value = amount;
+    setRateMode('t1','ready');
+    document.getElementById('t1_rate').value = String(rate);
+  }
+
+  if(tabId === 't2'){
+    document.getElementById('t2_total').value = amount;
+    setRateMode('t2','ready');
+    document.getElementById('t2_rate').value = String(rate);
+  }
+};
+
+function showSummary(tabId, base, vat, total, rate){
+  var summary = document.getElementById(tabId + '_summary');
+  if(summary){ summary.style.display = 'grid'; }
+
+  var baseEl = document.getElementById(tabId + '_summary_base');
+  var vatEl = document.getElementById(tabId + '_summary_vat');
+  var totalEl = document.getElementById(tabId + '_summary_total');
+
+  if(baseEl) baseEl.textContent = fmtNum(base);
+  if(vatEl) vatEl.textContent = fmtNum(vat);
+  if(totalEl) totalEl.textContent = fmtNum(total);
+
+  var copyBtn = document.getElementById(tabId + '_copy_btn');
+  if(copyBtn) copyBtn.style.display = 'block';
+
+  var invoice = document.getElementById(tabId + '_invoice');
+  if(invoice){
+    invoice.style.display = 'block';
+    document.getElementById(tabId + '_invoice_base').textContent = fmtNum(base);
+    document.getElementById(tabId + '_invoice_rate').textContent = '%' + fmtNum(rate);
+    document.getElementById(tabId + '_invoice_vat').textContent = fmtNum(vat);
+    document.getElementById(tabId + '_invoice_total').textContent = fmtNum(total);
+  }
+}
+
+window.copyKdvSummary = function(tabId){
+  var base = document.getElementById(tabId + '_summary_base') ? document.getElementById(tabId + '_summary_base').textContent : '';
+  var vat = document.getElementById(tabId + '_summary_vat') ? document.getElementById(tabId + '_summary_vat').textContent : '';
+  var total = document.getElementById(tabId + '_summary_total') ? document.getElementById(tabId + '_summary_total').textContent : '';
+
+  var text =
+    'KDV Hariç: ' + base + '\n' +
+    'KDV Tutarı: ' + vat + '\n' +
+    'KDV Dahil: ' + total;
+
+  navigator.clipboard.writeText(text).then(function(){
+    alert('Sonuç kopyalandı.');
+  }).catch(function(){
+    alert('Kopyalama başarısız oldu.');
+  });
+};
+  
   document.addEventListener('keypress', function(e){
     if(e.key !== 'Enter') return;
     var map = {
