@@ -1294,7 +1294,7 @@
       return null;
     }
 
-    var brutFaiz = anapara * (faizOrani / 100) * (vadeGun / 365);
+    var brutFaiz = anapara * (faizOrani / 100) * (vadeGun / mevduatGunEsasi);
     var stopaj = brutFaiz * (stopajOrani / 100);
     var netFaiz = brutFaiz - stopaj;
     var vadeSonu = anapara + netFaiz;
