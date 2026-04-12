@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3524613180930720"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Faiz Hesaplama 2026 - Mevduat, Kredi ve Yasal Faiz Hesaplayıcı | MaaşHesap</title>
+<meta name="description" content="Faiz hesaplama aracı ile mevduat faizini, kredi taksitini, basit ve bileşik faizi ve yasal faiz tutarını tek sayfada hesaplayın.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://maashesap.net/faiz-hesaplama.html">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0f0f0f;
+    --paper:#f2f5fb;
+    --white:#ffffff;
+    --muted:#6b7280;
+    --line:#e2e8f0;
+    --accent:#1a5cff;
+    --accent-soft:#eef2ff;
+    --accent-dark:#0f48e0;
+    --green:#0d7a3e;
+    --green-soft:#e8f7ef;
+    --orange:#d97706;
+    --orange-soft:#fff7ed;
+    --red:#c0392b;
+    --shadow-sm:0 1px 3px rgba(0,0,0,.07),0 2px 8px rgba(0,0,0,.05);
+    --r:14px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    font-size:15px;
+  }
+
+  header{
+    border-bottom:1px solid var(--line);
+    padding:0 clamp(16px,4vw,40px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    height:64px;
+    background:var(--white);
+    position:sticky;
+    top:0;
+    z-index:200;
+    box-shadow:0 1px 8px rgba(0,0,0,.06);
+  }
+
+  .header-left{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    min-width:0;
+  }
+
+  .logo-wrap{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+
+  .logo-icon{
+    width:38px;
+    height:38px;
+    background:var(--accent);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+
+  .logo-icon svg{width:20px;height:20px}
+
+  .logo-text{
+    font-family:'DM Serif Display',serif;
+    font-size:20px;
+    color:var(--ink);
+    line-height:1;
+  }
+
+  .logo-text span{color:var(--accent)}
+
+  .main-nav{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    min-width:0;
+  }
+
+  .nav-link{
+    font-size:13px;
+    font-weight:600;
+    color:var(--muted);
+    text-decoration:none;
+    padding:7px 12px;
+    border-radius:8px;
+    transition:all .2s;
+    white-space:nowrap;
+  }
+
+  .nav-link:hover{background:var(--paper);color:var(--ink)}
+  .nav-link.active{background:var(--accent-soft);color:var(--accent)}
+
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:none;
+    font-size:24px;
+    line-height:1;
+    cursor:pointer;
+    color:var(--muted);
+    padding:6px 8px;
+    margin-left:auto;
+    flex-shrink:0;
+  }
+
+  .mobile-nav{
+    display:none;
+    position:fixed;
+    top:64px;
+    left:0;
+    right:0;
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    z-index:199;
+    box-shadow:0 4px 16px rgba(0,0,0,.1);
+    flex-direction:column;
+  }
+
+  .mobile-nav.open{display:flex}
+
+  .mobile-nav a{
+    padding:14px 18px;
+    font-size:14px;
+    font-weight:600;
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+
+  .mobile-nav a:last-child{border-bottom:none}
+  .mobile-nav a:hover{background:var(--paper)}
+
+  @media (max-width:980px){
+    .main-nav{display:none}
+    .nav-toggle{display:block}
+  }
+
+  .hero{
+    text-align:center;
+    padding:64px clamp(16px,5vw,60px) 52px;
+    background:linear-gradient(160deg,#dce8ff 0%,#eef4ff 50%,var(--paper) 100%);
+    border-bottom:1px solid var(--line);
+  }
+
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    font-size:12px;
+    font-weight:600;
+    padding:4px 14px;
+    border-radius:99px;
+    margin-bottom:20px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    border:1px solid #c5d5ff;
+  }
+
+  .hero h1{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(30px,5vw,50px);
+    line-height:1.1;
+    max-width:780px;
+    margin:0 auto 16px;
+    letter-spacing:-.02em;
+  }
+
+  .hero h1 em{
+    font-style:italic;
+    color:var(--accent);
+  }
+
+  .hero p{
+    color:var(--muted);
+    max-width:760px;
+    margin:0 auto;
+    font-size:16px;
+    font-weight:300;
+  }
+
+  .main{
+    max-width:1180px;
+    margin:0 auto;
+    padding:28px clamp(16px,3vw,40px) 0;
+    display:grid;
+    grid-template-columns:360px 1fr;
+    gap:22px;
+    align-items:start;
+  }
+
+  @media (max-width:960px){
+    .main{
+      grid-template-columns:1fr;
+    }
+  }
+
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--r);
+    box-shadow:var(--shadow-sm);
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+
+  .card:last-child{margin-bottom:0}
+
+  .card-header{
+    padding:16px 20px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#fafbfd;
+  }
+
+  .card-header h2{
+    font-size:14px;
+    font-weight:600;
+    color:var(--ink);
+  }
+
+  .card-icon{
+    width:30px;
+    height:30px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    flex-shrink:0;
+  }
+
+  .card-body{padding:20px}
+
+  .tab-nav{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:6px;
+    background:var(--paper);
+    padding:4px;
+    border-radius:10px;
+    border:1.5px solid var(--line);
+    margin-bottom:20px;
+  }
+
+  .tab-btn{
+    padding:9px 6px;
+    border:none;
+    border-radius:7px;
+    font-family:'DM Sans',sans-serif;
+    font-size:12px;
+    font-weight:600;
+    cursor:pointer;
+    background:transparent;
+    color:var(--muted);
+    transition:all .2s;
+    text-align:center;
+    line-height:1.3;
+  }
+
+  .tab-btn.active{
+    background:var(--accent);
+    color:#fff;
+    box-shadow:0 2px 8px rgba(26,92,255,.3);
+  }
+
+  .tab-btn:not(.active):hover{
+    background:var(--white);
+    color:var(--ink);
+  }
+
+  .tab-panel{display:none}
+  .tab-panel.active{display:block}
+
+  .field{margin-bottom:16px}
+
+  label{
+    display:block;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.07em;
+    color:var(--muted);
+    margin-bottom:7px;
+  }
+
+  .field-help{
+    display:block;
+    font-size:12px;
+    color:var(--muted);
+    line-height:1.55;
+    margin-top:6px;
+  }
+
+  .input-wrap{
+    position:relative;
+    display:flex;
+    align-items:center;
+  }
+
+  .input-wrap input,
+  .input-wrap select{
+    width:100%;
+    padding:11px 48px 11px 14px;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    font-family:'DM Sans',sans-serif;
+    font-size:16px;
+    font-weight:600;
+    color:var(--ink);
+    background:var(--white);
+    outline:none;
+    transition:border-color .2s,box-shadow .2s;
+  }
+
+  .input-wrap input:focus,
+  .input-wrap select:focus{
+    border-color:var(--accent);
+    box-shadow:0 0 0 3px rgba(26,92,255,.1);
+  }
+
+  .input-unit{
+    position:absolute;
+    right:14px;
+    font-size:13px;
+    font-weight:700;
+    color:var(--muted);
+    pointer-events:none;
+  }
+
+  .toggle-group{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:6px;
+    background:var(--paper);
+    padding:4px;
+    border-radius:10px;
+    border:1.5px solid var(--line);
+  }
+
+  .toggle-btn{
+    padding:9px 8px;
+    border:none;
+    border-radius:7px;
+    font-family:'DM Sans',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    background:transparent;
+    color:var(--muted);
+    transition:all .2s;
+  }
+
+  .toggle-btn.active{
+    background:var(--accent);
+    color:#fff;
+    box-shadow:0 2px 8px rgba(26,92,255,.3);
+  }
+
+  .toggle-btn:not(.active):hover{
+    background:var(--white);
+    color:var(--ink);
+  }
+
+  .calc-btn{
+    width:100%;
+    padding:13px;
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    font-family:'DM Sans',sans-serif;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    margin-top:10px;
+    transition:background .2s,transform .1s;
+  }
+
+  .calc-btn:hover{background:var(--accent-dark)}
+  .calc-btn:active{transform:scale(.98)}
+
+  #results{display:none}
+  #results.show{display:block}
+
+  .result-highlight{
+    background:linear-gradient(135deg,var(--accent) 0%,#3b7dff 100%);
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:18px;
+    text-align:center;
+    color:#fff;
+  }
+
+  .result-highlight.green-hl{
+    background:linear-gradient(135deg,var(--green) 0%,#16a34a 100%);
+  }
+
+  .result-highlight.orange-hl{
+    background:linear-gradient(135deg,#b45309 0%,#d97706 100%);
+  }
+
+  .result-highlight .lbl{
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    opacity:.82;
+    margin-bottom:6px;
+  }
+
+  .result-highlight .amt{
+    font-family:'DM Serif Display',serif;
+    font-size:38px;
+    letter-spacing:-.02em;
+  }
+
+  .result-highlight .amt span{
+    font-size:20px;
+    opacity:.7;
+    font-family:'DM Sans',sans-serif;
+    font-weight:400;
+  }
+
+  .result-highlight .sub-info{
+    font-size:12px;
+    opacity:.8;
+    margin-top:6px;
+  }
+
+  .result-sub-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-bottom:16px;
+  }
+
+  .result-sub-item{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:12px 14px;
+    text-align:center;
+  }
+
+  .result-sub-item .s-lbl{
+    font-size:11px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--muted);
+    margin-bottom:4px;
+  }
+
+  .result-sub-item .s-val{
+    font-size:16px;
+    font-weight:700;
+    color:var(--ink);
+  }
+
+  .result-sub-item .s-val.red{color:var(--red)}
+  .result-sub-item .s-val.green{color:var(--green)}
+
+  .result-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:9px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+    gap:12px;
+  }
+
+  .result-row:last-child{border-bottom:none}
+  .result-row .rname{color:var(--muted)}
+  .result-row .rval{font-weight:700;text-align:right}
+  .result-row .rval.red{color:var(--red)}
+  .result-row .rval.green{color:var(--green)}
+
+  .action-row{
+    display:flex;
+    gap:8px;
+    margin-top:16px;
+  }
+
+  .btn-sec{
+    flex:1;
+    padding:10px 4px;
+    border:1.5px solid var(--line);
+    border-radius:9px;
+    font-family:'DM Sans',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    background:var(--white);
+    color:var(--muted);
+    transition:all .2s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+  }
+
+  .btn-sec:hover{
+    border-color:var(--accent);
+    color:var(--accent);
+    background:var(--accent-soft);
+  }
+
+  .mini-tip{
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .mini-tip:last-child{
+    border-bottom:none;
+    padding-bottom:0;
+  }
+
+  .tip-title{
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:3px;
+  }
+
+  .tip-text{
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.6;
+  }
+
+  .tab-note{
+    background:#fffbea;
+    border:1px solid #fde68a;
+    border-radius:10px;
+    padding:10px 12px;
+    font-size:12px;
+    color:#57534e;
+    line-height:1.6;
+    margin-bottom:16px;
+  }
+
+  .section-band{
+    background:var(--white);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    margin-top:48px;
+  }
+
+  .section-inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:48px clamp(16px,3vw,40px);
+  }
+
+  .section-title{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(22px,3vw,30px);
+    margin-bottom:6px;
+    letter-spacing:-.02em;
+  }
+
+  .section-sub{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:28px;
+  }
+
+  .info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+  }
+
+  .info-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--r);
+    padding:20px;
+  }
+
+  .info-card h3{
+    font-family:'DM Serif Display',serif;
+    font-size:16px;
+    margin-bottom:10px;
+  }
+
+  .info-card p,
+  .info-card li{
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.7;
+  }
+
+  .info-card ul{
+    padding-left:16px;
+  }
+
+  .info-card li{
+    margin-bottom:4px;
+  }
+
+  .related-links{
+    max-width:1100px;
+    margin:30px auto;
+    padding:16px 20px;
+    font-size:14px;
+    color:#555;
+    line-height:1.8;
+    background:#fff;
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+  }
+
+  .related-links a{
+    color:var(--accent);
+    text-decoration:none;
+    margin-right:8px;
+  }
+
+  .related-links a:hover{text-decoration:underline}
+
+  .sss-band{
+    background:var(--paper);
+    padding-bottom:64px;
+  }
+
+  .sss-inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:48px clamp(16px,3vw,40px) 0;
+  }
+
+  .faq-item{
+    border-bottom:1px solid var(--line);
+    padding:16px 0;
+  }
+
+  .faq-item:first-child{border-top:1px solid var(--line)}
+
+  .faq-q{
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    color:var(--ink);
+  }
+
+  .faq-q::after{
+    content:'+';
+    font-size:20px;
+    color:var(--accent);
+    flex-shrink:0;
+    line-height:1;
+    font-weight:300;
+    transition:transform .2s;
+  }
+
+  .faq-item.open .faq-q::after{transform:rotate(45deg)}
+
+  .faq-a{
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.7;
+    display:none;
+    margin-top:8px;
+  }
+
+  .faq-item.open .faq-a{display:block}
+
+  .disclaimer{
+    max-width:1100px;
+    margin:40px auto;
+    padding:15px 20px;
+    font-size:14px;
+    color:#666;
+    line-height:1.6;
+  }
+
+  footer{
+    background:var(--ink);
+    color:rgba(255,255,255,.6);
+    padding:28px clamp(16px,5vw,60px);
+    text-align:center;
+    font-size:13px;
+  }
+
+  footer strong{color:#fff;font-weight:600}
+  footer a{color:rgba(255,255,255,.6);text-decoration:underline}
+  footer a:hover{color:#fff}
+
+  footer .footer-links{
+    margin-top:10px;
+    display:flex;
+    justify-content:center;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+
+  .hidden-ad{
+    display:none !important;
+  }
+
+  @media (max-width:760px){
+    body{font-size:14px}
+    header{
+      height:60px;
+      padding:0 14px;
+      gap:10px;
+    }
+    .header-left{gap:0}
+    .logo-icon{
+      width:34px;
+      height:34px;
+      border-radius:9px;
+    }
+    .logo-icon svg{width:18px;height:18px}
+    .logo-text{font-size:18px}
+    .mobile-nav{top:60px}
+    .hero{
+      padding:36px 16px 30px;
+    }
+    .hero h1{font-size:32px}
+    .hero p{font-size:14px;line-height:1.65}
+    .main{
+      padding:16px 14px 0;
+    }
+    .tab-nav{
+      grid-template-columns:1fr 1fr;
+    }
+    .result-highlight .amt{font-size:30px}
+    .result-row{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:4px;
+    }
+    .result-row .rname,
+    .result-row .rval{
+      text-align:left;
+      width:100%;
+    }
+    .result-sub-grid{
+      grid-template-columns:1fr 1fr;
+    }
+    .action-row{
+      flex-direction:column;
+    }
+    footer{
+      padding:22px 14px;
+      font-size:12px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <a href="/" class="logo-wrap">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="white" stroke-width="1.8"/>
+          <line x1="3" y1="9" x2="21" y2="9" stroke="white" stroke-width="1.8"/>
+          <line x1="8" y1="14" x2="10" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="14" x2="14" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="16" y1="14" x2="16" y2="19" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="8" y1="18" x2="10" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="18" x2="14" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="logo-text">maas<span>hesap</span></div>
+    </a>
+
+    <nav class="main-nav">
+      <a href="/" class="nav-link">💰 Maaş Hesaplama</a>
+      <a href="tazminat.html" class="nav-link">📄 Tazminat</a>
+      <a href="issizlik.html" class="nav-link">🧳 İşsizlik</a>
+      <a href="fazla-mesai.html" class="nav-link">⏱️ Fazla Mesai</a>
+      <a href="yuzde-hesaplama.html" class="nav-link">📊 Yüzde Hesaplama</a>
+      <a href="kdv-hesaplama.html" class="nav-link">🧾 KDV Hesaplama</a>
+      <a href="faiz-hesaplama.html" class="nav-link active">💹 Faiz Hesaplama</a>
+    </nav>
+  </div>
+
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menüyü aç">☰</button>
+</header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/">💰 Maaş Hesaplama</a>
+  <a href="tazminat.html">📄 Tazminat</a>
+  <a href="issizlik.html">🧳 İşsizlik</a>
+  <a href="fazla-mesai.html">⏱️ Fazla Mesai</a>
+  <a href="yuzde-hesaplama.html">📊 Yüzde Hesaplama</a>
+  <a href="kdv-hesaplama.html">🧾 KDV Hesaplama</a>
+  <a href="faiz-hesaplama.html">💹 Faiz Hesaplama</a>
+</div>
+
+<div class="hero">
+  <div class="hero-badge">Faiz Hesaplama Aracı</div>
+  <h1>Faiz Hesaplama 2026<br><em>Mevduat, Kredi ve Yasal Faiz</em></h1>
+  <p>
+    Mevduat getirisini, basit ve bileşik faizi, konut ve araç kredisi taksitlerini ve yasal faiz tutarını tek sayfada hesaplayın.
+    Değişebilen oranlar için resmi kaynak ve banka verilerini ayrıca kontrol etmeyi unutmayın.
+  </p>
+</div>
+
+<div class="hidden-ad">Reklam Alanı</div>
+
+<div class="main" id="hesaplayici">
+
+  <div class="col-left">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:#eff6ff">💹</div>
+        <h2>Faiz Hesaplama</h2>
+      </div>
+      <div class="card-body">
+
+        <div class="tab-nav">
+          <button class="tab-btn active" id="tabBtn_mevduat" onclick="switchTab('mevduat')">💳 Mevduat</button>
+          <button class="tab-btn" id="tabBtn_faiz" onclick="switchTab('faiz')">📐 Basit / Bileşik</button>
+          <button class="tab-btn" id="tabBtn_kredi" onclick="switchTab('kredi')">🏠 Kredi</button>
+          <button class="tab-btn" id="tabBtn_yasal" onclick="switchTab('yasal')">⚖️ Yasal Faiz</button>
+        </div>
+
+        <div id="tab-mevduat" class="tab-panel active">
+          <div class="tab-note">
+            Mevduat faizlerinde bankanın açıkladığı oran genelde <strong>yıllık</strong> ifade edilir. Net getiri için stopaj ve ürün koşulları ayrıca önemlidir.
+          </div>
+
+          <div class="field">
+            <label>Ana Para</label>
+            <div class="input-wrap">
+              <input type="number" inputmode="decimal" id="mv_anapara" placeholder="Örneğin: 100000" min="0" step="0.01">
+              <span class="input-unit">TL</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Yıllık Faiz Oranı</label>
+            <div class="input-wrap">
+              <input type="number" inputmode="decimal" id="mv_faiz" placeholder="Örneğin: 42" min="0" step="0.01">
+              <span class="input-unit">%</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Vade (Gün)</label>
+            <div class="input-wrap">
+              <input type="number" inputmode="numeric" id="mv_vade" placeholder="Örneğin: 32" min="1" step="1">
+              <span class="input-unit">Gün</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Stopaj Oranı</label>
+            <div class="input-wrap">
+              <input type="number" inputmode="decimal" id="mv_stopaj" placeholder="Örneğin: 15" value="15" min="0" max="100" step="0.01">
+              <span class="input-unit">%</span>
+            </div>
+            <span class="field-help">Stopaj oranı ürün, vade ve döneme göre değişebilir. Kesin oran için bankanızın güncel ürün bilgisini kontrol edin.</span>
+          </div>
+        </div>
+
+        <div id="tab-faiz" class="tab-panel">
+          <div class="field">
+            <label>Faiz Türü</label>
+            <div class="toggle-group" style="grid-template-columns:1fr 1fr;">
+              <button class="toggle-btn active" id="btn_basit" type="button" onclick="setFaizTur('basit')">Basit Faiz</button>
+              <button class="toggle-btn" id="btn_bilesik" type="button" onclick="setFaizTur('bilesik')">Bileşik Faiz</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Ana Para</label>
+            <div class="input-wrap">
+              <input type="number" inputmode="decimal" id="fz_anapara" placeholder="Örneğin: 50000" min="0" step="0.01">
+              <span class="input-unit">TL</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Faiz Oranı</label>
+            <div style="display:flex;gap:8px;align-items:center">
+              <div class="input-wrap" style="flex:1">
+                <input type="number" inputmode="decimal" id="fz_faiz" placeholder="Örneğin: 36" min="0" step="0.01">
+                <span class="input-unit">%</span>
+              </div>
+              <div class="input-wrap" style="width:120px">
+                <select id="fz_faiz_donemi">
+                  <option value="yillik">Yıllık</option>
+                  <option value="aylik">Aylık</option>
+                  <option value="gunluk">Günlük</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Vade</label>
+            <div style="display:flex;gap:8px;align-items:center">
+              <div class="input-wrap" style="flex:1">
+                <input type="number" inputmode="decimal" id="fz_vade" placeholder="Örneğin: 12" min="0" step="0.01">
+              </div>
+              <div class="input-wrap" style="width:120px">
+                <select id="fz_vade_birim">
+                  <option value="yil">Yıl</option>
+                  <option value="ay">Ay</option>
+                  <option value="gun">Gün</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field" id="nema_field" style="display:none;">
+            <label>Nemalandırma Sıklığı</label>
+            <div class="input-wrap">
+              <select id="fz_nema">
+                <option value="yillik">Yıllık</option>
+                <option value="6aylik">6 Aylık</option>
+                <option value="3aylik">3 Aylık</option>
+                <option value="aylik">Aylık</option>
+                <option value="gunluk">Günlük</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-kredi" class="tab-panel">
+          <div class="tab-note">
+            Kredi faiz oranları genelde <strong>aylık</strong> açıklanır. Mevduat faizleri ise çoğunlukla <strong>yıllık</strong> ifade edilir. Bu yüzden 2,49 aylık kredi oranı ile 42 yıllık mevduat oranı doğrudan aynı şekilde okunmaz.
+          </div>
+
+          <div class="field">
+            <label>Kredi Türü</label>
+            <div class="toggle-group">
+              <button class="toggle-btn active" id="btn_konut" type="button" onclick="setKrediTur('konut')">Konut</button>
+              <button class="toggle-btn" id="btn_tasit" type="button" onclick="setKrediTur('tasit')">Taşıt</button>
+              <button class="toggle-btn" id="btn_ihtiyac" type="button" onclick="setKrediTur('ihtiyac')">İhtiyaç</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Kredi Tutarı</label>
+            <div class="input-wrap">
+              <input type="number" inputmode="decimal" id="kr_tutar" placeholder="Örneğin: 1000000" min="0" step="0.01">
+              <span class="input-unit">TL</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Aylık Faiz Oranı</label>
+            <div class="input-wrap">
+              <input type="number" inputmode="decimal" id="kr_oran" placeholder="Örneğin: 2,49" min="0" step="0.01">
+              <span class="input-unit">%</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Vade</label>
+            <div class="input-wrap">
+              <input type="number" inputmode="numeric" id="kr_vade" placeholder="Örneğin: 120" min="1" step="1">
+              <span class="input-unit">Ay</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-yasal" class="tab-panel">
+          <div class="tab-note">
+            Yasal faiz oranı, temerrüt faizi ve bazı ticari faiz türleri dönemsel olarak değişebilir. Kesin hesap için ilgili resmi düzenleme ve güncel karar ayrıca kontrol edilmelidir.
+          </div>
+
+          <div class="field">
+            <label>Anapara (Alacak Tutarı)</label>
+            <div class="input-wrap">
+              <input type="number" inputmode="decimal" id="ys_anapara" placeholder="Örneğin: 25000" min="0" step="0.01">
+              <span class="input-unit">TL</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Yıllık Faiz Oranı</label>
+            <div class="input-wrap">
+              <input type="number" inputmode="decimal" id="ys_oran" placeholder="Örneğin: 9" min="0" step="0.01">
+              <span class="input-unit">%</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Faiz Başlangıç Tarihi</label>
+            <div class="input-wrap">
+              <input type="date" id="ys_baslangic" style="padding-right:14px">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Faiz Bitiş Tarihi</label>
+            <div class="input-wrap">
+              <input type="date" id="ys_bitis" style="padding-right:14px">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Gün Esası</label>
+            <div class="toggle-group" style="grid-template-columns:1fr 1fr;">
+              <button class="toggle-btn active" id="btn_365" type="button" onclick="setGunEsasi(365)">365 Gün</button>
+              <button class="toggle-btn" id="btn_360" type="button" onclick="setGunEsasi(360)">360 Gün</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="calc-btn" id="calc_btn">Hesapla →</button>
+      </div>
+    </div>
+
+    <div class="hidden-ad">Reklam Alanı</div>
+  </div>
+
+  <div class="col-mid">
+
+    <div class="card" id="results">
+      <div class="card-header">
+        <div class="card-icon" style="background:var(--green-soft)">📊</div>
+        <h2 id="res_card_title">Hesaplama Sonuçları</h2>
+      </div>
+      <div class="card-body">
+        <div class="result-highlight" id="res_highlight">
+          <div class="lbl" id="res_label">Sonuç</div>
+          <div class="amt" id="res_amount">--<span> TL</span></div>
+          <div class="sub-info" id="res_sub"></div>
+        </div>
+
+        <div class="result-sub-grid" id="res_sub_grid"></div>
+        <div id="rows"></div>
+
+        <div class="action-row">
+          <button class="btn-sec" id="print_btn">🖨️ Yazdır</button>
+          <button class="btn-sec" id="copy_btn">📋 Kopyala</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon" style="background:#eff6ff">💡</div>
+        <h2>Faiz Türleri Arasındaki Temel Fark</h2>
+      </div>
+      <div class="card-body">
+        <div class="mini-tip">
+          <div class="tip-title">Mevduat Faizi</div>
+          <div class="tip-text">Bankada değerlendirdiğiniz paranın getirisi için kullanılır. Genelde yıllık oran üzerinden ifade edilir ve net getiri stopaj sonrası bulunur.</div>
+        </div>
+        <div class="mini-tip">
+          <div class="tip-title">Kredi Faizi</div>
+          <div class="tip-text">Konut, taşıt veya ihtiyaç kredilerinde çoğunlukla aylık oran görülür. Taksit hesabı bu aylık oranla yapılır.</div>
+        </div>
+        <div class="mini-tip">
+          <div class="tip-title">Basit ve Bileşik Faiz</div>
+          <div class="tip-text">Basit faizde getiri yalnızca anapara üzerinden, bileşik faizde ise faiz de yeniden faiz üretir.</div>
+        </div>
+        <div class="mini-tip">
+          <div class="tip-title">Yasal Faiz</div>
+          <div class="tip-text">Alacak, gecikme ve temerrüt gibi hukuki süreçlerde kullanılan faiz türüdür. Kesin oran ve başlangıç tarihi dosyaya göre değişebilir.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden-ad">Reklam Alanı</div>
+
+  </div>
+</div>
+
+<div class="section-band">
+  <div class="section-inner">
+    <div class="section-title">Faiz Hesaplama Hakkında Bilmeniz Gerekenler</div>
+    <div class="section-sub">Mevduat, kredi ve yasal faiz hesaplarında en çok karıştırılan noktalar.</div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Mevduat Faizi Yıllık mı, Aylık mı?</h3>
+        <p>Mevduat faiz oranları çoğu zaman yıllık olarak açıklanır. Bu yüzden 32 gün veya 92 gün gibi kısa vadelerde aynı oran doğrudan tam yıl için değil, vadeye orantılı şekilde uygulanır.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Kredi Faizi Neden Düşük Görünür?</h3>
+        <p>Konut ve araç kredilerinde bankalar genelde aylık faiz oranı yazar. Örneğin aylık %2,49 oran ilk bakışta düşük görünse de, yıllık karşılığı farklıdır. Bu yüzden mevduat faizi ile doğrudan aynı formatta kıyaslanmamalıdır.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Net Getiri İçin Stopaj Önemlidir</h3>
+        <p>Mevduat faizinde asıl önemli olan brüt oran değil, kesinti sonrası elde kalan net getiridir. Bu nedenle hesap yapılırken stopaj oranı ayrıca dikkate alınmalıdır.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Bileşik Faiz Uzun Vadede Fark Yaratır</h3>
+        <p>Kısa vadede basit faiz ile bileşik faiz arasındaki fark küçük olabilir. Ancak vade uzadıkça bileşik faiz anaparaya eklenen getiriler nedeniyle daha yüksek sonuç verir.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Yasal Faiz Oranı Sabit Kalmayabilir</h3>
+        <p>Kanuni faiz, temerrüt faizi veya ticari faiz türlerinde uygulanacak oran ve yöntem mevzuata veya işlemin niteliğine göre farklılaşabilir. Bu yüzden nihai hesaplamada resmi kaynak kontrolü önemlidir.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Bu Araç Nerelerde İşe Yarar?</h3>
+        <ul>
+          <li>Mevduat getirisi kıyaslaması</li>
+          <li>Kredi taksit planı ön hesabı</li>
+          <li>Basit ve bileşik faiz eğitimi</li>
+          <li>Alacak ve gecikme faizinin kaba hesabı</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="related-links">
+  <strong>İlgili Hesaplama Araçları:</strong><br>
+  <a href="/">Maaş Hesaplama</a> ·
+  <a href="tazminat.html">Kıdem Tazminatı Hesaplama</a> ·
+  <a href="issizlik.html">İşsizlik Maaşı Hesaplama</a> ·
+  <a href="fazla-mesai.html">Fazla Mesai Hesaplama</a> ·
+  <a href="yuzde-hesaplama.html">Yüzde Hesaplama</a> ·
+  <a href="kdv-hesaplama.html">KDV Hesaplama</a>
+</div>
+
+<div class="sss-band">
+  <div class="sss-inner">
+    <div class="section-title">Sık Sorulan Sorular</div>
+    <div class="section-sub">Faiz hesaplama hakkında en çok merak edilenler.</div>
+
+    <div style="max-width:900px;">
+      <div class="faq-item">
+        <div class="faq-q">Mevduat faizi ile kredi faizi neden farklı formatta görünür?</div>
+        <div class="faq-a">Mevduat faizi çoğu zaman yıllık, kredi faizi ise çoğu zaman aylık oran olarak sunulur. Bu yüzden iki oranı doğrudan yan yana okumak kafa karıştırabilir.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Net mevduat getirisi nasıl hesaplanır?</div>
+        <div class="faq-a">Önce vadeye göre brüt faiz bulunur. Daha sonra stopaj kesintisi düşülerek net faiz getirisi hesaplanır. Bu araç net sonucu ayrıca gösterir.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Bileşik faiz her zaman daha mı yüksek sonuç verir?</div>
+        <div class="faq-a">Uzun vadede genellikle evet. Çünkü bileşik faizde önceki dönemde kazanılan faiz de yeni dönemde getiri üretir.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Kredi taksiti bu sayfada kesin sonuç verir mi?</div>
+        <div class="faq-a">Hayır. Bu sayfa ön hesap içindir. Banka tahsis ücreti, sigorta, kampanya ve dosya masrafı gibi ek kalemler nihai ödemeyi değiştirebilir.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Yasal faiz hesabı mahkeme dosyasında birebir kullanılabilir mi?</div>
+        <div class="faq-a">Hayır. Bu araç yalnızca bilgilendirme amaçlı kaba hesap sunar. Resmi veya hukuki süreçte dosya türü, faiz başlangıcı ve uygulanacak oran ayrıca değerlendirilmelidir.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  Bu içerik bilgilendirme amaçlıdır. Faiz, stopaj, kredi ve yasal faiz oranları dönemsel olarak değişebilir. Kesin işlem öncesinde banka, resmi kurum veya uzman görüşü esas alınmalıdır.
+</div>
+
+<footer>
+  <p><strong>MaaşHesap 2026</strong> &mdash; Bu site yalnızca bilgilendirme amaçlıdır. Kesin hesap için yetkili kurum veya uzman görüşü esas alınmalıdır.</p>
+  <div class="footer-links">
+    <a href="/">Maaş Hesaplama</a>
+    <a href="tazminat.html">Tazminat</a>
+    <a href="issizlik.html">İşsizlik</a>
+    <a href="fazla-mesai.html">Fazla Mesai</a>
+    <a href="yuzde-hesaplama.html">Yüzde Hesaplama</a>
+    <a href="kdv-hesaplama.html">KDV Hesaplama</a>
+    <a href="faiz-hesaplama.html">Faiz Hesaplama</a>
+    <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="iletisim.html">İletişim</a>
+    <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
+    <a href="kaynaklar.html">Kaynaklar</a>
+    <a href="cerez-politikasi.html">Çerez Politikası</a>
+  </div>
+  <p style="margin-top:10px">İletişim: <a href="mailto:info@maashesap.net">info@maashesap.net</a></p>
+</footer>
+
+<script>
+(function () {
+  var activeTab = 'mevduat';
+  var faizTur = 'basit';
+  var gunEsasi = 365;
+  var krediTur = 'konut';
+  var lastR = null;
+
+  function fmt(n) {
+    return n.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' TL';
+  }
+
+  function fmtPct(n) {
+    return '%' + n.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function toNum(v) {
+    return parseFloat(String(v || '').replace(',', '.')) || 0;
+  }
+
+  window.switchTab = function (tab) {
+    activeTab = tab;
+    ['mevduat', 'faiz', 'kredi', 'yasal'].forEach(function (t) {
+      document.getElementById('tab-' + t).classList.toggle('active', t === tab);
+      document.getElementById('tabBtn_' + t).classList.toggle('active', t === tab);
+    });
+    document.getElementById('results').classList.remove('show');
+  };
+
+  window.setFaizTur = function (tur) {
+    faizTur = tur;
+    document.getElementById('btn_basit').classList.toggle('active', tur === 'basit');
+    document.getElementById('btn_bilesik').classList.toggle('active', tur === 'bilesik');
+    document.getElementById('nema_field').style.display = tur === 'bilesik' ? 'block' : 'none';
+    document.getElementById('results').classList.remove('show');
+  };
+
+  window.setGunEsasi = function (g) {
+    gunEsasi = g;
+    document.getElementById('btn_365').classList.toggle('active', g === 365);
+    document.getElementById('btn_360').classList.toggle('active', g === 360);
+  };
+
+  window.setKrediTur = function (tur) {
+    krediTur = tur;
+    document.getElementById('btn_konut').classList.toggle('active', tur === 'konut');
+    document.getElementById('btn_tasit').classList.toggle('active', tur === 'tasit');
+    document.getElementById('btn_ihtiyac').classList.toggle('active', tur === 'ihtiyac');
+  };
+
+  function calcMevduat() {
+    var anapara = toNum(document.getElementById('mv_anapara').value);
+    var faizOrani = toNum(document.getElementById('mv_faiz').value);
+    var vadeGun = parseInt(document.getElementById('mv_vade').value, 10) || 0;
+    var stopajOrani = toNum(document.getElementById('mv_stopaj').value);
+
+    if (anapara <= 0 || faizOrani <= 0 || vadeGun <= 0) {
+      alert('Lütfen tüm alanları doldurun.');
+      return null;
+    }
+
+    var brutFaiz = anapara * (faizOrani / 100) * (vadeGun / 365);
+    var stopaj = brutFaiz * (stopajOrani / 100);
+    var netFaiz = brutFaiz - stopaj;
+    var vadeSonu = anapara + netFaiz;
+    var netGetiriOrani = (netFaiz / anapara) * 100;
+
+    return {
+      type: 'mevduat',
+      anapara: anapara,
+      faizOrani: faizOrani,
+      vadeGun: vadeGun,
+      stopajOrani: stopajOrani,
+      brutFaiz: brutFaiz,
+      stopaj: stopaj,
+      netFaiz: netFaiz,
+      vadeSonu: vadeSonu,
+      netGetiriOrani: netGetiriOrani
+    };
+  }
+
+  function calcFaizGenel() {
+    var anapara = toNum(document.getElementById('fz_anapara').value);
+    var faizDeger = toNum(document.getElementById('fz_faiz').value);
+    var faizDonemi = document.getElementById('fz_faiz_donemi').value;
+    var vade = toNum(document.getElementById('fz_vade').value);
+    var vadeBirim = document.getElementById('fz_vade_birim').value;
+
+    if (anapara <= 0 || faizDeger <= 0 || vade <= 0) {
+      alert('Lütfen tüm alanları doldurun.');
+      return null;
+    }
+
+    var yillikFaiz;
+    if (faizDonemi === 'gunluk') yillikFaiz = faizDeger * 365;
+    else if (faizDonemi === 'aylik') yillikFaiz = faizDeger * 12;
+    else yillikFaiz = faizDeger;
+
+    var vadeGun;
+    if (vadeBirim === 'gun') vadeGun = vade;
+    else if (vadeBirim === 'ay') vadeGun = vade * 30.4375;
+    else vadeGun = vade * 365;
+
+    var getiri, vadeSonu, periyotLabel;
+
+    if (faizTur === 'basit') {
+      getiri = anapara * (yillikFaiz / 100) * (vadeGun / 365);
+      vadeSonu = anapara + getiri;
+      periyotLabel = 'Basit Faiz';
+    } else {
+      var nema = document.getElementById('fz_nema').value;
+      var periyotSayisi, periyotFaiz;
+
+      switch (nema) {
+        case 'gunluk':
+          periyotSayisi = vadeGun;
+          periyotFaiz = yillikFaiz / 365;
+          break;
+        case 'aylik':
+          periyotSayisi = vadeGun / 30.4375;
+          periyotFaiz = yillikFaiz / 12;
+          break;
+        case '3aylik':
+          periyotSayisi = vadeGun / 91.3125;
+          periyotFaiz = yillikFaiz / 4;
+          break;
+        case '6aylik':
+          periyotSayisi = vadeGun / 182.625;
+          periyotFaiz = yillikFaiz / 2;
+          break;
+        default:
+          periyotSayisi = vadeGun / 365;
+          periyotFaiz = yillikFaiz;
+      }
+
+      vadeSonu = anapara * Math.pow(1 + periyotFaiz / 100, periyotSayisi);
+      getiri = vadeSonu - anapara;
+      periyotLabel = 'Bileşik Faiz';
+    }
+
+    var getiriOrani = (getiri / anapara) * 100;
+
+    return {
+      type: 'faiz',
+      periyotLabel: periyotLabel,
+      anapara: anapara,
+      yillikFaiz: yillikFaiz,
+      vadeGun: Math.round(vadeGun),
+      getiri: getiri,
+      vadeSonu: vadeSonu,
+      getiriOrani: getiriOrani
+    };
+  }
+
+  function calcKredi() {
+    var tutar = toNum(document.getElementById('kr_tutar').value);
+    var aylikOran = toNum(document.getElementById('kr_oran').value);
+    var vade = parseInt(document.getElementById('kr_vade').value, 10) || 0;
+
+    if (tutar <= 0 || aylikOran < 0 || vade <= 0) {
+      alert('Lütfen tüm alanları doldurun.');
+      return null;
+    }
+
+    var r = aylikOran / 100;
+    var aylikTaksit;
+
+    if (r === 0) {
+      aylikTaksit = tutar / vade;
+    } else {
+      aylikTaksit = tutar * r * Math.pow(1 + r, vade) / (Math.pow(1 + r, vade) - 1);
+    }
+
+    var toplamOdeme = aylikTaksit * vade;
+    var toplamFaiz = toplamOdeme - tutar;
+    var nominalYillik = aylikOran * 12;
+    var efektifYillik = (Math.pow(1 + r, 12) - 1) * 100;
+
+    return {
+      type: 'kredi',
+      krediTur: krediTur,
+      tutar: tutar,
+      aylikOran: aylikOran,
+      vade: vade,
+      aylikTaksit: aylikTaksit,
+      toplamOdeme: toplamOdeme,
+      toplamFaiz: toplamFaiz,
+      nominalYillik: nominalYillik,
+      efektifYillik: efektifYillik
+    };
+  }
+
+  function calcYasal() {
+    var anapara = toNum(document.getElementById('ys_anapara').value);
+    var oran = toNum(document.getElementById('ys_oran').value);
+    var bas = document.getElementById('ys_baslangic').value;
+    var bit = document.getElementById('ys_bitis').value;
+
+    if (anapara <= 0 || oran <= 0 || !bas || !bit) {
+      alert('Lütfen tüm alanları doldurun.');
+      return null;
+    }
+
+    var d1 = new Date(bas);
+    var d2 = new Date(bit);
+
+    if (isNaN(d1.getTime()) || isNaN(d2.getTime())) {
+      alert('Geçerli tarihler girin.');
+      return null;
+    }
+
+    var gunSayisi = Math.round((d2 - d1) / 86400000);
+    if (gunSayisi <= 0) {
+      alert('Bitiş tarihi, başlangıç tarihinden sonra olmalıdır.');
+      return null;
+    }
+
+    var faizTutari = anapara * (oran / 100) * (gunSayisi / gunEsasi);
+    var toplam = anapara + faizTutari;
+    var efektifOran = (faizTutari / anapara) * 100;
+
+    return {
+      type: 'yasal',
+      anapara: anapara,
+      oran: oran,
+      gunSayisi: gunSayisi,
+      gunEsasi: gunEsasi,
+      faizTutari: faizTutari,
+      toplam: toplam,
+      efektifOran: efektifOran,
+      basTarih: bas,
+      bitTarih: bit
+    };
+  }
+
+  function calculate() {
+    var r;
+    if (activeTab === 'mevduat') r = calcMevduat();
+    else if (activeTab === 'faiz') r = calcFaizGenel();
+    else if (activeTab === 'kredi') r = calcKredi();
+    else r = calcYasal();
+
+    if (!r) return;
+    lastR = r;
+    render(r);
+  }
+
+  function render(r) {
+    var resEl = document.getElementById('results');
+    var hl = document.getElementById('res_highlight');
+    var rows = '';
+    var subGrid = '';
+
+    if (r.type === 'mevduat') {
+      hl.className = 'result-highlight green-hl';
+      document.getElementById('res_label').textContent = 'Net Mevduat Getirisi';
+      document.getElementById('res_amount').innerHTML =
+        r.netFaiz.toLocaleString('tr-TR', { maximumFractionDigits: 2 }) + '<span> TL</span>';
+      document.getElementById('res_sub').textContent =
+        'Vade sonu toplam: ' + fmt(r.vadeSonu);
+
+      subGrid =
+        '<div class="result-sub-item"><div class="s-lbl">Brüt Faiz</div><div class="s-val">' + fmt(r.brutFaiz) + '</div></div>' +
+        '<div class="result-sub-item"><div class="s-lbl">Stopaj</div><div class="s-val red">-' + fmt(r.stopaj) + '</div></div>';
+
+      rows = buildRows([
+        { n: 'Ana Para', v: fmt(r.anapara), c: '' },
+        { n: 'Yıllık Faiz Oranı', v: fmtPct(r.faizOrani), c: '' },
+        { n: 'Vade', v: r.vadeGun + ' Gün', c: '' },
+        { n: 'Brüt Faiz', v: fmt(r.brutFaiz), c: '' },
+        { n: 'Stopaj Oranı', v: fmtPct(r.stopajOrani), c: '' },
+        { n: 'Stopaj Tutarı', v: '- ' + fmt(r.stopaj), c: 'red' },
+        { n: 'Net Faiz', v: fmt(r.netFaiz), c: 'green' },
+        { n: 'Net Getiri Oranı', v: fmtPct(r.netGetiriOrani), c: '' },
+        { n: 'Vade Sonu Toplam', v: fmt(r.vadeSonu), c: 'green' }
+      ]);
+    }
+
+    if (r.type === 'faiz') {
+      hl.className = 'result-highlight';
+      document.getElementById('res_label').textContent = r.periyotLabel + ' Getirisi';
+      document.getElementById('res_amount').innerHTML =
+        r.getiri.toLocaleString('tr-TR', { maximumFractionDigits: 2 }) + '<span> TL</span>';
+      document.getElementById('res_sub').textContent =
+        'Vade sonu toplam: ' + fmt(r.vadeSonu);
+
+      subGrid =
+        '<div class="result-sub-item"><div class="s-lbl">Ana Para</div><div class="s-val">' + fmt(r.anapara) + '</div></div>' +
+        '<div class="result-sub-item"><div class="s-lbl">Getiri</div><div class="s-val green">' + fmt(r.getiri) + '</div></div>';
+
+      rows = buildRows([
+        { n: 'Ana Para', v: fmt(r.anapara), c: '' },
+        { n: 'Yıllık Faiz Karşılığı', v: fmtPct(r.yillikFaiz), c: '' },
+        { n: 'Vade', v: r.vadeGun + ' Gün', c: '' },
+        { n: 'Faiz Türü', v: r.periyotLabel, c: '' },
+        { n: 'Faiz Getirisi', v: fmt(r.getiri), c: 'green' },
+        { n: 'Getiri Oranı', v: fmtPct(r.getiriOrani), c: '' },
+        { n: 'Vade Sonu Toplam', v: fmt(r.vadeSonu), c: 'green' }
+      ]);
+    }
+
+    if (r.type === 'kredi') {
+      hl.className = 'result-highlight orange-hl';
+      document.getElementById('res_label').textContent = 'Aylık Taksit';
+      document.getElementById('res_amount').innerHTML =
+        r.aylikTaksit.toLocaleString('tr-TR', { maximumFractionDigits: 2 }) + '<span> TL</span>';
+      document.getElementById('res_sub').textContent =
+        'Toplam geri ödeme: ' + fmt(r.toplamOdeme);
+
+      var turMap = {
+        konut: 'Konut Kredisi',
+        tasit: 'Taşıt Kredisi',
+        ihtiyac: 'İhtiyaç Kredisi'
+      };
+
+      subGrid =
+        '<div class="result-sub-item"><div class="s-lbl">Toplam Faiz Yükü</div><div class="s-val red">' + fmt(r.toplamFaiz) + '</div></div>' +
+        '<div class="result-sub-item"><div class="s-lbl">Efektif Yıllık Karşılık</div><div class="s-val">' + fmtPct(r.efektifYillik) + '</div></div>';
+
+      rows = buildRows([
+        { n: 'Kredi Türü', v: turMap[r.krediTur], c: '' },
+        { n: 'Kredi Tutarı', v: fmt(r.tutar), c: '' },
+        { n: 'Aylık Faiz Oranı', v: fmtPct(r.aylikOran), c: '' },
+        { n: 'Vade', v: r.vade + ' Ay', c: '' },
+        { n: 'Aylık Taksit', v: fmt(r.aylikTaksit), c: 'green' },
+        { n: 'Toplam Geri Ödeme', v: fmt(r.toplamOdeme), c: '' },
+        { n: 'Toplam Faiz Yükü', v: fmt(r.toplamFaiz), c: 'red' },
+        { n: 'Nominal Yıllık Karşılık', v: fmtPct(r.nominalYillik), c: '' },
+        { n: 'Efektif Yıllık Karşılık', v: fmtPct(r.efektifYillik), c: '' }
+      ]);
+    }
+
+    if (r.type === 'yasal') {
+      hl.className = 'result-highlight orange-hl';
+      document.getElementById('res_label').textContent = 'İşleyen Faiz Tutarı';
+      document.getElementById('res_amount').innerHTML =
+        r.faizTutari.toLocaleString('tr-TR', { maximumFractionDigits: 2 }) + '<span> TL</span>';
+      document.getElementById('res_sub').textContent =
+        'Toplam alacak: ' + fmt(r.toplam);
+
+      subGrid =
+        '<div class="result-sub-item"><div class="s-lbl">Gün Sayısı</div><div class="s-val">' + r.gunSayisi + ' Gün</div></div>' +
+        '<div class="result-sub-item"><div class="s-lbl">Toplam Alacak</div><div class="s-val green">' + fmt(r.toplam) + '</div></div>';
+
+      rows = buildRows([
+        { n: 'Anapara', v: fmt(r.anapara), c: '' },
+        { n: 'Yıllık Faiz Oranı', v: fmtPct(r.oran), c: '' },
+        { n: 'Gün Esası', v: r.gunEsasi + ' Gün', c: '' },
+        { n: 'Başlangıç Tarihi', v: r.basTarih, c: '' },
+        { n: 'Bitiş Tarihi', v: r.bitTarih, c: '' },
+        { n: 'Gün Sayısı', v: r.gunSayisi + ' Gün', c: '' },
+        { n: 'İşleyen Faiz', v: fmt(r.faizTutari), c: 'green' },
+        { n: 'Dönemsel Faiz Oranı', v: fmtPct(r.efektifOran), c: '' },
+        { n: 'Toplam Alacak', v: fmt(r.toplam), c: 'green' }
+      ]);
+    }
+
+    document.getElementById('res_sub_grid').innerHTML = subGrid;
+    document.getElementById('rows').innerHTML = rows;
+    resEl.className = 'card show';
+    resEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(function () { window.scrollBy(0, -70); }, 250);
+  }
+
+  function buildRows(arr) {
+    return arr.map(function (row) {
+      return '<div class="result-row"><span class="rname">' + row.n + '</span><span class="rval ' + row.c + '">' + row.v + '</span></div>';
+    }).join('');
+  }
+
+  function doCopy() {
+    if (!lastR) return;
+
+    var txt = 'MaaşHesap - Faiz Hesaplama\n--------------------\n';
+
+    if (lastR.type === 'mevduat') {
+      txt +=
+        'Ana Para: ' + fmt(lastR.anapara) + '\n' +
+        'Yıllık Faiz Oranı: ' + fmtPct(lastR.faizOrani) + '\n' +
+        'Vade: ' + lastR.vadeGun + ' Gün\n' +
+        'Brüt Faiz: ' + fmt(lastR.brutFaiz) + '\n' +
+        'Stopaj: ' + fmt(lastR.stopaj) + '\n' +
+        'Net Faiz: ' + fmt(lastR.netFaiz) + '\n' +
+        'Vade Sonu Toplam: ' + fmt(lastR.vadeSonu);
+    }
+
+    if (lastR.type === 'faiz') {
+      txt +=
+        'Ana Para: ' + fmt(lastR.anapara) + '\n' +
+        'Yıllık Faiz: ' + fmtPct(lastR.yillikFaiz) + '\n' +
+        'Vade: ' + lastR.vadeGun + ' Gün\n' +
+        'Faiz Getirisi: ' + fmt(lastR.getiri) + '\n' +
+        'Vade Sonu Toplam: ' + fmt(lastR.vadeSonu);
+    }
+
+    if (lastR.type === 'kredi') {
+      txt +=
+        'Kredi Tutarı: ' + fmt(lastR.tutar) + '\n' +
+        'Aylık Oran: ' + fmtPct(lastR.aylikOran) + '\n' +
+        'Vade: ' + lastR.vade + ' Ay\n' +
+        'Aylık Taksit: ' + fmt(lastR.aylikTaksit) + '\n' +
+        'Toplam Ödeme: ' + fmt(lastR.toplamOdeme) + '\n' +
+        'Toplam Faiz: ' + fmt(lastR.toplamFaiz);
+    }
+
+    if (lastR.type === 'yasal') {
+      txt +=
+        'Anapara: ' + fmt(lastR.anapara) + '\n' +
+        'Faiz Oranı: ' + fmtPct(lastR.oran) + '\n' +
+        'Gün Sayısı: ' + lastR.gunSayisi + '\n' +
+        'İşleyen Faiz: ' + fmt(lastR.faizTutari) + '\n' +
+        'Toplam Alacak: ' + fmt(lastR.toplam);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(function () {
+        alert('Kopyalandı.');
+      }).catch(function () {
+        alert('Kopyalama başarısız oldu.');
+      });
+    } else {
+      alert('Tarayıcı kopyalamayı desteklemiyor.');
+    }
+  }
+
+  function printResult() {
+    if (!lastR) {
+      alert('Önce hesaplama yapın.');
+      return;
+    }
+    window.print();
+  }
+
+  function initFaqs() {
+    document.querySelectorAll('.faq-item .faq-q').forEach(function (el) {
+      el.addEventListener('click', function () {
+        this.parentElement.classList.toggle('open');
+      });
+    });
+  }
+
+  function initMobileNav() {
+    var toggle = document.getElementById('nav-toggle');
+    var nav = document.getElementById('mobile-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        nav.classList.toggle('open');
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!toggle.contains(e.target) && !nav.contains(e.target)) {
+          nav.classList.remove('open');
+        }
+      });
+    }
+  }
+
+  window.addEventListener('load', function () {
+    document.getElementById('calc_btn').addEventListener('click', calculate);
+    document.getElementById('print_btn').addEventListener('click', printResult);
+    document.getElementById('copy_btn').addEventListener('click', doCopy);
+
+    document.addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') calculate();
+    });
+
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementById('ys_bitis').value = today;
+
+    initFaqs();
+    initMobileNav();
+  });
+})();
+</script>
+
+</body>
+</html>
