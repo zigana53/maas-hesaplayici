@@ -1613,9 +1613,10 @@
     if (lastR.type === 'mevduat') {
       txt +=
         'Ana Para: ' + fmt(lastR.anapara) + '\n' +
-        'Yıllık Faiz Oranı: ' + fmtPct(lastR.faizOrani) + '\n' +
-        'Vade: ' + lastR.vadeGun + ' Gün\n' +
-        'Brüt Faiz: ' + fmt(lastR.brutFaiz) + '\n' +
+         'Yıllık Faiz Oranı: ' + fmtPct(lastR.faizOrani) + '\n' +
+         'Vade: ' + lastR.vadeGun + ' Gün\n' +
+         'Gün Esası: ' + lastR.mevduatGunEsasi + ' Gün\n' +
+         'Brüt Faiz: ' + fmt(lastR.brutFaiz) + '\n' +
         'Stopaj: ' + fmt(lastR.stopaj) + '\n' +
         'Net Faiz: ' + fmt(lastR.netFaiz) + '\n' +
         'Vade Sonu Toplam: ' + fmt(lastR.vadeSonu);
