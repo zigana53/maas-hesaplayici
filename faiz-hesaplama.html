@@ -1260,7 +1260,13 @@
     document.getElementById('btn_365').classList.toggle('active', g === 365);
     document.getElementById('btn_360').classList.toggle('active', g === 360);
   };
-
+  
+  window.setMevduatGunEsasi = function (g) {
+    mevduatGunEsasi = g;
+    document.getElementById('btn_mv_365').classList.toggle('active', g === 365);
+    document.getElementById('btn_mv_360').classList.toggle('active', g === 360);
+  };
+  
   window.setKrediTur = function (tur) {
     krediTur = tur;
     document.getElementById('btn_konut').classList.toggle('active', tur === 'konut');
