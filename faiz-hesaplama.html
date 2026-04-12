@@ -886,7 +886,16 @@
               <span class="input-unit">Gün</span>
             </div>
           </div>
-
+          
+          <div class="field">
+            <label>Faiz Gün Esası</label>
+            <div class="toggle-group" style="grid-template-columns:1fr 1fr;">
+             <button class="toggle-btn active" id="btn_mv_365" type="button" onclick="setMevduatGunEsasi(365)">365 Gün</button>
+             <button class="toggle-btn" id="btn_mv_360" type="button" onclick="setMevduatGunEsasi(360)">360 Gün</button>
+            </div>
+            <span class="field-help">Bazı bankalar 365, bazıları 360 gün esasıyla hesaplama yapabilir. Küçük farklar oluşabilir.</span>
+          </div>
+          
           <div class="field">
             <label>Stopaj Oranı</label>
             <div class="input-wrap">
