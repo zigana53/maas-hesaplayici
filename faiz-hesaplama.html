@@ -1661,6 +1661,7 @@
     }
   }
 
+
   function printResult() {
   if (!lastR) {
     alert('Önce hesaplama yapınız.');
@@ -1804,12 +1805,6 @@
   }, 300);
 }
      
-  var win = window.open('', '', 'width=800,height=600');
-  win.document.write('<html><head><title>Yazdır</title></head><body>' + content + '</body></html>');
-  win.document.close();
-  win.print();
-}
-
   function initFaqs() {
     document.querySelectorAll('.faq-item .faq-q').forEach(function (el) {
       el.addEventListener('click', function () {
