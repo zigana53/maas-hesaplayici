@@ -1667,35 +1667,143 @@
     return;
   }
 
-  var content = `
-    <div style="font-family:Arial,sans-serif; padding:20px; max-width:700px; margin:auto;">
-      
-      <h2 style="margin-bottom:10px; color:#1a5cff;">MaaşHesap - Faiz Hesaplama</h2>
-      <p style="color:#666; font-size:13px; margin-bottom:20px;">
-        Oluşturulma: ${new Date().toLocaleString('tr-TR')}
-      </p>
+  var title = document.getElementById('res_label').innerText;
+  var amount = document.getElementById('res_amount').innerText;
+  var sub = document.getElementById('res_sub').innerText;
 
-      <div style="border:1px solid #ddd; border-radius:10px; padding:15px; margin-bottom:20px;">
-        <strong>${document.getElementById('res_label').innerText}</strong>
-        <div style="font-size:28px; margin-top:5px;">
-          ${document.getElementById('res_amount').innerText}
+  var rowsHtml = '';
+  var rows = document.querySelectorAll('#rows .result-row');
+
+  rows.forEach(function(row) {
+    var name = row.querySelector('.rname') ? row.querySelector('.rname').innerText : '';
+    var val = row.querySelector('.rval') ? row.querySelector('.rval').innerText : '';
+
+    rowsHtml += `
+      <tr>
+        <td style="padding:8px 10px; border-bottom:1px solid #e5e7eb; color:#555;">${name}</td>
+        <td style="padding:8px 10px; border-bottom:1px solid #e5e7eb; text-align:right; font-weight:700; color:#111;">${val}</td>
+      </tr>
+    `;
+  });
+
+  var printWindow = window.open('', '', 'width=800,height=700');
+
+  printWindow.document.write(`
+    <!DOCTYPE html>
+    <html lang="tr">
+    <head>
+      <meta charset="UTF-8">
+      <title>Faiz Hesaplama Yazdır</title>
+      <style>
+        @page {
+          size: A4;
+          margin: 12mm;
+        }
+
+        body {
+          font-family: Arial, sans-serif;
+          color: #111;
+          margin: 0;
+          padding: 0;
+          background: #fff;
+        }
+
+        .wrap {
+          max-width: 700px;
+          margin: 0 auto;
+          padding: 12px;
+        }
+
+        h1 {
+          font-size: 22px;
+          margin: 0 0 8px;
+          color: #1a5cff;
+        }
+
+        .date {
+          font-size: 12px;
+          color: #666;
+          margin-bottom: 18px;
+        }
+
+        .summary {
+          border: 1px solid #dbe5ff;
+          background: #f3f7ff;
+          border-radius: 10px;
+          padding: 14px;
+          margin-bottom: 18px;
+        }
+
+        .summary .label {
+          font-size: 12px;
+          text-transform: uppercase;
+          color: #555;
+          margin-bottom: 6px;
+          font-weight: 700;
+        }
+
+        .summary .amount {
+          font-size: 28px;
+          font-weight: 700;
+          margin-bottom: 6px;
+        }
+
+        .summary .sub {
+          font-size: 12px;
+          color: #666;
+        }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          font-size: 14px;
+        }
+
+        .note {
+          margin-top: 18px;
+          font-size: 12px;
+          color: #777;
+        }
+
+        tr {
+          page-break-inside: avoid;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="wrap">
+        <h1>MaaşHesap - Faiz Hesaplama</h1>
+        <div class="date">Oluşturulma: ${new Date().toLocaleString('tr-TR')}</div>
+
+        <div class="summary">
+          <div class="label">${title}</div>
+          <div class="amount">${amount}</div>
+          <div class="sub">${sub}</div>
         </div>
-        <div style="font-size:13px; color:#666; margin-top:5px;">
-          ${document.getElementById('res_sub').innerText}
+
+        <table>
+          <tbody>
+            ${rowsHtml}
+          </tbody>
+        </table>
+
+        <div class="note">
+          Bu çıktı bilgilendirme amaçlıdır.
         </div>
       </div>
+    </body>
+    </html>
+  `);
 
-      <div>
-        ${document.getElementById('rows').innerHTML}
-      </div>
+  printWindow.document.close();
+  printWindow.focus();
 
-      <p style="margin-top:20px; font-size:12px; color:#777;">
-        Bu hesaplama bilgilendirme amaçlıdır.
-      </p>
-
-    </div>
-  `;
-
+  setTimeout(function() {
+    printWindow.print();
+    printWindow.close();
+  }, 300);
+}
+     
   var win = window.open('', '', 'width=800,height=600');
   win.document.write('<html><head><title>Yazdır</title></head><body>' + content + '</body></html>');
   win.document.close();
