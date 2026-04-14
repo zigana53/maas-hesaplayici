@@ -3,50 +3,526 @@
 <head>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3524613180930720"
      crossorigin="anonymous"></script>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.svg">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Brüt Maaş Nedir? Net Maaştan Farkı Nedir? (2026)</title>
-<meta name="description" content="Brüt maaş nedir, net maaştan farkı nedir? 2026 yılında maaş hesaplama mantığını basit şekilde öğrenin.">
+<meta name="description" content="Brüt maaş nedir, net maaştan farkı nedir? 2026 yılında brüt ve net maaş farkını, kesintileri ve hesaplama mantığını sade şekilde öğrenin.">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://maashesap.net/brut-maas-nedir.html">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-body{font-family:Arial;padding:20px;max-width:800px;margin:auto;line-height:1.7}
-h1{font-size:28px}
-h2{margin-top:25px}
+  :root{
+    --ink:#0f0f0f;
+    --paper:#f2f5fb;
+    --white:#ffffff;
+    --muted:#6b7280;
+    --line:#e2e8f0;
+    --accent:#1a5cff;
+    --accent-soft:#eef2ff;
+    --shadow-sm:0 1px 3px rgba(0,0,0,.07),0 2px 8px rgba(0,0,0,.05);
+    --r:14px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:15px;
+  }
+
+  header{
+    border-bottom:1px solid var(--line);
+    padding:0 clamp(16px,4vw,40px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    height:64px;
+    background:var(--white);
+    position:sticky;
+    top:0;
+    z-index:200;
+    box-shadow:0 1px 8px rgba(0,0,0,.06);
+  }
+
+  .header-left{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    min-width:0;
+  }
+
+  .logo-wrap{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+
+  .logo-icon{
+    width:38px;
+    height:38px;
+    background:var(--accent);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+
+  .logo-icon svg{width:20px;height:20px}
+  .logo-text{
+    font-family:'DM Serif Display',serif;
+    font-size:20px;
+    color:var(--ink);
+    line-height:1;
+  }
+  .logo-text span{color:var(--accent)}
+
+  .main-nav{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    min-width:0;
+  }
+
+  .nav-link{
+    font-size:13px;
+    font-weight:600;
+    color:var(--muted);
+    text-decoration:none;
+    padding:7px 12px;
+    border-radius:8px;
+    transition:all .2s;
+    white-space:nowrap;
+  }
+
+  .nav-link:hover{background:var(--paper);color:var(--ink)}
+  .nav-link.active{background:var(--accent-soft);color:var(--accent)}
+
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:none;
+    font-size:24px;
+    line-height:1;
+    cursor:pointer;
+    color:var(--muted);
+    padding:6px 8px;
+    margin-left:auto;
+    flex-shrink:0;
+  }
+
+  .mobile-nav{
+    display:none;
+    position:fixed;
+    top:64px;
+    left:0;
+    right:0;
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    z-index:199;
+    box-shadow:0 4px 16px rgba(0,0,0,.1);
+    flex-direction:column;
+  }
+  .mobile-nav.open{display:flex}
+  .mobile-nav a{
+    padding:14px 18px;
+    font-size:14px;
+    font-weight:600;
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-nav a:last-child{border-bottom:none}
+  .mobile-nav a:hover{background:var(--paper)}
+
+  @media (max-width:860px){
+    .main-nav{display:none}
+    .nav-toggle{display:block}
+  }
+
+  .hero{
+    text-align:center;
+    padding:56px clamp(16px,5vw,60px) 40px;
+    background:linear-gradient(160deg,#dce8ff 0%,#eef4ff 50%,var(--paper) 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    font-size:12px;
+    font-weight:600;
+    padding:4px 14px;
+    border-radius:99px;
+    margin-bottom:18px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    border:1px solid #c5d5ff;
+  }
+  .hero h1{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(28px,5vw,46px);
+    line-height:1.1;
+    max-width:760px;
+    margin:0 auto 14px;
+    letter-spacing:-.02em;
+  }
+  .hero p{
+    color:var(--muted);
+    max-width:700px;
+    margin:0 auto;
+    font-size:16px;
+    font-weight:300;
+  }
+
+  .content-wrap{
+    max-width:980px;
+    margin:0 auto;
+    padding:32px 20px 0;
+  }
+
+  .content-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--r);
+    box-shadow:var(--shadow-sm);
+    padding:28px;
+  }
+
+  .content-card h2{
+    font-family:'DM Serif Display',serif;
+    font-size:28px;
+    margin:30px 0 12px;
+    line-height:1.2;
+    letter-spacing:-.02em;
+  }
+
+  .content-card h2:first-of-type{margin-top:0}
+
+  .content-card p{
+    margin-bottom:14px;
+    color:#374151;
+    font-size:16px;
+  }
+
+  .content-card ul{
+    padding-left:20px;
+    margin:10px 0 16px;
+  }
+
+  .content-card li{
+    margin-bottom:8px;
+    color:#374151;
+    font-size:16px;
+  }
+
+  .content-card a{
+    color:var(--accent);
+    text-decoration:underline;
+  }
+
+  .note-box{
+    background:#fffbea;
+    border:1px solid #fde68a;
+    border-radius:12px;
+    padding:14px 16px;
+    margin:20px 0 24px;
+    font-size:14px;
+    color:#57534e;
+  }
+
+  .related-links{
+    margin-top:26px;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+    font-size:15px;
+    color:#374151;
+  }
+
+  .disclaimer{
+    max-width:1100px;
+    margin:40px auto;
+    padding:15px 20px;
+    font-size:14px;
+    color:#666;
+    line-height:1.6;
+  }
+
+  footer{
+    background:var(--ink);
+    color:rgba(255,255,255,.6);
+    padding:28px clamp(16px,5vw,60px);
+    text-align:center;
+    font-size:13px;
+    margin-top:10px;
+  }
+  footer strong{color:#fff;font-weight:600}
+  footer a{color:rgba(255,255,255,.6);text-decoration:underline}
+  footer a:hover{color:#fff}
+  footer .footer-links{
+    margin-top:10px;
+    display:flex;
+    justify-content:center;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+
+  @media (max-width:760px){
+    body{font-size:14px}
+    header{
+      height:60px;
+      padding:0 14px;
+      gap:10px;
+    }
+    .header-left{gap:0}
+    .logo-icon{
+      width:34px;
+      height:34px;
+      border-radius:9px;
+    }
+    .logo-icon svg{width:18px;height:18px}
+    .logo-text{font-size:18px}
+    .mobile-nav{top:60px}
+    .hero{padding:36px 16px 28px}
+    .hero h1{font-size:34px}
+    .hero p{font-size:14px;line-height:1.65}
+    .content-wrap{padding:18px 14px 0}
+    .content-card{padding:20px}
+    .content-card h2{font-size:24px}
+    .content-card p,.content-card li{font-size:15px}
+    footer{padding:22px 14px;font-size:12px}
+  }
 </style>
 </head>
 
 <body>
 
-<h1>Brüt Maaş Nedir? Net Maaştan Farkı Nedir?</h1>
+<header>
+  <div class="header-left">
+    <a href="/" class="logo-wrap">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="white" stroke-width="1.8"/>
+          <line x1="3" y1="9" x2="21" y2="9" stroke="white" stroke-width="1.8"/>
+          <line x1="8" y1="14" x2="10" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="14" x2="14" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="16" y1="14" x2="16" y2="19" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="8" y1="18" x2="10" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="18" x2="14" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="logo-text">maas<span>hesap</span></div>
+    </a>
 
-<p>Brüt maaş, çalışanın işveren tarafından belirlenen toplam maaşıdır. Bu tutar üzerinden vergi ve sigorta kesintileri yapılır.</p>
+    <nav class="main-nav">
+      <a href="/" class="nav-link active">💰 Maaş Hesaplama</a>
+      <a href="tazminat.html" class="nav-link">📄 Tazminat</a>
+      <a href="issizlik.html" class="nav-link">🧳 İşsizlik</a>
+      <a href="fazla-mesai.html" class="nav-link">⏱️ Fazla Mesai</a>
+      <a href="yuzde-hesaplama.html" class="nav-link">📊 Yüzde Hesaplama</a>
+      <a href="kdv-hesaplama.html" class="nav-link">🧾 KDV Hesaplama</a>
+      <a href="faiz-hesaplama.html" class="nav-link">📈 Faiz Hesaplama</a>
+    </nav>
+  </div>
 
-<h2>Brüt Maaş Nedir?</h2>
-<p>Brüt maaş, herhangi bir kesinti yapılmadan önceki toplam kazancı ifade eder.</p>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menüyü aç">☰</button>
+</header>
 
-<h2>Net Maaş Nedir?</h2>
-<p>Net maaş, brüt maaştan SGK primi, gelir vergisi ve diğer kesintiler düşüldükten sonra çalışanın eline geçen tutardır.</p>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/">💰 Maaş Hesaplama</a>
+  <a href="tazminat.html">📄 Tazminat</a>
+  <a href="issizlik.html">🧳 İşsizlik</a>
+  <a href="fazla-mesai.html">⏱️ Fazla Mesai</a>
+  <a href="yuzde-hesaplama.html">📊 Yüzde Hesaplama</a>
+  <a href="kdv-hesaplama.html">🧾 KDV Hesaplama</a>
+  <a href="faiz-hesaplama.html">📈 Faiz Hesaplama</a>
+</div>
 
-<h2>Brüt ve Net Maaş Arasındaki Fark</h2>
-<ul>
-<li>Brüt maaş → kesinti öncesi</li>
-<li>Net maaş → kesinti sonrası</li>
-</ul>
+<div class="hero">
+  <div class="hero-badge">2026 Güncel Rehber</div>
+  <h1>Brüt Maaş Nedir?<br>Net Maaştan Farkı Nedir?</h1>
+  <p>Brüt maaş ile net maaş arasındaki farkı, maaştan yapılan temel kesintileri ve çalışan açısından neden önemli olduğunu sade şekilde öğrenin.</p>
+</div>
 
-<h2>Neden Önemlidir?</h2>
-<p>Maaş pazarlığı yapılırken brüt maaş üzerinden konuşulur ancak çalışan için önemli olan net maaştır.</p>
+<div class="content-wrap">
+  <article class="content-card">
 
-<hr>
+    <h2>Brüt Maaş Nedir?</h2>
 
-<p><strong>2026 güncel hesaplama:</strong>
-<a href="/">Net maaş hesaplama aracını kullanın</a></p>
+    <p>
+      Brüt maaş, çalışanın işveren tarafından belirlenen ve bordroda yer alan toplam ücretidir.
+      Bu tutar üzerinden SGK primi, işsizlik sigortası primi, gelir vergisi ve damga vergisi gibi yasal kesintiler yapılır.
+      Çalışanın hesabına yatan tutar ise net maaştır.
+    </p>
 
-<p>
-<a href="netten-brute-maas-hesaplama.html">Netten brüt maaş hesaplama</a> ·
-<a href="vergi-dilimi-maas-etkisi.html">Vergi dilimi</a>
-</p>
+    <p>
+      Hesaplamayı doğrudan görmek için <a href="/">net maaş hesaplama aracını</a> kullanabilirsiniz.
+      Ancak brüt maaş mantığını bilmek, iş görüşmelerinde teklifleri karşılaştırırken ve bordronuzu kontrol ederken büyük avantaj sağlar.
+    </p>
+
+    <div class="note-box">
+      Kısa özet: Brüt maaş kesinti öncesi toplam tutardır, net maaş ise kesintiler sonrası çalışanın eline geçen tutardır.
+    </div>
+
+    <h2>Net Maaş Nedir?</h2>
+
+    <p>
+      Net maaş, brüt maaştan yasal kesintiler düşüldükten sonra çalışanın hesabına geçen gerçek ödemedir.
+      Çalışanlar için pratikte en önemli rakam genellikle net maaştır; çünkü aylık harcama ve bütçe planı bu tutara göre yapılır.
+    </p>
+
+    <p>
+      Net maaş hesabı yalnızca tek bir vergiye bakılarak yapılmaz.
+      SGK primi, işsizlik primi, gelir vergisi, damga vergisi ve asgari ücret istisnası gibi kalemler birlikte değerlendirilir.
+    </p>
+
+    <h2>Brüt Maaş ile Net Maaş Arasındaki Fark Nedir?</h2>
+
+    <p>
+      Brüt ve net maaş arasındaki fark, büyük ölçüde yasal kesintilerden kaynaklanır.
+      Aynı brüt maaşı alan iki çalışan, yılın farklı dönemlerinde veya farklı çalışma tiplerinde farklı net maaş görebilir.
+    </p>
+
+    <ul>
+      <li><strong>Brüt maaş:</strong> Kesinti öncesi toplam ücret</li>
+      <li><strong>Net maaş:</strong> Kesinti sonrası çalışanın eline geçen tutar</li>
+      <li><strong>Farkı oluşturan ana kalemler:</strong> SGK, işsizlik primi, gelir vergisi ve damga vergisi</li>
+    </ul>
+
+    <p>
+      Özellikle vergi dilimi ilerledikçe net maaşta düşüş görülebilir.
+      Bu etkinin detayını <a href="vergi-dilimi-maas-etkisi.html">vergi dilimi maaşı nasıl etkiler?</a> rehberinde daha detaylı inceleyebilirsiniz.
+    </p>
+
+    <h2>Brüt Maaştan Hangi Kesintiler Yapılır?</h2>
+
+    <p>
+      Brüt maaş üzerinden yapılan temel kesintiler şunlardır:
+    </p>
+
+    <ul>
+      <li>SGK işçi primi</li>
+      <li>İşsizlik sigortası primi</li>
+      <li>Gelir vergisi</li>
+      <li>Damga vergisi</li>
+    </ul>
+
+    <p>
+      Özellikle SGK tarafı çalışanların en çok merak ettiği konulardan biridir.
+      Bunun için <a href="sgk-primi-nedir.html">SGK primi nedir?</a> sayfasına da göz atabilirsiniz.
+    </p>
+
+    <h2>Brüt Maaş Neden Önemlidir?</h2>
+
+    <p>
+      İş görüşmelerinde ve maaş pazarlığında çoğu zaman brüt ücret konuşulur.
+      Ancak çalışan açısından esas önemli olan net maaştır.
+      Bu yüzden bir iş teklifini değerlendirirken sadece “brüt maaş ne kadar” sorusunu değil, “nette elime ne geçecek” sorusunu da sormak gerekir.
+    </p>
+
+    <p>
+      Brüt maaşı anlamak, maaş zammı, terfi ve bordro kontrolü gibi konularda daha bilinçli hareket etmenizi sağlar.
+      Maaş artışlarını kıyaslamak için <a href="yuzde-hesaplama.html">yüzde hesaplama</a> aracı da faydalı olabilir.
+    </p>
+
+    <h2>Brüt Maaş Her Zaman Aynı Net Maaşı Verir mi?</h2>
+
+    <p>
+      Hayır. Aynı brüt maaş her zaman aynı net maaşı vermez.
+      Özellikle yıl içinde vergi diliminin değişmesi, istisna uygulamaları ve bazı özel bordro koşulları nedeniyle net maaş farklılaşabilir.
+    </p>
+
+    <p>
+      Bu yüzden tek bir örneğe bakmak yerine güncel brüt ücreti doğrudan hesaplatmak daha sağlıklıdır.
+      Bunun için <a href="/">maaş hesaplama aracını</a> kullanabilir, isterseniz
+      <a href="net-maas-nasil-hesaplanir.html">net maaş nasıl hesaplanır?</a> rehberine de göz atabilirsiniz.
+    </p>
+
+    <h2>Brüt Maaş ile Net Maaş Farkını En Kolay Nasıl Öğrenebilirim?</h2>
+
+    <p>
+      En kolay yöntem, brüt maaşı hesaplama aracına girerek net maaşı doğrudan görmektir.
+      Elle hesap yapılabilir; ancak vergi dilimi ve istisna gibi detaylar sonucu değiştirebilir.
+    </p>
+
+    <p>
+      Eğer hedefiniz “netten brüte” ya da “brütten nete” maaş dönüşümünü hızlı görmekse,
+      doğrudan <a href="/">maaş hesaplama</a> aracı daha pratik olur.
+      Gelir planlaması yaparken <a href="faiz-hesaplama.html">faiz hesaplama</a> sayfası da destekleyici olabilir.
+    </p>
+
+    <div class="related-links">
+      <strong>İlgili rehberler:</strong><br>
+      <a href="net-maas-nasil-hesaplanir.html">Net maaş nasıl hesaplanır?</a> ·
+      <a href="sgk-primi-nedir.html">SGK primi nedir?</a> ·
+      <a href="vergi-dilimi-maas-etkisi.html">Vergi dilimi maaşı nasıl etkiler?</a> ·
+      <a href="kumulatif-vergi-matrahi-nedir.html">Kümülatif vergi matrahı nedir?</a> ·
+      <a href="yuzde-hesaplama.html">Yüzde Hesaplama</a> ·
+      <a href="faiz-hesaplama.html">Faiz Hesaplama</a>
+    </div>
+
+  </article>
+</div>
+
+<div class="disclaimer">
+  Bu içerik bilgilendirme amaçlıdır. Brüt ve net maaş hesabı; vergi dilimi, istisnalar ve bordro uygulamasına göre değişebilir. Kesin sonuç için güncel bordro ve uzman değerlendirmesi esas alınmalıdır.
+</div>
+
+<footer>
+  <p><strong>MaaşHesap 2026</strong> &mdash; Bu site yalnızca bilgilendirme amaçlıdır. Kesin hesap için bordro ve uzman görüşü esas alınmalıdır.</p>
+  <div class="footer-links">
+    <a href="/">Maaş Hesaplama</a>
+    <a href="tazminat.html">Tazminat</a>
+    <a href="issizlik.html">İşsizlik</a>
+    <a href="fazla-mesai.html">Fazla Mesai</a>
+    <a href="yuzde-hesaplama.html">Yüzde Hesaplama</a>
+    <a href="kdv-hesaplama.html">KDV Hesaplama</a>
+    <a href="faiz-hesaplama.html">Faiz Hesaplama</a>
+    <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="iletisim.html">İletişim</a>
+    <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
+    <a href="kaynaklar.html">Kaynaklar</a>
+    <a href="cerez-politikasi.html">Çerez Politikası</a>
+  </div>
+  <p style="margin-top:10px">
+    İletişim: <a href="mailto:info@maashesap.net">info@maashesap.net</a>
+  </p>
+</footer>
+
+<script>
+(function() {
+  var navToggle = document.getElementById('nav-toggle');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  if (navToggle && mobileNav) {
+    navToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      mobileNav.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!navToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+        mobileNav.classList.remove('open');
+      }
+    });
+  }
+})();
+</script>
 
 </body>
 </html>
