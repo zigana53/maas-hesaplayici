@@ -1,89 +1,531 @@
-<h1>Maaş Hesaplama Nasıl Yapılır? (2026 Rehberi)</h1>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3524613180930720"
+     crossorigin="anonymous"></script>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<p>
-Maaş hesaplama, brüt maaş üzerinden yapılan kesintiler düşülerek net maaşın bulunması işlemidir.
-Bu hesaplama SGK primi, işsizlik sigortası ve vergiler dikkate alınarak yapılır.
-</p>
+<title>Maaş Hesaplama Nasıl Yapılır? 2026 Rehberi</title>
+<meta name="description" content="Maaş hesaplama nasıl yapılır? 2026 rehberinde brüt maaştan net maaşa geçişi, SGK primi, işsizlik primi ve vergi kesintileriyle sade şekilde öğrenin.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://maashesap.net/maas-hesaplama-nasil-yapilir.html">
 
-<h2>Maaş Hesaplama Mantığı</h2>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="MaaşHesap">
+<meta property="og:title" content="Maaş Hesaplama Nasıl Yapılır? 2026 Rehberi">
+<meta property="og:description" content="Brüt maaştan net maaşa geçişi, kesintileri ve bordro mantığını sade şekilde öğrenin.">
+<meta property="og:url" content="https://maashesap.net/maas-hesaplama-nasil-yapilir.html">
 
-<p>
-Bir çalışanın maaşı hesaplanırken şu adımlar izlenir:
-</p>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maaş Hesaplama Nasıl Yapılır? 2026 Rehberi">
+<meta name="twitter:description" content="Maaş hesaplama mantığını, SGK ve vergi kesintileriyle birlikte sade şekilde öğrenin.">
 
-<ul>
-<li>Brüt maaş belirlenir</li>
-<li>SGK primi (%14) düşülür</li>
-<li>İşsizlik primi (%1) düşülür</li>
-<li>Gelir vergisi hesaplanır</li>
-<li>Damga vergisi eklenir</li>
-</ul>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<p>
-Net maaş şu formülle bulunur:
-</p>
+<style>
+  :root{
+    --ink:#0f0f0f;
+    --paper:#f2f5fb;
+    --white:#ffffff;
+    --muted:#6b7280;
+    --line:#e2e8f0;
+    --accent:#1a5cff;
+    --accent-soft:#eef2ff;
+    --shadow-sm:0 1px 3px rgba(0,0,0,.07),0 2px 8px rgba(0,0,0,.05);
+    --r:14px;
+  }
 
-<p><strong>Net Maaş = Brüt Maaş - Tüm Kesintiler</strong></p>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:15px;
+  }
 
-<p>
-Türkiye’de maaş hesaplamasında SGK, vergi ve diğer kesintiler dikkate alınarak net ücret bulunur.  [oai_citation:1‡Eleman](https://www.eleman.net/hesaplama/maas-hesaplama?utm_source=chatgpt.com)
-</p>
+  header{
+    border-bottom:1px solid var(--line);
+    padding:0 clamp(16px,4vw,40px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    height:64px;
+    background:var(--white);
+    position:sticky;
+    top:0;
+    z-index:200;
+    box-shadow:0 1px 8px rgba(0,0,0,.06);
+  }
 
-<h2>Maaştan Hangi Kesintiler Yapılır?</h2>
+  .header-left{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    min-width:0;
+  }
 
-<ul>
-<li>SGK primi (sosyal güvenlik)</li>
-<li>İşsizlik sigortası</li>
-<li>Gelir vergisi</li>
-<li>Damga vergisi</li>
-</ul>
+  .logo-wrap{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    flex-shrink:0;
+  }
 
-<p>
-Bu kesintiler toplamı net maaşı belirler.
-</p>
+  .logo-icon{
+    width:38px;
+    height:38px;
+    background:var(--accent);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
 
-<h2>Brüt ve Net Maaş Farkı</h2>
+  .logo-icon svg{width:20px;height:20px}
+  .logo-text{
+    font-family:'DM Serif Display',serif;
+    font-size:20px;
+    color:var(--ink);
+    line-height:1;
+  }
+  .logo-text span{color:var(--accent)}
 
-<p>
-Brüt maaş işveren maliyetidir. Net maaş ise çalışanın eline geçen tutardır.
-Aradaki fark tamamen yasal kesintilerden oluşur.
-</p>
+  .main-nav{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    min-width:0;
+  }
 
-<h2>Vergi Dilimi Maaşı Nasıl Etkiler?</h2>
+  .nav-link{
+    font-size:13px;
+    font-weight:600;
+    color:var(--muted);
+    text-decoration:none;
+    padding:7px 12px;
+    border-radius:8px;
+    transition:all .2s;
+    white-space:nowrap;
+  }
 
-<p>
-Yıl içinde kümülatif vergi matrahı arttıkça çalışan daha yüksek vergi dilimine girer.
-Bu da net maaşın düşmesine neden olabilir.
-</p>
+  .nav-link:hover{background:var(--paper);color:var(--ink)}
 
-<p>
-👉 Detaylı bilgi: <a href="vergi-dilimi-net-maas.html">Vergi dilimi rehberi</a>
-</p>
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:none;
+    font-size:24px;
+    line-height:1;
+    cursor:pointer;
+    color:var(--muted);
+    padding:6px 8px;
+    margin-left:auto;
+    flex-shrink:0;
+  }
 
-<h2>En Doğru Maaş Hesaplama Nasıl Yapılır?</h2>
+  .mobile-nav{
+    display:none;
+    position:fixed;
+    top:64px;
+    left:0;
+    right:0;
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    z-index:199;
+    box-shadow:0 4px 16px rgba(0,0,0,.1);
+    flex-direction:column;
+  }
+  .mobile-nav.open{display:flex}
+  .mobile-nav a{
+    padding:14px 18px;
+    font-size:14px;
+    font-weight:600;
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-nav a:last-child{border-bottom:none}
+  .mobile-nav a:hover{background:var(--paper)}
 
-<p>
-Manuel hesaplama yapılabilir ancak vergi dilimi ve istisnalar nedeniyle en doğru sonuç için hesaplama aracı kullanılmalıdır.
-</p>
+  @media (max-width:860px){
+    .main-nav{display:none}
+    .nav-toggle{display:block}
+  }
 
-<p>
-👉 <a href="/">Net maaş hesaplama aracını kullan</a>
-</p>
+  .hero{
+    text-align:center;
+    padding:56px clamp(16px,5vw,60px) 40px;
+    background:linear-gradient(160deg,#dce8ff 0%,#eef4ff 50%,var(--paper) 100%);
+    border-bottom:1px solid var(--line);
+  }
 
-<h2>Kimler Bu Hesabı Kullanmalı?</h2>
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    font-size:12px;
+    font-weight:600;
+    padding:4px 14px;
+    border-radius:99px;
+    margin-bottom:18px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    border:1px solid #c5d5ff;
+  }
 
-<ul>
-<li>İş teklifi değerlendirenler</li>
-<li>Maaşını kontrol etmek isteyenler</li>
-<li>Bordrosunu anlamak isteyenler</li>
-<li>Brütten nete farkı öğrenmek isteyenler</li>
-</ul>
+  .hero h1{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(28px,5vw,46px);
+    line-height:1.1;
+    max-width:760px;
+    margin:0 auto 14px;
+    letter-spacing:-.02em;
+  }
 
-<hr>
+  .hero p{
+    color:var(--muted);
+    max-width:700px;
+    margin:0 auto;
+    font-size:16px;
+    font-weight:300;
+  }
 
-<p>
-İlgili sayfalar:
-<a href="netten-brute-maas-hesaplama.html">Netten brüte hesaplama</a> ·
-<a href="brut-maas-nedir.html">Brüt maaş nedir</a> ·
-<a href="asgari-ucret-hesaplama-2026.html">Asgari ücret hesaplama</a>
-</p>
+  .content-wrap{
+    max-width:980px;
+    margin:0 auto;
+    padding:32px 20px 0;
+  }
+
+  .content-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--r);
+    box-shadow:var(--shadow-sm);
+    padding:28px;
+  }
+
+  .content-card h2{
+    font-family:'DM Serif Display',serif;
+    font-size:28px;
+    margin:30px 0 12px;
+    line-height:1.2;
+    letter-spacing:-.02em;
+  }
+
+  .content-card h2:first-of-type{margin-top:0}
+
+  .content-card p{
+    margin-bottom:14px;
+    color:#374151;
+    font-size:16px;
+  }
+
+  .content-card ul{
+    padding-left:20px;
+    margin:10px 0 16px;
+  }
+
+  .content-card li{
+    margin-bottom:8px;
+    color:#374151;
+    font-size:16px;
+  }
+
+  .content-card a{
+    color:var(--accent);
+    text-decoration:underline;
+  }
+
+  .note-box{
+    background:#fffbea;
+    border:1px solid #fde68a;
+    border-radius:12px;
+    padding:14px 16px;
+    margin:20px 0 24px;
+    font-size:14px;
+    color:#57534e;
+  }
+
+  .related-links{
+    margin-top:26px;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+    font-size:15px;
+    color:#374151;
+  }
+
+  .disclaimer{
+    max-width:1100px;
+    margin:40px auto;
+    padding:15px 20px;
+    font-size:14px;
+    color:#666;
+    line-height:1.6;
+  }
+
+  footer{
+    background:var(--ink);
+    color:rgba(255,255,255,.6);
+    padding:28px clamp(16px,5vw,60px);
+    text-align:center;
+    font-size:13px;
+    margin-top:10px;
+  }
+  footer strong{color:#fff;font-weight:600}
+  footer a{color:rgba(255,255,255,.6);text-decoration:underline}
+  footer a:hover{color:#fff}
+  footer .footer-links{
+    margin-top:10px;
+    display:flex;
+    justify-content:center;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+
+  @media (max-width:760px){
+    body{font-size:14px}
+    header{
+      height:60px;
+      padding:0 14px;
+      gap:10px;
+    }
+    .header-left{gap:0}
+    .logo-icon{
+      width:34px;
+      height:34px;
+      border-radius:9px;
+    }
+    .logo-icon svg{width:18px;height:18px}
+    .logo-text{font-size:18px}
+    .mobile-nav{top:60px}
+    .hero{padding:36px 16px 28px}
+    .hero h1{font-size:34px}
+    .hero p{font-size:14px;line-height:1.65}
+    .content-wrap{padding:18px 14px 0}
+    .content-card{padding:20px}
+    .content-card h2{font-size:24px}
+    .content-card p,.content-card li{font-size:15px}
+    footer{padding:22px 14px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <a href="/" class="logo-wrap">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="white" stroke-width="1.8"/>
+          <line x1="3" y1="9" x2="21" y2="9" stroke="white" stroke-width="1.8"/>
+          <line x1="8" y1="14" x2="10" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="14" x2="14" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="16" y1="14" x2="16" y2="19" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="8" y1="18" x2="10" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="18" x2="14" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="logo-text">maas<span>hesap</span></div>
+    </a>
+
+    <nav class="main-nav">
+      <a href="/" class="nav-link">💰 Maaş Hesaplama</a>
+      <a href="tazminat.html" class="nav-link">📄 Tazminat</a>
+      <a href="issizlik.html" class="nav-link">🧳 İşsizlik</a>
+      <a href="fazla-mesai.html" class="nav-link">⏱️ Fazla Mesai</a>
+      <a href="yuzde-hesaplama.html" class="nav-link">📊 Yüzde Hesaplama</a>
+      <a href="kdv-hesaplama.html" class="nav-link">🧾 KDV Hesaplama</a>
+      <a href="faiz-hesaplama.html" class="nav-link">📈 Faiz Hesaplama</a>
+    </nav>
+  </div>
+
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menüyü aç">☰</button>
+</header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/">💰 Maaş Hesaplama</a>
+  <a href="tazminat.html">📄 Tazminat</a>
+  <a href="issizlik.html">🧳 İşsizlik</a>
+  <a href="fazla-mesai.html">⏱️ Fazla Mesai</a>
+  <a href="yuzde-hesaplama.html">📊 Yüzde Hesaplama</a>
+  <a href="kdv-hesaplama.html">🧾 KDV Hesaplama</a>
+  <a href="faiz-hesaplama.html">📈 Faiz Hesaplama</a>
+</div>
+
+<div class="hero">
+  <div class="hero-badge">2026 Maaş Rehberi</div>
+  <h1>Maaş Hesaplama Nasıl Yapılır?</h1>
+  <p>Brüt maaştan net maaşa geçişte SGK, işsizlik primi, gelir vergisi ve bordro mantığını sade şekilde öğrenin.</p>
+</div>
+
+<div class="content-wrap">
+  <article class="content-card">
+
+    <h2>Maaş Hesaplama Nedir?</h2>
+    <p>
+      Maaş hesaplama, çalışanın brüt ücretinden yasal kesintiler düşülerek net maaşın bulunması işlemidir.
+      Bordroda görülen rakamların doğru yorumlanabilmesi için bu temel mantığı bilmek gerekir.
+    </p>
+
+    <p>
+      Sonucu doğrudan görmek için <a href="/">maaş hesaplama aracını</a> kullanabilirsiniz.
+      Ancak mantığı bilmek, iş teklifi değerlendirirken veya bordro kontrol ederken büyük avantaj sağlar.
+    </p>
+
+    <div class="note-box">
+      Kısa özet: Brüt maaş kesinti öncesi tutardır, net maaş ise çalışanın eline geçen gerçek tutardır.
+    </div>
+
+    <h2>Maaş Hesaplama Hangi Adımlarla Yapılır?</h2>
+    <p>
+      Genel mantıkta önce brüt maaş belirlenir. Daha sonra bu tutardan SGK işçi primi, işsizlik sigortası primi ve vergi kalemleri düşülür.
+      Kalan sonuç net maaşı verir.
+    </p>
+
+    <ul>
+      <li>Brüt maaş belirlenir</li>
+      <li>SGK işçi primi düşülür</li>
+      <li>İşsizlik sigortası primi düşülür</li>
+      <li>Gelir vergisi hesaplanır</li>
+      <li>Damga vergisi ve varsa istisnalar uygulanır</li>
+      <li>Net maaş bulunur</li>
+    </ul>
+
+    <h2>Brüt Maaş ve Net Maaş Arasındaki Fark Nedir?</h2>
+    <p>
+      Brüt maaş, işverenin bordroda gösterdiği toplam ücrettir.
+      Net maaş ise bütün yasal kesintiler sonrasında çalışanın hesabına geçen tutardır.
+    </p>
+
+    <p>
+      Bu farkı daha detaylı incelemek için <a href="brut-maas-nedir.html">brüt maaş nedir?</a> rehberine bakabilirsiniz.
+      Ters yönden hesap yapmak isterseniz <a href="netten-brute-maas-hesaplama.html">netten brüte maaş hesaplama</a> sayfası da faydalıdır.
+    </p>
+
+    <h2>Maaştan Hangi Kesintiler Yapılır?</h2>
+    <p>
+      Çalışan maaşında en çok görülen temel kesintiler şunlardır:
+    </p>
+
+    <ul>
+      <li>SGK işçi primi</li>
+      <li>İşsizlik sigortası primi</li>
+      <li>Gelir vergisi</li>
+      <li>Damga vergisi</li>
+    </ul>
+
+    <p>
+      Özellikle SGK ve vergi tarafını anlamak için
+      <a href="sgk-primi-nedir.html">SGK primi nedir?</a> ve
+      <a href="vergi-dilimi-net-maas.html">vergi dilimi net maaşı nasıl etkiler?</a> rehberleri de yardımcı olur.
+    </p>
+
+    <h2>Vergi Dilimi Maaşı Neden Değiştirir?</h2>
+    <p>
+      Yıl içinde kümülatif vergi matrahı arttıkça çalışan daha yüksek vergi dilimine geçebilir.
+      Bu da brüt maaş aynı kalsa bile net maaşın düşmesine neden olabilir.
+    </p>
+
+    <p>
+      Konunun detaylarını
+      <a href="vergi-dilimi-maas-etkisi.html">vergi dilimi maaşı nasıl etkiler?</a> ve
+      <a href="kumulatif-vergi-matrahi-nedir.html">kümülatif vergi matrahı nedir?</a>
+      sayfalarında daha ayrıntılı görebilirsiniz.
+    </p>
+
+    <h2>Asgari Ücret ve İstisnalar Maaşı Etkiler mi?</h2>
+    <p>
+      Evet. Asgari ücret istisnası ve bordroda uygulanan bazı düzenlemeler, net maaşı doğrudan etkileyebilir.
+      Bu nedenle her brüt maaş aynı şekilde yorumlanmamalıdır.
+    </p>
+
+    <p>
+      Bunun için <a href="asgari-ucret-istisnasi-nedir.html">asgari ücret istisnası nedir?</a> ve
+      <a href="asgari-ucret-hesaplama-2026.html">asgari ücret hesaplama 2026</a> sayfalarına da göz atabilirsiniz.
+    </p>
+
+    <h2>En Kolay Maaş Hesaplama Yöntemi Nedir?</h2>
+    <p>
+      Teoriyi bilmek önemli olsa da günlük kullanımda en kolay yol hesaplama aracı kullanmaktır.
+      Özellikle farklı ayları, vergi dilimlerini ve maaş seviyelerini karşılaştırırken araç kullanmak zaman kazandırır.
+    </p>
+
+    <p>
+      Hemen hesaplamak için <a href="/">net maaş hesaplama aracını kullanabilirsiniz</a>.
+      Oransal farkları görmek için <a href="yuzde-hesaplama.html">yüzde hesaplama</a>,
+      gelir planlaması için ise <a href="faiz-hesaplama.html">faiz hesaplama</a> sayfası da destekleyici olabilir.
+    </p>
+
+    <div class="related-links">
+      <strong>İlgili rehberler:</strong><br>
+      <a href="/">Net Maaş Hesaplama</a> ·
+      <a href="net-maas-nasil-hesaplanir.html">Net Maaş Nasıl Hesaplanır?</a> ·
+      <a href="netten-brute-maas-hesaplama.html">Netten Brüte Maaş Hesaplama</a> ·
+      <a href="brut-maas-nedir.html">Brüt Maaş Nedir?</a> ·
+      <a href="vergi-dilimi-net-maas.html">Vergi Dilimi Net Maaşı Nasıl Etkiler?</a> ·
+      <a href="yuzde-hesaplama.html">Yüzde Hesaplama</a> ·
+      <a href="faiz-hesaplama.html">Faiz Hesaplama</a>
+    </div>
+
+  </article>
+</div>
+
+<div class="disclaimer">
+  Bu içerik bilgilendirme amaçlıdır. Maaş hesaplaması; brüt ücret, vergi dilimi, SGK kesintileri, istisnalar ve bordro yapısına göre değişebilir. Kesin sonuç için resmi bordro ve uzman değerlendirmesi esas alınmalıdır.
+</div>
+
+<footer>
+  <p><strong>MaaşHesap 2026</strong> &mdash; Bu site yalnızca bilgilendirme amaçlıdır. Kesin hesap için bordro ve uzman görüşü esas alınmalıdır.</p>
+  <div class="footer-links">
+    <a href="/">Maaş Hesaplama</a>
+    <a href="tazminat.html">Tazminat</a>
+    <a href="issizlik.html">İşsizlik</a>
+    <a href="fazla-mesai.html">Fazla Mesai</a>
+    <a href="yuzde-hesaplama.html">Yüzde Hesaplama</a>
+    <a href="kdv-hesaplama.html">KDV Hesaplama</a>
+    <a href="faiz-hesaplama.html">Faiz Hesaplama</a>
+    <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="iletisim.html">İletişim</a>
+    <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
+    <a href="kaynaklar.html">Kaynaklar</a>
+    <a href="cerez-politikasi.html">Çerez Politikası</a>
+  </div>
+  <p style="margin-top:10px">
+    İletişim: <a href="mailto:info@maashesap.net">info@maashesap.net</a>
+  </p>
+</footer>
+
+<script>
+(function() {
+  var navToggle = document.getElementById('nav-toggle');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  if (navToggle && mobileNav) {
+    navToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      mobileNav.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!navToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+        mobileNav.classList.remove('open');
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
