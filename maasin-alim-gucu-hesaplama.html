@@ -1074,11 +1074,11 @@
   }
 
   function getBaseAmount(fromYear) {
-    if (mode === 'asgari') {
-      return powerData[fromYear].asgari;
-    }
-    return parseFloat(String(byId('salary_input').value || '').replace(',', '.')) || 0;
+  if (mode === 'asgari') {
+    return powerData[fromYear].asgariNet;
   }
+  return parseFloat(String(byId('salary_input').value || '').replace(',', '.')) || 0;
+}
 
   function calculate() {
     var fromYear = byId('from_year').value;
