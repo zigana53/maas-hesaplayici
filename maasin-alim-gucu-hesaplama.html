@@ -1204,6 +1204,28 @@
       currencyChangePct: currencyChangePct
     });
   }
+  
+  function getTrendInfo(value) {
+  if (value > 1) {
+    return {
+      cls: 'trend-up',
+      icon: '↑',
+      text: fmtNum((value - 1) * 100, 1) + '% daha yüksek'
+    };
+  }
+  if (value < 1) {
+    return {
+      cls: 'trend-down',
+      icon: '↓',
+      text: fmtNum((1 - value) * 100, 1) + '% daha düşük'
+    };
+  }
+  return {
+    cls: 'trend-flat',
+    icon: '→',
+    text: 'Benzer seviye'
+  };
+}
 
   function renderResults(r) {
     byId('res_label').textContent = r.toYear + ' yılına göre yaklaşık karşılık';
