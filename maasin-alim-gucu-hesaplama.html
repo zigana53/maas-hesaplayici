@@ -9,13 +9,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Maaşın Alım Gücü Hesaplama 2026 - Altın, Dolar ve Ekmek Karşılığı</title>
-<meta name="description" content="Maaşınızın alım gücünü hesaplayın. 2026 yılında maaşınızla kaç gram altın, dolar ve ekmek alınabileceğini anında öğrenin.">
+<meta name="description" content="Maaşınızın alım gücünü hesaplayın. 2005-2026 arasında maaşınızla kaç gram altın, dolar ve ekmek alınabileceğini karşılaştırın.">
 <link rel="canonical" href="https://maashesap.net/maasin-alim-gucu-hesaplama.html">
 <meta name="robots" content="index, follow">
 
 <meta property="og:type" content="article">
 <meta property="og:title" content="Maaşın Alım Gücü Hesaplama 2026">
-<meta property="og:description" content="Maaşınızla kaç gram altın, dolar ve ekmek alınır? 2026 alım gücü hesaplama aracı.">
+<meta property="og:description" content="Maaşınızla kaç gram altın, dolar ve ekmek alınır? 2005-2026 alım gücü hesaplama aracı.">
 <meta property="og:url" content="https://maashesap.net/maasin-alim-gucu-hesaplama.html">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -411,8 +411,8 @@
   .result-highlight .sub-info{
     font-size:12px;
     opacity:.95;
-    margin-top:6px;
-    line-height:1.6;
+    margin-top:8px;
+    line-height:1.7;
   }
 
   .result-sub-grid{
@@ -1043,16 +1043,28 @@
   var mode = 'asgari';
 
   var powerData = {
-    2005: { asgariNet: 350.15, usd: 1.34, eur: 1.63, gbp: 2.35, goldGram: 28.00, goldQuarter: 46.00, goldFull: 184.00, bread: 0.25 },
-    2010: { asgariNet: 599.12, usd: 1.50, eur: 2.00, gbp: 2.34, goldGram: 60.00, goldQuarter: 99.00, goldFull: 396.00, bread: 0.75 },
-    2015: { asgariNet: 949.07, usd: 2.72, eur: 3.02, gbp: 4.16, goldGram: 97.00, goldQuarter: 160.00, goldFull: 640.00, bread: 1.00 },
-    2020: { asgariNet: 2324.70, usd: 7.00, eur: 7.85, gbp: 8.70, goldGram: 450.00, goldQuarter: 735.00, goldFull: 2940.00, bread: 1.75 },
-    2021: { asgariNet: 2825.90, usd: 8.89, eur: 10.47, gbp: 12.38, goldGram: 800.00, goldQuarter: 1310.00, goldFull: 5240.00, bread: 2.25 },
-    2022: { asgariNet: 5500.35, usd: 18.70, eur: 19.80, gbp: 22.80, goldGram: 1100.00, goldQuarter: 1810.00, goldFull: 7240.00, bread: 3.50 },
-    2023: { asgariNet: 11402.32, usd: 23.60, eur: 25.70, gbp: 29.90, goldGram: 1700.00, goldQuarter: 2780.00, goldFull: 11120.00, bread: 6.00 },
-    2024: { asgariNet: 17002.12, usd: 32.20, eur: 34.90, gbp: 40.90, goldGram: 2450.00, goldQuarter: 4010.00, goldFull: 16040.00, bread: 10.00 },
-    2025: { asgariNet: 22104.67, usd: 35.20, eur: 38.10, gbp: 44.60, goldGram: 2950.00, goldQuarter: 4830.00, goldFull: 19320.00, bread: 12.50 },
-    2026: { asgariNet: 28075.50, usd: 38.00, eur: 41.20, gbp: 48.30, goldGram: 3250.00, goldQuarter: 5320.00, goldFull: 21280.00, bread: 15.00 }
+    2005: { asgariNet: 350.15, usd: 1.34, eur: 1.67, gbp: 2.43, goldGram: 28, bread: 0.25 },
+    2006: { asgariNet: 380.46, usd: 1.43, eur: 1.79, gbp: 2.64, goldGram: 32, bread: 0.30 },
+    2007: { asgariNet: 419.15, usd: 1.30, eur: 1.78, gbp: 2.60, goldGram: 35, bread: 0.35 },
+    2008: { asgariNet: 503.26, usd: 1.29, eur: 1.90, gbp: 2.39, goldGram: 45, bread: 0.50 },
+    2009: { asgariNet: 546.48, usd: 1.55, eur: 2.16, gbp: 2.42, goldGram: 50, bread: 0.60 },
+    2010: { asgariNet: 599.12, usd: 1.50, eur: 2.00, gbp: 2.34, goldGram: 60, bread: 0.75 },
+    2011: { asgariNet: 658.95, usd: 1.67, eur: 2.33, gbp: 2.69, goldGram: 65, bread: 0.85 },
+    2012: { asgariNet: 739.79, usd: 1.80, eur: 2.31, gbp: 2.84, goldGram: 95, bread: 1.00 },
+    2013: { asgariNet: 803.68, usd: 1.90, eur: 2.53, gbp: 2.97, goldGram: 100, bread: 1.00 },
+    2014: { asgariNet: 891.03, usd: 2.18, eur: 2.89, gbp: 3.58, goldGram: 90, bread: 1.00 },
+    2015: { asgariNet: 1000.54, usd: 2.72, eur: 3.02, gbp: 4.16, goldGram: 97, bread: 1.00 },
+    2016: { asgariNet: 1300.99, usd: 3.02, eur: 3.35, gbp: 4.10, goldGram: 120, bread: 1.25 },
+    2017: { asgariNet: 1404.06, usd: 3.65, eur: 4.12, gbp: 4.70, goldGram: 145, bread: 1.25 },
+    2018: { asgariNet: 1603.12, usd: 4.83, eur: 5.70, gbp: 6.47, goldGram: 220, bread: 1.50 },
+    2019: { asgariNet: 2020.90, usd: 5.67, eur: 6.35, gbp: 7.22, goldGram: 275, bread: 1.75 },
+    2020: { asgariNet: 2324.71, usd: 7.00, eur: 7.85, gbp: 8.70, goldGram: 450, bread: 1.75 },
+    2021: { asgariNet: 2825.90, usd: 8.89, eur: 10.47, gbp: 12.38, goldGram: 800, bread: 2.25 },
+    2022: { asgariNet: 5500.35, usd: 18.70, eur: 19.80, gbp: 22.80, goldGram: 1100, bread: 3.50 },
+    2023: { asgariNet: 11402.32, usd: 23.60, eur: 25.70, gbp: 29.90, goldGram: 1700, bread: 6.00 },
+    2024: { asgariNet: 17002.12, usd: 32.20, eur: 34.90, gbp: 40.90, goldGram: 2450, bread: 10.00 },
+    2025: { asgariNet: 22104.67, usd: 35.20, eur: 38.10, gbp: 44.60, goldGram: 2950, bread: 12.50 },
+    2026: { asgariNet: 28075.50, usd: 38.00, eur: 41.20, gbp: 48.30, goldGram: 3250, bread: 15.00 }
   };
 
   var currencyLabels = {
@@ -1168,8 +1180,21 @@
     var fromCurrency = amount / fromData[currencyType];
     var toCurrency = equivalentToday / toData[currencyType];
 
-    var fromGold = amount / fromData[goldType];
-    var toGold = equivalentToday / toData[goldType];
+    var fromGoldPrice, toGoldPrice;
+
+    if (goldType === 'goldGram') {
+      fromGoldPrice = fromData.goldGram;
+      toGoldPrice = toData.goldGram;
+    } else if (goldType === 'goldQuarter') {
+      fromGoldPrice = fromData.goldGram * 1.75;
+      toGoldPrice = toData.goldGram * 1.75;
+    } else {
+      fromGoldPrice = fromData.goldGram * 7;
+      toGoldPrice = toData.goldGram * 7;
+    }
+
+    var fromGold = amount / fromGoldPrice;
+    var toGold = equivalentToday / toGoldPrice;
 
     var fromBread = amount / fromData.bread;
     var toBread = equivalentToday / toData.bread;
@@ -1208,8 +1233,8 @@
     byId('res_label').textContent = labelText;
     byId('res_amount').innerHTML = fmtTL(r.amount).replace(' TL', '<span> TL</span>');
     byId('res_sub').innerHTML =
-      r.toYear + ' karşılığı: <strong>' + fmtTL(r.equivalentToday) + '</strong> &nbsp;•&nbsp; ' +
-      '<span class="trend-badge ' + mainTrend.cls + '">' + mainTrend.icon + ' ' + fmtNum(mainRatio, 1) + 'x</span>';
+      r.toYear + ' karşılığı: <strong>' + fmtTL(r.equivalentToday) + '</strong><br>' +
+      '<span class="trend-badge ' + mainTrend.cls + '">' + mainTrend.icon + ' ' + mainTrend.text + '</span>';
 
     byId('res_sub_grid').innerHTML =
       '<div class="result-sub-item">' +
@@ -1245,11 +1270,11 @@
       '<div class="result-sub-item">' +
         '<div class="sub-top">' +
           '<div class="sub-icon fx">₺</div>' +
-          '<div class="s-lbl">Karşılaştırma Özeti</div>' +
+          '<div class="s-lbl">TL Karşılığı</div>' +
         '</div>' +
         '<div class="s-val">' + fmtTL(r.equivalentToday) + '</div>' +
-        '<div class="sub-mini">' + r.fromYear + ' tutarının ' + r.toYear + ' yılına göre yaklaşık net karşılığı</div>' +
-        '<div class="trend-badge ' + mainTrend.cls + '">' + mainTrend.icon + ' ' + fmtNum(mainRatio, 1) + 'x</div>' +
+        '<div class="sub-mini">' + r.fromYear + ': ' + fmtTL(r.amount) + ' → ' + r.toYear + ': ' + fmtTL(r.equivalentToday) + '</div>' +
+        '<div class="trend-badge ' + mainTrend.cls + '">' + mainTrend.icon + ' ' + mainTrend.text + '</div>' +
       '</div>';
 
     var rows = [
@@ -1272,7 +1297,7 @@
     byId('summary_box').innerHTML =
       '<strong>Kısa yorum:</strong> ' +
       r.fromYear + ' yılındaki bu tutarın ' + r.toYear + ' yılına göre yaklaşık net karşılığı <strong>' + fmtTL(r.equivalentToday) + '</strong>. ' +
-      'Döviz, altın ve ekmek karşılığı üstte tek bakışta karşılaştırılabilir şekilde gösterilmiştir.';
+      'Döviz, altın, ekmek ve TL karşılığı üstte tek bakışta karşılaştırılabilir şekilde gösterilmiştir.';
 
     byId('results').classList.add('show');
     byId('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
