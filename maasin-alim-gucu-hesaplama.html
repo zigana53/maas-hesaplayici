@@ -9,11 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Maaşın Alım Gücü Hesaplama 2026 - Altın, Dolar ve Ekmek Karşılığı</title>
-
 <meta name="description" content="Maaşınızın alım gücünü hesaplayın. 2026 yılında maaşınızla kaç gram altın, dolar ve ekmek alınabileceğini anında öğrenin.">
-
 <link rel="canonical" href="https://maashesap.net/maasin-alim-gucu-hesaplama.html">
-
 <meta name="robots" content="index, follow">
 
 <meta property="og:type" content="article">
@@ -45,7 +42,6 @@
     --red:#c0392b;
     --yellow-soft:#fffbea;
     --shadow-sm:0 1px 3px rgba(0,0,0,.07),0 2px 8px rgba(0,0,0,.05);
-    --shadow:0 2px 8px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.06);
     --r:14px;
   }
 
@@ -233,9 +229,7 @@
   }
 
   @media (max-width:980px){
-    .main{
-      grid-template-columns:1fr;
-    }
+    .main{grid-template-columns:1fr;}
   }
 
   .card{
@@ -392,10 +386,6 @@
     background:linear-gradient(135deg,var(--green) 0%,#16a34a 100%);
   }
 
-  .result-highlight.orange-hl{
-    background:linear-gradient(135deg,#b45309 0%,#d97706 100%);
-  }
-
   .result-highlight .lbl{
     font-size:11px;
     font-weight:700;
@@ -420,8 +410,9 @@
 
   .result-highlight .sub-info{
     font-size:12px;
-    opacity:.8;
+    opacity:.95;
     margin-top:6px;
+    line-height:1.6;
   }
 
   .result-sub-grid{
@@ -438,73 +429,75 @@
     padding:12px 14px;
     text-align:center;
   }
-   .sub-top{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  margin-bottom:6px;
-}
 
-.sub-icon{
-  width:24px;
-  height:24px;
-  border-radius:999px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:13px;
-  flex-shrink:0;
-}
+  .sub-top{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin-bottom:6px;
+  }
 
-.sub-icon.fx{
-  background:#ecfdf5;
-  color:#15803d;
-}
+  .sub-icon{
+    width:24px;
+    height:24px;
+    border-radius:999px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    flex-shrink:0;
+  }
 
-.sub-icon.gold{
-  background:#fef9c3;
-  color:#ca8a04;
-}
+  .sub-icon.fx{
+    background:#ecfdf5;
+    color:#15803d;
+  }
 
-.sub-icon.bread{
-  background:#fff7ed;
-  color:#c2410c;
-}
+  .sub-icon.gold{
+    background:#fef9c3;
+    color:#ca8a04;
+  }
 
-.sub-mini{
-  font-size:11px;
-  color:var(--muted);
-  margin-top:5px;
-  line-height:1.5;
-}
+  .sub-icon.bread{
+    background:#fff7ed;
+    color:#c2410c;
+  }
 
-.trend-badge{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:4px;
-  font-size:11px;
-  font-weight:700;
-  border-radius:999px;
-  padding:3px 8px;
-  margin-top:8px;
-}
+  .sub-mini{
+    font-size:11px;
+    color:var(--muted);
+    margin-top:5px;
+    line-height:1.5;
+  }
 
-.trend-up{
-  background:#e8f7ef;
-  color:#0d7a3e;
-}
+  .trend-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+    font-size:11px;
+    font-weight:700;
+    border-radius:999px;
+    padding:3px 8px;
+    margin-top:8px;
+  }
 
-.trend-down{
-  background:#fef2f2;
-  color:#c0392b;
-}
+  .trend-up{
+    background:#e8f7ef;
+    color:#0d7a3e;
+  }
 
-.trend-flat{
-  background:#f3f4f6;
-  color:#6b7280;
-}
+  .trend-down{
+    background:#fef2f2;
+    color:#c0392b;
+  }
+
+  .trend-flat{
+    background:#f3f4f6;
+    color:#6b7280;
+  }
+
   .result-sub-item .s-lbl{
     font-size:11px;
     font-weight:600;
@@ -537,8 +530,6 @@
   .result-row:last-child{border-bottom:none}
   .result-row .rname{color:var(--muted)}
   .result-row .rval{font-weight:700;text-align:right}
-  .result-row .rval.green{color:var(--green)}
-  .result-row .rval.orange{color:var(--orange)}
 
   .note{
     background:var(--yellow-soft);
@@ -623,9 +614,6 @@
     color:var(--muted);
     line-height:1.7;
   }
-
-  .info-card ul{padding-left:16px}
-  .info-card li{margin-bottom:4px}
 
   .sss-band{
     background:var(--paper);
@@ -727,9 +715,7 @@
     flex-wrap:wrap;
   }
 
-  .hidden{
-    display:none !important;
-  }
+  .hidden{display:none !important;}
 
   @media (max-width:760px){
     body{font-size:14px}
@@ -747,14 +733,10 @@
     .logo-icon svg{width:18px;height:18px}
     .logo-text{font-size:18px}
     .mobile-nav{top:60px}
-    .hero{
-      padding:36px 16px 30px;
-    }
+    .hero{padding:36px 16px 30px;}
     .hero h1{font-size:32px}
     .hero p{font-size:14px;line-height:1.65}
-    .main{
-      padding:16px 14px 0;
-    }
+    .main{padding:16px 14px 0;}
     .card{margin-bottom:16px}
     .card-header{padding:14px 16px}
     .card-body{padding:16px}
@@ -768,9 +750,7 @@
       text-align:left;
       width:100%;
     }
-    .result-sub-grid{
-      grid-template-columns:1fr 1fr;
-    }
+    .result-sub-grid{grid-template-columns:1fr;}
     .section-inner{padding:34px 14px}
     .sss-inner{padding:34px 14px 0}
     footer{padding:22px 14px;font-size:12px}
@@ -846,15 +826,15 @@
             <button class="toggle-btn active" id="btn_mode_asgari" type="button" onclick="setMode('asgari')">Asgari Ücret</button>
             <button class="toggle-btn" id="btn_mode_manual" type="button" onclick="setMode('manual')">Kendi Maaşım</button>
           </div>
-          <span class="field-help">Asgari ücret seçerseniz ilgili yılın kayıtlı tutarı otomatik kullanılır.</span>
+          <span class="field-help">Asgari ücret seçerseniz ilgili yılın kayıtlı net tutarı otomatik kullanılır.</span>
         </div>
 
         <div class="field">
           <label>Başlangıç Yılı</label>
           <div class="input-wrap">
             <select id="from_year"></select>
-            <span class="field-help">Karşılaştırma 2005 sonrası net ücret verileriyle yapılır.</span>
           </div>
+          <span class="field-help">Karşılaştırma 2005 sonrası net ücret verileriyle yapılır.</span>
         </div>
 
         <div class="field">
@@ -869,7 +849,7 @@
           <div class="input-wrap">
             <input type="number" inputmode="decimal" id="salary_input" placeholder="Örneğin: 25000" min="0" step="0.01">
           </div>
-          <span class="field-help">Başlangıç yılı için kendi maaş tutarınızı girin.</span>
+          <span class="field-help">Başlangıç yılı için kendi net maaş tutarınızı girin.</span>
         </div>
 
         <div class="field">
@@ -911,7 +891,7 @@
       <div class="card-body" style="padding:14px 18px">
         <div class="mini-tip">
           <div class="tip-title">Asgari Ücret Modu</div>
-          <div class="tip-text">Seçilen başlangıç yılı için kayıtlı asgari ücret otomatik alınır.</div>
+          <div class="tip-text">Seçilen başlangıç yılı için kayıtlı net asgari ücret otomatik alınır.</div>
         </div>
         <div class="mini-tip">
           <div class="tip-title">Kendi Maaşım Modu</div>
@@ -1062,11 +1042,6 @@
 (function () {
   var mode = 'asgari';
 
-  /*
-    ÖNEMLİ NOT:
-    Bu veri tablosu çalışır prototip içindir.
-    Yayına almadan önce yıllık rakamları kendi kesin veri setinize göre güncelleyin.
-  */
   var powerData = {
     2005: { asgariNet: 350.15, usd: 1.34, eur: 1.63, gbp: 2.35, goldGram: 28.00, goldQuarter: 46.00, goldFull: 184.00, bread: 0.25 },
     2010: { asgariNet: 599.12, usd: 1.50, eur: 2.00, gbp: 2.34, goldGram: 60.00, goldQuarter: 99.00, goldFull: 396.00, bread: 0.75 },
@@ -1116,7 +1091,6 @@
     byId('btn_mode_manual').classList.toggle('active', newMode === 'manual');
     byId('manual_salary_field').classList.toggle('hidden', newMode !== 'manual');
   }
-
   window.setMode = setMode;
 
   function populateYears() {
@@ -1141,11 +1115,33 @@
   }
 
   function getBaseAmount(fromYear) {
-  if (mode === 'asgari') {
-    return powerData[fromYear].asgariNet;
+    if (mode === 'asgari') {
+      return powerData[fromYear].asgariNet;
+    }
+    return parseFloat(String(byId('salary_input').value || '').replace(',', '.')) || 0;
   }
-  return parseFloat(String(byId('salary_input').value || '').replace(',', '.')) || 0;
-}
+
+  function getTrendInfo(value) {
+    if (value > 1.0001) {
+      return {
+        cls: 'trend-up',
+        icon: '↑',
+        text: fmtNum((value - 1) * 100, 1) + '% daha yüksek'
+      };
+    }
+    if (value < 0.9999) {
+      return {
+        cls: 'trend-down',
+        icon: '↓',
+        text: fmtNum((1 - value) * 100, 1) + '% daha düşük'
+      };
+    }
+    return {
+      cls: 'trend-flat',
+      icon: '→',
+      text: 'Benzer seviye'
+    };
+  }
 
   function calculate() {
     var fromYear = byId('from_year').value;
@@ -1167,12 +1163,7 @@
     var fromData = powerData[fromYear];
     var toData = powerData[toYear];
 
-    /*
-      Yaklaşık karşılık hesabı:
-      Seçilen maaşı, yılların asgari ücret oranı üzerinden normalize ediyoruz.
-      Prototip için oldukça anlaşılır bir yaklaşım.
-    */
-    var equivalentToday = amount * (toData.asgari / fromData.asgari);
+    var equivalentToday = amount * (toData.asgariNet / fromData.asgariNet);
 
     var fromCurrency = amount / fromData[currencyType];
     var toCurrency = equivalentToday / toData[currencyType];
@@ -1182,10 +1173,6 @@
 
     var fromBread = amount / fromData.bread;
     var toBread = equivalentToday / toData.bread;
-
-    var breadChangePct = ((toBread / fromBread) - 1) * 100;
-    var goldChangePct = ((toGold / fromGold) - 1) * 100;
-    var currencyChangePct = ((toCurrency / fromCurrency) - 1) * 100;
 
     renderResults({
       fromYear: fromYear,
@@ -1199,56 +1186,98 @@
       fromGold: fromGold,
       toGold: toGold,
       fromBread: fromBread,
-      toBread: toBread,
-      breadChangePct: breadChangePct,
-      goldChangePct: goldChangePct,
-      currencyChangePct: currencyChangePct
+      toBread: toBread
     });
   }
-  
-  function getTrendInfo(value) {
-  if (value > 1) {
-    return {
-      cls: 'trend-up',
-      icon: '↑',
-      text: fmtNum((value - 1) * 100, 1) + '% daha yüksek'
-    };
-  }
-  if (value < 1) {
-    return {
-      cls: 'trend-down',
-      icon: '↓',
-      text: fmtNum((1 - value) * 100, 1) + '% daha düşük'
-    };
-  }
-  return {
-    cls: 'trend-flat',
-    icon: '→',
-    text: 'Benzer seviye'
-  };
-}
 
-  function getTrendInfo(value) {
-  if (value > 1) {
-    return {
-      cls: 'trend-up',
-      icon: '↑',
-      text: fmtNum((value - 1) * 100, 1) + '% daha yüksek'
-    };
+  function renderResults(r) {
+    var mainRatio = r.equivalentToday / r.amount;
+    var currencyRatio = r.toCurrency / r.fromCurrency;
+    var goldRatio = r.toGold / r.fromGold;
+    var breadRatio = r.toBread / r.fromBread;
+
+    var mainTrend = getTrendInfo(mainRatio);
+    var currencyTrend = getTrendInfo(currencyRatio);
+    var goldTrend = getTrendInfo(goldRatio);
+    var breadTrend = getTrendInfo(breadRatio);
+
+    var labelText = mode === 'asgari'
+      ? r.fromYear + ' Net Asgari Ücret'
+      : 'Girilen Net Maaş';
+
+    byId('res_label').textContent = labelText;
+    byId('res_amount').innerHTML = fmtTL(r.amount).replace(' TL', '<span> TL</span>');
+    byId('res_sub').innerHTML =
+      r.toYear + ' karşılığı: <strong>' + fmtTL(r.equivalentToday) + '</strong> &nbsp;•&nbsp; ' +
+      '<span class="trend-badge ' + mainTrend.cls + '">' + mainTrend.icon + ' ' + fmtNum(mainRatio, 1) + 'x</span>';
+
+    byId('res_sub_grid').innerHTML =
+      '<div class="result-sub-item">' +
+        '<div class="sub-top">' +
+          '<div class="sub-icon fx">💵</div>' +
+          '<div class="s-lbl">Döviz Karşılığı</div>' +
+        '</div>' +
+        '<div class="s-val green">' + fmtNum(r.toCurrency, 2) + ' ' + currencyLabels[r.currencyType] + '</div>' +
+        '<div class="sub-mini">' + r.fromYear + ': ' + fmtNum(r.fromCurrency, 2) + ' → ' + r.toYear + ': ' + fmtNum(r.toCurrency, 2) + '</div>' +
+        '<div class="trend-badge ' + currencyTrend.cls + '">' + currencyTrend.icon + ' ' + currencyTrend.text + '</div>' +
+      '</div>' +
+
+      '<div class="result-sub-item">' +
+        '<div class="sub-top">' +
+          '<div class="sub-icon gold">🪙</div>' +
+          '<div class="s-lbl">Altın Karşılığı</div>' +
+        '</div>' +
+        '<div class="s-val orange">' + fmtNum(r.toGold, 2) + ' ' + goldLabels[r.goldType] + '</div>' +
+        '<div class="sub-mini">' + r.fromYear + ': ' + fmtNum(r.fromGold, 2) + ' → ' + r.toYear + ': ' + fmtNum(r.toGold, 2) + '</div>' +
+        '<div class="trend-badge ' + goldTrend.cls + '">' + goldTrend.icon + ' ' + goldTrend.text + '</div>' +
+      '</div>' +
+
+      '<div class="result-sub-item">' +
+        '<div class="sub-top">' +
+          '<div class="sub-icon bread">🥖</div>' +
+          '<div class="s-lbl">Ekmek Karşılığı</div>' +
+        '</div>' +
+        '<div class="s-val">' + fmtNum(r.toBread, 0) + ' adet</div>' +
+        '<div class="sub-mini">' + r.fromYear + ': ' + fmtNum(r.fromBread, 0) + ' → ' + r.toYear + ': ' + fmtNum(r.toBread, 0) + '</div>' +
+        '<div class="trend-badge ' + breadTrend.cls + '">' + breadTrend.icon + ' ' + breadTrend.text + '</div>' +
+      '</div>' +
+
+      '<div class="result-sub-item">' +
+        '<div class="sub-top">' +
+          '<div class="sub-icon fx">₺</div>' +
+          '<div class="s-lbl">Karşılaştırma Özeti</div>' +
+        '</div>' +
+        '<div class="s-val">' + fmtTL(r.equivalentToday) + '</div>' +
+        '<div class="sub-mini">' + r.fromYear + ' tutarının ' + r.toYear + ' yılına göre yaklaşık net karşılığı</div>' +
+        '<div class="trend-badge ' + mainTrend.cls + '">' + mainTrend.icon + ' ' + fmtNum(mainRatio, 1) + 'x</div>' +
+      '</div>';
+
+    var rows = [
+      ['Başlangıç Yılı', r.fromYear],
+      ['Karşılaştırma Yılı', r.toYear],
+      ['Seçilen Başlangıç Tutarı', fmtTL(r.amount)],
+      ['Yaklaşık Net Karşılık', fmtTL(r.equivalentToday)],
+      [currencyLabels[r.currencyType] + ' Karşılığı (' + r.fromYear + ')', fmtNum(r.fromCurrency, 2) + ' ' + currencyLabels[r.currencyType]],
+      [currencyLabels[r.currencyType] + ' Karşılığı (' + r.toYear + ')', fmtNum(r.toCurrency, 2) + ' ' + currencyLabels[r.currencyType]],
+      [goldLabels[r.goldType] + ' Karşılığı (' + r.fromYear + ')', fmtNum(r.fromGold, 2) + ' ' + goldLabels[r.goldType]],
+      [goldLabels[r.goldType] + ' Karşılığı (' + r.toYear + ')', fmtNum(r.toGold, 2) + ' ' + goldLabels[r.goldType]],
+      ['Ekmek Karşılığı (' + r.fromYear + ')', fmtNum(r.fromBread, 0) + ' adet'],
+      ['Ekmek Karşılığı (' + r.toYear + ')', fmtNum(r.toBread, 0) + ' adet']
+    ];
+
+    byId('rows').innerHTML = rows.map(function (row) {
+      return '<div class="result-row"><span class="rname">' + row[0] + '</span><span class="rval">' + row[1] + '</span></div>';
+    }).join('');
+
+    byId('summary_box').innerHTML =
+      '<strong>Kısa yorum:</strong> ' +
+      r.fromYear + ' yılındaki bu tutarın ' + r.toYear + ' yılına göre yaklaşık net karşılığı <strong>' + fmtTL(r.equivalentToday) + '</strong>. ' +
+      'Döviz, altın ve ekmek karşılığı üstte tek bakışta karşılaştırılabilir şekilde gösterilmiştir.';
+
+    byId('results').classList.add('show');
+    byId('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(function () { window.scrollBy(0, -70); }, 250);
   }
-  if (value < 1) {
-    return {
-      cls: 'trend-down',
-      icon: '↓',
-      text: fmtNum((1 - value) * 100, 1) + '% daha düşük'
-    };
-  }
-  return {
-    cls: 'trend-flat',
-    icon: '→',
-    text: 'Benzer seviye'
-  };
-}
 
   function initFaqs() {
     document.querySelectorAll('.faq-item .faq-q').forEach(function (el) {
