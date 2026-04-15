@@ -1227,64 +1227,27 @@
   };
 }
 
-  function renderResults(r) {
-    byId('res_label').textContent = r.toYear + ' yılına göre yaklaşık karşılık';
-    byId('res_amount').innerHTML = fmtTL(r.equivalentToday).replace(' TL', '<span> TL</span>');
-    byId('res_sub').textContent =
-      r.fromYear + ' yılındaki tutar, ' + r.toYear + ' yılı şartlarına yaklaşık çevrildi.';
-
-    var subGrid =
-      '<div class="result-sub-item">' +
-        '<div class="s-lbl">' + currencyLabels[r.currencyType] + ' Karşılığı</div>' +
-        '<div class="s-val green">' + fmtNum(r.toCurrency, 2) + ' ' + currencyLabels[r.currencyType] + '</div>' +
-      '</div>' +
-      '<div class="result-sub-item">' +
-        '<div class="s-lbl">' + goldLabels[r.goldType] + ' Karşılığı</div>' +
-        '<div class="s-val orange">' + fmtNum(r.toGold, 2) + ' ' + goldLabels[r.goldType] + '</div>' +
-      '</div>' +
-      '<div class="result-sub-item">' +
-        '<div class="s-lbl">Ekmek Karşılığı</div>' +
-        '<div class="s-val">' + fmtNum(r.toBread, 0) + ' adet</div>' +
-      '</div>' +
-      '<div class="result-sub-item">' +
-        '<div class="s-lbl">Başlangıç Tutarı</div>' +
-        '<div class="s-val">' + fmtTL(r.amount) + '</div>' +
-      '</div>';
-
-    byId('res_sub_grid').innerHTML = subGrid;
-
-    var rows = [
-      ['Başlangıç Yılı', r.fromYear],
-      ['Karşılaştırma Yılı', r.toYear],
-      ['Başlangıç Tutarı', fmtTL(r.amount)],
-      ['Yaklaşık Karşılık', fmtTL(r.equivalentToday)],
-      [currencyLabels[r.currencyType] + ' Karşılığı (' + r.fromYear + ')', fmtNum(r.fromCurrency, 2) + ' ' + currencyLabels[r.currencyType]],
-      [currencyLabels[r.currencyType] + ' Karşılığı (' + r.toYear + ')', fmtNum(r.toCurrency, 2) + ' ' + currencyLabels[r.currencyType]],
-      [goldLabels[r.goldType] + ' Karşılığı (' + r.fromYear + ')', fmtNum(r.fromGold, 2) + ' ' + goldLabels[r.goldType]],
-      [goldLabels[r.goldType] + ' Karşılığı (' + r.toYear + ')', fmtNum(r.toGold, 2) + ' ' + goldLabels[r.goldType]],
-      ['Ekmek Karşılığı (' + r.fromYear + ')', fmtNum(r.fromBread, 0) + ' adet'],
-      ['Ekmek Karşılığı (' + r.toYear + ')', fmtNum(r.toBread, 0) + ' adet']
-    ];
-
-    byId('rows').innerHTML = rows.map(function (row) {
-      return '<div class="result-row"><span class="rname">' + row[0] + '</span><span class="rval">' + row[1] + '</span></div>';
-    }).join('');
-
-    var breadDirection = r.breadChangePct >= 0 ? 'arttı' : 'azaldı';
-    var goldDirection = r.goldChangePct >= 0 ? 'arttı' : 'azaldı';
-    var currencyDirection = r.currencyChangePct >= 0 ? 'arttı' : 'azaldı';
-
-    byId('summary_box').innerHTML =
-      '<strong>Kısa yorum:</strong> ' +
-      r.fromYear + ' yılındaki bu tutarın ' + r.toYear + ' yılına göre yaklaşık karşılığı <strong>' + fmtTL(r.equivalentToday) + '</strong> görünüyor. ' +
-      'Ekmek karşılığı <strong>%' + fmtNum(Math.abs(r.breadChangePct), 1) + '</strong> oranında ' + breadDirection + ', ' +
-      goldLabels[r.goldType].toLowerCase() + ' karşılığı <strong>%' + fmtNum(Math.abs(r.goldChangePct), 1) + '</strong> oranında ' + goldDirection + ', ' +
-      currencyLabels[r.currencyType].toLowerCase() + ' karşılığı ise <strong>%' + fmtNum(Math.abs(r.currencyChangePct), 1) + '</strong> oranında ' + currencyDirection + '.';
-
-    byId('results').classList.add('show');
-    byId('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setTimeout(function () { window.scrollBy(0, -70); }, 250);
+  function getTrendInfo(value) {
+  if (value > 1) {
+    return {
+      cls: 'trend-up',
+      icon: '↑',
+      text: fmtNum((value - 1) * 100, 1) + '% daha yüksek'
+    };
   }
+  if (value < 1) {
+    return {
+      cls: 'trend-down',
+      icon: '↓',
+      text: fmtNum((1 - value) * 100, 1) + '% daha düşük'
+    };
+  }
+  return {
+    cls: 'trend-flat',
+    icon: '→',
+    text: 'Benzer seviye'
+  };
+}
 
   function initFaqs() {
     document.querySelectorAll('.faq-item .faq-q').forEach(function (el) {
