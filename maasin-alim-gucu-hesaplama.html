@@ -1298,9 +1298,11 @@
     }).join('');
 
     byId('summary_box').innerHTML =
-      '<strong>Kısa yorum:</strong> ' +
-      r.fromYear + ' yılındaki bu tutarın ' + r.toYear + ' yılına göre yaklaşık net karşılığı <strong>' + fmtTL(r.equivalentToday) + '</strong>. ' +
-      'Döviz, altın, ekmek ve TL karşılığı üstte tek bakışta karşılaştırılabilir şekilde gösterilmiştir.';
+       '<strong>Kısa yorum:</strong> ' +
+       (mode === 'asgari'
+           ? r.fromYear + ' yılındaki net asgari ücretin ' + r.toYear + ' yılına göre yaklaşık net karşılığı <strong>' + fmtTL(r.equivalentToday) + '</strong>. '
+           : r.fromYear + ' yılında girilen net maaş, seçilen yılın net asgari ücretine göre endekslenerek ' + r.toYear + ' yılı için yaklaşık <strong>' + fmtTL(r.equivalentToday) + '</strong> olarak gösterilmiştir. ') +
+       'Döviz, altın, ekmek ve TL karşılığı üstte tek bakışta karşılaştırılabilir şekilde gösterilmiştir.';
 
     byId('results').classList.add('show');
     byId('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
