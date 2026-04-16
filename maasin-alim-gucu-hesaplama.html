@@ -1227,16 +1227,12 @@
     var goldTrend = getTrendInfo(goldRatio);
     var breadTrend = getTrendInfo(breadRatio);
 
-    var labelText = mode === 'asgari'
-      ? r.fromYear + ' Net Asgari Ücret'
-      : r.fromYear + ' Yılında Girilen Net Maaş';
+    var labelText = r.toYear + ' Karşılığı';
 
     byId('res_label').textContent = labelText;
-    byId('res_amount').innerHTML = fmtTL(r.amount).replace(' TL', '<span> TL</span>');
+    byId('res_amount').innerHTML = fmtTL(r.equivalentToday).replace(' TL', '<span> TL</span>');
     byId('res_sub').innerHTML =
-      (mode === 'asgari'
-        ? r.toYear + ' karşılığı: <strong>' + fmtTL(r.equivalentToday) + '</strong><br>'
-        : r.toYear + ' karşılığı (asgari ücret endeksine göre): <strong>' + fmtTL(r.equivalentToday) + '</strong><br>') +
+      r.fromYear + ' yılında ' + fmtTL(r.amount) + ' → ' + r.toYear + ' yılında <strong>' + fmtTL(r.equivalentToday) + '</strong><br>' +
       '<span class="trend-badge ' + mainTrend.cls + '">' + mainTrend.icon + ' ' + mainTrend.text + '</span>';
 
     byId('res_sub_grid').innerHTML =
