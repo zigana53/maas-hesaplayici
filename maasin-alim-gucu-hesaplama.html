@@ -815,7 +815,7 @@
   <div class="col-left">
     <div class="card">
       <div class="card-header">
-        <div class="card-icon" style="background:#eff6ff">🧮</div>
+        <div class="card-icon" style="background:#eff6ff">🛒</div>
         <h2>Alım Gücü Hesaplama</h2>
       </div>
       <div class="card-body">
@@ -849,7 +849,7 @@
           <div class="input-wrap">
             <input type="number" inputmode="decimal" id="salary_input" placeholder="Örneğin: 25000" min="0" step="0.01">
           </div>
-          <span class="field-help">Başlangıç yılı için kendi net maaş tutarınızı girin.</span>
+          <span class="field-help">Girilen tutar, seçilen yılın net asgari ücretine göre karşılaştırma yılına yaklaşık olarak endekslenir.</span>
         </div>
 
         <div class="field">
@@ -1220,6 +1220,7 @@
     var currencyRatio = r.toCurrency / r.fromCurrency;
     var goldRatio = r.toGold / r.fromGold;
     var breadRatio = r.toBread / r.fromBread;
+    var goldUnit = r.goldType === 'goldGram' ? 'gram' : 'adet';
 
     var mainTrend = getTrendInfo(mainRatio);
     var currencyTrend = getTrendInfo(currencyRatio);
@@ -1228,12 +1229,14 @@
 
     var labelText = mode === 'asgari'
       ? r.fromYear + ' Net Asgari Ücret'
-      : 'Girilen Net Maaş';
+      : r.fromYear + ' Yılında Girilen Net Maaş';
 
     byId('res_label').textContent = labelText;
     byId('res_amount').innerHTML = fmtTL(r.amount).replace(' TL', '<span> TL</span>');
     byId('res_sub').innerHTML =
-      r.toYear + ' karşılığı: <strong>' + fmtTL(r.equivalentToday) + '</strong><br>' +
+      (mode === 'asgari'
+        ? r.toYear + ' karşılığı: <strong>' + fmtTL(r.equivalentToday) + '</strong><br>'
+        : r.toYear + ' karşılığı (asgari ücret endeksine göre): <strong>' + fmtTL(r.equivalentToday) + '</strong><br>') +
       '<span class="trend-badge ' + mainTrend.cls + '">' + mainTrend.icon + ' ' + mainTrend.text + '</span>';
 
     byId('res_sub_grid').innerHTML =
@@ -1252,7 +1255,7 @@
           '<div class="sub-icon gold">🪙</div>' +
           '<div class="s-lbl">Altın Karşılığı</div>' +
         '</div>' +
-        '<div class="s-val orange">' + fmtNum(r.toGold, 2) + ' ' + goldLabels[r.goldType] + '</div>' +
+        '<div class="s-val orange">' + fmtNum(r.toGold, 2) + ' <span style="font-size:12px;font-weight:600;opacity:.75;">' + goldUnit + '</span></div>' +
         '<div class="sub-mini">' + r.fromYear + ': ' + fmtNum(r.fromGold, 2) + ' → ' + r.toYear + ': ' + fmtNum(r.toGold, 2) + '</div>' +
         '<div class="trend-badge ' + goldTrend.cls + '">' + goldTrend.icon + ' ' + goldTrend.text + '</div>' +
       '</div>' +
@@ -1262,7 +1265,7 @@
           '<div class="sub-icon bread">🥖</div>' +
           '<div class="s-lbl">Ekmek Karşılığı</div>' +
         '</div>' +
-        '<div class="s-val">' + fmtNum(r.toBread, 0) + ' adet</div>' +
+        '<div class="s-val">' + fmtNum(r.toBread, 0) + ' <span style="font-size:12px;font-weight:600;opacity:.75;">adet</span></div>' +
         '<div class="sub-mini">' + r.fromYear + ': ' + fmtNum(r.fromBread, 0) + ' → ' + r.toYear + ': ' + fmtNum(r.toBread, 0) + '</div>' +
         '<div class="trend-badge ' + breadTrend.cls + '">' + breadTrend.icon + ' ' + breadTrend.text + '</div>' +
       '</div>' +
