@@ -465,6 +465,10 @@
     color:#c2410c;
   }
 
+  .sub-icon.gold svg{
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+  }
+
   .sub-mini{
     font-size:11px;
     color:var(--muted);
@@ -905,7 +909,7 @@
         </div>
         <div class="mini-tip">
           <div class="tip-title">Ekmek Karşılığı</div>
-          <div class="tip-text">Günlük hayatla daha kolay bağ kurmak için ekmek adedi ayrıca gösterilir.</div>
+          <div class="tip-text">Günlük hayata en yakın göstergelerden biri olduğu için maaşın temel tüketim gücünü sade şekilde görünür kılar.</div>
         </div>
       </div>
     </div>
@@ -1045,29 +1049,29 @@
   var mode = 'asgari';
 
   var powerData = {
-   2005: { asgariNet: 350.15, usd: 1.34, eur: 1.67, gbp: 2.43, goldGram: 28, bread: 0.325 },
-   2006: { asgariNet: 380.46, usd: 1.43, eur: 1.79, gbp: 2.64, goldGram: 32, bread: 0.35 },
-   2007: { asgariNet: 419.15, usd: 1.30, eur: 1.78, gbp: 2.60, goldGram: 35, bread: 0.35 },
-   2008: { asgariNet: 503.26, usd: 1.29, eur: 1.90, gbp: 2.39, goldGram: 45, bread: 0.375 },
-   2009: { asgariNet: 546.48, usd: 1.55, eur: 2.16, gbp: 2.42, goldGram: 50, bread: 0.40 },
-   2010: { asgariNet: 599.12, usd: 1.50, eur: 2.00, gbp: 2.34, goldGram: 60, bread: 0.40 },
-   2011: { asgariNet: 658.95, usd: 1.75, eur: 2.33, gbp: 2.69, goldGram: 80, bread: 0.80 },
-   2012: { asgariNet: 739.79, usd: 1.80, eur: 2.31, gbp: 2.84, goldGram: 95, bread: 0.855 },
-   2013: { asgariNet: 803.68, usd: 1.90, eur: 2.53, gbp: 2.97, goldGram: 100, bread: 1.00 },
-   2014: { asgariNet: 891.03, usd: 2.19, eur: 2.89, gbp: 3.58, goldGram: 90, bread: 1.00 },
-   2015: { asgariNet: 1000.54, usd: 2.72, eur: 3.02, gbp: 4.16, goldGram: 97, bread: 1.00 },
-   2016: { asgariNet: 1300.99, usd: 3.02, eur: 3.35, gbp: 4.10, goldGram: 120, bread: 1.25 },
-   2017: { asgariNet: 1404.06, usd: 3.65, eur: 4.12, gbp: 4.70, goldGram: 155, bread: 1.00 },
-   2018: { asgariNet: 1603.12, usd: 4.83, eur: 5.70, gbp: 6.47, goldGram: 220, bread: 1.15 },
-   2019: { asgariNet: 2020.90, usd: 5.67, eur: 6.35, gbp: 7.22, goldGram: 275, bread: 1.25 },
-   2020: { asgariNet: 2324.71, usd: 7.00, eur: 7.85, gbp: 8.70, goldGram: 450, bread: 1.50 },
-   2021: { asgariNet: 2825.90, usd: 8.89, eur: 10.47, gbp: 12.38, goldGram: 800, bread: 2.00 },
-   2022: { asgariNet: 5500.35, usd: 18.70, eur: 19.80, gbp: 22.80, goldGram: 1100, bread: 8.00 },
-   2023: { asgariNet: 11402.32, usd: 23.60, eur: 25.70, gbp: 29.90, goldGram: 1700, bread: 8.00 },
-   2024: { asgariNet: 17002.12, usd: 32.20, eur: 34.90, gbp: 40.90, goldGram: 2450, bread: 10.00 },
-   2025: { asgariNet: 22104.67, usd: 35.20, eur: 38.10, gbp: 44.60, goldGram: 2950, bread: 15.00 },
-   2026: { asgariNet: 28075.50, usd: 44.6681, eur: 52.6350, gbp: 60.4546, goldGram: 6942.59, bread: 17.50 }
- };
+    2005: { asgariNet: 350.15, usd: 1.34, eur: 1.67, gbp: 2.43, goldGram: 28, bread: 0.325 },
+    2006: { asgariNet: 380.46, usd: 1.43, eur: 1.79, gbp: 2.64, goldGram: 32, bread: 0.35 },
+    2007: { asgariNet: 419.15, usd: 1.30, eur: 1.78, gbp: 2.60, goldGram: 35, bread: 0.35 },
+    2008: { asgariNet: 503.26, usd: 1.29, eur: 1.90, gbp: 2.39, goldGram: 45, bread: 0.375 },
+    2009: { asgariNet: 546.48, usd: 1.55, eur: 2.16, gbp: 2.42, goldGram: 50, bread: 0.40 },
+    2010: { asgariNet: 599.12, usd: 1.50, eur: 2.00, gbp: 2.34, goldGram: 60, bread: 0.40 },
+    2011: { asgariNet: 658.95, usd: 1.75, eur: 2.33, gbp: 2.69, goldGram: 80, bread: 0.80 },
+    2012: { asgariNet: 739.79, usd: 1.80, eur: 2.31, gbp: 2.84, goldGram: 95, bread: 0.855 },
+    2013: { asgariNet: 803.68, usd: 1.90, eur: 2.53, gbp: 2.97, goldGram: 100, bread: 1.00 },
+    2014: { asgariNet: 891.03, usd: 2.19, eur: 2.89, gbp: 3.58, goldGram: 90, bread: 1.00 },
+    2015: { asgariNet: 1000.54, usd: 2.72, eur: 3.02, gbp: 4.16, goldGram: 97, bread: 1.00 },
+    2016: { asgariNet: 1300.99, usd: 3.02, eur: 3.35, gbp: 4.10, goldGram: 120, bread: 1.25 },
+    2017: { asgariNet: 1404.06, usd: 3.65, eur: 4.12, gbp: 4.70, goldGram: 155, bread: 1.00 },
+    2018: { asgariNet: 1603.12, usd: 4.83, eur: 5.70, gbp: 6.47, goldGram: 220, bread: 1.15 },
+    2019: { asgariNet: 2020.90, usd: 5.67, eur: 6.35, gbp: 7.22, goldGram: 275, bread: 1.25 },
+    2020: { asgariNet: 2324.71, usd: 7.00, eur: 7.85, gbp: 8.70, goldGram: 450, bread: 1.50 },
+    2021: { asgariNet: 2825.90, usd: 8.89, eur: 10.47, gbp: 12.38, goldGram: 800, bread: 2.00 },
+    2022: { asgariNet: 5500.35, usd: 18.70, eur: 19.80, gbp: 22.80, goldGram: 1100, bread: 8.00 },
+    2023: { asgariNet: 11402.32, usd: 23.60, eur: 25.70, gbp: 29.90, goldGram: 1700, bread: 8.00 },
+    2024: { asgariNet: 17002.12, usd: 32.20, eur: 34.90, gbp: 40.90, goldGram: 2450, bread: 10.00 },
+    2025: { asgariNet: 22104.67, usd: 35.20, eur: 38.10, gbp: 44.60, goldGram: 2950, bread: 15.00 },
+    2026: { asgariNet: 28075.50, usd: 44.6681, eur: 52.6350, gbp: 60.4546, goldGram: 6942.59, bread: 17.50 }
+  };
 
   var currencyLabels = {
     usd: 'Dolar',
@@ -1166,59 +1170,59 @@
   }
 
   async function fetchLiveCurrencies() {
-  try {
-    const res = await fetch('https://www.tcmb.gov.tr/kurlar/today.xml', { cache: 'no-store' });
-    const xmlText = await res.text();
-    const parser = new DOMParser();
-    const xml = parser.parseFromString(xmlText, 'text/xml');
-    const currencies = xml.getElementsByTagName('Currency');
+    try {
+      const res = await fetch('https://www.tcmb.gov.tr/kurlar/today.xml', { cache: 'no-store' });
+      const xmlText = await res.text();
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(xmlText, 'text/xml');
+      const currencies = xml.getElementsByTagName('Currency');
 
-    for (const c of currencies) {
-      const code = c.getAttribute('CurrencyCode');
-      const forexBuying = c.getElementsByTagName('ForexBuying')[0]?.textContent?.trim();
-      if (!forexBuying) continue;
+      for (const c of currencies) {
+        const code = c.getAttribute('CurrencyCode');
+        const forexBuying = c.getElementsByTagName('ForexBuying')[0]?.textContent?.trim();
+        if (!forexBuying) continue;
 
-      const value = parseFloat(forexBuying.replace(',', '.'));
-      if (!value || Number.isNaN(value)) continue;
+        const value = parseFloat(forexBuying.replace(',', '.'));
+        if (!value || Number.isNaN(value)) continue;
 
-      if (code === 'USD') live2026Data.usd = value;
-      if (code === 'EUR') live2026Data.eur = value;
-      if (code === 'GBP') live2026Data.gbp = value;
+        if (code === 'USD') live2026Data.usd = value;
+        if (code === 'EUR') live2026Data.eur = value;
+        if (code === 'GBP') live2026Data.gbp = value;
+      }
+
+      live2026Data.fetchedAt = new Date();
+    } catch (err) {
+      console.error('TCMB canlı döviz verisi alınamadı:', err);
     }
-
-    live2026Data.fetchedAt = new Date();
-  } catch (err) {
-    console.error('TCMB canlı döviz verisi alınamadı:', err);
   }
-}
 
   async function fetchLiveGold() {
-  try {
-    const res = await fetch('https://data-asg.goldprice.org/dbXRates/TRY', { cache: 'no-store' });
-    const data = await res.json();
+    try {
+      const res = await fetch('https://data-asg.goldprice.org/dbXRates/TRY', { cache: 'no-store' });
+      const data = await res.json();
 
-    let gramTL = null;
+      let gramTL = null;
 
-    if (data && Array.isArray(data.items) && data.items[0]) {
-      const item = data.items[0];
+      if (data && Array.isArray(data.items) && data.items[0]) {
+        const item = data.items[0];
 
-      if (typeof item.xauPrice === 'number') {
-        gramTL = item.xauPrice / 31.1034768;
-      } else if (typeof item.goldPrice === 'number') {
-        gramTL = item.goldPrice / 31.1034768;
-      } else if (typeof item.price === 'number') {
-        gramTL = item.price / 31.1034768;
+        if (typeof item.xauPrice === 'number') {
+          gramTL = item.xauPrice / 31.1034768;
+        } else if (typeof item.goldPrice === 'number') {
+          gramTL = item.goldPrice / 31.1034768;
+        } else if (typeof item.price === 'number') {
+          gramTL = item.price / 31.1034768;
+        }
       }
-    }
 
-    if (gramTL && !Number.isNaN(gramTL)) {
-      live2026Data.goldGram = gramTL;
+      if (gramTL && !Number.isNaN(gramTL)) {
+        live2026Data.goldGram = gramTL;
+      }
+    } catch (err) {
+      console.error('Canlı altın verisi alınamadı:', err);
     }
-  } catch (err) {
-    console.error('Canlı altın verisi alınamadı:', err);
   }
-}
-     
+
   function calculate() {
     var fromYear = byId('from_year').value;
     var toYear = byId('to_year').value;
@@ -1240,12 +1244,12 @@
     var toData = powerData[toYear];
 
     if (toYear === '2026') {
-     toData = Object.assign({}, toData);
+      toData = Object.assign({}, toData);
 
-     if (live2026Data.usd) toData.usd = live2026Data.usd;
-     if (live2026Data.eur) toData.eur = live2026Data.eur;
-     if (live2026Data.gbp) toData.gbp = live2026Data.gbp;
-     if (live2026Data.goldGram) toData.goldGram = live2026Data.goldGram;
+      if (live2026Data.usd) toData.usd = live2026Data.usd;
+      if (live2026Data.eur) toData.eur = live2026Data.eur;
+      if (live2026Data.gbp) toData.gbp = live2026Data.gbp;
+      if (live2026Data.goldGram) toData.goldGram = live2026Data.goldGram;
     }
 
     var equivalentToday = amount * (toData.asgariNet / fromData.asgariNet);
@@ -1324,12 +1328,7 @@
 
       '<div class="result-sub-item">' +
         '<div class="sub-top">' +
-          '<div class="sub-icon gold">
-            <svg viewBox="0 0 24 24" width="16" height="16">
-             <circle cx="12" cy="12" r="10" fill="#facc15"/>
-             <circle cx="12" cy="12" r="6" fill="#eab308"/>
-            </svg>
-          </div>'
+          '<div class="sub-icon gold"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10" fill="#facc15"></circle><circle cx="12" cy="12" r="6" fill="#eab308"></circle></svg></div>' +
           '<div class="s-lbl">Altın Karşılığı</div>' +
         '</div>' +
         '<div class="s-val orange">' + fmtNum(r.toGold, 2) + ' <span style="font-size:12px;font-weight:600;opacity:.75;">' + goldUnit + '</span></div>' +
@@ -1353,8 +1352,8 @@
           '<div class="s-lbl">TL Karşılığı</div>' +
         '</div>' +
         '<div class="s-val">' + fmtTL(r.equivalentToday) + '</div>' +
-        '<div class="sub-mini">' + 
-          r.fromYear + ': ' + fmtTL(r.amount) + ' → ' + r.toYear + ': ' + fmtTL(r.equivalentToday) + 
+        '<div class="sub-mini">' +
+          r.fromYear + ': ' + fmtTL(r.amount) + ' → ' + r.toYear + ': ' + fmtTL(r.equivalentToday) +
           '<br><span style="font-size:11px;">Asgari ücret artış oranına göre yaklaşık karşılık</span>' +
         '</div>' +
         '<div class="trend-badge ' + mainTrend.cls + '">' + mainTrend.icon + ' ' + mainTrend.text + '</div>' +
@@ -1378,11 +1377,11 @@
     }).join('');
 
     byId('summary_box').innerHTML =
-       '<strong>Kısa yorum:</strong> ' +
-       (mode === 'asgari'
-           ? r.fromYear + ' yılındaki net asgari ücretin ' + r.toYear + ' yılına göre yaklaşık net karşılığı <strong>' + fmtTL(r.equivalentToday) + '</strong>. '
-           : r.fromYear + ' yılında girilen net maaş, seçilen yılın net asgari ücretine göre endekslenerek ' + r.toYear + ' yılı için yaklaşık <strong>' + fmtTL(r.equivalentToday) + '</strong> olarak gösterilmiştir. ') +
-       'Döviz, altın, ekmek ve TL karşılığı üstte tek bakışta karşılaştırılabilir şekilde gösterilmiştir.';
+      '<strong>Kısa yorum:</strong> ' +
+      (mode === 'asgari'
+        ? r.fromYear + ' yılındaki net asgari ücretin ' + r.toYear + ' yılına göre yaklaşık net karşılığı <strong>' + fmtTL(r.equivalentToday) + '</strong>. '
+        : r.fromYear + ' yılında girilen net maaş, seçilen yılın net asgari ücretine göre endekslenerek ' + r.toYear + ' yılı için yaklaşık <strong>' + fmtTL(r.equivalentToday) + '</strong> olarak gösterilmiştir. ') +
+      'Döviz, altın, ekmek ve TL karşılığı üstte tek bakışta karşılaştırılabilir şekilde gösterilmiştir.';
 
     byId('results').classList.add('show');
     byId('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
