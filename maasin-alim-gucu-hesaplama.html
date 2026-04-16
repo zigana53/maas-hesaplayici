@@ -1347,7 +1347,10 @@
           '<div class="s-lbl">TL Karşılığı</div>' +
         '</div>' +
         '<div class="s-val">' + fmtTL(r.equivalentToday) + '</div>' +
-        '<div class="sub-mini">' + r.fromYear + ': ' + fmtTL(r.amount) + ' → ' + r.toYear + ': ' + fmtTL(r.equivalentToday) + '</div>' +
+        '<div class="sub-mini">' + 
+          r.fromYear + ': ' + fmtTL(r.amount) + ' → ' + r.toYear + ': ' + fmtTL(r.equivalentToday) + 
+          '<br><span style="font-size:11px;">Asgari ücret artış oranına göre yaklaşık karşılık</span>' +
+        '</div>' +
         '<div class="trend-badge ' + mainTrend.cls + '">' + mainTrend.icon + ' ' + mainTrend.text + '</div>' +
       '</div>';
 
