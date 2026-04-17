@@ -1202,16 +1202,16 @@ if (breakEvenYear) {
     });
 
     svg.innerHTML =
-      '<rect x="0" y="0" width="' + width + '" height="' + height + '" fill="#ffffff"/>' +
-      grid +
-      '<line x1="' + padLeft + '" y1="' + (height - padBottom) + '" x2="' + (width - padRight) + '" y2="' + (height - padBottom) + '" stroke="#cbd5e1" stroke-width="1.2"/>' +
-      '<line x1="' + padLeft + '" y1="' + padTop + '" x2="' + padLeft + '" y2="' + (height - padBottom) + '" stroke="#cbd5e1" stroke-width="1.2"/>' +
-      '<polyline fill="none" stroke="#1a5cff" stroke-width="3" points="' + points('rent') + '"/>' +
-      '<polyline fill="none" stroke="#0d7a3e" stroke-width="3" points="' + points('loan') + '"/>' +
-      '<polyline fill="none" stroke="#c0392b" stroke-width="3" points="' + points('out') + '"/>' +
-      circles +
-      xLabels;
-  }
+     '<rect x="0" y="0" width="' + width + '" height="' + height + '" fill="#ffffff"/>' +
+     grid +
+     '<line x1="' + padLeft + '" y1="' + (height - padBottom) + '" x2="' + (width - padRight) + '" y2="' + (height - padBottom) + '" stroke="#cbd5e1" stroke-width="1.2"/>' +
+     '<line x1="' + padLeft + '" y1="' + padTop + '" x2="' + padLeft + '" y2="' + (height - padBottom) + '" stroke="#cbd5e1" stroke-width="1.2"/>' +
+     breakLine +
+     '<polyline fill="none" stroke="#1a5cff" stroke-width="3" points="' + points('rent') + '"/>' +
+     '<polyline fill="none" stroke="#0d7a3e" stroke-width="3" points="' + points('loan') + '"/>' +
+     '<polyline fill="none" stroke="#c0392b" stroke-width="3" points="' + points('out') + '"/>' +
+     circles +
+     xLabels;
 
   function calculate() {
     var housePrice = parseFloat(byId('house_price').value || 0);
