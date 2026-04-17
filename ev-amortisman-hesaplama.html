@@ -945,22 +945,22 @@
        : 'Girilen senaryoda kira geliri kredi taksidini tek başına karşılamıyor.<br>') +
      'İlk yıl cepten çıkan tutar: <strong>' + fmtTL(r.firstYearOut) + '</strong>';
     byId('res_cards').innerHTML =
-      '<div class="result-sub-item">' +
-        '<div class="s-lbl">Aylık Kredi Taksiti</div>' +
-        '<div class="s-val">' + fmtTL(r.monthlyInstallment) + '</div>' +
-      '</div>' +
-      '<div class="result-sub-item">' +
-        '<div class="s-lbl">İlk Yıl Cepten Çıkan</div>' +
-        '<div class="s-val">' + fmtTL(r.firstYearOut) + '</div>' +
-      '</div>' +
-      '<div class="result-sub-item">' +
-        '<div class="s-lbl">Kredi Tutarı</div>' +
-        '<div class="s-val">' + fmtTL(r.loanAmount) + '</div>' +
-      '</div>' +
-      '<div class="result-sub-item">' +
-        '<div class="s-lbl">Toplam Başlangıç Yükü</div>' +
-        '<div class="s-val">' + fmtTL(r.totalOutOfPocket) + '</div>' +
-      '</div>';
+       '<div class="result-sub-item">' +
+         '<div class="s-lbl">Aylık Kredi Taksiti</div>' +
+         '<div class="s-val">' + fmtTL(r.monthlyInstallment) + '</div>' +
+       '</div>' +
+       '<div class="result-sub-item">' +
+         '<div class="s-lbl">İlk Yıl Cepten Çıkan</div>' +
+         '<div class="s-val">' + fmtTL(r.firstYearOut) + '</div>' +
+       '</div>' +
+       '<div class="result-sub-item">' +
+         '<div class="s-lbl">Kira Krediyi Karşılıyor</div>' +
+         '<div class="s-val">' + (r.yearWhenRentCovers ? r.yearWhenRentCovers + '. yıl' : 'Henüz değil') + '</div>' +
+       '</div>' +
+       '<div class="result-sub-item">' +
+         '<div class="s-lbl">10 Yılda Cepten Çıkan</div>' +
+         '<div class="s-val">' + fmtTL(r.tenYearOutOfPocket) + '</div>' +
+       '</div>';
 
     var rows = [
       ['Ev Fiyatı', fmtTL(r.housePrice)],
