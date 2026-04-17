@@ -1177,12 +1177,12 @@
 
     byId('yearly_table').innerHTML = r.rows.map(function (row) {
       return '<tr>' +
-        '<td>' + row.year + '</td>' +
-        '<td>' + fmtTL(row.rent) + '</td>' +
-        '<td>' + fmtTL(row.loan) + '</td>' +
-        '<td>' + fmtNum(row.ratio, 2) + ' kat</td>' +
-        '<td>' + fmtTL(row.salary) + '</td>' +
-        '<td>' + fmtTL(row.out) + '</td>' +
+        '<td data-label="Yıl">' + row.year + '</td>' +
+        '<td data-label="Kira">' + fmtTL(row.rent) + '</td>' +
+        '<td data-label="Kredi">' + fmtTL(row.credit) + '</td>' +
+        '<td data-label="Karşılama">' + fmtNum(row.ratio, 2) + ' kat</td>' +
+        '<td data-label="Maaş Katkısı">' + fmtTL(row.salarySupport) + '</td>' +
+        '<td data-label="Cepten Çıkan">' + fmtTL(row.outOfPocket) + '</td>' +
       '</tr>';
     }).join('');
 
