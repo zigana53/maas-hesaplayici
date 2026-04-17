@@ -1016,11 +1016,11 @@
     var yearlyRows = [];
     var tenYearOutOfPocket = downPayment;
 
-    for (var year = 1; year <= 30; year++) {
+    var totalYears = Math.ceil(loanTerm / 12);
+    for (var year = 1; year <= totalYears; year++) {
       var annualRent = currentRent * 12;
       var annualSalary = currentSalarySupport * 12;
-      var remainingLoanYears = Math.ceil(loanTerm / 12);
-      var annualLoanCost = year <= remainingLoanYears ? yearlyInstallment : 0;
+      var annualLoanCost = yearlyInstallment;
 
       var outOfPocket = Math.max(annualLoanCost - annualRent - annualSalary, 0);
       totalOutOfPocket += outOfPocket;
@@ -1041,17 +1041,11 @@
         yearWhenRentCovers = year;
       }
 
-      if (amortizationYear === null && totalOutOfPocket >= housePrice) {
-        amortizationYear = year;
-      }
-
-      currentRent *= (1 + rentGrowth / 100);
-      currentSalarySupport *= (1 + salaryGrowth / 100);
-    }
-
-    if (amortizationYear === null) {
-      amortizationYear = 30;
-    }
+      if (yearWhenRentCovers !== null) {
+       amortizationYear = yearWhenRentCovers;
+     } else {
+       amortizationYear = totalYears;
+     }
 
     renderResults({
       housePrice: housePrice,
@@ -1067,16 +1061,16 @@
   }
 
   function renderResults(r) {
-    byId('res_main').textContent = r.yearWhenRentCovers
-     ? r.yearWhenRentCovers + '. yıl'
-     : 'Karşılamıyor';
+   byId('res_main').textContent = r.yearWhenRentCovers
+       ? r.yearWhenRentCovers + '. yıl'
+       : 'Karşılamıyor';
 
-    byId('res_sub').innerHTML =
-     (r.yearWhenRentCovers
-       ? 'Kira geliri kredi taksidini yaklaşık <strong>' + r.yearWhenRentCovers + '. yılda</strong> karşılıyor.<br>'
-       : 'Girilen senaryoda kira geliri kredi taksidini tek başına karşılamıyor.<br>') +
-     'İlk yıl cepten çıkan tutar: <strong>' + fmtTL(r.firstYearOut) + '</strong>';
-    byId('res_cards').innerHTML =
+   byId('res_sub').innerHTML =
+       (r.yearWhenRentCovers
+        ? 'Kira geliri kredi taksidini yaklaşık <strong>' + r.yearWhenRentCovers + '. yılda</strong> karşılıyor.<br>'
+        : 'Girilen senaryoda kira geliri kredi süresi boyunca taksidi tek başına karşılamıyor.<br>') +
+       'İlk yıl cepten çıkan tutar: <strong>' + fmtTL(r.firstYearOut) + '</strong>';
+   byId('res_cards').innerHTML =
        '<div class="result-sub-item">' +
          '<div class="s-lbl">Aylık Kredi Taksiti</div>' +
          '<div class="s-val">' + fmtTL(r.monthlyInstallment) + '</div>' +
@@ -1100,7 +1094,7 @@
       ['Aylık Kredi Taksiti', fmtTL(r.monthlyInstallment)],
       ['İlk Yıl Cepten Çıkan', fmtTL(r.firstYearOut)],
       ['Kira Krediyi Karşılıyor mu?', r.yearWhenRentCovers ? (r.yearWhenRentCovers + '. yılda') : 'Henüz karşılamıyor'],
-      ['Tahmini Amortisman', r.amortizationYear + ' yıl']
+      ['Kira Krediyi Karşılıyor', r.yearWhenRentCovers ? (r.yearWhenRentCovers + '. yılda') : 'Kredi süresince karşılamıyor']
     ];
 
     byId('rows').innerHTML = rows.map(function (row) {
@@ -1112,7 +1106,7 @@
          '<td>' + row.year + '</td>' +
          '<td>' + fmtTL(row.rent) + '</td>' +
          '<td>' + fmtTL(row.loan) + '</td>' +
-         '<td>' + (row.loan > 0 ? fmtNum(row.ratio, 2) + 'x' : '-') + '</td>' +
+         '<td>' + (row.loan > 0 ? fmtNum(row.ratio, 2) + ' kat' : '-') + '</td>' +
          '<td>' + fmtTL(row.salary) + '</td>' +
          '<td>' + fmtTL(row.out) + '</td>' +
        '</tr>';
