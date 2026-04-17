@@ -630,6 +630,48 @@
       word-break:break-word;
       overflow-wrap:anywhere;
      }
+  
+     .table-wrap table{
+      min-width:600px;
+     }
+
+     @media (max-width:760px){
+
+     .table-wrap table{
+      min-width:unset;
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0 10px;
+     }
+
+     .table-wrap thead{
+      display:none;
+     }
+
+     .table-wrap tbody tr{
+      display:block;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:12px;
+      margin-bottom:10px;
+      mbox-shadow:0 2px 8px rgba(0,0,0,.04);
+     }
+
+     .table-wrap tbody td{
+      display:flex;
+      justify-content:space-between;
+      font-size:13px;
+      padding:6px 0;
+      border:none;
+     }
+
+    .table-wrap tbody td::before{
+      content:attr(data-label);
+      font-weight:600;
+      color:var(--muted);
+     }
+   }
 
  }
 </style>
