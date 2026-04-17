@@ -1354,7 +1354,7 @@ if (breakEvenYear) {
         : 'Bu senaryoda kira geliri kredi süresi boyunca taksidi tek başına karşılamıyor. Yatırımın yükü uzun süre maaş desteği gerektiriyor.') +
       ' İlk yıl kişisel yükünüz <strong>' + fmtTL(r.firstYearOut) + '</strong>.';
 
-    renderChart(r.rows);
+    renderChart(r.rows, r.yearWhenRentCovers);
 
     byId('results').classList.add('show');
     byId('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
