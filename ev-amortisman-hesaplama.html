@@ -221,7 +221,7 @@
     gap:22px;
     align-items:start;
   }
-    
+
   .main > *{
     min-width:0;
   }
@@ -349,6 +349,7 @@
     margin-bottom:18px;
     text-align:center;
     color:#fff;
+    overflow:hidden;
   }
 
   .result-highlight .lbl{
@@ -365,6 +366,8 @@
     font-size:38px;
     letter-spacing:-.02em;
     line-height:1.15;
+    word-break:break-word;
+    overflow-wrap:anywhere;
   }
 
   .result-highlight .sub-info{
@@ -372,6 +375,8 @@
     opacity:.95;
     margin-top:8px;
     line-height:1.7;
+    word-break:break-word;
+    overflow-wrap:anywhere;
   }
 
   .result-sub-grid{
@@ -403,6 +408,8 @@
     font-weight:700;
     color:var(--ink);
     line-height:1.35;
+    word-break:break-word;
+    overflow-wrap:anywhere;
   }
 
   .result-row{
@@ -597,7 +604,7 @@
     .card-header{padding:14px 16px}
     .card-body{padding:16px}
     .field-grid{grid-template-columns:1fr}
-    .result-highlight .amt{font-size:30px}
+    .result-highlight .amt{font-size:28px}
     .result-sub-grid{grid-template-columns:1fr}
     .result-row{
       flex-direction:column;
@@ -610,70 +617,45 @@
     }
     .section-inner{padding:34px 14px}
     footer{padding:22px 14px;font-size:12px}
-   
-    .result-highlight{
-     overflow:hidden;
-    }
 
-    .result-highlight .amt{
-     font-size:28px;
-     word-break:break-word;
-     overflow-wrap:anywhere;
-    }
-
-     .result-highlight .sub-info{
-      word-break:break-word;
-      overflow-wrap:anywhere;
-     }
-
-     .result-sub-item .s-val{
-      word-break:break-word;
-      overflow-wrap:anywhere;
-     }
-  
-     .table-wrap table{
-      min-width:600px;
-     }
-
-     @media (max-width:760px){
-
-     .table-wrap table{
+    .table-wrap table{
       min-width:unset;
       width:100%;
       border-collapse:separate;
       border-spacing:0 10px;
-     }
+    }
 
-     .table-wrap thead{
+    .table-wrap thead{
       display:none;
-     }
+    }
 
-     .table-wrap tbody tr{
+    .table-wrap tbody tr{
       display:block;
       background:#fff;
       border:1px solid var(--line);
       border-radius:12px;
       padding:12px;
       margin-bottom:10px;
-      mbox-shadow:0 2px 8px rgba(0,0,0,.04);
-     }
+      box-shadow:0 2px 8px rgba(0,0,0,.04);
+    }
 
-     .table-wrap tbody td{
+    .table-wrap tbody td{
       display:flex;
       justify-content:space-between;
+      gap:12px;
       font-size:13px;
       padding:6px 0;
       border:none;
-     }
+      white-space:normal;
+    }
 
     .table-wrap tbody td::before{
       content:attr(data-label);
       font-weight:600;
       color:var(--muted);
-     }
-   }
-
- }
+      flex-shrink:0;
+    }
+  }
 </style>
 </head>
 <body>
@@ -727,7 +709,7 @@
   <div class="hero-badge">Yatırım Senaryosu</div>
   <h1>Ev Kaç Yılda<br>Amorti Eder?</h1>
   <p>
-    Ev fiyatı, kredi taksiti, kira geliri ve maaş katkısına göre bir konut yatırımının kaç yılda kendini ödeyebileceğini yaklaşık olarak hesaplayın.
+    Ev fiyatı, kredi taksiti, kira geliri ve maaş katkısına göre bir konut yatırımının ödeme dengesini yaklaşık olarak hesaplayın.
   </p>
 </div>
 
@@ -809,7 +791,7 @@
         <button class="calc-btn" id="calc_btn">Hesapla →</button>
 
         <div class="note">
-          Bu araç yaklaşık senaryo hesabı yapar. Kredi faizi sabit, kira ve maaş katkısı ise girilen yıllık artış oranına göre büyütülür.
+          Bu araç yaklaşık senaryo hesabı yapar. Kredi faizi sabit kabul edilir. Kira ve maaş katkısı ise girilen yıllık artış oranına göre büyütülür.
         </div>
       </div>
     </div>
@@ -832,7 +814,7 @@
         <div id="rows"></div>
 
         <div id="summary_box">
-         Ev fiyatı, kredi, kira ve maaş katkısı bilgilerini girip hesaplayın. Sonuçlarda aylık kredi taksiti, yıllık karşılama oranı ve yıllık ödeme tablosunu göreceksiniz. Bu tabloda kira ve kredi değerleri yıllık bazda karşılaştırılır.
+          Ev fiyatı, kredi, kira ve maaş katkısı bilgilerini girip hesaplayın. Sonuçlarda aylık kredi taksiti, yıllık karşılama oranı ve yıllık ödeme tablosunu göreceksiniz. Bu tabloda kira ve kredi değerleri yıllık bazda karşılaştırılır.
         </div>
 
         <div class="table-wrap">
@@ -863,12 +845,12 @@
     <div class="info-grid">
       <div class="info-card">
         <h3>Kira Krediyi Ne Zaman Karşılar?</h3>
-        <p>Kira geliri yıllar içinde artarken kredi taksiti sabit kaldığı için, belirli bir yıldan sonra taksit yükü belirgin şekilde hafifleyebilir. Bu hesaplama özellikle yatırım amaçlı ev alırken ilk yıllardaki yük ile ilerleyen yıllardaki rahatlamayı birlikte görmek için önemlidir.</p>
+        <p>Kira geliri yıllar içinde artarken kredi taksiti sabit kaldığı için, belirli bir yıldan sonra ödeme yükü belirgin şekilde hafifleyebilir. Bu hesaplama özellikle yatırım amaçlı ev alırken ilk yıllardaki yük ile ilerleyen yıllardaki rahatlamayı birlikte görmek için önemlidir.</p>
       </div>
 
       <div class="info-card">
         <h3>Maaştan Ne Kadar Çıkıyor?</h3>
-        <p>İlk yıllarda yüksek olan maaş katkısı, kira artışı ve maaş artışı etkisiyle zaman içinde azalabilir.</p>
+        <p>İlk yıllarda yüksek olan maaş katkısı, kira artışı ve maaş artışı etkisiyle zaman içinde azalabilir. Bu sayfa tam olarak bu baskının yıllara göre nasıl değiştiğini göstermek için hazırlanmıştır.</p>
       </div>
 
       <div class="info-card">
@@ -893,14 +875,14 @@
       <div class="info-card">
         <h3>Ev amortismanı nedir?</h3>
         <p>
-          Ev amortismanı, bir konut yatırımının kira geliri ve toplam ödeme dengesi dikkate alındığında yaklaşık kaç yılda kendini geri ödediğini gösteren hesaplamadır. Sadece ev fiyatını yıllık kiraya bölmek çoğu zaman yeterli olmaz. Çünkü kredi kullanıldığında işin içine faiz, peşinat ve aylık nakit akışı da girer.
+          Ev amortismanı, bir konut yatırımının kira geliri ve toplam ödeme dengesi dikkate alındığında yaklaşık kaç yılda dengeye geldiğini gösteren hesaplamadır. Sadece ev fiyatını yıllık kiraya bölmek çoğu zaman yeterli olmaz. Çünkü kredi kullanıldığında işin içine faiz, peşinat ve aylık nakit akışı da girer.
         </p>
       </div>
 
       <div class="info-card">
         <h3>Ev kredisi neden sonucu değiştirir?</h3>
         <p>
-          Ev kredisi kullanıldığında yatırımın toplam maliyeti sadece konut bedelinden oluşmaz. Faiz yükü nedeniyle ödenecek toplam tutar artar. Bu yüzden aynı ev, peşin alındığında farklı; krediyle alındığında farklı geri ödeme dengesi verebilir.
+          Ev kredisi kullanıldığında yatırımın toplam maliyeti sadece konut bedelinden oluşmaz. Faiz yükü nedeniyle ödenecek toplam tutar artar. Bu yüzden aynı ev, peşin alındığında farklı; krediyle alındığında farklı ödeme dengesi verebilir.
         </p>
       </div>
 
@@ -1036,14 +1018,14 @@
   }
 
   function fmtTL(n) {
-    return n.toLocaleString('tr-TR', {
+    return Number(n || 0).toLocaleString('tr-TR', {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
     }) + ' TL';
   }
 
   function fmtNum(n, digits) {
-    return n.toLocaleString('tr-TR', {
+    return Number(n || 0).toLocaleString('tr-TR', {
       minimumFractionDigits: digits,
       maximumFractionDigits: digits
     });
@@ -1179,10 +1161,10 @@
       return '<tr>' +
         '<td data-label="Yıl">' + row.year + '</td>' +
         '<td data-label="Kira">' + fmtTL(row.rent) + '</td>' +
-        '<td data-label="Kredi">' + fmtTL(row.credit) + '</td>' +
-        '<td data-label="Karşılama">' + fmtNum(row.ratio, 2) + ' katı</td>' +
-        '<td data-label="Maaş Katkısı">' + fmtTL(row.salarySupport) + '</td>' +
-        '<td data-label="Cepten Çıkan">' + fmtTL(row.outOfPocket) + '</td>' +
+        '<td data-label="Kredi">' + fmtTL(row.loan) + '</td>' +
+        '<td data-label="Karşılama">' + fmtNum(row.ratio, 2) + ' kat</td>' +
+        '<td data-label="Maaş Katkısı">' + fmtTL(row.salary) + '</td>' +
+        '<td data-label="Cepten Çıkan">' + fmtTL(row.out) + '</td>' +
       '</tr>';
     }).join('');
 
