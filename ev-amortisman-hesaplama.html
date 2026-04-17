@@ -1174,6 +1174,26 @@
       xLabels += '<text x="' + lx.toFixed(1) + '" y="' + (height - 12) + '" text-anchor="middle" font-size="11" fill="#6b7280">' + row.year + '</text>';
     });
 
+    var breakLine = '';
+if (breakEvenYear) {
+  var breakIndex = -1;
+
+  for (var b = 0; b < rows.length; b++) {
+    if (rows[b].year === breakEvenYear) {
+      breakIndex = b;
+      break;
+    }
+  }
+
+  if (breakIndex !== -1) {
+    var bx = x(breakIndex);
+
+    breakLine =
+      '<line x1="' + bx.toFixed(1) + '" y1="' + padTop + '" x2="' + bx.toFixed(1) + '" y2="' + (height - padBottom) + '" stroke="#d97706" stroke-width="2" stroke-dasharray="6 6"/>' +
+      '<text x="' + (bx + 8).toFixed(1) + '" y="' + (padTop + 14).toFixed(1) + '" font-size="11" fill="#d97706">Kırılma: ' + breakEvenYear + '. yıl</text>';
+  }
+}
+
     var circles = '';
     rows.forEach(function(row, i){
       circles += '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(row.rent).toFixed(1) + '" r="3.5" fill="#1a5cff"/>';
