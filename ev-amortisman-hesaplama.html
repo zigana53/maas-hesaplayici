@@ -454,6 +454,17 @@
     line-height:1.7;
   }
 
+  #summary_box{
+    margin-top:16px;
+    font-size:13px;
+    line-height:1.7;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:10px;
+    padding:14px;
+    color:#4b5563;
+  }
+
   .section-band{
     background:var(--white);
     border-top:1px solid var(--line);
@@ -592,15 +603,6 @@
     .section-inner{padding:34px 14px}
     footer{padding:22px 14px;font-size:12px}
   }
-     #summary_box{
-       margin-top:16px;
-       font-size:13px;
-       line-height:1.7;
-       background:#f8fafc;
-       border:1px solid #e2e8f0;
-       border-radius:10px;
-       padding:14px;
-     }
 </style>
 </head>
 <body>
@@ -654,7 +656,7 @@
   <div class="hero-badge">Yatırım Senaryosu</div>
   <h1>Ev Kaç Yılda<br>Amorti Eder?</h1>
   <p>
-    Kredi taksiti, kira geliri ve maaş katkısına göre ev yatırımının kaç yılda kendini ödeyeceğini yaklaşık olarak hesaplayın.
+    Ev fiyatı, kredi taksiti, kira geliri ve maaş katkısına göre bir konut yatırımının kaç yılda kendini ödeyebileceğini yaklaşık olarak hesaplayın.
   </p>
 </div>
 
@@ -712,7 +714,7 @@
             <div class="input-wrap">
               <input type="number" id="rent_growth" value="35" min="0" step="0.1">
             </div>
-            <span class="field-help">Varsayılan öneri değerdir. İsterseniz manuel değiştirebilirsiniz.</span>
+            <span class="field-help">Varsayılan oran öneri değerdir. İsterseniz manuel değiştirebilirsiniz.</span>
           </div>
         </div>
 
@@ -750,30 +752,29 @@
       </div>
       <div class="card-body">
         <div class="result-highlight">
-          <div class="lbl">Tahmini Amortisman Süresi</div>
-          <div class="amt" id="res_main">-- yıl</div>
+          <div class="lbl">Kira Krediyi Karşılıyor</div>
+          <div class="amt" id="res_main">--</div>
           <div class="sub-info" id="res_sub">Sonuç burada görünecek.</div>
         </div>
 
         <div class="result-sub-grid" id="res_cards"></div>
         <div id="rows"></div>
 
-        <div class="note" id="summary_box">
-          Ev fiyatı, kredi, kira ve maaş katkısı bilgilerini girip hesaplayın.
-          Sonuçlarda aylık kredi taksiti, kira/kredi dengesi ve yıllık tabloyu göreceksiniz.
+        <div id="summary_box">
+          Ev fiyatı, kredi, kira ve maaş katkısı bilgilerini girip hesaplayın. Sonuçlarda aylık kredi taksiti, kira/kredi dengesi ve yıllık tabloyu göreceksiniz.
         </div>
 
         <div class="table-wrap">
           <table>
             <thead>
-            <tr>
-              <th>Yıl</th>
-              <th>Kira</th>
-              <th>Kredi</th>
-              <th>Kira / Kredi</th>
-              <th>Maaş Katkısı</th>
-              <th>Cepten Çıkan</th>
-            </tr>
+              <tr>
+                <th>Yıl</th>
+                <th>Kira</th>
+                <th>Kredi</th>
+                <th>Kira / Kredi</th>
+                <th>Maaş Katkısı</th>
+                <th>Cepten Çıkan</th>
+              </tr>
             </thead>
             <tbody id="yearly_table"></tbody>
           </table>
@@ -800,8 +801,8 @@
       </div>
 
       <div class="info-card">
-        <h3>Kaç Yılda Kendini Öder?</h3>
-        <p>Toplam peşinat, kredi ödemesi, kira geliri ve cepten çıkan tutar birlikte dikkate alınarak yatırımın yaklaşık amortisman süresi hesaplanır. Böylece yalnızca satış fiyatına değil, gerçek ödeme yüküne göre değerlendirme yapılır.</p>
+        <h3>Kira/Kredi Dengesi</h3>
+        <p>Toplam peşinat, kredi ödemesi, kira geliri ve cepten çıkan tutar birlikte değerlendirilerek yatırımın ödeme dengesi görülür. Böylece yalnızca satış fiyatına değil, gerçek ödeme yüküne göre değerlendirme yapılır.</p>
       </div>
 
       <div class="info-card">
@@ -812,79 +813,79 @@
   </div>
 </div>
 
-     <div class="section-band">
-       <div class="section-inner">
-         <div class="section-title">Ev Amortisman Hesaplama Nasıl Yorumlanmalı?</div>
-         <div class="section-sub">Kredi, kira geliri ve maaş katkısı birlikte değerlendirildiğinde ev yatırımının gerçek yükü daha net görülebilir.</div>
+<div class="section-band">
+  <div class="section-inner">
+    <div class="section-title">Ev Amortisman Hesaplama Nasıl Yorumlanmalı?</div>
+    <div class="section-sub">Kredi, kira geliri ve maaş katkısı birlikte değerlendirildiğinde ev yatırımının gerçek yükü daha net görülebilir.</div>
 
-         <div class="info-grid">
-           <div class="info-card">
-             <h3>Ev amortismanı nedir?</h3>
-             <p>
-               Ev amortismanı, bir konut yatırımının kira geliri ve toplam ödeme dengesi dikkate alındığında yaklaşık kaç yılda kendini geri ödediğini gösteren hesaplamadır. Sadece ev fiyatını yıllık kiraya bölmek çoğu zaman yeterli olmaz. Çünkü kredi kullanıldığında işin içine faiz, peşinat ve aylık nakit akışı da girer.
-             </p>
-           </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Ev amortismanı nedir?</h3>
+        <p>
+          Ev amortismanı, bir konut yatırımının kira geliri ve toplam ödeme dengesi dikkate alındığında yaklaşık kaç yılda kendini geri ödediğini gösteren hesaplamadır. Sadece ev fiyatını yıllık kiraya bölmek çoğu zaman yeterli olmaz. Çünkü kredi kullanıldığında işin içine faiz, peşinat ve aylık nakit akışı da girer.
+        </p>
+      </div>
 
-           <div class="info-card">
-             <h3>Ev kredisi neden sonucu değiştirir?</h3>
-             <p>
-               Ev kredisi kullanıldığında yatırımın toplam maliyeti sadece konut bedelinden oluşmaz. Faiz yükü nedeniyle ödenecek toplam tutar artar. Bu yüzden aynı ev, peşin alındığında farklı; krediyle alındığında farklı amortisman süresi verebilir.
-             </p>
-           </div>
+      <div class="info-card">
+        <h3>Ev kredisi neden sonucu değiştirir?</h3>
+        <p>
+          Ev kredisi kullanıldığında yatırımın toplam maliyeti sadece konut bedelinden oluşmaz. Faiz yükü nedeniyle ödenecek toplam tutar artar. Bu yüzden aynı ev, peşin alındığında farklı; krediyle alındığında farklı geri ödeme dengesi verebilir.
+        </p>
+      </div>
 
-           <div class="info-card">
-             <h3>Kira geliri neden tek başına yeterli değildir?</h3>
-             <p>
-               Birçok kullanıcı sadece aylık kira tutarına bakar. Oysa önemli olan, kira gelirinin kredi taksidinin ne kadarını karşıladığıdır. İlk yıllarda kira geliri taksidin altında kalabilir, ilerleyen yıllarda ise kira artışı ile bu fark daralabilir.
-             </p>
-           </div>
+      <div class="info-card">
+        <h3>Kira geliri neden tek başına yeterli değildir?</h3>
+        <p>
+          Birçok kullanıcı sadece aylık kira tutarına bakar. Oysa önemli olan, kira gelirinin kredi taksidinin ne kadarını karşıladığıdır. İlk yıllarda kira geliri taksidin altında kalabilir, ilerleyen yıllarda ise kira artışı ile bu fark daralabilir.
+        </p>
+      </div>
 
-           <div class="info-card">
-             <h3>Maaş katkısı neden önemlidir?</h3>
-             <p>
-               Konut yatırımında gerçek yük çoğu zaman maaştan çıkan kısımdır. Bu nedenle bu araç, yalnızca kira getirisini değil, maaştan ne kadar destek gerektiğini de birlikte hesaplar. Özellikle ilk yıllarda yatırımın ne kadar zorlayıcı olduğunu görmek için bu veri önemlidir.
-             </p>
-             </div>
-         </div>
-       </div>
-     </div>
+      <div class="info-card">
+        <h3>Maaş katkısı neden önemlidir?</h3>
+        <p>
+          Konut yatırımında gerçek yük çoğu zaman maaştan çıkan kısımdır. Bu nedenle bu araç, yalnızca kira getirisini değil, maaştan ne kadar destek gerektiğini de birlikte hesaplar. Özellikle ilk yıllarda yatırımın ne kadar zorlayıcı olduğunu görmek için bu veri önemlidir.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
-     <div class="section-band">
-       <div class="section-inner">
-         <div class="section-title">Kira Artışı ve TÜFE Etkisi</div>
-         <div class="section-sub">Kira artış oranı, amortisman hesabının en kritik değişkenlerinden biridir.</div>
+<div class="section-band">
+  <div class="section-inner">
+    <div class="section-title">Kira Artışı ve TÜFE Etkisi</div>
+    <div class="section-sub">Kira artış oranı, ödeme dengesinin en kritik değişkenlerinden biridir.</div>
 
-         <div class="info-grid">
-           <div class="info-card">
-             <h3>TÜFE nedir?</h3>
-             <p>
-               TÜFE, tüketici fiyat endeksi anlamına gelir ve fiyatlardaki genel değişimi gösteren temel göstergelerden biridir. Kira artış oranları değerlendirilirken kullanıcılar çoğu zaman TÜFE oranlarını referans alır. Bu nedenle kira gelirinin yıllar içindeki artışı amortisman hesabını doğrudan etkiler.
-             </p>
-           </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>TÜFE nedir?</h3>
+        <p>
+          TÜFE, tüketici fiyat endeksi anlamına gelir ve fiyatlardaki genel değişimi gösteren temel göstergelerden biridir. Kira artış oranları değerlendirilirken kullanıcılar çoğu zaman TÜFE oranlarını referans alır. Bu nedenle kira gelirinin yıllar içindeki artışı ödeme dengesini doğrudan etkiler.
+        </p>
+      </div>
 
-           <div class="info-card">
-             <h3>Kira artış oranı neden bu kadar önemlidir?</h3>
-             <p>
-               Kira artış oranı ne kadar yüksek olursa, kredi taksidinin kira ile karşılanma süresi o kadar kısalabilir. Düşük kira artışı senaryolarında ise yatırımın kendini ödeme süresi uzayabilir. Bu yüzden araçta varsayılan oranlar kadar manuel oran denemek de faydalıdır.
-             </p>
-           </div>
+      <div class="info-card">
+        <h3>Kira artış oranı neden bu kadar önemlidir?</h3>
+        <p>
+          Kira artış oranı ne kadar yüksek olursa, kira gelirinin kredi taksidini karşılama süresi o kadar kısalabilir. Düşük kira artışı senaryolarında ise yatırımın yükü daha uzun sürebilir.
+        </p>
+      </div>
 
-           <div class="info-card">
-             <h3>Kredi sabit, kira neden değişiyor?</h3>
-             <p>
-              Sabit faizli kredi senaryosunda aylık taksit değişmez. Ancak kira gelirleri zaman içinde artabilir. Bu da ilk yıllarda yüksek olan cebinden çıkışın ilerleyen yıllarda azalmasına neden olabilir. Kullanıcıların en çok merak ettiği konu da budur: kira krediyi ne zaman karşılar?
-             </p>
-           </div>
+      <div class="info-card">
+        <h3>Kredi sabit, kira neden değişiyor?</h3>
+        <p>
+          Sabit faizli kredi senaryosunda aylık taksit değişmez. Ancak kira gelirleri zaman içinde artabilir. Bu da ilk yıllarda yüksek olan cebinden çıkışın ilerleyen yıllarda azalmasına neden olabilir.
+        </p>
+      </div>
 
-           <div class="info-card">
-             <h3>Maaş artışı sonucu nasıl etkiler?</h3>
-             <p>
-               Eğer yatırım süresince maaş geliriniz de artıyorsa, aynı kredi taksidini ödemek zaman içinde daha kolay hale gelebilir. Bu nedenle bu sayfada maaş katkısı ve yıllık maaş artış oranı birlikte düşünülmüştür.
-             </p>
-           </div>
-         </div>
-       </div>
-     </div>
+      <div class="info-card">
+        <h3>Maaş artışı sonucu nasıl etkiler?</h3>
+        <p>
+          Eğer yatırım süresince maaş geliriniz de artıyorsa, aynı kredi taksidini ödemek zaman içinde daha kolay hale gelebilir. Bu nedenle bu sayfada maaş katkısı ve yıllık maaş artış oranı birlikte düşünülmüştür.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="section-band">
   <div class="section-inner">
@@ -895,7 +896,7 @@
       <div class="info-card">
         <h3>Ev kaç yılda kendini amorti eder?</h3>
         <p>
-          Bu süre ev fiyatı, peşinat, kredi faizi, kira geliri ve yıllık artış oranlarına göre değişir. Aynı ev, farklı senaryolarda çok farklı amortisman süresi verebilir.
+          Bu süre ev fiyatı, peşinat, kredi faizi, kira geliri ve yıllık artış oranlarına göre değişir. Aynı ev, farklı senaryolarda çok farklı sonuç verebilir.
         </p>
       </div>
 
@@ -907,9 +908,9 @@
       </div>
 
       <div class="info-card">
-        <h3>Ev kredisi ile alınan ev daha geç mi amorti eder?</h3>
+        <h3>Ev kredisi ile alınan ev daha geç mi dengelenir?</h3>
         <p>
-          Çoğu durumda evet. Çünkü kredi faizi toplam maliyeti yükseltir. Peşin alıma göre geri ödeme süresi uzayabilir. Bu yüzden krediyle alınan evlerde kira ve maaş katkısı birlikte değerlendirilmelidir.
+          Çoğu durumda evet. Çünkü kredi faizi toplam maliyeti yükseltir. Peşin alıma göre geri ödeme dengesi daha geç oluşabilir. Bu yüzden krediyle alınan evlerde kira ve maaş katkısı birlikte değerlendirilmelidir.
         </p>
       </div>
 
@@ -922,7 +923,7 @@
     </div>
   </div>
 </div>
-     
+
 <div class="related-links">
   <strong>İlgili araç ve sayfalar:</strong><br>
   <a href="faiz-hesaplama.html">Faiz hesaplama</a> ·
@@ -1007,94 +1008,96 @@
     var loanAmount = housePrice - downPayment;
     var monthlyInstallment = monthlyPayment(loanAmount, interestRate, loanTerm);
     var yearlyInstallment = monthlyInstallment * 12;
+    var totalYears = Math.ceil(loanTerm / 12);
 
     var currentRent = rentIncome;
     var currentSalarySupport = salarySupport;
-    var totalOutOfPocket = downPayment;
-    var yearWhenRentCovers = null;
-    var amortizationYear = null;
     var yearlyRows = [];
+    var yearWhenRentCovers = null;
     var tenYearOutOfPocket = downPayment;
+    var firstYearOut = 0;
 
-    var totalYears = Math.ceil(loanTerm / 12);
     for (var year = 1; year <= totalYears; year++) {
       var annualRent = currentRent * 12;
       var annualSalary = currentSalarySupport * 12;
       var annualLoanCost = yearlyInstallment;
 
       var outOfPocket = Math.max(annualLoanCost - annualRent - annualSalary, 0);
-      totalOutOfPocket += outOfPocket;
+      var ratio = annualLoanCost > 0 ? (annualRent / annualLoanCost) : 0;
+
+      if (year === 1) {
+        firstYearOut = outOfPocket;
+      }
+
       if (year <= 10) {
-       tenYearOutOfPocket += outOfPocket;
+        tenYearOutOfPocket += outOfPocket;
+      }
+
+      if (yearWhenRentCovers === null && annualRent >= annualLoanCost) {
+        yearWhenRentCovers = year;
       }
 
       yearlyRows.push({
         year: year,
         rent: annualRent,
         loan: annualLoanCost,
-        ratio: annualLoanCost > 0 ? (annualRent / annualLoanCost) : 0,
+        ratio: ratio,
         salary: annualSalary,
         out: outOfPocket
       });
 
-      if (yearWhenRentCovers === null && annualRent >= annualLoanCost && annualLoanCost > 0) {
-        yearWhenRentCovers = year;
-      }
-
-      if (yearWhenRentCovers !== null) {
-       amortizationYear = yearWhenRentCovers;
-     } else {
-       amortizationYear = totalYears;
-     }
+      currentRent *= (1 + rentGrowth / 100);
+      currentSalarySupport *= (1 + salaryGrowth / 100);
+    }
 
     renderResults({
       housePrice: housePrice,
       loanAmount: loanAmount,
       monthlyInstallment: monthlyInstallment,
-      firstYearOut: yearlyRows[0] ? yearlyRows[0].out : 0,
+      firstYearOut: firstYearOut,
       yearWhenRentCovers: yearWhenRentCovers,
-      amortizationYear: amortizationYear,
-      totalOutOfPocket: totalOutOfPocket,
+      totalYears: totalYears,
       tenYearOutOfPocket: tenYearOutOfPocket,
       rows: yearlyRows
     });
   }
 
   function renderResults(r) {
-   byId('res_main').textContent = r.yearWhenRentCovers
-       ? r.yearWhenRentCovers + '. yıl'
-       : 'Karşılamıyor';
+    byId('res_main').textContent = r.yearWhenRentCovers
+      ? r.yearWhenRentCovers + '. yıl'
+      : 'Karşılamıyor';
 
-   byId('res_sub').innerHTML =
-       (r.yearWhenRentCovers
+    byId('res_sub').innerHTML =
+      (r.yearWhenRentCovers
         ? 'Kira geliri kredi taksidini yaklaşık <strong>' + r.yearWhenRentCovers + '. yılda</strong> karşılıyor.<br>'
         : 'Girilen senaryoda kira geliri kredi süresi boyunca taksidi tek başına karşılamıyor.<br>') +
-       'İlk yıl cepten çıkan tutar: <strong>' + fmtTL(r.firstYearOut) + '</strong>';
-   byId('res_cards').innerHTML =
-       '<div class="result-sub-item">' +
-         '<div class="s-lbl">Aylık Kredi Taksiti</div>' +
-         '<div class="s-val">' + fmtTL(r.monthlyInstallment) + '</div>' +
-       '</div>' +
-       '<div class="result-sub-item">' +
-         '<div class="s-lbl">İlk Yıl Cepten Çıkan</div>' +
-         '<div class="s-val">' + fmtTL(r.firstYearOut) + '</div>' +
-       '</div>' +
-       '<div class="result-sub-item">' +
-         '<div class="s-lbl">Kira Krediyi Karşılıyor</div>' +
-         '<div class="s-val">' + (r.yearWhenRentCovers ? r.yearWhenRentCovers + '. yıl' : 'Henüz değil') + '</div>' +
-       '</div>' +
-       '<div class="result-sub-item">' +
-         '<div class="s-lbl">10 Yılda Cepten Çıkan</div>' +
-         '<div class="s-val">' + fmtTL(r.tenYearOutOfPocket) + '</div>' +
-       '</div>';
+      'İlk yıl cepten çıkan tutar: <strong>' + fmtTL(r.firstYearOut) + '</strong>';
+
+    byId('res_cards').innerHTML =
+      '<div class="result-sub-item">' +
+        '<div class="s-lbl">Aylık Kredi Taksiti</div>' +
+        '<div class="s-val">' + fmtTL(r.monthlyInstallment) + '</div>' +
+      '</div>' +
+      '<div class="result-sub-item">' +
+        '<div class="s-lbl">İlk Yıl Cepten Çıkan</div>' +
+        '<div class="s-val">' + fmtTL(r.firstYearOut) + '</div>' +
+      '</div>' +
+      '<div class="result-sub-item">' +
+        '<div class="s-lbl">Kira Krediyi Karşılıyor</div>' +
+        '<div class="s-val">' + (r.yearWhenRentCovers ? r.yearWhenRentCovers + '. yıl' : 'Henüz değil') + '</div>' +
+      '</div>' +
+      '<div class="result-sub-item">' +
+        '<div class="s-lbl">10 Yılda Cepten Çıkan</div>' +
+        '<div class="s-val">' + fmtTL(r.tenYearOutOfPocket) + '</div>' +
+      '</div>';
 
     var rows = [
       ['Ev Fiyatı', fmtTL(r.housePrice)],
       ['Kredi Tutarı', fmtTL(r.loanAmount)],
       ['Aylık Kredi Taksiti', fmtTL(r.monthlyInstallment)],
       ['İlk Yıl Cepten Çıkan', fmtTL(r.firstYearOut)],
-      ['Kira Krediyi Karşılıyor mu?', r.yearWhenRentCovers ? (r.yearWhenRentCovers + '. yılda') : 'Henüz karşılamıyor'],
-      ['Kira Krediyi Karşılıyor', r.yearWhenRentCovers ? (r.yearWhenRentCovers + '. yılda') : 'Kredi süresince karşılamıyor']
+      ['Kira Krediyi Karşılıyor', r.yearWhenRentCovers ? (r.yearWhenRentCovers + '. yılda') : 'Kredi süresince karşılamıyor'],
+      ['Kredi Süresi', r.totalYears + ' yıl']
     ];
 
     byId('rows').innerHTML = rows.map(function (row) {
@@ -1102,15 +1105,22 @@
     }).join('');
 
     byId('yearly_table').innerHTML = r.rows.map(function (row) {
-       return '<tr>' +
-         '<td>' + row.year + '</td>' +
-         '<td>' + fmtTL(row.rent) + '</td>' +
-         '<td>' + fmtTL(row.loan) + '</td>' +
-         '<td>' + (row.loan > 0 ? fmtNum(row.ratio, 2) + ' kat' : '-') + '</td>' +
-         '<td>' + fmtTL(row.salary) + '</td>' +
-         '<td>' + fmtTL(row.out) + '</td>' +
-       '</tr>';
-     }).join('');
+      return '<tr>' +
+        '<td>' + row.year + '</td>' +
+        '<td>' + fmtTL(row.rent) + '</td>' +
+        '<td>' + fmtTL(row.loan) + '</td>' +
+        '<td>' + fmtNum(row.ratio, 2) + ' kat</td>' +
+        '<td>' + fmtTL(row.salary) + '</td>' +
+        '<td>' + fmtTL(row.out) + '</td>' +
+      '</tr>';
+    }).join('');
+
+    byId('summary_box').innerHTML =
+      'Bu senaryoda kredi süresi <strong>' + r.totalYears + ' yıl</strong>. ' +
+      (r.yearWhenRentCovers
+        ? 'Kira geliri kredi yükünü yaklaşık <strong>' + r.yearWhenRentCovers + '. yılda</strong> karşılamaya başlıyor.'
+        : 'Girilen büyüme oranlarına göre kira geliri kredi süresi boyunca taksidi tek başına karşılamıyor.') +
+      ' İlk yıl cebinizden çıkan tutar <strong>' + fmtTL(r.firstYearOut) + '</strong>.';
 
     byId('results').classList.add('show');
     byId('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1136,7 +1146,10 @@
 
   window.addEventListener('load', function () {
     initMobileNav();
-    byId('calc_btn').addEventListener('click', calculate);
+    var btn = byId('calc_btn');
+    if (btn) {
+      btn.addEventListener('click', calculate);
+    }
   });
 })();
 </script>
