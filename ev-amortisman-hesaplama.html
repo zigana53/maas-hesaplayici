@@ -935,13 +935,15 @@
   }
 
   function renderResults(r) {
-    byId('res_main').textContent = r.amortizationYear + ' yıl';
-    byId('res_sub').innerHTML =
-      (r.yearWhenRentCovers
-        ? r.yearWhenRentCovers + '. yılda kira geliri krediyi karşılamaya başlıyor.<br>'
-        : 'Girilen senaryoda kira geliri kredi taksidini tek başına karşılamıyor.<br>') +
-      'Toplam kredi yükü, kira geliri ve maaş katkısı birlikte değerlendirilmiştir.';
+    byId('res_main').textContent = r.yearWhenRentCovers
+     ? r.yearWhenRentCovers + '. yıl'
+     : 'Karşılamıyor';
 
+    byId('res_sub').innerHTML =
+     (r.yearWhenRentCovers
+       ? 'Kira geliri kredi taksidini yaklaşık <strong>' + r.yearWhenRentCovers + '. yılda</strong> karşılıyor.<br>'
+       : 'Girilen senaryoda kira geliri kredi taksidini tek başına karşılamıyor.<br>') +
+     'İlk yıl cepten çıkan tutar: <strong>' + fmtTL(r.firstYearOut) + '</strong>';
     byId('res_cards').innerHTML =
       '<div class="result-sub-item">' +
         '<div class="s-lbl">Aylık Kredi Taksiti</div>' +
