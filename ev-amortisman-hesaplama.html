@@ -887,7 +887,7 @@
           <div class="chart-head">
             <div>
               <h3>Yıllara Göre Kira, Kredi ve Kişisel Yük</h3>
-              <p>Grafikte yıllık kira geliri, yıllık kredi ödemesi ve yıllık cepten çıkan tutar birlikte gösterilir.</p>
+              <p>Grafikte yıllık kira geliri, yıllık kredi ödemesi ve gerçekten kişisel katkı gereken yıllardaki cepten çıkan tutar birlikte gösterilir.</p>
             </div>
             <div class="chart-legend">
               <div class="legend-item"><span class="legend-dot" style="background:#1a5cff;"></span>Kira</div>
@@ -896,7 +896,7 @@
               <div class="legend-item"><span class="legend-dot" style="background:#d97706;"></span>Kırılma Yılı</div>
             </div>
           </div>
-          <div class="chart-wrap" id="chart_wrap">
+          <div class="chart-wrap">
             <svg id="result_chart" viewBox="0 0 860 320" preserveAspectRatio="xMidYMid meet"></svg>
           </div>
         </div>
@@ -1124,7 +1124,7 @@
       title: 'Belirsiz Senaryo',
       text: 'Girilen oranlar içinde kira geliri kredi yükünü karşılamaya yaklaşsa da baskı uzun süre devam ediyor.',
       cls: 'warning'
-    };
+      };
   }
 
   function renderChart(rows, breakEvenYear) {
@@ -1155,10 +1155,26 @@
       return padTop + innerH - (v / maxValue) * innerH;
     }
 
-    function points(key){
-      return rows.map(function(row, i){
-        return x(i).toFixed(1) + ',' + y(row[key]).toFixed(1);
-      }).join(' ');
+    function points(key, skipZeroAfterStart){
+      var started = false;
+      var pts = [];
+
+      rows.forEach(function(row, i){
+        var value = row[key];
+
+        if (skipZeroAfterStart) {
+          if (value > 0) {
+            started = true;
+            pts.push(x(i).toFixed(1) + ',' + y(value).toFixed(1));
+          } else if (!started) {
+            pts.push(x(i).toFixed(1) + ',' + y(0).toFixed(1));
+          }
+        } else {
+          pts.push(x(i).toFixed(1) + ',' + y(value).toFixed(1));
+        }
+      });
+
+      return pts.join(' ');
     }
 
     var grid = '';
@@ -1176,43 +1192,45 @@
     });
 
     var breakLine = '';
-if (breakEvenYear) {
-  var breakIndex = -1;
+    if (breakEvenYear) {
+      var breakIndex = -1;
 
-  for (var b = 0; b < rows.length; b++) {
-    if (rows[b].year === breakEvenYear) {
-      breakIndex = b;
-      break;
+      for (var b = 0; b < rows.length; b++) {
+        if (rows[b].year === breakEvenYear) {
+          breakIndex = b;
+          break;
+        }
+      }
+
+      if (breakIndex !== -1) {
+        var bx = x(breakIndex);
+        breakLine =
+          '<line x1="' + bx.toFixed(1) + '" y1="' + padTop + '" x2="' + bx.toFixed(1) + '" y2="' + (height - padBottom) + '" stroke="#d97706" stroke-width="2" stroke-dasharray="6 6"/>' +
+          '<text x="' + (bx + 8).toFixed(1) + '" y="' + (padTop + 14).toFixed(1) + '" font-size="11" fill="#d97706">Kırılma: ' + breakEvenYear + '. yıl</text>';
+      }
     }
-  }
-
-  if (breakIndex !== -1) {
-    var bx = x(breakIndex);
-
-    breakLine =
-      '<line x1="' + bx.toFixed(1) + '" y1="' + padTop + '" x2="' + bx.toFixed(1) + '" y2="' + (height - padBottom) + '" stroke="#d97706" stroke-width="2" stroke-dasharray="6 6"/>' +
-      '<text x="' + (bx + 8).toFixed(1) + '" y="' + (padTop + 14).toFixed(1) + '" font-size="11" fill="#d97706">Kırılma: ' + breakEvenYear + '. yıl</text>';
-  }
-}
 
     var circles = '';
     rows.forEach(function(row, i){
       circles += '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(row.rent).toFixed(1) + '" r="3.5" fill="#1a5cff"/>';
       circles += '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(row.loan).toFixed(1) + '" r="3.5" fill="#0d7a3e"/>';
-      circles += '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(row.out).toFixed(1) + '" r="3.5" fill="#c0392b"/>';
+      if (row.out > 0) {
+        circles += '<circle cx="' + x(i).toFixed(1) + '" cy="' + y(row.out).toFixed(1) + '" r="3.5" fill="#c0392b"/>';
+      }
     });
 
     svg.innerHTML =
-     '<rect x="0" y="0" width="' + width + '" height="' + height + '" fill="#ffffff"/>' +
-     grid +
-     '<line x1="' + padLeft + '" y1="' + (height - padBottom) + '" x2="' + (width - padRight) + '" y2="' + (height - padBottom) + '" stroke="#cbd5e1" stroke-width="1.2"/>' +
-     '<line x1="' + padLeft + '" y1="' + padTop + '" x2="' + padLeft + '" y2="' + (height - padBottom) + '" stroke="#cbd5e1" stroke-width="1.2"/>' +
-     breakLine +
-     '<polyline fill="none" stroke="#1a5cff" stroke-width="3" points="' + points('rent') + '"/>' +
-     '<polyline fill="none" stroke="#0d7a3e" stroke-width="3" points="' + points('loan') + '"/>' +
-     '<polyline fill="none" stroke="#c0392b" stroke-width="3" points="' + points('out') + '"/>' +
-     circles +
-     xLabels;
+      '<rect x="0" y="0" width="' + width + '" height="' + height + '" fill="#ffffff"/>' +
+      grid +
+      '<line x1="' + padLeft + '" y1="' + (height - padBottom) + '" x2="' + (width - padRight) + '" y2="' + (height - padBottom) + '" stroke="#cbd5e1" stroke-width="1.2"/>' +
+      '<line x1="' + padLeft + '" y1="' + padTop + '" x2="' + padLeft + '" y2="' + (height - padBottom) + '" stroke="#cbd5e1" stroke-width="1.2"/>' +
+      breakLine +
+      '<polyline fill="none" stroke="#1a5cff" stroke-width="3" points="' + points('rent') + '"/>' +
+      '<polyline fill="none" stroke="#0d7a3e" stroke-width="3" points="' + points('loan') + '"/>' +
+      '<polyline fill="none" stroke="#c0392b" stroke-width="3" points="' + points('out', true) + '"/>' +
+      circles +
+      xLabels;
+  }
 
   function calculate() {
     var housePrice = parseFloat(byId('house_price').value || 0);
