@@ -849,6 +849,13 @@
   <p>
     Ev fiyatı, kredi taksiti, kira geliri ve maaş katkısına göre bir konut yatırımının ödeme dengesini yaklaşık olarak hesaplayın.
   </p>
+  <p style="margin-top:12px;font-size:14px;color:#6b7280;">
+    Ayrıca
+    <a href="/faiz-hesaplama.html">faiz hesaplama</a>,
+    <a href="/yuzde-hesaplama.html">yüzde hesaplama</a> ve
+    <a href="/maasin-alim-gucu-hesaplama.html">maaşın alım gücü hesaplama</a>
+    araçlarına da göz atabilirsiniz.
+</p>
 </div>
 
 <div class="main">
@@ -973,6 +980,11 @@
       <div class="card-body">
         <p class="lead">
           Kredi ile alınan bir evin kira geliri ve maaş katkısı ile nasıl dengelendiğini görürsünüz. Amaç sadece “kaç yılda öder?” demek değil, ilk yıllardaki yükü ve zamanla oluşan rahatlamayı da görünür hale getirmektir.
+          Kredi maliyetini ayrıca analiz etmek için
+          <a href="/faiz-hesaplama.html">faiz hesaplama</a>,
+          maaşın zaman içindeki değerini görmek için ise
+          <a href="/maasin-alim-gucu-hesaplama.html">maaşın alım gücü hesaplama</a>
+          sayfasına da bakabilirsiniz.
         </p>
 
         <div class="placeholder-list">
@@ -1034,6 +1046,9 @@
               <div class="legend-item"><span class="legend-dot" style="background:#c0392b;"></span>Cepten Çıkan</div>
               <div class="legend-item"><span class="legend-dot" style="background:#d97706;"></span>Kırılma Yılı</div>
             </div>
+             <div class="note">
+              Bu senaryoyu farklı faiz oranlarıyla denemek için <a href="/faiz-hesaplama.html">faiz hesaplama</a>, maaşın yıllar içindeki gerçek değerini görmek için <a href="/maasin-alim-gucu-hesaplama.html">maaşın alım gücü hesaplama</a> sayfasını da kullanabilirsiniz.
+             </div>
           </div>
           <div class="chart-wrap">
             <svg id="result_chart" viewBox="0 0 860 320" preserveAspectRatio="xMidYMid meet"></svg>
@@ -1102,7 +1117,10 @@
 
       <div class="info-card">
         <h3>Ev kredisi neden sonucu değiştirir?</h3>
-        <p>Ev kredisi kullanıldığında yatırımın toplam maliyeti sadece konut bedelinden oluşmaz. Faiz yükü nedeniyle ödenecek toplam tutar artar. Bu yüzden aynı ev, peşin alındığında farklı; krediyle alındığında farklı ödeme dengesi verebilir.</p>
+        <p>
+          Ev kredisi kullanıldığında yatırımın toplam maliyeti sadece konut bedelinden oluşmaz. Faiz yükü nedeniyle ödenecek toplam tutar artar. Bu yüzden aynı ev, peşin alındığında farklı; krediyle alındığında farklı ödeme dengesi verebilir.
+          Aylık taksit etkisini ayrıca görmek için <a href="/faiz-hesaplama.html">faiz hesaplama</a> aracını da kullanabilirsiniz.
+        </p>
       </div>
 
       <div class="info-card">
@@ -1112,7 +1130,10 @@
 
       <div class="info-card">
         <h3>Maaş katkısı neden önemlidir?</h3>
-        <p>Konut yatırımında gerçek yük çoğu zaman maaştan çıkan kısımdır. Bu nedenle bu araç, yalnızca kira getirisini değil, maaştan ne kadar destek gerektiğini de birlikte hesaplar. Özellikle ilk yıllarda yatırımın ne kadar zorlayıcı olduğunu görmek için bu veri önemlidir.</p>
+        <p>
+         Konut yatırımında gerçek yük çoğu zaman maaştan çıkan kısımdır. Bu nedenle bu araç, yalnızca kira getirisini değil, maaştan ne kadar destek gerektiğini de birlikte hesaplar. Özellikle ilk yıllarda yatırımın ne kadar zorlayıcı olduğunu görmek için bu veri önemlidir.
+         Maaşın zaman içindeki satın alma gücünü görmek için <a href="/maasin-alim-gucu-hesaplama.html">maaşın alım gücü hesaplama</a> sayfasına bakabilirsiniz.
+        </p>
       </div>
     </div>
   </div>
@@ -1177,11 +1198,12 @@
 </div>
 
 <div class="related-links">
-  <strong>İlgili araç ve sayfalar:</strong><br>
-  <a href="faiz-hesaplama.html">Faiz hesaplama</a> ·
+  <strong>İlgili hesaplama araçları:</strong><br>
+  <a href="/faiz-hesaplama.html">Faiz hesaplama</a> ·
+  <a href="/yuzde-hesaplama.html">Yüzde hesaplama</a> ·
+  <a href="/maasin-alim-gucu-hesaplama.html">Maaşın alım gücü hesaplama</a> ·
   <a href="/">Net maaş hesaplama</a> ·
-  <a href="maasin-alim-gucu-hesaplama.html">Maaşın alım gücü hesaplama</a> ·
-  <a href="yuzde-hesaplama.html">Yüzde hesaplama</a>
+  <a href="/kdv-hesaplama.html">KDV hesaplama</a>
 </div>
 
 <div class="disclaimer">
@@ -1531,7 +1553,8 @@
         ? 'Bu senaryoda ilk yıllarda maaş desteği gerekir. Ancak kira artışıyla birlikte yük zamanla azalır ve net kira geliri yaklaşık <strong>' + r.yearWhenRentCovers + '. yılda</strong> kredi ödemesini karşılamaya başlar.'
         : 'Bu senaryoda net kira geliri kredi süresi boyunca taksidi tek başına karşılamıyor. Yatırımın yükü uzun süre maaş desteği gerektiriyor.') +
       ' İlk yıl kişisel yükünüz <strong>' + fmtTL(r.firstYearOut) + '</strong>.' +
-      (extraNote.length ? ' Hesaplamada ' + extraNote.join(', ') + '.' : '');
+      (extraNote.length ? ' Hesaplamada ' + extraNote.join(', ') + '.' : '') +
+      ' Kredi yükünü daha ayrı görmek isterseniz <a href="/faiz-hesaplama.html">faiz hesaplama</a>, satın alma gücü etkisini karşılaştırmak isterseniz <a href="/maasin-alim-gucu-hesaplama.html">maaşın alım gücü hesaplama</a> sayfasına geçebilirsiniz.';
 
     renderChart(r.rows, r.yearWhenRentCovers);
 
