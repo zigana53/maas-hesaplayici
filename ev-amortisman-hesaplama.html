@@ -1697,6 +1697,14 @@
     var btn = byId('calc_btn');
     if (btn) {
       btn.addEventListener('click', calculate);
+    
+    var printBtn = byId('print_btn');
+    if (printBtn) {
+     printBtn.addEventListener('click', function () {
+      window.print();
+    });
+}
+
     }
   });
 })();
