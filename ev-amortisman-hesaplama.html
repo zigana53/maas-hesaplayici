@@ -47,7 +47,7 @@
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
-  html{-webkit-text-size-adjust:100%}
+  html{-webkit-text-size-adjust:100%;overflow-x:hidden}
   body{
     font-family:'DM Sans',sans-serif;
     background:var(--paper);
@@ -223,11 +223,11 @@
     grid-template-columns:380px 1fr;
     gap:22px;
     align-items:start;
-  }
-
-  .main > *{
     min-width:0;
   }
+
+  .main > *{min-width:0}
+  .col-left,.col-mid,.card,.card-body,.chart-card,.chart-wrap,.table-wrap{min-width:0}
 
   @media (max-width:980px){
     .main{grid-template-columns:1fr;}
@@ -301,6 +301,7 @@
     position:relative;
     display:flex;
     align-items:center;
+    min-width:0;
   }
 
   .input-wrap input{
@@ -315,6 +316,7 @@
     background:var(--white);
     outline:none;
     transition:border-color .2s,box-shadow .2s;
+    min-width:0;
   }
 
   .input-wrap input:focus{
@@ -374,99 +376,26 @@
     transition:background .2s,transform .1s;
   }
 
-  .print-btn{
-  border:1px solid var(--line);
-  background:var(--white);
-  color:var(--ink);
-  border-radius:10px;
-  padding:9px 12px;
-  font-family:'DM Sans',sans-serif;
-  font-size:13px;
-  font-weight:700;
-  cursor:pointer;
-  transition:all .2s;
-}
-
-.print-btn:hover{
-  background:var(--paper);
-}
-
-@media print{
-  header,
-  .mobile-nav,
-  .hero,
-  .col-left,
-  .section-band,
-  .related-links,
-  .disclaimer,
-  footer,
-  #print_btn,
-  .ghost-btn,
-  .note{
-    display:none !important;
-  }
-
-  body{
-    background:#fff;
-    color:#000;
-  }
-
-  .main{
-    display:block;
-    max-width:100%;
-    padding:0;
-    margin:0;
-  }
-
-  .col-mid{
-    width:100%;
-  }
-
-  #results{
-    display:block !important;
-    border:none;
-    box-shadow:none;
-  }
-
-  .card,
-  .chart-card,
-  .table-wrap,
-  .result-sub-item,
-  #summary_box{
-    box-shadow:none !important;
-    break-inside:avoid;
-    page-break-inside:avoid;
-  }
-
-  .result-highlight{
-    color:#000 !important;
-    background:#fff !important;
-    border:2px solid #ddd;
-  }
-
-  .result-highlight .lbl,
-  .result-highlight .amt,
-  .result-highlight .sub-info{
-    color:#000 !important;
-  }
-
-  .table-wrap{
-    overflow:visible !important;
-  }
-
-  table{
-    width:100% !important;
-    border-collapse:collapse;
-  }
-
-  th, td{
-    white-space:normal;
-    border:1px solid #ddd;
-  }
-}
-
   .calc-btn:hover{background:var(--accent-dark)}
   .calc-btn:active{transform:scale(.98)}
+
+  .print-btn{
+    border:1px solid var(--line);
+    background:var(--white);
+    color:var(--ink);
+    border-radius:10px;
+    padding:9px 12px;
+    font-family:'DM Sans',sans-serif;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    transition:all .2s;
+    flex-shrink:0;
+  }
+
+  .print-btn:hover{
+    background:var(--paper);
+  }
 
   #results{display:none}
   #results.show{display:block}
@@ -553,6 +482,7 @@
     grid-template-columns:1fr 1fr;
     gap:10px;
     margin-bottom:16px;
+    min-width:0;
   }
 
   .result-sub-item{
@@ -561,6 +491,8 @@
     border-radius:10px;
     padding:14px;
     text-align:center;
+    max-width:100%;
+    min-width:0;
   }
 
   .result-sub-item .s-lbl{
@@ -589,11 +521,17 @@
     border-bottom:1px solid var(--line);
     font-size:14px;
     gap:12px;
+    min-width:0;
   }
 
   .result-row:last-child{border-bottom:none}
   .result-row .rname{color:var(--muted)}
-  .result-row .rval{font-weight:700;text-align:right}
+  .result-row .rval{
+    font-weight:700;
+    text-align:right;
+    word-break:break-word;
+    overflow-wrap:anywhere;
+  }
 
   .chart-card{
     margin-top:18px;
@@ -601,6 +539,7 @@
     border-radius:12px;
     background:#fff;
     padding:16px;
+    overflow:hidden;
   }
 
   .chart-head{
@@ -610,6 +549,7 @@
     gap:12px;
     margin-bottom:12px;
     flex-wrap:wrap;
+    min-width:0;
   }
 
   .chart-head h3{
@@ -629,6 +569,7 @@
     flex-wrap:wrap;
     font-size:12px;
     color:var(--muted);
+    min-width:0;
   }
 
   .legend-item{
@@ -647,12 +588,14 @@
   .chart-wrap{
     width:100%;
     overflow:hidden;
+    max-width:100%;
   }
 
   .chart-wrap svg{
     width:100%;
     height:auto;
     display:block;
+    max-width:100%;
   }
 
   .table-wrap{
@@ -696,6 +639,7 @@
     font-size:13px;
     color:#57534e;
     line-height:1.7;
+    overflow-wrap:anywhere;
   }
 
   #summary_box{
@@ -707,6 +651,7 @@
     border-radius:10px;
     padding:14px;
     color:#4b5563;
+    overflow-wrap:anywhere;
   }
 
   .section-band{
@@ -746,6 +691,7 @@
     border:1px solid var(--line);
     border-radius:var(--r);
     padding:20px;
+    min-width:0;
   }
 
   .info-card h3{
@@ -840,18 +786,21 @@
       align-items:flex-start;
       gap:4px;
     }
-    .result-row .rname,.result-row .rval{
+    .result-row .rname,
+    .result-row .rval{
       text-align:left;
       width:100%;
-     
+    }
     .print-btn{
       font-size:12px;
       padding:8px 10px;
     }
-     
-    }
     .section-inner{padding:34px 14px}
     footer{padding:22px 14px;font-size:12px}
+
+    .table-wrap{
+      overflow-x:hidden;
+    }
 
     .table-wrap table{
       min-width:unset;
@@ -889,6 +838,80 @@
       font-weight:600;
       color:var(--muted);
       flex-shrink:0;
+    }
+  }
+
+  @media print{
+    header,
+    .mobile-nav,
+    .hero,
+    .col-left,
+    .section-band,
+    .related-links,
+    .disclaimer,
+    footer,
+    #print_btn,
+    .ghost-btn,
+    .note{
+      display:none !important;
+    }
+
+    body{
+      background:#fff;
+      color:#000;
+    }
+
+    .main{
+      display:block;
+      max-width:100%;
+      padding:0;
+      margin:0;
+    }
+
+    .col-mid{
+      width:100%;
+    }
+
+    #results{
+      display:block !important;
+      border:none;
+      box-shadow:none;
+    }
+
+    .card,
+    .chart-card,
+    .table-wrap,
+    .result-sub-item,
+    #summary_box{
+      box-shadow:none !important;
+      break-inside:avoid;
+      page-break-inside:avoid;
+    }
+
+    .result-highlight{
+      color:#000 !important;
+      background:#fff !important;
+      border:2px solid #ddd;
+    }
+
+    .result-highlight .lbl,
+    .result-highlight .amt,
+    .result-highlight .sub-info{
+      color:#000 !important;
+    }
+
+    .table-wrap{
+      overflow:visible !important;
+    }
+
+    table{
+      width:100% !important;
+      border-collapse:collapse;
+    }
+
+    th, td{
+      white-space:normal;
+      border:1px solid #ddd;
     }
   }
 </style>
@@ -952,7 +975,7 @@
     <a href="/yuzde-hesaplama.html">yüzde hesaplama</a> ve
     <a href="/maasin-alim-gucu-hesaplama.html">maaşın alım gücü hesaplama</a>
     araçlarına da göz atabilirsiniz.
-</p>
+  </p>
 </div>
 
 <div class="main">
@@ -1114,13 +1137,13 @@
 
     <div class="card" id="results">
       <div class="card-header" style="justify-content:space-between;">
-       <div style="display:flex;align-items:center;gap:10px;">
-        <div class="card-icon" style="background:var(--green-soft)">📊</div>
-        <h2>Sonuçlar</h2>
+        <div style="display:flex;align-items:center;gap:10px;min-width:0;">
+          <div class="card-icon" style="background:var(--green-soft)">📊</div>
+          <h2>Sonuçlar</h2>
+        </div>
+        <button type="button" class="print-btn" id="print_btn">🖨️ Yazdır</button>
       </div>
 
-      <button type="button" class="print-btn" id="print_btn">🖨️ Yazdır</button>
-    </div>
       <div class="card-body">
         <div class="result-highlight" id="status_box">
           <div class="lbl">Yatırım Analizi</div>
@@ -1147,10 +1170,12 @@
               <div class="legend-item"><span class="legend-dot" style="background:#c0392b;"></span>Cepten Çıkan</div>
               <div class="legend-item"><span class="legend-dot" style="background:#d97706;"></span>Kırılma Yılı</div>
             </div>
-             <div class="note">
-              Bu senaryoyu farklı faiz oranlarıyla denemek için <a href="/faiz-hesaplama.html">faiz hesaplama</a>, maaşın yıllar içindeki gerçek değerini görmek için <a href="/maasin-alim-gucu-hesaplama.html">maaşın alım gücü hesaplama</a> sayfasını da kullanabilirsiniz.
-             </div>
           </div>
+
+          <div class="note">
+            Bu senaryoyu farklı faiz oranlarıyla denemek için <a href="/faiz-hesaplama.html">faiz hesaplama</a>, maaşın yıllar içindeki gerçek değerini görmek için <a href="/maasin-alim-gucu-hesaplama.html">maaşın alım gücü hesaplama</a> sayfasını da kullanabilirsiniz.
+          </div>
+
           <div class="chart-wrap">
             <svg id="result_chart" viewBox="0 0 860 320" preserveAspectRatio="xMidYMid meet"></svg>
           </div>
@@ -1232,8 +1257,8 @@
       <div class="info-card">
         <h3>Maaş katkısı neden önemlidir?</h3>
         <p>
-         Konut yatırımında gerçek yük çoğu zaman maaştan çıkan kısımdır. Bu nedenle bu araç, yalnızca kira getirisini değil, maaştan ne kadar destek gerektiğini de birlikte hesaplar. Özellikle ilk yıllarda yatırımın ne kadar zorlayıcı olduğunu görmek için bu veri önemlidir.
-         Maaşın zaman içindeki satın alma gücünü görmek için <a href="/maasin-alim-gucu-hesaplama.html">maaşın alım gücü hesaplama</a> sayfasına bakabilirsiniz.
+          Konut yatırımında gerçek yük çoğu zaman maaştan çıkan kısımdır. Bu nedenle bu araç, yalnızca kira getirisini değil, maaştan ne kadar destek gerektiğini de birlikte hesaplar. Özellikle ilk yıllarda yatırımın ne kadar zorlayıcı olduğunu görmek için bu veri önemlidir.
+          Maaşın zaman içindeki satın alma gücünü görmek için <a href="/maasin-alim-gucu-hesaplama.html">maaşın alım gücü hesaplama</a> sayfasına bakabilirsiniz.
         </p>
       </div>
     </div>
@@ -1703,14 +1728,13 @@
     var btn = byId('calc_btn');
     if (btn) {
       btn.addEventListener('click', calculate);
-    
+    }
+
     var printBtn = byId('print_btn');
     if (printBtn) {
-     printBtn.addEventListener('click', function () {
-      window.print();
-    });
-}
-
+      printBtn.addEventListener('click', function () {
+        window.print();
+      });
     }
   });
 })();
