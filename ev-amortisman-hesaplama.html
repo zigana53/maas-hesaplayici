@@ -9,13 +9,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Ev Amortisman Hesaplama 2026 | Kira ile Kaç Yılda Kendini Öder?</title>
-<meta name="description" content="Ev amortisman hesaplama aracı ile kredi, kira geliri ve maaş katkısına göre evin ödeme dengesini ve yıllara göre yükünü hesaplayın.">
+<meta name="description" content="Ev amortisman hesaplama aracı ile kredi, kira geliri, maaş katkısı ve ek giderlere göre evin ödeme dengesini hesaplayın.">
 <link rel="canonical" href="https://maashesap.net/ev-amortisman-hesaplama.html">
 <meta name="robots" content="index, follow">
 
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ev Amortisman Hesaplama 2026">
-<meta property="og:description" content="Kredi, kira geliri ve maaş katkısına göre evin ödeme dengesini ve yıllara göre yükünü hesaplayın.">
+<meta property="og:description" content="Kredi, kira geliri, maaş katkısı ve ek giderlere göre ev yatırımınızın ödeme dengesini hesaplayın.">
 <meta property="og:url" content="https://maashesap.net/ev-amortisman-hesaplama.html">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -56,6 +56,8 @@
     font-size:15px;
     overflow-x:hidden;
   }
+
+  .hidden{display:none !important}
 
   header{
     border-bottom:1px solid var(--line);
@@ -320,6 +322,43 @@
     box-shadow:0 0 0 3px rgba(26,92,255,.1);
   }
 
+  .ghost-btn{
+    width:100%;
+    padding:12px;
+    border:1.5px dashed #bfd1ff;
+    background:#f8fbff;
+    color:var(--accent);
+    border-radius:10px;
+    font-family:'DM Sans',sans-serif;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
+    transition:all .2s;
+    margin-bottom:14px;
+  }
+
+  .ghost-btn:hover{
+    background:#eef4ff;
+    border-color:#9db9ff;
+  }
+
+  .advanced-fields{
+    background:#f8fbff;
+    border:1px solid #d8e5ff;
+    border-radius:12px;
+    padding:14px;
+    margin-bottom:16px;
+  }
+
+  .advanced-title{
+    font-size:12px;
+    font-weight:700;
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    margin-bottom:10px;
+  }
+
   .calc-btn{
     width:100%;
     padding:13px;
@@ -340,6 +379,38 @@
 
   #results{display:none}
   #results.show{display:block}
+
+  .placeholder-card .lead{
+    font-size:14px;
+    color:#4b5563;
+    line-height:1.8;
+    margin-bottom:18px;
+  }
+
+  .placeholder-list{
+    display:grid;
+    gap:10px;
+    margin-bottom:16px;
+  }
+
+  .placeholder-item{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:14px;
+  }
+
+  .placeholder-item strong{
+    display:block;
+    font-size:13px;
+    margin-bottom:4px;
+  }
+
+  .placeholder-item span{
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.7;
+  }
 
   .result-highlight{
     background:linear-gradient(135deg,var(--green) 0%,#16a34a 100%);
@@ -854,6 +925,36 @@
           </div>
         </div>
 
+        <button class="ghost-btn" id="advanced_toggle" type="button">Gelişmiş Ayarları Göster</button>
+
+        <div class="advanced-fields hidden" id="advanced_fields">
+          <div class="advanced-title">Gelişmiş Ayarlar</div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label>Aylık Aidat</label>
+              <div class="input-wrap">
+                <input type="number" id="monthly_aidat" value="0" min="0" step="1">
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Yıllık Bakım / Ek Masraf</label>
+              <div class="input-wrap">
+                <input type="number" id="annual_maintenance" value="0" min="0" step="1">
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Boş Kalma Oranı (%)</label>
+            <div class="input-wrap">
+              <input type="number" id="vacancy_rate" value="0" min="0" max="100" step="0.1">
+            </div>
+            <span class="field-help">Kiranın yıl içinde tahsil edilemeyen kısmını yaklaşık olarak hesaba katmak için kullanılır.</span>
+          </div>
+        </div>
+
         <button class="calc-btn" id="calc_btn">Hesapla →</button>
 
         <div class="note">
@@ -864,6 +965,44 @@
   </div>
 
   <div class="col-mid">
+    <div class="card placeholder-card" id="placeholder_panel">
+      <div class="card-header">
+        <div class="card-icon" style="background:#eef4ff">ℹ️</div>
+        <h2>Bu araç neyi gösterir?</h2>
+      </div>
+      <div class="card-body">
+        <p class="lead">
+          Kredi ile alınan bir evin kira geliri ve maaş katkısı ile nasıl dengelendiğini görürsünüz. Amaç sadece “kaç yılda öder?” demek değil, ilk yıllardaki yükü ve zamanla oluşan rahatlamayı da görünür hale getirmektir.
+        </p>
+
+        <div class="placeholder-list">
+          <div class="placeholder-item">
+            <strong>Aylık kredi taksitini görürsünüz</strong>
+            <span>Girilen faiz ve vade bilgisine göre yaklaşık aylık kredi taksiti hesaplanır.</span>
+          </div>
+
+          <div class="placeholder-item">
+            <strong>Kiranın krediyi kaçıncı yılda karşıladığını görürsünüz</strong>
+            <span>Kira artışıyla birlikte ödeme dengesinin ne zaman kırıldığını tek bakışta izlersiniz.</span>
+          </div>
+
+          <div class="placeholder-item">
+            <strong>İlk yıl ve 10 yıllık kişisel yükü karşılaştırırsınız</strong>
+            <span>Cebinizden çıkan gerçek desteğin zaman içinde artıp azaldığını görebilirsiniz.</span>
+          </div>
+
+          <div class="placeholder-item">
+            <strong>Grafikte tüm hikâyeyi izlersiniz</strong>
+            <span>Net kira, kredi ve kişisel açık aynı grafikte gösterilir. Hesaplama yaptığınızda bu alan sonuç ekranına dönüşür.</span>
+          </div>
+        </div>
+
+        <div class="note">
+          İpucu: Gelişmiş ayarlardan aidat, bakım masrafı ve boş kalma oranı ekleyerek daha gerçekçi bir senaryo oluşturabilirsiniz.
+        </div>
+      </div>
+    </div>
+
     <div class="card" id="results">
       <div class="card-header">
         <div class="card-icon" style="background:var(--green-soft)">📊</div>
@@ -886,11 +1025,11 @@
         <div class="chart-card">
           <div class="chart-head">
             <div>
-              <h3>Yıllara Göre Kira, Kredi ve Kişisel Yük</h3>
-              <p>Grafikte yıllık kira geliri, yıllık kredi ödemesi ve gerçekten kişisel katkı gereken yıllardaki cepten çıkan tutar birlikte gösterilir.</p>
+              <h3>Yıllara Göre Net Kira, Kredi ve Kişisel Yük</h3>
+              <p>Grafikte net kira geliri, yıllık kredi ödemesi ve gerçekten kişisel katkı gereken yıllardaki açık birlikte gösterilir.</p>
             </div>
             <div class="chart-legend">
-              <div class="legend-item"><span class="legend-dot" style="background:#1a5cff;"></span>Kira</div>
+              <div class="legend-item"><span class="legend-dot" style="background:#1a5cff;"></span>Net Kira</div>
               <div class="legend-item"><span class="legend-dot" style="background:#0d7a3e;"></span>Kredi</div>
               <div class="legend-item"><span class="legend-dot" style="background:#c0392b;"></span>Cepten Çıkan</div>
               <div class="legend-item"><span class="legend-dot" style="background:#d97706;"></span>Kırılma Yılı</div>
@@ -906,7 +1045,7 @@
             <thead>
               <tr>
                 <th>Yıl</th>
-                <th>Kira</th>
+                <th>Net Kira</th>
                 <th>Kredi</th>
                 <th>Yıllık Karşılama Oranı</th>
                 <th>Maaş Katkısı</th>
@@ -1102,14 +1241,14 @@
     if (!yearWhenRentCovers) {
       return {
         title: 'Zorlayıcı Senaryo',
-        text: 'Kira geliri kredi süresi boyunca taksidi tek başına karşılamıyor. Bu senaryoda maaş desteği uzun süre gerekir.',
+        text: 'Net kira geliri kredi süresi boyunca taksidi tek başına karşılamıyor. Bu senaryoda maaş desteği uzun süre gerekir.',
         cls: 'danger'
       };
     }
     if (yearWhenRentCovers <= 5) {
       return {
         title: 'Güçlü Senaryo',
-        text: 'Kira geliri görece kısa sürede krediyi karşılıyor. Bu yapı orta vadede daha rahat bir denge sunabilir.',
+        text: 'Net kira geliri görece kısa sürede krediyi karşılıyor. Bu yapı orta vadede daha rahat bir denge sunabilir.',
         cls: ''
       };
     }
@@ -1122,9 +1261,9 @@
     }
     return {
       title: 'Belirsiz Senaryo',
-      text: 'Girilen oranlar içinde kira geliri kredi yükünü karşılamaya yaklaşsa da baskı uzun süre devam ediyor.',
+      text: 'Girilen oranlar içinde net kira kredi yükünü karşılamaya yaklaşsa da baskı uzun süre devam ediyor.',
       cls: 'warning'
-      };
+    };
   }
 
   function renderChart(rows, breakEvenYear) {
@@ -1194,14 +1333,12 @@
     var breakLine = '';
     if (breakEvenYear) {
       var breakIndex = -1;
-
       for (var b = 0; b < rows.length; b++) {
         if (rows[b].year === breakEvenYear) {
           breakIndex = b;
           break;
         }
       }
-
       if (breakIndex !== -1) {
         var bx = x(breakIndex);
         breakLine =
@@ -1242,6 +1379,10 @@
     var salarySupport = parseFloat(byId('salary_support').value || 0);
     var salaryGrowth = parseFloat(byId('salary_growth').value || 0);
 
+    var monthlyAidat = parseFloat(byId('monthly_aidat').value || 0);
+    var annualMaintenance = parseFloat(byId('annual_maintenance').value || 0);
+    var vacancyRate = parseFloat(byId('vacancy_rate').value || 0);
+
     if (housePrice <= 0 || loanTerm <= 0) {
       alert('Lütfen geçerli ev fiyatı ve vade girin.');
       return;
@@ -1249,6 +1390,11 @@
 
     if (downPayment > housePrice) {
       alert('Peşinat ev fiyatından büyük olamaz.');
+      return;
+    }
+
+    if (vacancyRate < 0 || vacancyRate > 100) {
+      alert('Boş kalma oranı 0 ile 100 arasında olmalıdır.');
       return;
     }
 
@@ -1263,29 +1409,32 @@
     var yearWhenRentCovers = null;
     var tenYearOutOfPocket = downPayment;
     var firstYearOut = 0;
+    var firstYearNetRent = 0;
 
     for (var year = 1; year <= totalYears; year++) {
-      var annualRent = currentRent * 12;
+      var grossAnnualRent = currentRent * 12;
+      var netAnnualRent = Math.max((grossAnnualRent * (1 - vacancyRate / 100)) - (monthlyAidat * 12) - annualMaintenance, 0);
       var annualSalary = currentSalarySupport * 12;
       var annualLoanCost = yearlyInstallment;
-      var outOfPocket = Math.max(annualLoanCost - annualRent - annualSalary, 0);
-      var ratio = annualLoanCost > 0 ? (annualRent / annualLoanCost) : 0;
+      var outOfPocket = Math.max(annualLoanCost - netAnnualRent - annualSalary, 0);
+      var ratio = annualLoanCost > 0 ? (netAnnualRent / annualLoanCost) : 0;
 
       if (year === 1) {
         firstYearOut = outOfPocket;
+        firstYearNetRent = netAnnualRent;
       }
 
       if (year <= 10) {
         tenYearOutOfPocket += outOfPocket;
       }
 
-      if (yearWhenRentCovers === null && annualRent >= annualLoanCost) {
+      if (yearWhenRentCovers === null && netAnnualRent >= annualLoanCost) {
         yearWhenRentCovers = year;
       }
 
       yearlyRows.push({
         year: year,
-        rent: annualRent,
+        rent: netAnnualRent,
         loan: annualLoanCost,
         ratio: ratio,
         salary: annualSalary,
@@ -1301,10 +1450,14 @@
       loanAmount: loanAmount,
       monthlyInstallment: monthlyInstallment,
       firstYearOut: firstYearOut,
+      firstYearNetRent: firstYearNetRent,
       yearWhenRentCovers: yearWhenRentCovers,
       totalYears: totalYears,
       tenYearOutOfPocket: tenYearOutOfPocket,
-      rows: yearlyRows
+      rows: yearlyRows,
+      monthlyAidat: monthlyAidat,
+      annualMaintenance: annualMaintenance,
+      vacancyRate: vacancyRate
     });
   }
 
@@ -1321,8 +1474,8 @@
     byId('res_sub').innerHTML =
       meta.text + '<br>' +
       (r.yearWhenRentCovers
-        ? 'Kira geliri krediyi yaklaşık <strong>' + r.yearWhenRentCovers + '. yılda</strong> karşılıyor.'
-        : 'Girilen senaryoda kira kredi süresi boyunca taksidi tek başına karşılamıyor.');
+        ? 'Net kira geliri krediyi yaklaşık <strong>' + r.yearWhenRentCovers + '. yılda</strong> karşılıyor.'
+        : 'Girilen senaryoda net kira kredi süresi boyunca taksidi tek başına karşılamıyor.');
 
     byId('res_cards').innerHTML =
       '<div class="result-sub-item">' +
@@ -1330,7 +1483,7 @@
         '<div class="s-val">' + fmtTL(r.monthlyInstallment) + '</div>' +
       '</div>' +
       '<div class="result-sub-item">' +
-        '<div class="s-lbl">İlk Yıl Cepten Çıkan</div>' +
+        '<div class="s-lbl">İlk Yıl Kişisel Yük</div>' +
         '<div class="s-val">' + fmtTL(r.firstYearOut) + '</div>' +
       '</div>' +
       '<div class="result-sub-item">' +
@@ -1338,7 +1491,7 @@
         '<div class="s-val">' + (r.yearWhenRentCovers ? r.yearWhenRentCovers + '. yıl' : 'Henüz değil') + '</div>' +
       '</div>' +
       '<div class="result-sub-item">' +
-        '<div class="s-lbl">10 Yılda Cepten Çıkan</div>' +
+        '<div class="s-lbl">10 Yılda Kişisel Yük</div>' +
         '<div class="s-val">' + fmtTL(r.tenYearOutOfPocket) + '</div>' +
       '</div>';
 
@@ -1346,7 +1499,8 @@
       ['Ev Fiyatı', fmtTL(r.housePrice)],
       ['Kredi Tutarı', fmtTL(r.loanAmount)],
       ['Aylık Kredi Taksiti', fmtTL(r.monthlyInstallment)],
-      ['İlk Yıl Cepten Çıkan', fmtTL(r.firstYearOut)],
+      ['İlk Yıl Net Kira', fmtTL(r.firstYearNetRent)],
+      ['İlk Yıl Kişisel Yük', fmtTL(r.firstYearOut)],
       ['Kira Krediyi Karşılıyor', r.yearWhenRentCovers ? (r.yearWhenRentCovers + '. yılda') : 'Kredi süresince karşılamıyor'],
       ['Kredi Süresi', r.totalYears + ' yıl']
     ];
@@ -1358,24 +1512,32 @@
     byId('yearly_table').innerHTML = r.rows.map(function (row) {
       return '<tr>' +
         '<td data-label="Yıl">' + row.year + '</td>' +
-        '<td data-label="Kira">' + fmtTL(row.rent) + '</td>' +
+        '<td data-label="Net Kira">' + fmtTL(row.rent) + '</td>' +
         '<td data-label="Kredi">' + fmtTL(row.loan) + '</td>' +
-        '<td data-label="Karşılama">' + fmtNum(row.ratio, 2) + ' katı</td>' +
+        '<td data-label="Karşılama">' + fmtNum(row.ratio, 2) + ' kat</td>' +
         '<td data-label="Maaş Katkısı">' + fmtTL(row.salary) + '</td>' +
         '<td data-label="Cepten Çıkan">' + fmtTL(row.out) + '</td>' +
       '</tr>';
     }).join('');
 
+    var extraNote = [];
+    if (r.monthlyAidat > 0) extraNote.push('aylık aidat dahil');
+    if (r.annualMaintenance > 0) extraNote.push('yıllık bakım gideri dahil');
+    if (r.vacancyRate > 0) extraNote.push('%' + fmtNum(r.vacancyRate, 1) + ' boş kalma oranı dahil');
+
     byId('summary_box').innerHTML =
       '<strong>Yorum:</strong> ' +
       (r.yearWhenRentCovers
-        ? 'Bu senaryoda ilk yıllarda maaş desteği gerekir. Ancak kira artışıyla birlikte yük zamanla azalır ve kira geliri yaklaşık <strong>' + r.yearWhenRentCovers + '. yılda</strong> kredi ödemesini karşılamaya başlar.'
-        : 'Bu senaryoda kira geliri kredi süresi boyunca taksidi tek başına karşılamıyor. Yatırımın yükü uzun süre maaş desteği gerektiriyor.') +
-      ' İlk yıl kişisel yükünüz <strong>' + fmtTL(r.firstYearOut) + '</strong>.';
+        ? 'Bu senaryoda ilk yıllarda maaş desteği gerekir. Ancak kira artışıyla birlikte yük zamanla azalır ve net kira geliri yaklaşık <strong>' + r.yearWhenRentCovers + '. yılda</strong> kredi ödemesini karşılamaya başlar.'
+        : 'Bu senaryoda net kira geliri kredi süresi boyunca taksidi tek başına karşılamıyor. Yatırımın yükü uzun süre maaş desteği gerektiriyor.') +
+      ' İlk yıl kişisel yükünüz <strong>' + fmtTL(r.firstYearOut) + '</strong>.' +
+      (extraNote.length ? ' Hesaplamada ' + extraNote.join(', ') + '.' : '');
 
     renderChart(r.rows, r.yearWhenRentCovers);
 
+    byId('placeholder_panel').classList.add('hidden');
     byId('results').classList.add('show');
+
     byId('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
     setTimeout(function () { window.scrollBy(0, -70); }, 250);
   }
@@ -1397,8 +1559,23 @@
     }
   }
 
+  function initAdvancedToggle() {
+    var btn = byId('advanced_toggle');
+    var box = byId('advanced_fields');
+    if (!btn || !box) return;
+
+    btn.addEventListener('click', function () {
+      box.classList.toggle('hidden');
+      btn.textContent = box.classList.contains('hidden')
+        ? 'Gelişmiş Ayarları Göster'
+        : 'Gelişmiş Ayarları Gizle';
+    });
+  }
+
   window.addEventListener('load', function () {
     initMobileNav();
+    initAdvancedToggle();
+
     var btn = byId('calc_btn');
     if (btn) {
       btn.addEventListener('click', calculate);
