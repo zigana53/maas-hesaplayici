@@ -992,6 +992,29 @@
 .result-sub-item{
   min-width:0;
 }
+/* --- Mobil yatay kayma fix --- */
+html, body{
+  overflow-x:hidden;
+  position:relative;
+  max-width:100%;
+}
+
+body{
+  touch-action:pan-y;
+}
+
+.main,
+.col-left,
+.col-mid,
+.card,
+.card-body,
+.chart-card,
+.chart-wrap,
+.table-wrap,
+.result-sub-grid,
+.result-sub-item{
+  max-width:100%;
+}
 </style>
 </head>
 <body>
