@@ -785,6 +785,37 @@
       flex-direction:column;
       align-items:flex-start;
       gap:4px;
+     
+     .table-wrap{
+  border:none;
+  background:transparent;
+  box-shadow:none;
+  overflow:visible;
+  margin-top:14px;
+}
+
+.table-wrap table{
+  width:100%;
+  min-width:unset;
+  border-collapse:separate;
+  border-spacing:0 10px;
+}
+
+.table-wrap tbody{
+  display:block;
+}
+
+.table-wrap tbody tr{
+  display:block;
+  width:100%;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:12px;
+  margin-bottom:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+     
     }
     .result-row .rname,
     .result-row .rval{
@@ -799,15 +830,49 @@
     footer{padding:22px 14px;font-size:12px}
 
     .table-wrap{
-      overflow-x:hidden;
-    }
+  border:none;
+  background:transparent;
+  box-shadow:none;
+  overflow:visible;
+  margin-top:14px;
+}
 
-    .table-wrap table{
-      min-width:unset;
-      width:100%;
-      border-collapse:separate;
-      border-spacing:0 10px;
-    }
+.table-wrap table{
+  width:100%;
+  min-width:unset;
+  border-collapse:separate;
+  border-spacing:0 10px;
+}
+
+    .chart-card{
+  padding:14px;
+}
+
+.chart-head{
+  display:block;
+}
+
+.chart-head h3{
+  font-size:17px;
+  line-height:1.35;
+}
+
+.chart-legend{
+  gap:10px 18px;
+  margin-top:10px;
+}
+
+.chart-wrap{
+  margin-top:12px;
+  overflow:hidden;
+}
+
+.chart-wrap svg{
+  width:100%;
+  max-width:100%;
+  height:auto;
+  display:block;
+}
 
     .table-wrap thead{
       display:none;
@@ -914,6 +979,19 @@
       border:1px solid #ddd;
     }
   }
+
+    .main,
+.col-left,
+.col-mid,
+.card,
+.card-body,
+.chart-card,
+.chart-wrap,
+.table-wrap,
+.result-sub-grid,
+.result-sub-item{
+  min-width:0;
+}
 </style>
 </head>
 <body>
