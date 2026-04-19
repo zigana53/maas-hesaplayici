@@ -546,15 +546,20 @@
   }
 
   .aff-banner{
-    border-radius:var(--r);
-    overflow:hidden;
-    margin-bottom:20px;
-    text-decoration:none;
-    display:block;
-    border:1.5px solid var(--line);
-    transition:box-shadow .2s;
-  }
-  .aff-banner:hover{box-shadow:var(--shadow)}
+  border-radius:var(--r);
+  overflow:hidden;
+  margin-bottom:16px;
+  text-decoration:none;
+  display:block;
+  border:1px solid var(--line);
+  transition:background .2s,border-color .2s;
+  box-shadow:none;
+}
+
+.aff-banner:hover{
+  background:#fafbfd;
+  border-color:#d6deea;
+}
   .aff-inner{
     padding:16px 18px;
     display:flex;
@@ -583,9 +588,8 @@
     color:var(--muted);
   }
   .aff-arrow{
-    font-size:18px;
-    color:var(--muted);
-  }
+  display:none;
+}
 
   .section-band{
     background:var(--white);
@@ -1026,7 +1030,7 @@
   </div>
 
   <div class="col-mid">
-    <a class="aff-banner" href="https://www.kariyer.net" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#fff7ed,#fff)">
+    <a class="aff-banner" href="https://www.kariyer.net" target="_blank" rel="noopener nofollow" style="background:#fff;">
       <div class="aff-inner">
         <div class="aff-icon" style="background:#fff0db">&#128188;</div>
         <div class="aff-text">
@@ -1119,7 +1123,7 @@
   </div>
      
   <div class="col-right">
-    <a class="aff-banner" href="https://www.linkedin.com/jobs" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#eff6ff,#fff)">
+    <a class="aff-banner" href="https://www.linkedin.com/jobs" target="_blank" rel="noopener nofollow" style="background:#fff;">
       <div class="aff-inner">
         <div class="aff-icon" style="background:#dbeafe">&#128100;</div>
         <div class="aff-text">
@@ -1130,7 +1134,7 @@
       </div>
     </a>
 
-    <a class="aff-banner" href="https://www.iskur.gov.tr" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#f0fdf4,#fff)">
+    <a class="aff-banner" href="https://www.iskur.gov.tr" target="_blank" rel="noopener nofollow" style="background:#fff;">
       <div class="aff-inner">
         <div class="aff-icon" style="background:#dcfce7">&#127970;</div>
         <div class="aff-text">
