@@ -217,10 +217,15 @@
       align-items:start;
     }
     .col-left{position:static;align-self:start}
+    .col-right{align-self:start}
   }
 
   @media (max-width:979px){
     .col-left,.col-mid,.col-right{display:block;margin-bottom:20px}
+    .featured-tools{
+      position:static;
+      top:auto;
+    }
   }
 
   .card{
@@ -257,6 +262,12 @@
     flex-shrink:0;
   }
   .card-body{padding:20px}
+
+  .featured-tools{
+    position:sticky;
+    top:88px;
+    align-self:start;
+  }
 
   .field{margin-bottom:16px}
   label{
@@ -546,20 +557,21 @@
   }
 
   .aff-banner{
-  border-radius:var(--r);
-  overflow:hidden;
-  margin-bottom:16px;
-  text-decoration:none;
-  display:block;
-  border:1px solid var(--line);
-  transition:background .2s,border-color .2s;
-  box-shadow:none;
-}
+    border-radius:var(--r);
+    overflow:hidden;
+    margin-bottom:16px;
+    text-decoration:none;
+    display:block;
+    border:1px solid var(--line);
+    transition:background .2s,border-color .2s;
+    box-shadow:none;
+  }
 
-.aff-banner:hover{
-  background:#fafbfd;
-  border-color:#d6deea;
-}
+  .aff-banner:hover{
+    background:#fafbfd;
+    border-color:#d6deea;
+  }
+
   .aff-inner{
     padding:16px 18px;
     display:flex;
@@ -588,8 +600,8 @@
     color:var(--muted);
   }
   .aff-arrow{
-  display:none;
-}
+    display:none;
+  }
 
   .section-band{
     background:var(--white);
@@ -731,36 +743,22 @@
     to{opacity:1;transform:translateY(0)}
   }
   .ui-box{
-  background:var(--line);
-  border-radius:var(--r);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:11px;
-  color:var(--muted);
-  letter-spacing:.04em;
-  text-transform:uppercase;
-  font-weight:600;
-}
+    background:var(--line);
+    border-radius:var(--r);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--muted);
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    font-weight:600;
+  }
 
-.top-slot{
-  height:90px;
-}
-
-.box-mid{
-  height:250px;
-  margin-bottom:20px;
-}
-
-.box-side{
-  height:250px;
-  margin-bottom:20px;
-}
-
-.box-left{
-  height:250px;
-  margin-bottom:20px;
-}
+  .top-slot{height:90px}
+  .box-mid{height:250px;margin-bottom:20px}
+  .box-side{height:250px;margin-bottom:20px}
+  .box-left{height:250px;margin-bottom:20px}
 
   @media (max-width:760px){
     body{font-size:14px}
@@ -885,38 +883,37 @@
     2026 yılı güncel verilerine göre brütten nete maaş hesaplama yapabilir, SGK primi, gelir vergisi, damga vergisi ve işveren maliyetini tek ekranda görebilirsiniz.
   </p>
   <div style="margin-top:12px;">
-  <a href="ev-amortisman-hesaplama.html" style="
-    display:inline-block;
-    background:#eef2ff;
-    color:#1a5cff;
-    padding:8px 14px;
-    border-radius:8px;
-    font-size:13px;
-    font-weight:600;
-    text-decoration:none;">
-    Ev Amortisman Hesaplama →
-  </a>
-</div>
+    <a href="ev-amortisman-hesaplama.html" style="
+      display:inline-block;
+      background:#eef2ff;
+      color:#1a5cff;
+      padding:8px 14px;
+      border-radius:8px;
+      font-size:13px;
+      font-weight:600;
+      text-decoration:none;">
+      Ev Amortisman Hesaplama →
+    </a>
+  </div>
 
-<div style="text-align:center;margin-top:18px;">
-  <a href="#hesaplayici" style="
-    display:inline-block;
-    background:#1a5cff;
-    color:#fff;
-    padding:10px 18px;
-    border-radius:10px;
-    font-size:14px;
-    font-weight:600;
-    text-decoration:none;">
-    Maaşını Hemen Hesapla ↓
-  </a>
-</div>
+  <div style="text-align:center;margin-top:18px;">
+    <a href="#hesaplayici" style="
+      display:inline-block;
+      background:#1a5cff;
+      color:#fff;
+      padding:10px 18px;
+      border-radius:10px;
+      font-size:14px;
+      font-weight:600;
+      text-decoration:none;">
+      Maaşını Hemen Hesapla ↓
+    </a>
+  </div>
 
-<div style="max-width:1100px;margin:20px auto 0;padding:14px 18px;font-size:14px;color:#374151;line-height:1.7;background:#fff;border:1px solid #e2e8f0;border-radius:12px;">
-  Bu sayfadaki maaş hesaplama aracı, 2026 yılı güncel vergi dilimleri ve SGK oranlarına göre yaklaşık sonuçlar üretir. 
-  Hesaplama sonucunda net maaş, vergi kesintileri ve işveren maliyeti detaylı şekilde gösterilir.
-</div>
-
+  <div style="max-width:1100px;margin:20px auto 0;padding:14px 18px;font-size:14px;color:#374151;line-height:1.7;background:#fff;border:1px solid #e2e8f0;border-radius:12px;">
+    Bu sayfadaki maaş hesaplama aracı, 2026 yılı güncel vergi dilimleri ve SGK oranlarına göre yaklaşık sonuçlar üretir. 
+    Hesaplama sonucunda net maaş, vergi kesintileri ve işveren maliyeti detaylı şekilde gösterilir.
+  </div>
 </div>
 
 <div class="main" id="hesaplayici">
@@ -1001,32 +998,32 @@
         <p style="margin-top:15px;font-size:14px;color:#555;">
           Hesaplamayı daha iyi anlamak için →
           <a href="net-maas-nasil-hesaplanir.html">
-          Net maaş nasıl hesaplanır?
+            Net maaş nasıl hesaplanır?
           </a>
         </p>
       </div>
     </div>
 
     <div class="card">
-  <div class="card-header">
-    <div class="card-icon" style="background:#eef2ff">📘</div>
-    <h2>Hızlı Başlangıç</h2>
-  </div>
-  <div class="card-body" style="padding:14px 18px">
-    <div class="mini-tip">
-      <div class="tip-title">Brütten nete hesaplama</div>
-      <div class="tip-text">Brüt maaşınızı girerek net maaşınızı, vergi ve SGK kesintileriyle birlikte görebilirsiniz.</div>
+      <div class="card-header">
+        <div class="card-icon" style="background:#eef2ff">📘</div>
+        <h2>Hızlı Başlangıç</h2>
+      </div>
+      <div class="card-body" style="padding:14px 18px">
+        <div class="mini-tip">
+          <div class="tip-title">Brütten nete hesaplama</div>
+          <div class="tip-text">Brüt maaşınızı girerek net maaşınızı, vergi ve SGK kesintileriyle birlikte görebilirsiniz.</div>
+        </div>
+        <div class="mini-tip">
+          <div class="tip-title">Netten brüte hesaplama</div>
+          <div class="tip-text">Elinize geçen maaşı girerek yaklaşık brüt maaş karşılığını hesaplayabilirsiniz.</div>
+        </div>
+        <div class="mini-tip">
+          <div class="tip-title">Vergi dilimi etkisi</div>
+          <div class="tip-text">Ay seçimi yaparak yıl içindeki vergi dilimi değişiminin net maaşa etkisini inceleyebilirsiniz.</div>
+        </div>
+      </div>
     </div>
-    <div class="mini-tip">
-      <div class="tip-title">Netten brüte hesaplama</div>
-      <div class="tip-text">Elinize geçen maaşı girerek yaklaşık brüt maaş karşılığını hesaplayabilirsiniz.</div>
-    </div>
-    <div class="mini-tip">
-      <div class="tip-title">Vergi dilimi etkisi</div>
-      <div class="tip-text">Ay seçimi yaparak yıl içindeki vergi dilimi değişiminin net maaşa etkisini inceleyebilirsiniz.</div>
-    </div>
-  </div>
-</div>
   </div>
 
   <div class="col-mid">
@@ -1171,10 +1168,6 @@
           <div class="tip-title">Emekli Çalışan</div>
           <div class="tip-text">Emekli çalışanlarda işsizlik primi yerine SGDP uygulanır; işçi kesintisi %7,5’tir.</div>
         </div>
-      </div>
-    </div>
-
-      <div class="card-body" style="padding:14px 18px">
         <div class="mini-tip">
           <div class="tip-title">Normal Çalışan</div>
           <div class="tip-text">Brütten önce %14 SGK ve %1 işsizlik primi düşülür, sonra gelir vergisi ve damga vergisi hesaplanır.</div>
@@ -1183,7 +1176,7 @@
           <div class="tip-title">Asgari Ücret İstisnası</div>
           <div class="tip-text">Gelir vergisi ve damga vergisinde asgari ücrete isabet eden kısım kadar istisna uygulanır.</div>
           <div class="tip-text">Maaşınızın yalnızca net tutarını değil, yıllara göre gerçek satın alma gücünü görmek için <a href="/maasin-alim-gucu-hesaplama.html">maaşın alım gücü hesaplama aracını</a> da kullanabilirsiniz.</div>
-         </div>
+        </div>
         <div class="mini-tip">
           <div class="tip-title">İşveren Maliyeti</div>
           <div class="tip-text">Teşvikli ve teşviksiz işveren prim oranları farklıdır; bu yüzden maliyet tek sabit oranla hesaplanmaz.</div>
@@ -1191,26 +1184,26 @@
       </div>
     </div>
 
-    <div class="card">
-  <div class="card-header">
-    <div class="card-icon" style="background:#fef3c7">🔎</div>
-    <h2>Öne Çıkan Araçlar</h2>
-  </div>
-  <div class="card-body" style="padding:14px 18px">
-    <div class="mini-tip">
-      <div class="tip-title"><a href="faiz-hesaplama.html" style="color:inherit;text-decoration:none;">Faiz Hesaplama</a></div>
-      <div class="tip-text">Kredi ve birikim senaryoları için aylık ve toplam faiz etkisini görün.</div>
+    <div class="card featured-tools">
+      <div class="card-header">
+        <div class="card-icon" style="background:#fef3c7">🔎</div>
+        <h2>Öne Çıkan Araçlar</h2>
+      </div>
+      <div class="card-body" style="padding:14px 18px">
+        <div class="mini-tip">
+          <div class="tip-title"><a href="faiz-hesaplama.html" style="color:inherit;text-decoration:none;">Faiz Hesaplama</a></div>
+          <div class="tip-text">Kredi ve birikim senaryoları için aylık ve toplam faiz etkisini görün.</div>
+        </div>
+        <div class="mini-tip">
+          <div class="tip-title"><a href="maasin-alim-gucu-hesaplama.html" style="color:inherit;text-decoration:none;">Maaşın Alım Gücü</a></div>
+          <div class="tip-text">Maaşın yıllara göre altın, döviz ve ekmek karşılığını inceleyin.</div>
+        </div>
+        <div class="mini-tip">
+          <div class="tip-title"><a href="ev-amortisman-hesaplama.html" style="color:inherit;text-decoration:none;">Ev Amortisman</a></div>
+          <div class="tip-text">Kredi, kira ve maaş katkısıyla ev yatırımının ödeme dengesini hesaplayın.</div>
+        </div>
+      </div>
     </div>
-    <div class="mini-tip">
-      <div class="tip-title"><a href="maasin-alim-gucu-hesaplama.html" style="color:inherit;text-decoration:none;">Maaşın Alım Gücü</a></div>
-      <div class="tip-text">Maaşın yıllara göre altın, döviz ve ekmek karşılığını inceleyin.</div>
-    </div>
-    <div class="mini-tip">
-      <div class="tip-title"><a href="ev-amortisman-hesaplama.html" style="color:inherit;text-decoration:none;">Ev Amortisman</a></div>
-      <div class="tip-text">Kredi, kira ve maaş katkısıyla ev yatırımının ödeme dengesini hesaplayın.</div>
-    </div>
-  </div>
-</div>
   </div>
 </div>
 
@@ -1352,7 +1345,7 @@
 
 <div style="max-width:900px;margin:30px auto;font-size:14px;line-height:1.8;color:#374151">
   <h2 style="font-size:28px;margin-bottom:12px;line-height:1.2">
-  En Çok Aranan Maaş Hesaplamaları
+    En Çok Aranan Maaş Hesaplamaları
   </h2>
 
   <p style="margin-bottom:12px">
@@ -1384,7 +1377,7 @@
 </div>
 
 <div style="max-width:1100px;margin:40px auto;padding:15px 20px;font-size:14px;color:#666;line-height:1.6;">
-Bu hesaplamalar Türkiye Cumhuriyeti güncel vergi mevzuatı, 4857 sayılı İş Kanunu ve ilgili SGK düzenlemeleri dikkate alınarak hazırlanmıştır. Sonuçlar bilgilendirme amaçlı olup yaklaşık değerler sunar. Kesin sonuçlar için resmi bordro kayıtları ve mali müşavir değerlendirmesi esas alınmalıdır.
+  Bu hesaplamalar Türkiye Cumhuriyeti güncel vergi mevzuatı, 4857 sayılı İş Kanunu ve ilgili SGK düzenlemeleri dikkate alınarak hazırlanmıştır. Sonuçlar bilgilendirme amaçlı olup yaklaşık değerler sunar. Kesin sonuçlar için resmi bordro kayıtları ve mali müşavir değerlendirmesi esas alınmalıdır.
 </div>
 
 <div style="max-width:900px;margin:30px auto;padding:14px 18px;font-size:13px;color:#555;line-height:1.7;background:#fff;border:1px solid #e2e8f0;border-radius:12px;">
@@ -1392,7 +1385,7 @@ Bu hesaplamalar Türkiye Cumhuriyeti güncel vergi mevzuatı, 4857 sayılı İş
   Tüm sonuçlar yaklaşık değerlerdir ve resmi bordro sonuçları ile farklılık gösterebilir.
 </div>
     
-  <footer>
+<footer>
   <p><strong>MaaşHesap 2026</strong> &mdash; Bu site yalnızca bilgilendirme amaçlıdır. Kesin hesap için bordro ve uzman görüşü esas alınmalıdır.</p>
   <div class="footer-links">
     <a href="/">Maaş Hesaplama</a>
