@@ -8,13 +8,68 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fazla Mesai Hesaplama 2026 - Saatlik ve Aylık Ücret</title>
-<meta name="description" content="2026 fazla mesai hesaplama aracı. Saatlik, günlük ve aylık fazla mesai ücretinizi hızlıca öğrenin.">
-<meta name="keywords" content="fazla mesai hesaplama, mesai ücreti, haftalık çalışma süresi, 2026 iş kanunu">
+<title>Fazla Mesai Hesaplama 2026 - Saatlik, Günlük ve Aylık Mesai Ücreti</title>
+<meta name="description" content="2026 fazla mesai hesaplama aracı. Haftalık ve günlük fazla çalışma, saatlik fazla mesai ücreti, hafta sonu mesaisi ve aylık toplam mesai ücretini hızlıca hesaplayın.">
+<meta name="keywords" content="fazla mesai hesaplama, mesai ücreti hesaplama, fazla çalışma ücreti, saatlik mesai ücreti, hafta sonu mesaisi, 2026">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://maashesap.net/fazla-mesai.html">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Fazla Mesai Hesaplama Aracı",
+  "url":"https://maashesap.net/fazla-mesai.html",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"Web",
+  "description":"Saatlik, günlük ve aylık fazla mesai ücretini hesaplayan ücretsiz araç.",
+  "inLanguage":"tr-TR"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Fazla mesai nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Genel yaklaşımda haftalık 45 saati aşan çalışmalar fazla çalışma sayılır. Normal saatlik ücret bulunur ve fazla çalışma için bu ücret yüzde 50 zamlı uygulanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Saatlik fazla mesai ücreti nasıl bulunur?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Aylık brüt ücret yaklaşık aylık normal çalışma saatine bölünerek saatlik ücret bulunur. Fazla çalışma saatlik ücreti ise bu tutarın yüzde 50 zamlı halidir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Hafta sonu çalışması fazla mesai midir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Hafta sonu çalışmasının bordroya nasıl yansıyacağı çalışma düzenine ve işyeri uygulamasına göre değişebilir. Bu nedenle sözleşme ve bordro uygulaması ayrıca değerlendirilmelidir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Yıllık fazla mesai sınırı var mı?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Genel kabul gören yıllık fazla çalışma sınırı 270 saattir."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
   :root{
@@ -36,37 +91,38 @@
     --r:14px;
   }
 
-.seo-band{
-  max-width:1320px;
-  margin:48px auto 0;
-  padding:0 clamp(16px,3vw,40px);
-}
+  .seo-band{
+    max-width:1320px;
+    margin:48px auto 0;
+    padding:0 clamp(16px,3vw,40px);
+  }
 
-.seo-wrap{
-  background:var(--white);
-  border:1px solid var(--line);
-  border-radius:var(--r);
-  box-shadow:var(--shadow-sm);
-  padding:28px;
-}
+  .seo-wrap{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--r);
+    box-shadow:var(--shadow-sm);
+    padding:28px;
+  }
 
-.seo-head{
-  margin-bottom:22px;
-}
+  .seo-head{
+    margin-bottom:22px;
+  }
 
-.seo-head h2{
-  font-family:'DM Serif Display',serif;
-  font-size:clamp(22px,3vw,30px);
-  margin-bottom:6px;
-}
+  .seo-head h2{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(22px,3vw,30px);
+    margin-bottom:6px;
+  }
 
-.seo-head p{
-  color:var(--muted);
-  font-size:14px;
-}
-  
+  .seo-head p{
+    color:var(--muted);
+    font-size:14px;
+  }
+
   *{box-sizing:border-box;margin:0;padding:0}
   html{-webkit-text-size-adjust:100%}
+
   body{
     font-family:'DM Sans',sans-serif;
     background:var(--paper);
@@ -97,38 +153,92 @@
     min-width:0;
   }
 
-  .logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
-  .logo-icon{
-    width:38px;height:38px;background:var(--accent);border-radius:10px;
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  .logo-wrap{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    flex-shrink:0;
   }
+
+  .logo-icon{
+    width:38px;
+    height:38px;
+    background:var(--accent);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+
   .logo-icon svg{width:20px;height:20px}
-  .logo-text{font-family:'DM Serif Display',serif;font-size:20px;color:var(--ink);line-height:1}
+  .logo-text{
+    font-family:'DM Serif Display',serif;
+    font-size:20px;
+    color:var(--ink);
+    line-height:1;
+  }
   .logo-text span{color:var(--accent)}
 
-  .main-nav{display:flex;align-items:center;gap:4px;min-width:0}
-  .nav-link{
-    font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;
-    padding:7px 12px;border-radius:8px;transition:all .2s;white-space:nowrap;
+  .main-nav{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    min-width:0;
   }
+
+  .nav-link{
+    font-size:13px;
+    font-weight:600;
+    color:var(--muted);
+    text-decoration:none;
+    padding:7px 12px;
+    border-radius:8px;
+    transition:all .2s;
+    white-space:nowrap;
+  }
+
   .nav-link:hover{background:var(--paper);color:var(--ink)}
   .nav-link.active{background:var(--teal-soft);color:var(--teal)}
 
   .nav-toggle{
-    display:none;background:none;border:none;font-size:24px;line-height:1;cursor:pointer;
-    color:var(--muted);padding:6px 8px;margin-left:auto;flex-shrink:0;
+    display:none;
+    background:none;
+    border:none;
+    font-size:24px;
+    line-height:1;
+    cursor:pointer;
+    color:var(--muted);
+    padding:6px 8px;
+    margin-left:auto;
+    flex-shrink:0;
   }
 
   .mobile-nav{
-    display:none;position:fixed;top:64px;left:0;right:0;background:var(--white);
-    border-bottom:1px solid var(--line);z-index:199;box-shadow:0 4px 16px rgba(0,0,0,.1);
+    display:none;
+    position:fixed;
+    top:64px;
+    left:0;
+    right:0;
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    z-index:199;
+    box-shadow:0 4px 16px rgba(0,0,0,.1);
     flex-direction:column;
   }
+
   .mobile-nav.open{display:flex}
+
   .mobile-nav a{
-    padding:14px 18px;font-size:14px;font-weight:600;color:var(--ink);
-    text-decoration:none;border-bottom:1px solid var(--line);
+    padding:14px 18px;
+    font-size:14px;
+    font-weight:600;
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
   }
+
   .mobile-nav a:last-child{border-bottom:none}
   .mobile-nav a:hover{background:var(--paper)}
 
@@ -143,17 +253,41 @@
     background:linear-gradient(160deg,#ecfeff 0%,#f0fdfe 50%,var(--paper) 100%);
     border-bottom:1px solid var(--line);
   }
+
   .hero-badge{
-    display:inline-flex;align-items:center;gap:6px;background:var(--teal-soft);color:var(--teal);
-    font-size:12px;font-weight:600;padding:4px 14px;border-radius:99px;margin-bottom:20px;
-    letter-spacing:.04em;text-transform:uppercase;border:1px solid #a5f3fc;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:var(--teal-soft);
+    color:var(--teal);
+    font-size:12px;
+    font-weight:600;
+    padding:4px 14px;
+    border-radius:99px;
+    margin-bottom:20px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    border:1px solid #a5f3fc;
   }
+
   .hero h1{
-    font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,46px);
-    line-height:1.1;max-width:680px;margin:0 auto 16px;letter-spacing:-.02em;
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(28px,5vw,46px);
+    line-height:1.1;
+    max-width:760px;
+    margin:0 auto 16px;
+    letter-spacing:-.02em;
   }
+
   .hero h1 em{font-style:italic;color:var(--teal)}
-  .hero p{color:var(--muted);max-width:520px;margin:0 auto;font-size:16px;font-weight:300}
+
+  .hero p{
+    color:var(--muted);
+    max-width:700px;
+    margin:0 auto;
+    font-size:16px;
+    font-weight:300;
+  }
 
   .top-slot-wrap{
     max-width:1320px;
@@ -181,90 +315,248 @@
   }
 
   .card{
-    background:var(--white);border:1px solid var(--line);border-radius:var(--r);
-    box-shadow:var(--shadow-sm);overflow:hidden;margin-bottom:20px;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--r);
+    box-shadow:var(--shadow-sm);
+    overflow:hidden;
+    margin-bottom:20px;
   }
+
   .card:last-child{margin-bottom:0}
+
   .card-header{
-    padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;
-    gap:10px;background:#fafbfd;
+    padding:16px 20px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#fafbfd;
   }
+
   .card-header h2{font-size:14px;font-weight:600}
+
   .card-icon{
-    width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;
-    font-size:14px;flex-shrink:0;
+    width:30px;
+    height:30px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    flex-shrink:0;
   }
+
   .card-body{padding:22px}
 
   .field{margin-bottom:16px}
+
   label{
-    display:block;font-size:11px;font-weight:700;text-transform:uppercase;
-    letter-spacing:.07em;color:var(--muted);margin-bottom:7px;
-  }
-  .field-help{
-    display:block;font-size:12px;color:var(--muted);line-height:1.55;margin-top:6px;
+    display:block;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.07em;
+    color:var(--muted);
+    margin-bottom:7px;
   }
 
-  .input-wrap{position:relative;display:flex;align-items:center}
-  .input-wrap input{
-    width:100%;padding:11px 60px 11px 14px;border:1.5px solid var(--line);border-radius:10px;
-    font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--ink);
-    background:var(--white);outline:none;transition:border-color .2s, box-shadow .2s;
+  .field-help{
+    display:block;
+    font-size:12px;
+    color:var(--muted);
+    line-height:1.55;
+    margin-top:6px;
   }
-  .input-wrap input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(8,145,178,.1)}
-  .input-unit{position:absolute;right:14px;font-size:12px;font-weight:700;color:var(--muted);pointer-events:none}
+
+  .input-wrap{
+    position:relative;
+    display:flex;
+    align-items:center;
+  }
+
+  .input-wrap input{
+    width:100%;
+    padding:11px 60px 11px 14px;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    font-family:'DM Sans',sans-serif;
+    font-size:15px;
+    font-weight:600;
+    color:var(--ink);
+    background:var(--white);
+    outline:none;
+    transition:border-color .2s, box-shadow .2s;
+  }
+
+  .input-wrap input:focus{
+    border-color:var(--teal);
+    box-shadow:0 0 0 3px rgba(8,145,178,.1);
+  }
+
+  .input-unit{
+    position:absolute;
+    right:14px;
+    font-size:12px;
+    font-weight:700;
+    color:var(--muted);
+    pointer-events:none;
+  }
 
   select{
-    width:100%;padding:10px 36px 10px 14px;border:1.5px solid var(--line);border-radius:10px;
-    font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:var(--white);
-    outline:none;cursor:pointer;appearance:none;
+    width:100%;
+    padding:10px 36px 10px 14px;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    font-family:'DM Sans',sans-serif;
+    font-size:14px;
+    color:var(--ink);
+    background:var(--white);
+    outline:none;
+    cursor:pointer;
+    appearance:none;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat:no-repeat;background-position:right 14px center;
+    background-repeat:no-repeat;
+    background-position:right 14px center;
   }
+
   select:focus{border-color:var(--teal)}
 
   .toggle-group{
-    display:grid;grid-template-columns:1fr 1fr;gap:5px;background:var(--paper);
-    padding:4px;border-radius:10px;border:1.5px solid var(--line);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:5px;
+    background:var(--paper);
+    padding:4px;
+    border-radius:10px;
+    border:1.5px solid var(--line);
   }
+
   .toggle-btn{
-    padding:8px;border:none;border-radius:7px;font-family:'DM Sans',sans-serif;
-    font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);transition:all .2s;
+    padding:8px;
+    border:none;
+    border-radius:7px;
+    font-family:'DM Sans',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    background:transparent;
+    color:var(--muted);
+    transition:all .2s;
   }
-  .toggle-btn.active{background:var(--teal);color:white;box-shadow:0 2px 8px rgba(8,145,178,.3)}
+
+  .toggle-btn.active{
+    background:var(--teal);
+    color:white;
+    box-shadow:0 2px 8px rgba(8,145,178,.3);
+  }
+
+  .quick-row{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:8px;
+  }
+
+  .quick-btn{
+    border:1px solid var(--line);
+    background:#fff;
+    color:#374151;
+    border-radius:999px;
+    padding:6px 12px;
+    font-size:12px;
+    font-weight:700;
+    cursor:pointer;
+    transition:all .2s;
+  }
+
+  .quick-btn:hover{
+    border-color:var(--teal);
+    color:var(--teal);
+    background:var(--teal-soft);
+  }
 
   .calc-btn{
-    width:100%;padding:13px;background:var(--teal);color:white;border:none;border-radius:10px;
-    font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;
-    margin-top:10px;transition:background .2s;
+    width:100%;
+    padding:13px;
+    background:var(--teal);
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-family:'DM Sans',sans-serif;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    margin-top:10px;
+    transition:background .2s;
   }
+
   .calc-btn:hover{background:#0e7490}
 
   .note-box{
-    background:var(--yellow-soft);border:1px solid #fde68a;border-radius:10px;padding:12px 16px;
-    font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;
+    background:var(--yellow-soft);
+    border:1px solid #fde68a;
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:16px;
+    line-height:1.6;
+  }
+
+  .helper-box{
+    background:var(--teal-soft);
+    border:1px solid #a5f3fc;
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:13px;
+    color:#155e75;
+    margin-top:14px;
+    line-height:1.65;
   }
 
   #results{display:none}
   #results.show{display:block}
 
   .res-box{
-    border-radius:12px;padding:18px;margin-bottom:16px;text-align:center;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:16px;
+    text-align:center;
   }
+
   .res-box .lbl{
-    font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.85;margin-bottom:6px;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    opacity:.85;
+    margin-bottom:6px;
   }
+
   .res-box .amt{
-    font-family:'DM Serif Display',serif;font-size:34px;letter-spacing:-.02em;
+    font-family:'DM Serif Display',serif;
+    font-size:34px;
+    letter-spacing:-.02em;
   }
+
   .res-box .amt span{
-    font-size:18px;opacity:.7;font-family:'DM Sans',sans-serif;font-weight:400;
+    font-size:18px;
+    opacity:.7;
+    font-family:'DM Sans',sans-serif;
+    font-weight:400;
   }
 
   .result-row{
-    display:flex;justify-content:space-between;align-items:center;padding:10px 0;
-    border-bottom:1px solid var(--line);font-size:14px;gap:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+    gap:10px;
   }
+
   .result-row:last-child{border-bottom:none}
   .result-row .rname{color:var(--muted)}
   .result-row .rval{font-weight:700;text-align:right}
@@ -272,57 +564,173 @@
   .result-row .rval.green{color:var(--green)}
   .result-row .rval.red{color:var(--red)}
 
-  .action-row{display:flex;gap:8px;margin-top:16px}
-  .btn-sec{
-    flex:1;padding:10px 4px;border:1.5px solid var(--line);border-radius:9px;
-    font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;background:var(--white);
-    color:var(--muted);transition:all .2s;display:flex;align-items:center;justify-content:center;gap:5px;
+  .action-row{
+    display:flex;
+    gap:8px;
+    margin-top:16px;
   }
-  .btn-sec:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-soft)}
+
+  .btn-sec{
+    flex:1;
+    padding:10px 4px;
+    border:1.5px solid var(--line);
+    border-radius:9px;
+    font-family:'DM Sans',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    background:var(--white);
+    color:var(--muted);
+    transition:all .2s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+  }
+
+  .btn-sec:hover{
+    border-color:var(--teal);
+    color:var(--teal);
+    background:var(--teal-soft);
+  }
 
   .ui-box{
-    background:var(--line);border-radius:var(--r);display:flex;align-items:center;justify-content:center;
-    font-size:11px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;font-weight:600;
+    background:var(--line);
+    border-radius:var(--r);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    color:var(--muted);
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    font-weight:600;
   }
+
   .top-slot{height:90px}
   .box-side{height:250px;margin-bottom:20px}
 
-  .info-band{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:48px}
-  .info-inner{max-width:1320px;margin:0 auto;padding:48px clamp(16px,3vw,40px)}
-  .section-title{font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,28px);margin-bottom:6px;letter-spacing:-.02em}
-  .section-sub{color:var(--muted);font-size:14px;margin-bottom:24px}
-  .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-  .info-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px}
-  .info-card h3{font-family:'DM Serif Display',serif;font-size:16px;margin-bottom:10px}
-  .info-card p,.info-card li{font-size:14px;color:var(--muted);line-height:1.7}
+  .info-band{
+    background:var(--white);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    margin-top:48px;
+  }
+
+  .info-inner{
+    max-width:1320px;
+    margin:0 auto;
+    padding:48px clamp(16px,3vw,40px);
+  }
+
+  .section-title{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(22px,3vw,28px);
+    margin-bottom:6px;
+    letter-spacing:-.02em;
+  }
+
+  .section-sub{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:24px;
+  }
+
+  .info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+  }
+
+  .info-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--r);
+    padding:20px;
+  }
+
+  .info-card h3{
+    font-family:'DM Serif Display',serif;
+    font-size:16px;
+    margin-bottom:10px;
+  }
+
+  .info-card p,.info-card li{
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.7;
+  }
+
   .info-card ul{padding-left:16px}
   .info-card li{margin-bottom:4px}
 
-  .faq-band{background:var(--paper);padding:48px clamp(16px,3vw,40px) 64px}
-  .faq-inner{max-width:800px;margin:0 auto}
-  .faq-item{border-bottom:1px solid var(--line);padding:16px 0}
+  .faq-band{
+    background:var(--paper);
+    padding:48px clamp(16px,3vw,40px) 64px;
+  }
+
+  .faq-inner{
+    max-width:800px;
+    margin:0 auto;
+  }
+
+  .faq-item{
+    border-bottom:1px solid var(--line);
+    padding:16px 0;
+  }
+
   .faq-item:first-child{border-top:1px solid var(--line)}
+
   .faq-q{
-    font-weight:600;font-size:14px;cursor:pointer;display:flex;justify-content:space-between;
-    align-items:flex-start;gap:10px;
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
   }
+
   .faq-q::after{
-    content:'+';font-size:20px;color:var(--teal);flex-shrink:0;line-height:1;font-weight:300;transition:transform .2s;
+    content:'+';
+    font-size:20px;
+    color:var(--teal);
+    flex-shrink:0;
+    line-height:1;
+    font-weight:300;
+    transition:transform .2s;
   }
+
   .faq-item.open .faq-q::after{transform:rotate(45deg)}
-  .faq-a{font-size:13px;color:var(--muted);line-height:1.7;display:none;margin-top:8px}
+
+  .faq-a{
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.7;
+    display:none;
+    margin-top:8px;
+  }
+
   .faq-item.open .faq-a{display:block}
 
   footer{
-    background:var(--ink);color:rgba(255,255,255,.6);padding:28px clamp(16px,5vw,60px);
-    text-align:center;font-size:13px;
+    background:var(--ink);
+    color:rgba(255,255,255,.6);
+    padding:28px clamp(16px,5vw,60px);
+    text-align:center;
+    font-size:13px;
   }
+
   footer strong{color:white;font-weight:600}
   footer a{color:rgba(255,255,255,.6);text-decoration:underline}
   footer a:hover{color:white}
   footer .footer-links{margin-top:10px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
 
-  @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(10px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+
   .animate-in{animation:fadeUp .3s ease forwards}
 
   @media (max-width:760px){
@@ -382,7 +790,7 @@
       <a href="fazla-mesai.html" class="nav-link active">&#9200; Fazla Mesai</a>
       <a href="yuzde-hesaplama.html" class="nav-link">📊 Yüzde Hesaplama</a>
       <a href="kdv-hesaplama.html" class="nav-link">🧾 KDV Hesaplama</a>
-      <a href="faiz-hesaplama.html" class="nav-link">📈 Faiz Hesaplama</a>   
+      <a href="faiz-hesaplama.html" class="nav-link">📈 Faiz Hesaplama</a>
       <a href="maasin-alim-gucu-hesaplama.html" class="nav-link">🛒 Alım Gücü</a>
       <a href="ev-amortisman-hesaplama.html" class="nav-link">🏠 Ev Amortisman</a>
     </nav>
@@ -396,18 +804,18 @@
   <a href="tazminat.html">&#128203; Tazminat</a>
   <a href="issizlik.html">&#128084; İşsizlik</a>
   <a href="fazla-mesai.html">&#9200; Fazla Mesai</a>
-  <a href="yuzde-hesaplama.html" class="nav-link">📊 Yüzde Hesaplama</a>
-  <a href="kdv-hesaplama.html" class="nav-link">🧾 KDV Hesaplama</a>
+  <a href="yuzde-hesaplama.html">📊 Yüzde Hesaplama</a>
+  <a href="kdv-hesaplama.html">🧾 KDV Hesaplama</a>
   <a href="faiz-hesaplama.html">📈 Faiz Hesaplama</a>
   <a href="maasin-alim-gucu-hesaplama.html">🛒 Alım Gücü</a>
   <a href="ev-amortisman-hesaplama.html">🏠 Ev Amortisman</a>
 </div>
 
 <div class="hero">
-  <div class="hero-badge">&#9200; 2026 İş Kanunu</div>
-  <h1>Fazla Mesai Hesaplama 2026</h1>
-  <p style="color:#6b7280;margin-top:10px">
-  Saatlik, günlük ve aylık fazla mesai ücretinizi 2026 verilerine göre hızlıca hesaplayın.
+  <div class="hero-badge">&#9200; 2026 İş Hukuku Rehberi</div>
+  <h1>Fazla Mesai Hesaplama 2026<br><em>Saatlik, Günlük ve Aylık Ücret</em></h1>
+  <p>
+    Aylık brüt maaşınıza göre saatlik ücretinizi, normal fazla çalışma tutarınızı ve hafta sonu / tatil mesaisi dahil yaklaşık toplam mesai ücretinizi hesaplayın.
   </p>
 </div>
 
@@ -416,40 +824,53 @@
     <div class="card">
       <div class="card-header">
         <div class="card-icon" style="background:var(--teal-soft)">&#9200;</div>
-        <h2>Çalışma Saati</h2>
+        <h2>Mesai Bilgileri</h2>
       </div>
       <div class="card-body">
-        <div class="note-box">&#8505; Genel kural olarak haftalık 45 saati aşan çalışmalar fazla çalışma sayılır. Bu sayfa yaklaşık hesaplama sunar; nihai bordro ve sözleşme şartları sonucu etkileyebilir.</div>
+        <div class="note-box">
+          Genel yaklaşımda haftalık 45 saati aşan çalışmalar fazla çalışma kabul edilir. Bu araç yaklaşık hesaplama yapar; iş sözleşmesi, bordro düzeni, denkleştirme ve işyeri uygulamaları sonucu değiştirebilir.
+        </div>
 
         <div class="field">
           <label>Aylık Brüt Maaş</label>
           <div class="input-wrap">
-            <input type="number" inputmode="decimal" id="brut-maas" placeholder="Örneğin: 35000" min="0" onclick="this.select()">
+            <input type="number" inputmode="decimal" id="brut-maas" placeholder="Örneğin: 35000" min="0" autocomplete="off">
             <span class="input-unit">TL</span>
           </div>
         </div>
 
         <div class="field">
           <label>Hesaplama Türü</label>
-          <div class="toggle-group" id="tur-grp">
+          <div class="toggle-group">
             <button class="toggle-btn active" id="btn-hafta" type="button">Haftalık</button>
             <button class="toggle-btn" id="btn-gunluk" type="button">Günlük</button>
           </div>
+          <span class="field-help">Haftalık modda toplam haftalık çalışma süresi, günlük modda ise günlük fazla saat girilir.</span>
         </div>
 
         <div class="field" id="haftalik-alan">
           <label>Haftalık Toplam Çalışma Saati</label>
           <div class="input-wrap">
-            <input type="number" inputmode="numeric" id="haftalik-saat" placeholder="Örneğin: 50" min="45" onclick="this.select()">
+            <input type="number" inputmode="numeric" id="haftalik-saat" placeholder="Örneğin: 50" min="0" autocomplete="off">
             <span class="input-unit">SAAT</span>
+          </div>
+          <div class="quick-row">
+            <button class="quick-btn" type="button" onclick="fillWeekly(47)">47 saat</button>
+            <button class="quick-btn" type="button" onclick="fillWeekly(50)">50 saat</button>
+            <button class="quick-btn" type="button" onclick="fillWeekly(55)">55 saat</button>
           </div>
         </div>
 
         <div class="field" id="gunluk-alan" style="display:none">
           <label>Günlük Fazla Mesai Saati</label>
           <div class="input-wrap">
-            <input type="number" inputmode="decimal" id="gunluk-saat" placeholder="Örneğin: 2" min="0" step="0.1" onclick="this.select()">
+            <input type="number" inputmode="decimal" id="gunluk-saat" placeholder="Örneğin: 2" min="0" step="0.1" autocomplete="off">
             <span class="input-unit">SAAT</span>
+          </div>
+          <div class="quick-row">
+            <button class="quick-btn" type="button" onclick="fillDaily(1)">1 saat</button>
+            <button class="quick-btn" type="button" onclick="fillDaily(2)">2 saat</button>
+            <button class="quick-btn" type="button" onclick="fillDaily(3)">3 saat</button>
           </div>
         </div>
 
@@ -466,7 +887,7 @@
 
         <div class="field">
           <label>Hafta Sonu / Tatil Çalışması</label>
-          <div class="toggle-group" id="hs-grp">
+          <div class="toggle-group">
             <button class="toggle-btn active" id="btn-hs-yok" type="button">Yok</button>
             <button class="toggle-btn" id="btn-hs-var" type="button">Var</button>
           </div>
@@ -475,13 +896,17 @@
         <div class="field" id="haftasonu-alan" style="display:none">
           <label>Aylık Hafta Sonu / Tatil Mesai Saati</label>
           <div class="input-wrap">
-            <input type="number" inputmode="decimal" id="haftasonu-saat" placeholder="Örneğin: 8" min="0" step="0.1" onclick="this.select()">
+            <input type="number" inputmode="decimal" id="haftasonu-saat" placeholder="Örneğin: 8" min="0" step="0.1" autocomplete="off">
             <span class="input-unit">SAAT</span>
           </div>
-          <span class="field-help">Bu alan hafta sonu ya da benzer %100 zamlı değerlendirmek istediğiniz toplam aylık saat içindir.</span>
+          <span class="field-help">Bu alan, ayrıca %100 zamlı görmek istediğiniz toplam aylık hafta sonu / tatil saatleri içindir.</span>
         </div>
 
         <button class="calc-btn" id="calc-btn">Hesapla &#8594;</button>
+
+        <div class="helper-box">
+          Not: Sözleşmede haftalık normal süre 45 saatin altındaysa, bu sürenin üzerindeki ama 45 saate kadar olan kısım “fazla sürelerle çalışma” olarak farklı değerlendirilebilir. Bu sayfa temel ve pratik fazla mesai hesabı sunar.
+        </div>
       </div>
     </div>
   </div>
@@ -514,8 +939,8 @@
       </div>
       <div class="card-body" style="padding:14px 20px">
         <div class="result-row"><span class="rname">Normal fazla çalışma</span><span class="rval teal">%50 zamlı</span></div>
-        <div class="result-row"><span class="rname">Hafta sonu / tatil çalışması</span><span class="rval teal">%100 zamlı</span></div>
-        <div class="result-row"><span class="rname">Serbest zaman karşılığı</span><span class="rval teal">1,5 saat</span></div>
+        <div class="result-row"><span class="rname">Hafta sonu / tatil örnek senaryosu</span><span class="rval teal">%100 zamlı yaklaşım</span></div>
+        <div class="result-row"><span class="rname">Serbest zaman karşılığı</span><span class="rval teal">1 saate 1,5 saat</span></div>
         <div class="result-row" style="border:none"><span class="rname">Yıllık azami sınır</span><span class="rval">270 saat</span></div>
       </div>
     </div>
@@ -540,47 +965,51 @@
         <h2>Bilmeniz Gerekenler</h2>
       </div>
       <div class="card-body" style="padding:14px 18px">
-        <div class="result-row"><span class="rname">Haftalık sınır</span><span class="rval">45 saat</span></div>
+        <div class="result-row"><span class="rname">Genel haftalık sınır</span><span class="rval">45 saat</span></div>
         <div class="result-row"><span class="rname">Normal zam oranı</span><span class="rval">%50</span></div>
-        <div class="result-row"><span class="rname">Tatil / hafta sonu</span><span class="rval">%100</span></div>
-        <div class="result-row" style="border:none"><span class="rname">Yıllık üst sınır</span><span class="rval">270 saat</span></div>
+        <div class="result-row"><span class="rname">Yıllık referans sınır</span><span class="rval">270 saat</span></div>
+        <div class="result-row" style="border:none"><span class="rname">Kesin sonuç</span><span class="rval">Bordro + sözleşme</span></div>
       </div>
     </div>
 
-    <div class="box-side" style="height:250px;"></div>
+    <div class="box-side"></div>
   </div>
 </div>
 
 <div class="info-band">
   <div class="info-inner">
     <div class="section-title">Fazla Mesai Hakkında</div>
-    <div class="section-sub">İş Kanunu kapsamında temel fazla çalışma mantığı.</div>
+    <div class="section-sub">İş hukuku kapsamında temel fazla çalışma mantığı.</div>
     <div class="info-grid">
       <div class="info-card">
         <h3>Fazla Çalışma Nedir?</h3>
-        <p>Genel yaklaşım olarak haftalık 45 saati aşan çalışmalar fazla çalışma olarak değerlendirilir.</p>
-        <p>Fazla mesai ücretini oran bazlı değerlendirmek için <a href="yuzde-hesaplama.html">yüzde hesaplama</a> aracı da kullanılabilir.</p>
+        <p>Genel yaklaşımda haftalık 45 saati aşan çalışmalar fazla çalışma olarak değerlendirilir. Bu nedenle hesaplama yapılırken önce toplam haftalık süreye bakılır.</p>
+        <p>Mesai oranını daha net görmek için <a href="yuzde-hesaplama.html">yüzde hesaplama</a> aracını da kullanabilirsiniz.</p>
       </div>
+
       <div class="info-card">
-        <h3>Nasıl Hesaplanır?</h3>
-        <p>Saatlik ücret üzerinden normal fazla çalışmada %50 zam, hafta sonu veya benzer özel çalışmalarda daha yüksek oranlar dikkate alınır.</p>
-        <p>Toplam ücret yapısını görmek için <a href="/">maaş hesaplama</a> sayfasına da göz atabilirsiniz.</p>
+        <h3>Saatlik Ücret Nasıl Bulunur?</h3>
+        <p>Pratik hesapta aylık brüt ücret, yaklaşık aylık normal çalışma saatine bölünür. Böylece normal saatlik ücret bulunur ve mesai katsayısı bunun üstüne uygulanır.</p>
       </div>
+
+      <div class="info-card">
+        <h3>%50 Zamlı Mesai Ne Demek?</h3>
+        <p>Normal saatlik ücretin 1,5 katı üzerinden ödeme yapılması anlamına gelir. Örneğin saatlik ücret 200 TL ise fazla çalışma saati yaklaşık 300 TL olarak düşünülür.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Hafta Sonu Mesaisi Neden Ayrı Gösteriliyor?</h3>
+        <p>Çünkü kullanıcıların bir bölümü hafta içi fazla çalışmadan ayrı olarak hafta sonu veya tatil günlerindeki çalışmasını da ayrıca görmek ister. Bu alan pratik senaryo içindir.</p>
+      </div>
+
       <div class="info-card">
         <h3>Serbest Zaman Hakkı</h3>
-        <p>Çalışan, ücret yerine serbest zaman talep edebilir. Uygulama detayları işyeri düzenine göre değişebilir.</p>
+        <p>Çalışan bazı durumlarda ücret yerine serbest zaman talep edebilir. Ancak uygulama işyeri kayıtları ve çalışma düzenine göre değişebilir.</p>
       </div>
+
       <div class="info-card">
-        <h3>Hafta Sonu Çalışması</h3>
-        <p>Hafta sonu ya da benzer özel gün çalışmaları her zaman aynı kuralla ilerlemez; sözleşme ve bordro uygulaması önemlidir.</p>
-      </div>
-      <div class="info-card">
-        <h3>Yıllık Sınır</h3>
-        <p>Fazla çalışmada genel kabul gören yıllık üst sınır 270 saat olarak anılır.</p>
-      </div>
-      <div class="info-card">
-        <h3>Onay ve Kayıt</h3>
-        <p>İşveren uygulamaları, bordro kayıtları ve çalışma düzeni sonuca doğrudan etki edebilir.</p>
+        <h3>Kesin Sonuç Mudur?</h3>
+        <p>Hayır. Bu araç yaklaşık hesap üretir. Ara dinlenmeler, denkleştirme, bordro uygulaması, sözleşmesel normal süre ve özel gün çalışmaları sonucu değiştirebilir.</p>
       </div>
     </div>
   </div>
@@ -601,13 +1030,18 @@
     <div class="section-sub" style="margin-bottom:24px">Fazla mesai hakkında merak edilenler.</div>
 
     <div class="faq-item">
+      <div class="faq-q">Fazla mesai nasıl hesaplanır?</div>
+      <div class="faq-a">Pratik hesapta önce normal saatlik ücret bulunur. Ardından fazla çalışma saati bu ücretin %50 zamlı haliyle çarpılır.</div>
+    </div>
+
+    <div class="faq-item">
       <div class="faq-q">Cumartesi günü çalışma her zaman fazla mesai midir?</div>
-      <div class="faq-a">Hayır. Toplam haftalık çalışma düzeni ve sözleşme yapısı sonucu değiştirir. Genel değerlendirme toplam süre üzerinden yapılır.</div>
+      <div class="faq-a">Hayır. Toplam haftalık çalışma düzeni ve sözleşmedeki normal süre önemlidir. Bu yüzden değerlendirme yalnızca gün adına göre yapılmaz.</div>
     </div>
 
     <div class="faq-item">
       <div class="faq-q">Hafta sonu çalışması neden ayrı girdidir?</div>
-      <div class="faq-a">Çünkü kullanıcıların bir kısmı normal fazla çalışmadan ayrı olarak hafta sonu veya özel gün çalışmasını da görmek ister.</div>
+      <div class="faq-a">Çünkü kullanıcıların bir kısmı hafta içi fazla çalışmadan ayrı olarak hafta sonu veya özel gün çalışmasını da görmek ister.</div>
     </div>
 
     <div class="faq-item">
@@ -617,7 +1051,7 @@
 
     <div class="faq-item">
       <div class="faq-q">Bu hesaplama kesin bordro sonucu mudur?</div>
-      <div class="faq-a">Hayır. Bu sayfa yaklaşık hesaplama sunar. Nihai sonuç resmi bordro ve işyeri uygulamasına göre değişebilir.</div>
+      <div class="faq-a">Hayır. Bu sayfa yaklaşık hesaplama sunar. Nihai sonuç resmi bordro, iş sözleşmesi ve işyeri uygulamasına göre değişebilir.</div>
     </div>
   </div>
 </div>
@@ -630,50 +1064,47 @@
 
 <section class="seo-band">
   <div class="seo-wrap">
-
     <div class="seo-head">
       <h2>Fazla Mesai Ücreti Nasıl Hesaplanır?</h2>
       <p>2026 yılı için fazla çalışma ve mesai hesaplama rehberi</p>
     </div>
 
     <div class="info-grid">
-
       <div class="info-card">
         <h3>Fazla Mesai Nedir?</h3>
-        <p>Haftalık 45 saati aşan çalışmalar fazla mesai olarak değerlendirilir.</p>
+        <p>Genel uygulamada haftalık 45 saati aşan çalışmalar fazla mesai olarak değerlendirilir.</p>
       </div>
 
       <div class="info-card">
         <h3>Nasıl Hesaplanır?</h3>
-        <p>Saatlik ücret × 1.5 formülü ile hesaplanır.</p>
+        <p>Normal saatlik ücret bulunur ve fazla çalışma için bu ücretin %50 zamlı hali uygulanır.</p>
       </div>
 
       <div class="info-card">
         <h3>Hafta Sonu Mesaisi</h3>
-        <p>Hafta sonu çalışmaları bordroya göre farklı şekilde ücretlendirilebilir.</p>
+        <p>Hafta sonu veya özel gün çalışmaları işyeri uygulamasına göre farklı bordro mantıklarıyla hesaplanabilir.</p>
       </div>
 
       <div class="info-card">
-        <h3>Resmi Tatiller</h3>
-        <p>Resmi tatilde çalışılması durumunda ek ödeme yapılır.</p>
+        <h3>45 Saat Altı Sözleşmeler</h3>
+        <p>Normal haftalık süre 45 saatin altındaysa, bu sürenin üstü ile 45 saate kadar olan bölüm ayrı değerlendirilebilir.</p>
       </div>
 
       <div class="info-card">
         <h3>Yıllık Sınır</h3>
-        <p>Genel uygulamada yıllık fazla mesai sınırı 270 saat olarak kabul edilir.</p>
+        <p>Genel kabul gören yıllık fazla mesai sınırı 270 saat olarak bilinir.</p>
       </div>
 
       <div class="info-card">
         <h3>Doğru Hesaplama</h3>
-        <p>Saat ve ücret bilgileri doğru girildiğinde sistem otomatik hesaplama yapar.</p>
+        <p>Brüt ücret, çalışma süresi ve mesai türü doğru girildiğinde sistem pratik bir yaklaşık hesap üretir.</p>
       </div>
-
     </div>
   </div>
 </section>
 
 <div style="max-width:1100px;margin:40px auto;padding:15px 20px;font-size:14px;color:#666;line-height:1.6;">
-Bu hesaplamalar Türkiye Cumhuriyeti güncel vergi mevzuatı, 4857 sayılı İş Kanunu ve ilgili SGK düzenlemeleri dikkate alınarak hazırlanmıştır. Sonuçlar bilgilendirme amaçlı olup yaklaşık değerler sunar. Kesin sonuçlar için resmi bordro kayıtları ve mali müşavir değerlendirmesi esas alınmalıdır.
+Bu hesaplamalar genel iş hukuku prensipleri ve yaygın bordro mantığı dikkate alınarak hazırlanmıştır. Sonuçlar bilgilendirme amaçlı olup yaklaşık değer sunar. Kesin sonuçlar için resmi bordro kayıtları, iş sözleşmesi ve uzman görüşü esas alınmalıdır.
 </div>
 
 <footer>
@@ -694,7 +1125,7 @@ Bu hesaplamalar Türkiye Cumhuriyeti güncel vergi mevzuatı, 4857 sayılı İş
     <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
     <a href="kaynaklar.html">Kaynaklar</a>
     <a href="cerez-politikasi.html">Çerez Politikası</a>
- </div>
+  </div>
   <p style="margin-top:10px">
     İletişim: <a href="mailto:info@maashesap.net">info@maashesap.net</a>
   </p>
@@ -745,6 +1176,16 @@ Bu hesaplamalar Türkiye Cumhuriyeti güncel vergi mevzuatı, 4857 sayılı İş
     return n.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' TL';
   }
 
+  window.fillWeekly = function(v){
+    document.getElementById('haftalik-saat').value = v;
+    setTur('haftalik');
+  };
+
+  window.fillDaily = function(v){
+    document.getElementById('gunluk-saat').value = v;
+    setTur('gunluk');
+  };
+
   function calculate(){
     var brut = parseFloat(document.getElementById('brut-maas').value);
     var gun = parseFloat(document.getElementById('calisma-gun').value) || 22;
@@ -758,47 +1199,49 @@ Bu hesaplamalar Türkiye Cumhuriyeti güncel vergi mevzuatı, 4857 sayılı İş
     var haftalikStandart = 45;
     var aylikStandartSaat = haftalikStandart * 4.33;
     var saatlikUcret = brut / aylikStandartSaat;
-
     var fazlaMesaiSaat = 0;
 
     if(tur === 'haftalik'){
       var toplamSaat = parseFloat(document.getElementById('haftalik-saat').value);
-      if(!toplamSaat || toplamSaat <= 45){
-        alert('Haftalık çalışma saati 45\'ten fazla olmalıdır.');
+      if(!isFinite(toplamSaat) || toplamSaat <= 45){
+        alert('Haftalık çalışma saati 45 saatten büyük olmalıdır.');
         return;
       }
       fazlaMesaiSaat = (toplamSaat - 45) * 4.33;
     } else {
       var gunlukSaat = parseFloat(document.getElementById('gunluk-saat').value);
-      if(!gunlukSaat || gunlukSaat <= 0){
+      if(!isFinite(gunlukSaat) || gunlukSaat <= 0){
         alert('Lütfen günlük fazla mesai saatini giriniz.');
         return;
       }
       fazlaMesaiSaat = gunlukSaat * gun;
     }
 
-    var normalMesaiUcret = saatlikUcret * 1.5 * fazlaMesaiSaat;
+    var normalMesaiSaatlik = saatlikUcret * 1.5;
+    var normalMesaiUcret = normalMesaiSaatlik * fazlaMesaiSaat;
 
+    var haftaSonuSaatlik = saatlikUcret * 2;
     var haftaSonuUcret = 0;
+
     if(haftaSonuVar && haftasonuSaat > 0){
-      haftaSonuUcret = saatlikUcret * 2 * haftasonuSaat;
+      haftaSonuUcret = haftaSonuSaatlik * haftasonuSaat;
     }
 
     var toplamMesai = normalMesaiUcret + haftaSonuUcret;
-    var mesaiSaatlikUcret = saatlikUcret * 1.5;
 
     document.getElementById('mesai-amt').innerHTML =
       toplamMesai.toLocaleString('tr-TR',{maximumFractionDigits:2}) + '<span> TL</span>';
 
     document.getElementById('aylik-saat-goster').textContent = aylikStandartSaat.toFixed(0) + ' saat';
     document.getElementById('saatlik-goster').textContent = fmt(saatlikUcret);
-    document.getElementById('mesai-saatlik-goster').textContent = fmt(mesaiSaatlikUcret);
+    document.getElementById('mesai-saatlik-goster').textContent = fmt(normalMesaiSaatlik);
 
     var rows = [
       {n:'Aylık Brüt Maaş', v:fmt(brut), c:''},
       {n:'Normal Saatlik Ücret', v:fmt(saatlikUcret), c:''},
-      {n:'Aylık Normal Fazla Mesai Saati', v:fazlaMesaiSaat.toFixed(1) + ' saat', c:''},
-      {n:'Fazla Mesai Saatlik Ücreti', v:fmt(mesaiSaatlikUcret), c:'teal'},
+      {n:'Aylık Standart Çalışma Saati', v:aylikStandartSaat.toFixed(2) + ' saat', c:''},
+      {n:'Normal Fazla Mesai Saati', v:fazlaMesaiSaat.toFixed(1) + ' saat', c:''},
+      {n:'Fazla Mesai Saatlik Ücreti (%50 zamlı)', v:fmt(normalMesaiSaatlik), c:'teal'},
       {n:'Normal Fazla Mesai Toplamı', v:fmt(normalMesaiUcret), c:'teal'}
     ];
 
@@ -809,7 +1252,12 @@ Bu hesaplamalar Türkiye Cumhuriyeti güncel vergi mevzuatı, 4857 sayılı İş
         c:''
       });
       rows.push({
-        n:'Hafta Sonu / Tatil Mesai Ücreti',
+        n:'Hafta Sonu / Tatil Saatlik Yaklaşımı',
+        v:fmt(haftaSonuSaatlik),
+        c:'teal'
+      });
+      rows.push({
+        n:'Hafta Sonu / Tatil Mesai Toplamı',
         v:fmt(haftaSonuUcret),
         c:'teal'
       });
@@ -839,13 +1287,13 @@ Bu hesaplamalar Türkiye Cumhuriyeti güncel vergi mevzuatı, 4857 sayılı İş
       return;
     }
 
-    var text = 'MaaşHesap - Fazla Mesai Özeti\n--------------------\n';
-    text += 'Aylık Fazla Mesai Ücreti: ' + document.getElementById('mesai-amt').textContent.trim() + '\n';
+    var text = 'MaaşHesap - Fazla Mesai Özeti\\n--------------------\\n';
+    text += 'Aylık Fazla Mesai Ücreti: ' + document.getElementById('mesai-amt').textContent.trim() + '\\n';
 
     for(var i=0;i<rows.length;i++){
       var name = rows[i].querySelector('.rname').textContent.trim();
       var val = rows[i].querySelector('.rval').textContent.trim();
-      text += name + ': ' + val + '\n';
+      text += name + ': ' + val + '\\n';
     }
 
     navigator.clipboard.writeText(text).then(function(){
@@ -907,7 +1355,7 @@ Bu hesaplamalar Türkiye Cumhuriyeti güncel vergi mevzuatı, 4857 sayılı İş
             </div>
 
             <div class="rows">${rebuiltRows}</div>
-            <div class="note">Bu çıktı bilgilendirme amaçlıdır. Nihai hesap bordro ve işyeri uygulamasına göre değişebilir.</div>
+            <div class="note">Bu çıktı bilgilendirme amaçlıdır. Nihai hesap bordro, iş sözleşmesi ve işyeri uygulamasına göre değişebilir.</div>
           </div>
         </body>
       </html>
