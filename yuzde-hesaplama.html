@@ -68,18 +68,6 @@
     }
   ]
 }
-  function formatNumberTR(number) {
-  const isInteger = Number.isInteger(number);
-
-  if (isInteger) {
-    return number.toLocaleString('tr-TR');
-  } else {
-    return number.toLocaleString('tr-TR', {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
-  }
-}
 </script>
 
 <style>
@@ -155,12 +143,14 @@
   }
 
   .logo-icon svg{width:20px;height:20px}
+
   .logo-text{
     font-family:'DM Serif Display',serif;
     font-size:20px;
     color:var(--ink);
     line-height:1;
   }
+
   .logo-text span{color:var(--accent)}
 
   .main-nav{
@@ -209,7 +199,9 @@
     box-shadow:0 4px 16px rgba(0,0,0,.1);
     flex-direction:column;
   }
+
   .mobile-nav.open{display:flex}
+
   .mobile-nav a{
     padding:14px 18px;
     font-size:14px;
@@ -218,6 +210,7 @@
     text-decoration:none;
     border-bottom:1px solid var(--line);
   }
+
   .mobile-nav a:last-child{border-bottom:none}
   .mobile-nav a:hover{background:var(--paper)}
 
@@ -348,6 +341,7 @@
   .calc-section.active{display:block}
 
   .field{margin-bottom:14px}
+
   label{
     display:block;
     font-size:11px;
@@ -359,6 +353,7 @@
   }
 
   .input-wrap{position:relative;flex:1}
+
   .input-wrap input{
     width:100%;
     padding:11px 40px 11px 14px;
@@ -389,114 +384,6 @@
     transform:translateY(-50%);
   }
 
-  .result-box{
-    background:linear-gradient(135deg,#d97706 0%, #f59e0b 55%, #fbbf24 100%);
-    border-radius:16px;
-    padding:18px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    margin-top:14px;
-    box-shadow:0 10px 24px rgba(217,119,6,.18);
-    border:1px solid rgba(255,255,255,.18);
-    transform:translateY(0);
-    transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
-  }
-
-  .result-box.show-animate{
-    animation:resultPulse .35s ease;
-  }
-
-  .result-box.positive{
-    background:linear-gradient(135deg,#0d7a3e 0%, #16a34a 55%, #4ade80 100%);
-    box-shadow:0 10px 24px rgba(13,122,62,.18);
-  }
-
-.result-box.negative{
-  background:linear-gradient(135deg,#b91c1c 0%, #ef4444 55%, #f87171 100%);
-  box-shadow:0 10px 24px rgba(185,28,28,.18);
-  }
-
-.result-box .res-label{
-  font-size:12px;
-  font-weight:700;
-  color:rgba(255,255,255,.82);
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  margin-bottom:4px;
-}
-
-.result-box .res-value{
-  font-family:'DM Serif Display',serif;
-  font-size:34px;
-  color:#fff;
-  letter-spacing:-.03em;
-  line-height:1.05;
-  word-break:break-word;
-}
-
-.result-box .res-unit{
-  font-size:15px;
-  opacity:.82;
-  font-family:'DM Sans',sans-serif;
-  font-weight:500;
-}
-
-.result-box .res-icon{
-  font-size:38px;
-  opacity:.72;
-  flex-shrink:0;
-}
-
-@keyframes resultPulse{
-  0%{
-    transform:scale(.985);
-    opacity:.9;
-  }
-  100%{
-    transform:scale(1);
-    opacity:1;
-  }
-}
-
-  .result-box.positive{
-    background:linear-gradient(135deg,var(--green),#16a34a);
-  }
-
-  .result-box.negative{
-    background:linear-gradient(135deg,var(--red),#ef4444);
-  }
-
-  .result-box .res-label{
-    font-size:12px;
-    font-weight:600;
-    color:rgba(255,255,255,.8);
-    text-transform:uppercase;
-    letter-spacing:.05em;
-    margin-bottom:2px;
-  }
-
-  .result-box .res-value{
-    font-family:'DM Serif Display',serif;
-    font-size:28px;
-    color:white;
-    letter-spacing:-.02em;
-    line-height:1.1;
-  }
-
-  .result-box .res-unit{
-    font-size:14px;
-    opacity:.75;
-    font-family:'DM Sans',sans-serif;
-    font-weight:400;
-  }
-
-  .result-box .res-icon{
-    font-size:28px;
-    opacity:.65;
-  }
-
   .calc-btn{
     width:100%;
     padding:12px;
@@ -514,6 +401,76 @@
 
   .calc-btn:hover{background:#b45309}
 
+  .result-box{
+    background:linear-gradient(135deg,#d97706 0%, #f59e0b 55%, #fbbf24 100%);
+    border-radius:16px;
+    padding:18px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin-top:14px;
+    box-shadow:0 10px 24px rgba(217,119,6,.18);
+    border:1px solid rgba(255,255,255,.18);
+    transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+  }
+
+  .result-box.show-animate{
+    animation:resultPulse .35s ease;
+  }
+
+  .result-box.positive{
+    background:linear-gradient(135deg,#0d7a3e 0%, #16a34a 55%, #4ade80 100%);
+    box-shadow:0 10px 24px rgba(13,122,62,.18);
+  }
+
+  .result-box.negative{
+    background:linear-gradient(135deg,#b91c1c 0%, #ef4444 55%, #f87171 100%);
+    box-shadow:0 10px 24px rgba(185,28,28,.18);
+  }
+
+  .result-box .res-label{
+    font-size:12px;
+    font-weight:700;
+    color:rgba(255,255,255,.82);
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    margin-bottom:4px;
+  }
+
+  .result-box .res-value{
+    font-family:'DM Serif Display',serif;
+    font-size:34px;
+    color:#fff;
+    letter-spacing:-.03em;
+    line-height:1.05;
+    word-break:break-word;
+  }
+
+  .result-box .res-unit{
+    font-size:15px;
+    opacity:.82;
+    font-family:'DM Sans',sans-serif;
+    font-weight:500;
+  }
+
+  .result-box .res-icon{
+    font-size:38px;
+    opacity:.72;
+    flex-shrink:0;
+  }
+
+  @keyframes resultPulse{
+    0%{
+      transform:scale(.985);
+      opacity:.9;
+    }
+    100%{
+      transform:scale(1);
+      opacity:1;
+    }
+  }
+
   .result-detail{
     margin-top:12px;
     padding:14px 16px;
@@ -526,17 +483,12 @@
     display:none;
   }
 
-  .result-detail.show{
-    display:block;
-  }
+  .result-detail.show{display:block}
 
   .result-detail strong{
     color:var(--ink);
     font-weight:700;
   }
-
-  .result-detail.show{display:block}
-  .result-detail strong{color:var(--ink)}
 
   .section-band{
     background:var(--white);
@@ -737,6 +689,15 @@
 
   .related-links a:hover{text-decoration:underline}
 
+  .disclaimer{
+    max-width:1100px;
+    margin:40px auto;
+    padding:15px 20px;
+    font-size:14px;
+    color:#666;
+    line-height:1.6;
+  }
+
   footer{
     background:var(--ink);
     color:rgba(255,255,255,.6);
@@ -763,29 +724,14 @@
     .logo-text{font-size:18px}
     .mobile-nav{top:60px}
     .hero{padding:36px 16px 30px}
-    .result-box .res-value{font-size:24px}
+    .result-box{
+      padding:16px 16px;
+      border-radius:14px;
+    }
+    .result-box .res-value{font-size:28px}
+    .result-box .res-icon{font-size:30px}
     .content-box{padding:20px}
     .content-box h2{font-size:24px}
-  }
-  .result-box{
-    padding:16px 16px;
-    border-radius:14px;
-  }
-
-  .result-box .res-value{
-    font-size:28px;
-  }
-
-  .result-box .res-icon{
-    font-size:30px;
-  }
-  .disclaimer{
-    max-width:1100px;
-    margin:40px auto;
-    padding:15px 20px;
-    font-size:14px;
-    color:#666;
-    line-height:1.6;
   }
 </style>
 </head>
@@ -846,7 +792,6 @@
 </div>
 
 <div class="main">
-
   <div class="tab-bar">
     <button class="tab-btn main-tab-btn active" onclick="switchTab('t1')">Sayının Yüzdesi</button>
     <button class="tab-btn main-tab-btn" onclick="switchTab('t2')">Yüzde Kaçı?</button>
@@ -1029,7 +974,6 @@
       </div>
     </div>
   </div>
-
 </div>
 
 <div class="section-band">
@@ -1089,7 +1033,6 @@
 
 <div class="content-band">
   <div class="content-inner">
-
     <div class="content-box">
       <h2>Yüzde Hesaplama Aracı Ne İşe Yarar?</h2>
       <p>
@@ -1115,7 +1058,7 @@
       <p>
         Özellikle maaş ve çalışan hakları odaklı bir sitede yüzde hesaplama sayfası; maaş zam oranı, ücretteki değişim ve kesintilerin etkisini yorumlamak açısından güçlü bir yardımcı araçtır.
       </p>
-      </p>
+      <p>
         Ayrıca kira geliri ve kredi ile bir konut yatırımının geri dönüşünü görmek için
         <a href="/ev-amortisman-hesaplama.html">ev amortisman hesaplama</a>
         aracını da kullanabilirsiniz.
@@ -1138,21 +1081,20 @@
         En doğru sonuç için hangi işlemi yaptığınızı önce netleştirin: yüzde bulma, oran bulma, değişim hesaplama veya toplam sayıyı bulma.
       </div>
     </div>
-
   </div>
 </div>
 
 <div class="related-links">
-    <strong>İlgili Hesaplama Araçları:</strong><br>
-    <a href="kdv-hesaplama.html">KDV Hesaplama</a> ·
-    <a href="faiz-hesaplama.html">Faiz Hesaplama</a> ·
-    <a href="/">Maaş Hesaplama</a> ·
-    <a href="tazminat.html">Kıdem Tazminatı Hesaplama</a> ·
-    <a href="/ev-amortisman-hesaplama.html">Ev Amortisman Hesaplama</a>
-    <a href="issizlik.html">İşsizlik Maaşı Hesaplama</a> ·
-    <a href="fazla-mesai.html">Fazla Mesai Hesaplama</a>
+  <strong>İlgili Hesaplama Araçları:</strong><br>
+  <a href="kdv-hesaplama.html">KDV Hesaplama</a> ·
+  <a href="faiz-hesaplama.html">Faiz Hesaplama</a> ·
+  <a href="/">Maaş Hesaplama</a> ·
+  <a href="tazminat.html">Kıdem Tazminatı Hesaplama</a> ·
+  <a href="/ev-amortisman-hesaplama.html">Ev Amortisman Hesaplama</a>
+  <a href="issizlik.html">İşsizlik Maaşı Hesaplama</a> ·
+  <a href="fazla-mesai.html">Fazla Mesai Hesaplama</a>
 </div>
-  
+
 <div class="sss-band">
   <div class="sss-inner">
     <div class="section-title">Sık Sorulan Sorular</div>
@@ -1194,13 +1136,12 @@
     <a href="40000-brut-maas-net-ne-kadar.html">40000 TL brüt maaş net ne kadar?</a>
     sayfasını da inceleyebilirsiniz.
   </p>
-  
 </div>
 
 <div class="disclaimer">
   Bu içerik bilgilendirme amaçlıdır. Yüzde hesaplamaları standart matematiksel formüllerle yapılır. Ticari, mali ve hukuki kararlar için resmi veriler ve güncel oranlar ayrıca kontrol edilmelidir.
 </div>
-  
+
 <footer>
   <p><strong>MaaşHesap 2026</strong> &mdash; Bu site yalnızca bilgilendirme amaçlıdır. Kesin hesap için resmi kayıtlar ve uzman görüşü esas alınmalıdır.</p>
   <div class="footer-links">
@@ -1225,6 +1166,18 @@
 
 <script>
 (function(){
+  function formatNumberTR(number) {
+    var isInteger = Number.isInteger(number);
+    if (isInteger) {
+      return number.toLocaleString('tr-TR');
+    } else {
+      return number.toLocaleString('tr-TR', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
+  }
+
   var nt = document.getElementById('nav-toggle');
   var mn = document.getElementById('mobile-nav');
 
@@ -1281,23 +1234,11 @@
   }
 
   function fmtNum(n){
-    const rounded = Math.round(n * 100) / 100;
-    const isInteger = Number.isInteger(rounded);
-
-    return rounded.toLocaleString('tr-TR', {
-      minimumFractionDigits: isInteger ? 0 : 2,
-      maximumFractionDigits: 2
-    });
+    return formatNumberTR(Math.round(n * 100) / 100);
   }
 
   function fmtPct(n){
-    const rounded = Math.round(n * 100) / 100;
-    const isInteger = Number.isInteger(rounded);
-
-    return rounded.toLocaleString('tr-TR', {
-      minimumFractionDigits: isInteger ? 0 : 2,
-      maximumFractionDigits: 2
-    }) + '%';
+    return formatNumberTR(Math.round(n * 100) / 100) + '%';
   }
 
   function setResultBoxState(box, state){
