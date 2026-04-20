@@ -732,10 +732,6 @@
     flex-wrap:wrap;
   }
 
-  .hidden-ad{
-    display:none !important;
-  }
-
   @media (max-width:760px){
     body{font-size:14px}
     header{
@@ -775,7 +771,7 @@
       width:100%;
     }
     .result-sub-grid{
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:1fr;
     }
     .action-row{
       flex-direction:column;
@@ -838,8 +834,8 @@
   <div class="hero-badge">Faiz Hesaplama Aracı</div>
   <h1>Faiz Hesaplama 2026<br><em>Mevduat, Kredi ve Yasal Faiz</em></h1>
   <p>
-    Mevduat getirisini, basit ve bileşik faizi, konut ve araç kredisi taksitlerini ve yasal faiz tutarını tek sayfada hesaplayın.
-    Değişebilen oranlar için resmi kaynak ve banka verilerini ayrıca kontrol etmeyi unutmayın.
+   Mevduat faiz getirisi, basit ve bileşik faiz hesabı, konut ve ihtiyaç kredisi taksiti ile yasal faiz tutarını tek sayfada hesaplayın.
+   Bu araç ön hesaplama için hazırlanmıştır; değişebilen oranlar için resmi kaynak ve banka verilerini ayrıca kontrol etmeniz gerekir.
   </p>
   <p style="margin-top:12px;font-size:14px;color:#6b7280;">
     Konut yatırımı senaryosu için
@@ -848,7 +844,12 @@
   </p>
 </div>
 
-<div class="hidden-ad">Reklam Alanı</div>
+</div>
+
+<div style="max-width:1100px;margin:20px auto 0;padding:14px 18px;font-size:14px;color:#374151;line-height:1.7;background:#fff;border:1px solid #e2e8f0;border-radius:12px;">
+  Bu faiz hesaplama aracı; mevduat getirisi, kredi taksiti, basit faiz, bileşik faiz ve yasal faiz için yaklaşık sonuç üretir.
+  Banka ürünleri, stopaj oranları ve hukuki faiz türleri dönemsel olarak değişebileceği için işlem öncesinde güncel koşulları ayrıca kontrol etmeniz gerekir.
+</div>
 
 <div class="main" id="hesaplayici">
 
@@ -1066,7 +1067,30 @@
       </div>
     </div>
 
-    <div class="hidden-ad">Reklam Alanı</div>
+    <div class="card">
+  <div class="card-header">
+    <div class="card-icon" style="background:#eef2ff">🧭</div>
+    <h2>Hızlı Kullanım</h2>
+  </div>
+  <div class="card-body">
+    <div class="mini-tip">
+      <div class="tip-title">Mevduat hesabı</div>
+      <div class="tip-text">Ana para, yıllık faiz, vade ve stopaj oranını girerek net getiriyi hesaplayabilirsiniz.</div>
+    </div>
+    <div class="mini-tip">
+      <div class="tip-title">Basit ve bileşik faiz</div>
+      <div class="tip-text">Kısa vadeli ve uzun vadeli faiz getirisini aynı sayfada karşılaştırabilirsiniz.</div>
+    </div>
+    <div class="mini-tip">
+      <div class="tip-title">Kredi ön hesabı</div>
+      <div class="tip-text">Aylık faiz oranı ve vade bilgisiyle yaklaşık kredi taksiti ve toplam geri ödeme bulunur.</div>
+    </div>
+    <div class="mini-tip">
+      <div class="tip-title">Yasal faiz</div>
+      <div class="tip-text">Başlangıç ve bitiş tarihine göre yaklaşık faiz tutarını görmek için kullanılabilir.</div>
+    </div>
+  </div>
+</div>
   </div>
 
   <div class="col-mid">
@@ -1117,10 +1141,33 @@
           <div class="tip-text">Alacak, gecikme ve temerrüt gibi hukuki süreçlerde kullanılan faiz türüdür. Kesin oran ve başlangıç tarihi dosyaya göre değişebilir.</div>
           <div class="tip-text">Ticari işlemlerde oran ve tutar hesabı yaparken <a href="kdv-hesaplama.html">KDV hesaplama</a> aracı ile birlikte değerlendirme yapmak faydalı olabilir.</div>
         </div>
+        <div class="mini-tip">
+          <div class="tip-title">Faiz Karşılaştırırken Dönemi Kontrol Edin</div>
+          <div class="tip-text">Aylık faiz ile yıllık faiz aynı şekilde yorumlanmaz. Bir oranı değerlendirmeden önce bunun aylık mı yıllık mı açıklandığını mutlaka kontrol edin.</div>
+        </div>
       </div>
     </div>
 
-    <div class="hidden-ad">Reklam Alanı</div>
+    <div class="card">
+  <div class="card-header">
+    <div class="card-icon" style="background:#fff7ed">🔗</div>
+    <h2>İlgili Araçlar</h2>
+  </div>
+  <div class="card-body">
+    <div class="mini-tip">
+      <div class="tip-title"><a href="yuzde-hesaplama.html" style="color:inherit;text-decoration:none;">Yüzde Hesaplama</a></div>
+      <div class="tip-text">Faiz oranı değişimi, artış yüzdesi ve getiri karşılaştırmaları için yardımcı olur.</div>
+    </div>
+    <div class="mini-tip">
+      <div class="tip-title"><a href="ev-amortisman-hesaplama.html" style="color:inherit;text-decoration:none;">Ev Amortisman Hesaplama</a></div>
+      <div class="tip-text">Kredi faizinin konut yatırımındaki ödeme dengesini analiz etmek için kullanılabilir.</div>
+    </div>
+    <div class="mini-tip">
+      <div class="tip-title"><a href="maasin-alim-gucu-hesaplama.html" style="color:inherit;text-decoration:none;">Maaşın Alım Gücü</a></div>
+      <div class="tip-text">Faiz getirisi ile maaşın zaman içindeki gerçek değerini birlikte düşünmek isteyenler için faydalıdır.</div>
+    </div>
+  </div>
+</div>
 
   </div>
 </div>
@@ -1174,7 +1221,8 @@
   <a href="yuzde-hesaplama.html">Yüzde Hesaplama</a> ·
   <a href="kdv-hesaplama.html">KDV Hesaplama</a> ·
   <a href="/">Maaş Hesaplama</a> ·
-  <a href="/ev-amortisman-hesaplama.html">Ev amortisman hesaplama</a>
+  <a href="maasin-alim-gucu-hesaplama.html">Maaşın Alım Gücü Hesaplama</a> ·
+  <a href="/ev-amortisman-hesaplama.html">Ev amortisman hesaplama</a> ·
   <a href="tazminat.html">Kıdem Tazminatı Hesaplama</a> ·
   <a href="issizlik.html">İşsizlik Maaşı Hesaplama</a> ·
   <a href="fazla-mesai.html">Fazla Mesai Hesaplama</a>
@@ -1804,12 +1852,6 @@
 
         <div class="note">
           Bu çıktı bilgilendirme amaçlıdır.
-        </div>
-
-        <div class="note">
-         Faiz oranının uzun vadeli konut yatırımı üzerindeki etkisini görmek için
-         <a href="/ev-amortisman-hesaplama.html">ev amortisman hesaplama</a>
-         aracını da kullanabilirsiniz.
         </div>
         
       </div>
