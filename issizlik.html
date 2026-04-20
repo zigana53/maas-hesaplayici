@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>İşsizlik Maaşı Hesaplama 2026 - Ne Kadar Alırım?</title>
+<title>İşsizlik Maaşı Hesaplama 2026 (Ne Kadar Alırım?)</title>
 <meta name="description" content="2026 işsizlik maaşı hesaplama aracı. Prim günü ve maaş bilgisine göre işsizlik ödeneğinizi hızlıca hesaplayın.">
 <meta name="robots" content="index, follow">
 <meta name="keywords" content="işsizlik maaşı hesaplama, işsizlik ödeneği, SGK, 2026, işten çıkma">
@@ -16,6 +16,57 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "İşsizlik Maaşı Hesaplama 2026",
+  "description": "2026 işsizlik maaşı hesaplama aracı ile ne kadar işsizlik ödeneği alacağınızı hesaplayın.",
+  "url": "https://maashesap.net/issizlik.html"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "İstifa edersem işsizlik maaşı alabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Normal istifada işsizlik maaşı alınmaz. Ancak haklı fesih durumlarında farklı değerlendirme yapılabilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "İşsizlik maaşı ne kadar süre ödenir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prim gününe göre 180, 240 veya 300 gün ödeme yapılır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Askerlik nedeniyle ayrılırsam işsizlik maaşı alabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Askerlik nedeniyle ayrılma özel değerlendirme gerektirir. Nihai sonuç resmi başvuru ve kayıtlar üzerinden belirlenir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Emeklilik nedeniyle ayrılırsam işsizlik maaşı alabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Emeklilik nedeniyle ayrılmada işsizlik ödeneği genel olarak uygulanmaz."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
   :root{
@@ -435,6 +486,7 @@
             <input type="number" inputmode="decimal" id="brut-maas" placeholder="Örneğin: 35000" min="0" onclick="this.select()">
             <span class="input-unit">TL</span>
           </div>
+          <span class="field-help">Son 4 ay maaşlarınız farklıysa ortalamasını girin. Örn: 30.000 + 32.000 + 31.000 + 30.000 / 4</span>
         </div>
 
         <div class="field">
@@ -584,6 +636,10 @@
         <h3>Emeklilikte Durum Nedir?</h3>
         <p>Emeklilik nedeniyle ayrılma halinde işsizlik ödeneği genel olarak uygulanmaz. Bu sayfadaki hesaplayıcı da bu nedenle uyarı verir.</p>
       </div>
+      <div class="info-card">
+        <h3>2026 İşsizlik Maaşı Örnek Hesaplama</h3>
+        <p>Örneğin 30.000 TL brüt maaşı olan ve 900 gün primi bulunan bir çalışan yaklaşık 8 ay boyunca işsizlik maaşı alabilir. Kesin sonuç üst sınır, damga vergisi ve resmi kayıt durumuna göre değişebilir.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -593,6 +649,7 @@
   <a href="/">Maaş Hesaplama</a> ·
   <a href="yuzde-hesaplama.html">Yüzde Hesaplama</a> ·
   <a href="faiz-hesaplama.html">Faiz Hesaplama</a> ·
+  <a href="kdv-hesaplama.html">KDV Hesaplama</a> ·
   <a href="tazminat.html">Kıdem Tazminatı Hesaplama</a> ·
   <a href="fazla-mesai.html">Fazla Mesai Hesaplama</a>
 </div>
@@ -732,6 +789,7 @@ Bu hesaplamalar Türkiye Cumhuriyeti güncel vergi mevzuatı, 4857 sayılı İş
     });
   }
 
+  // 2026 brüt asgari ücret (güncellenebilir)
   var ASGARI_BRUT = 33030;
   var DAMGA = 0.00759;
   var UST_LIMIT = ASGARI_BRUT * 0.80;
